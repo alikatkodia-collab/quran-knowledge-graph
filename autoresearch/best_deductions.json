@@ -1,0 +1,1885 @@
+[
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "69:19",
+      "84:7",
+      "39:67"
+    ],
+    "bridge_keywords": [
+      "record",
+      "record",
+      "hand",
+      "hand",
+      "right"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → record → hand → hand → right. Path: [87:18] → [69:19] → [84:7] → [39:67]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "69:19",
+      "36:71",
+      "16:5"
+    ],
+    "bridge_keywords": [
+      "record",
+      "hand",
+      "create",
+      "livestock"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [16:5] (He —[creates]→ the livestock) through thematic chain: record → hand → create → livestock. Path: [87:18] → [69:19] → [36:71] → [16:5]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "69:25",
+      "84:10",
+      "3:187"
+    ],
+    "bridge_keywords": [
+      "record",
+      "record",
+      "receive",
+      "receive",
+      "behind"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → receive → behind. Path: [87:18] → [69:25] → [84:10] → [3:187]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "54:52",
+      "84:10",
+      "3:187"
+    ],
+    "bridge_keywords": [
+      "record",
+      "record",
+      "receive",
+      "behind"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → behind. Path: [87:18] → [54:52] → [84:10] → [3:187]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "77:16",
+      "36:31",
+      "34:54"
+    ],
+    "bridge_keywords": [
+      "earlier",
+      "annihilate",
+      "generation",
+      "many",
+      "generation"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [34:54] (they —[describes]→ of everything they longed for) through thematic chain: earlier → annihilate → generation → many → generation. Path: [87:18] → [77:16] → [36:31] → [34:54]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "7:145",
+      "2:93",
+      "49:2"
+    ],
+    "bridge_keywords": [
+      "teaching",
+      "uphold",
+      "strongly",
+      "raise",
+      "become"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [49:2] (You Who Believe —[commands]→ your voices above the voice of the prophet) through thematic chain: teaching → uphold → strongly → raise → become. Path: [87:18] → [7:145] → [2:93] → [49:2]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "7:145",
+      "7:171",
+      "114:6"
+    ],
+    "bridge_keywords": [
+      "teaching",
+      "uphold",
+      "strongly",
+      "think",
+      "save"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: teaching → uphold → strongly → think → save. Path: [87:18] → [7:145] → [7:171] → [114:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "78:29",
+      "84:7",
+      "39:67"
+    ],
+    "bridge_keywords": [
+      "record",
+      "record",
+      "hand",
+      "right"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → record → hand → right. Path: [87:18] → [78:29] → [84:7] → [39:67]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "78:29",
+      "27:75",
+      "6:120"
+    ],
+    "bridge_keywords": [
+      "record",
+      "record",
+      "everything",
+      "hide"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [6:120] (You —[commands]→ obvious sins) through thematic chain: record → record → everything → hide. Path: [87:18] → [78:29] → [27:75] → [6:120]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "20:52",
+      "18:61",
+      "114:6"
+    ],
+    "bridge_keywords": [
+      "record",
+      "forget",
+      "reach",
+      "meet"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: record → forget → reach → meet. Path: [87:18] → [20:52] → [18:61] → [114:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "87:18",
+      "27:75",
+      "84:7",
+      "39:67"
+    ],
+    "bridge_keywords": [
+      "record",
+      "record",
+      "hand",
+      "right"
+    ],
+    "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → record → hand → right. Path: [87:18] → [27:75] → [84:7] → [39:67]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "63:10",
+      "63:11",
+      "6:93",
+      "61:7"
+    ],
+    "bridge_keywords": [
+      "delay",
+      "death",
+      "soul",
+      "time",
+      "evil",
+      "fabricate"
+    ],
+    "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [61:7] (GOD —[states]→ the evil people) through thematic chain: delay → death → soul → time → evil → fabricate. Path: [63:10] → [63:11] → [6:93] → [61:7]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "63:10",
+      "2:195",
+      "20:69",
+      "51:39"
+    ],
+    "bridge_keywords": [
+      "charitable",
+      "hand",
+      "throw",
+      "magician"
+    ],
+    "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [51:39] (he —[states]→ in arrogance) through thematic chain: charitable → hand → throw → magician. Path: [63:10] → [2:195] → [20:69] → [51:39]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "63:10",
+      "23:99",
+      "14:17",
+      "45:10"
+    ],
+    "bridge_keywords": [
+      "death",
+      "death",
+      "await",
+      "retribution"
+    ],
+    "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [45:10] (Their earnings —[states]→ them) through thematic chain: death → death → await → retribution. Path: [63:10] → [23:99] → [14:17] → [45:10]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "63:10",
+      "23:99",
+      "33:16",
+      "39:42"
+    ],
+    "bridge_keywords": [
+      "death",
+      "death",
+      "death",
+      "live"
+    ],
+    "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [39:42] (GOD —[states]→ the souls) through thematic chain: death → death → death → live. Path: [63:10] → [23:99] → [33:16] → [39:42]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "63:10",
+      "17:52",
+      "114:6",
+      "21:24"
+    ],
+    "bridge_keywords": [
+      "short",
+      "realize",
+      "short",
+      "message",
+      "generation"
+    ],
+    "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [21:24] (they —[describes]→ other gods) through thematic chain: short → realize → short → message → generation. Path: [63:10] → [17:52] → [114:6] → [21:24]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "63:10",
+      "11:55",
+      "39:63",
+      "65:9"
+    ],
+    "bridge_keywords": [
+      "delay",
+      "give",
+      "decision",
+      "decision"
+    ],
+    "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [65:9] (They —[states]→ the consequences of their decisions) through thematic chain: delay → give → decision → decision. Path: [63:10] → [11:55] → [39:63] → [65:9]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "39:51",
+      "54:39",
+      "87:12"
+    ],
+    "bridge_keywords": [
+      "suffer",
+      "consequence",
+      "suffer",
+      "suffer"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [87:12] (he —[states]→ the great Hellfire) through thematic chain: suffer → consequence → suffer → suffer. Path: [59:15] → [39:51] → [54:39] → [87:12]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "34:54",
+      "2:147",
+      "22:53"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "doubt",
+      "harbor",
+      "doubt",
+      "harbor"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [22:53] (He —[describes]→ the devil 's scheme) through thematic chain: fate → counterpart → doubt → harbor → doubt → harbor. Path: [59:15] → [34:54] → [2:147] → [22:53]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "34:54",
+      "22:55",
+      "22:53"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "doubt",
+      "harbor",
+      "doubt",
+      "harbor"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [22:53] (He —[describes]→ the devil 's scheme) through thematic chain: fate → counterpart → doubt → harbor → doubt → harbor. Path: [59:15] → [34:54] → [22:55] → [22:53]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "34:54",
+      "22:55",
+      "73:17"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "doubt",
+      "harbor",
+      "disbelieve",
+      "terrible"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [73:17] (You —[states]→ a day) through thematic chain: fate → counterpart → doubt → harbor → disbelieve → terrible. Path: [59:15] → [34:54] → [22:55] → [73:17]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "34:54",
+      "22:55",
+      "29:48"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "doubt",
+      "harbor",
+      "doubt",
+      "harbor"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [29:48] (You —[states]→ the previous scriptures) through thematic chain: fate → counterpart → doubt → harbor → doubt → harbor. Path: [59:15] → [34:54] → [22:55] → [29:48]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "34:54",
+      "22:55",
+      "27:66"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "doubt",
+      "harbor",
+      "doubt",
+      "harbor"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [27:66] (their knowledge concerning the Hereafter —[describes]→ In fact) through thematic chain: fate → counterpart → doubt → harbor → doubt → harbor. Path: [59:15] → [34:54] → [22:55] → [27:66]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "77:13",
+      "82:19",
+      "21:43"
+    ],
+    "bridge_keywords": [
+      "decision",
+      "decision",
+      "help",
+      "another"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [21:43] (they —[describes]→ gods who can protect them from us) through thematic chain: decision → decision → help → another. Path: [59:15] → [77:13] → [82:19] → [21:43]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "44:11",
+      "64:5",
+      "16:104"
+    ],
+    "bridge_keywords": [
+      "retribution",
+      "painful",
+      "retribution",
+      "painful",
+      "painful",
+      "retribution"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [16:104] (GOD —[commands]→ them) through thematic chain: retribution → painful → retribution → painful → painful → retribution. Path: [59:15] → [44:11] → [64:5] → [16:104]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "10:102",
+      "2:280",
+      "4:25"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "wait",
+      "know",
+      "unable"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: fate → counterpart → wait → know → unable. Path: [59:15] → [10:102] → [2:280] → [4:25]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "10:102",
+      "32:30",
+      "10:32"
+    ],
+    "bridge_keywords": [
+      "fate",
+      "counterpart",
+      "wait",
+      "disregard"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [10:32] (You —[states]→ all this) through thematic chain: fate → counterpart → wait → disregard. Path: [59:15] → [10:102] → [32:30] → [10:32]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "65:9",
+      "71:24",
+      "11:63"
+    ],
+    "bridge_keywords": [
+      "suffer",
+      "decision",
+      "loss",
+      "loss"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [11:63] (Who —[states]→ me) through thematic chain: suffer → decision → loss → loss. Path: [59:15] → [65:9] → [71:24] → [11:63]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "19:59",
+      "74:43",
+      "14:39"
+    ],
+    "bridge_keywords": [
+      "suffer",
+      "consequence",
+      "salat",
+      "contact",
+      "contact",
+      "prayer"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [14:39] (Praise —[states]→ despite my old age , Ismail and Isaac) through thematic chain: suffer → consequence → salat → contact → contact → prayer. Path: [59:15] → [19:59] → [74:43] → [14:39]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "19:59",
+      "70:34",
+      "14:39"
+    ],
+    "bridge_keywords": [
+      "suffer",
+      "consequence",
+      "salat",
+      "contact",
+      "contact",
+      "prayer"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [14:39] (Praise —[states]→ despite my old age , Ismail and Isaac) through thematic chain: suffer → consequence → salat → contact → contact → prayer. Path: [59:15] → [19:59] → [70:34] → [14:39]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "59:15",
+      "19:59",
+      "87:15",
+      "56:96"
+    ],
+    "bridge_keywords": [
+      "suffer",
+      "consequence",
+      "salat",
+      "contact",
+      "name"
+    ],
+    "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [56:96] (You —[commands]→ the name of your Lord , the Great) through thematic chain: suffer → consequence → salat → contact → name. Path: [59:15] → [19:59] → [87:15] → [56:96]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "66:8",
+      "98:8",
+      "3:136",
+      "49:3"
+    ],
+    "bridge_keywords": [
+      "garden",
+      "flow",
+      "reward",
+      "abide",
+      "recompense",
+      "forgiveness"
+    ],
+    "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [49:3] (They —[describes]→ forgiveness and a great recompense) through thematic chain: garden → flow → reward → abide → recompense → forgiveness. Path: [66:8] → [98:8] → [3:136] → [49:3]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "66:8",
+      "98:8",
+      "3:195",
+      "112:4"
+    ],
+    "bridge_keywords": [
+      "garden",
+      "flow",
+      "reward",
+      "flow",
+      "equal"
+    ],
+    "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [112:4] (None —[states]→ Him) through thematic chain: garden → flow → reward → flow → equal. Path: [66:8] → [98:8] → [3:195] → [112:4]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "66:8",
+      "39:69",
+      "2:281",
+      "53:41"
+    ],
+    "bridge_keywords": [
+      "prophet",
+      "light",
+      "without",
+      "injustice",
+      "pay"
+    ],
+    "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [53:41] (they —[states]→ for such works) through thematic chain: prophet → light → without → injustice → pay. Path: [66:8] → [39:69] → [2:281] → [53:41]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "24:40",
+      "2:257",
+      "33:43",
+      "89:22"
+    ],
+    "bridge_keywords": [
+      "darkness",
+      "light",
+      "darkness",
+      "light",
+      "angel",
+      "together"
+    ],
+    "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [89:22] (GOD —[states]→ with the angels in row after row) through thematic chain: darkness → light → darkness → light → angel → together. Path: [24:40] → [2:257] → [33:43] → [89:22]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "24:40",
+      "65:11",
+      "33:43",
+      "89:22"
+    ],
+    "bridge_keywords": [
+      "darkness",
+      "light",
+      "darkness",
+      "light",
+      "angel",
+      "together"
+    ],
+    "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [89:22] (GOD —[states]→ with the angels in row after row) through thematic chain: darkness → light → darkness → light → angel → together. Path: [24:40] → [65:11] → [33:43] → [89:22]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "24:40",
+      "2:19",
+      "14:24",
+      "66:10"
+    ],
+    "bridge_keywords": [
+      "darkness",
+      "another",
+      "example",
+      "sky",
+      "cite",
+      "example"
+    ],
+    "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [66:10] (GOD —[states]→ as examples of those who disbelieved the wife of) through thematic chain: darkness → another → example → sky → cite → example. Path: [24:40] → [2:19] → [14:24] → [66:10]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "24:40",
+      "2:19",
+      "50:19",
+      "62:8"
+    ],
+    "bridge_keywords": [
+      "darkness",
+      "another",
+      "death",
+      "evade",
+      "death",
+      "evade"
+    ],
+    "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [62:8] (He —[states]→ you) through thematic chain: darkness → another → death → evade → death → evade. Path: [24:40] → [2:19] → [50:19] → [62:8]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "27:80",
+      "8:21",
+      "8:20"
+    ],
+    "bridge_keywords": [
+      "turn",
+      "deaf",
+      "hear",
+      "hear"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [8:20] (You Who Believe —[commands]→ GOD and His messenger) through thematic chain: turn → deaf → hear → hear. Path: [31:7] → [27:80] → [8:21] → [8:20]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "36:63",
+      "39:20",
+      "48:5"
+    ],
+    "bridge_keywords": [
+      "promise",
+      "promise",
+      "flow",
+      "stream"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [48:5] (He —[states]→ the believing men and women) through thematic chain: promise → promise → flow → stream. Path: [31:7] → [36:63] → [39:20] → [48:5]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "8:31",
+      "20:51",
+      "37:71"
+    ],
+    "bridge_keywords": [
+      "recite",
+      "revelation",
+      "past",
+      "generation"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [37:71] (Most of the previous generations —[describes]→ in the same manner) through thematic chain: recite → revelation → past → generation. Path: [31:7] → [8:31] → [20:51] → [37:71]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "7:133",
+      "28:39",
+      "5:12"
+    ],
+    "bridge_keywords": [
+      "arrogance",
+      "arrogance",
+      "right",
+      "continue"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [5:12] (GOD —[states]→ a covenant) through thematic chain: arrogance → arrogance → right → continue. Path: [31:7] → [7:133] → [28:39] → [5:12]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "7:133",
+      "92:5",
+      "42:40"
+    ],
+    "bridge_keywords": [
+      "arrogance",
+      "maintain",
+      "righteousness",
+      "maintain"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [42:40] (He —[states]→ the unjust) through thematic chain: arrogance → maintain → righteousness → maintain. Path: [31:7] → [7:133] → [92:5] → [42:40]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "14:22",
+      "39:20",
+      "48:5"
+    ],
+    "bridge_keywords": [
+      "retribution",
+      "painful",
+      "break",
+      "promise",
+      "flow",
+      "stream"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [48:5] (He —[states]→ the believing men and women) through thematic chain: retribution → painful → break → promise → flow → stream. Path: [31:7] → [14:22] → [39:20] → [48:5]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "14:22",
+      "7:87",
+      "99:6"
+    ],
+    "bridge_keywords": [
+      "retribution",
+      "painful",
+      "issue",
+      "disbelieve",
+      "issue"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [99:6] (the people —[states]→ from every direction) through thematic chain: retribution → painful → issue → disbelieve → issue. Path: [31:7] → [14:22] → [7:87] → [99:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "7:195",
+      "8:21",
+      "8:20"
+    ],
+    "bridge_keywords": [
+      "ear",
+      "hear",
+      "hear",
+      "hear"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [8:20] (You Who Believe —[commands]→ GOD and His messenger) through thematic chain: ear → hear → hear → hear. Path: [31:7] → [7:195] → [8:21] → [8:20]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "22:72",
+      "17:73",
+      "13:33"
+    ],
+    "bridge_keywords": [
+      "recite",
+      "promise",
+      "almost",
+      "revelation",
+      "fabricate",
+      "divert"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [13:33] (they —[states]→ idols) through thematic chain: recite → promise → almost → revelation → fabricate → divert. Path: [31:7] → [22:72] → [17:73] → [13:33]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:7",
+      "22:72",
+      "45:25",
+      "65:11"
+    ],
+    "bridge_keywords": [
+      "recite",
+      "promise",
+      "recite",
+      "clearly",
+      "recite",
+      "clearly"
+    ],
+    "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [65:11] (GOD —[promises]→ him) through thematic chain: recite → promise → recite → clearly → recite → clearly. Path: [31:7] → [22:72] → [45:25] → [65:11]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "2:82",
+      "26:129",
+      "43:74"
+    ],
+    "bridge_keywords": [
+      "forever",
+      "abide",
+      "forever",
+      "forever"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [43:74] (the guilty —[warns]→ in the retribution of Gehenna) through thematic chain: forever → abide → forever → forever. Path: [46:14] → [2:82] → [26:129] → [43:74]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "2:82",
+      "88:10",
+      "25:75"
+    ],
+    "bridge_keywords": [
+      "forever",
+      "abide",
+      "paradise",
+      "paradise"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [25:75] (they —[promises]→ with joyous greetings and peace) through thematic chain: forever → abide → paradise → paradise. Path: [46:14] → [2:82] → [88:10] → [25:75]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "2:82",
+      "25:24",
+      "7:50"
+    ],
+    "bridge_keywords": [
+      "forever",
+      "abide",
+      "dweller",
+      "paradise",
+      "dweller",
+      "paradise"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [7:50] (The dwellers of Hell —[promises]→ on the dwellers of Paradise) through thematic chain: forever → abide → dweller → paradise → dweller → paradise. Path: [46:14] → [2:82] → [25:24] → [7:50]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "18:107",
+      "88:10",
+      "25:75"
+    ],
+    "bridge_keywords": [
+      "abide",
+      "deserve",
+      "paradise",
+      "paradise"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [25:75] (they —[promises]→ with joyous greetings and peace) through thematic chain: abide → deserve → paradise → paradise. Path: [46:14] → [18:107] → [88:10] → [25:75]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "18:107",
+      "68:3",
+      "83:22"
+    ],
+    "bridge_keywords": [
+      "abide",
+      "deserve",
+      "deserve",
+      "deserve"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [83:22] (The righteous —[describes]→ bliss) through thematic chain: abide → deserve → deserve → deserve. Path: [46:14] → [18:107] → [68:3] → [83:22]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "21:101",
+      "76:11",
+      "9:26"
+    ],
+    "bridge_keywords": [
+      "reward",
+      "deserve",
+      "protect",
+      "reward",
+      "contentment"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [9:26] (GOD —[states]→ contentment) through thematic chain: reward → deserve → protect → reward → contentment. Path: [46:14] → [21:101] → [76:11] → [9:26]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "21:101",
+      "37:131",
+      "47:36"
+    ],
+    "bridge_keywords": [
+      "reward",
+      "deserve",
+      "reward",
+      "reward",
+      "righteous"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [47:36] (He —[commands]→ you) through thematic chain: reward → deserve → reward → reward → righteous. Path: [46:14] → [21:101] → [37:131] → [47:36]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "46:14",
+      "15:28",
+      "37:150",
+      "41:14"
+    ],
+    "bridge_keywords": [
+      "age",
+      "create",
+      "angel",
+      "angel"
+    ],
+    "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [41:14] (Their messengers —[commands]→ to them) through thematic chain: age → create → angel → angel. Path: [46:14] → [15:28] → [37:150] → [41:14]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "92:11",
+      "69:28",
+      "17:37",
+      "7:143"
+    ],
+    "bridge_keywords": [
+      "help",
+      "cannot",
+      "cannot",
+      "cannot",
+      "mountain"
+    ],
+    "conclusion": "[92:11] (His Money —[states]→ him) connects to [7:143] (You —[states]→ Me) through thematic chain: help → cannot → cannot → cannot → mountain. Path: [92:11] → [69:28] → [17:37] → [7:143]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "92:11",
+      "69:28",
+      "39:50",
+      "11:101"
+    ],
+    "bridge_keywords": [
+      "help",
+      "cannot",
+      "help",
+      "help",
+      "least"
+    ],
+    "conclusion": "[92:11] (His Money —[states]→ him) connects to [11:101] (they —[prohibits]→ their own souls) through thematic chain: help → cannot → help → help → least. Path: [92:11] → [69:28] → [39:50] → [11:101]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "92:11",
+      "64:15",
+      "2:155",
+      "65:9"
+    ],
+    "bridge_keywords": [
+      "money",
+      "test",
+      "money",
+      "loss"
+    ],
+    "conclusion": "[92:11] (His Money —[states]→ him) connects to [65:9] (They —[states]→ the consequences of their decisions) through thematic chain: money → test → money → loss. Path: [92:11] → [64:15] → [2:155] → [65:9]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "92:11",
+      "19:81",
+      "52:46",
+      "46:8"
+    ],
+    "bridge_keywords": [
+      "help",
+      "help",
+      "protect",
+      "scheme"
+    ],
+    "conclusion": "[92:11] (His Money —[states]→ him) connects to [46:8] (He —[states]→ as a witness between me and you) through thematic chain: help → help → protect → scheme. Path: [92:11] → [19:81] → [52:46] → [46:8]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "92:11",
+      "26:93",
+      "52:46",
+      "46:8"
+    ],
+    "bridge_keywords": [
+      "help",
+      "help",
+      "protect",
+      "scheme"
+    ],
+    "conclusion": "[92:11] (His Money —[states]→ him) connects to [46:8] (He —[states]→ as a witness between me and you) through thematic chain: help → help → protect → scheme. Path: [92:11] → [26:93] → [52:46] → [46:8]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "92:11",
+      "70:24",
+      "2:40",
+      "76:7"
+    ],
+    "bridge_keywords": [
+      "money",
+      "part",
+      "reverence",
+      "fulfill"
+    ],
+    "conclusion": "[92:11] (His Money —[states]→ him) connects to [76:7] (They —[describes]→ their pledges) through thematic chain: money → part → reverence → fulfill. Path: [92:11] → [70:24] → [2:40] → [76:7]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "26:7",
+      "55:76",
+      "61:12"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "earth",
+      "beautiful",
+      "beautiful"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [61:12] (He —[promises]→ your sins) through thematic chain: plant → earth → beautiful → beautiful. Path: [71:17] → [26:7] → [55:76] → [61:12]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "22:5",
+      "18:41",
+      "79:31"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "reach",
+      "water",
+      "water"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [79:31] (He —[states]→ its own water and pasture) through thematic chain: plant → reach → water → water. Path: [71:17] → [22:5] → [18:41] → [79:31]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "18:45",
+      "57:20",
+      "34:12"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "earth",
+      "hay",
+      "plant",
+      "severe",
+      "retribution"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [34:12] (the jinns —[states]→ by his Lord 's leave) through thematic chain: plant → earth → hay → plant → severe → retribution. Path: [71:17] → [18:45] → [57:20] → [34:12]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "18:45",
+      "79:31",
+      "23:20"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "earth",
+      "produce",
+      "water",
+      "produce"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [23:20] (A Tree Native To Sinai —[states]→ oil) through thematic chain: plant → earth → produce → water → produce. Path: [71:17] → [18:45] → [79:31] → [23:20]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "50:7",
+      "52:10",
+      "7:143"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "earth",
+      "mountain",
+      "mountain"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [7:143] (You —[states]→ Me) through thematic chain: plant → earth → mountain → mountain. Path: [71:17] → [50:7] → [52:10] → [7:143]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "86:12",
+      "22:5",
+      "80:19"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "earth",
+      "plant",
+      "grow",
+      "create",
+      "drop"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [80:19] (He —[creates]→ him) through thematic chain: plant → earth → plant → grow → create → drop. Path: [71:17] → [86:12] → [22:5] → [80:19]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "6:95",
+      "30:50",
+      "114:6"
+    ],
+    "bridge_keywords": [
+      "germinate",
+      "dead",
+      "continuous",
+      "dead"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: germinate → dead → continuous → dead. Path: [71:17] → [6:95] → [30:50] → [114:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "48:29",
+      "5:2",
+      "17:33"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "like",
+      "mark",
+      "blessing",
+      "sacred",
+      "enforce"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [17:33] (You —[commands]→ any person) through thematic chain: plant → like → mark → blessing → sacred → enforce. Path: [71:17] → [48:29] → [5:2] → [17:33]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "71:17",
+      "48:29",
+      "80:1",
+      "114:6"
+    ],
+    "bridge_keywords": [
+      "plant",
+      "like",
+      "muhammad",
+      "turn",
+      "muhammad"
+    ],
+    "conclusion": "[71:17] (GOD —[states]→ you) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: plant → like → muhammad → turn → muhammad. Path: [71:17] → [48:29] → [80:1] → [114:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "24:40",
+      "35:20",
+      "71:16"
+    ],
+    "bridge_keywords": [
+      "violent",
+      "wave",
+      "darkness",
+      "light",
+      "light"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [71:16] (He —[states]→ the moon) through thematic chain: violent → wave → darkness → light → light. Path: [31:32] → [24:40] → [35:20] → [71:16]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "24:40",
+      "56:67",
+      "59:8"
+    ],
+    "bridge_keywords": [
+      "violent",
+      "wave",
+      "deprive",
+      "deprive"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [59:8] (You —[commands]→ to the needy who immigrated) through thematic chain: violent → wave → deprive → deprive. Path: [31:32] → [24:40] → [56:67] → [59:8]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "37:128",
+      "37:111",
+      "23:109"
+    ],
+    "bridge_keywords": [
+      "devote",
+      "save",
+      "servant",
+      "servant"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [23:109] (A Group Of My Servants Used To Say —[promises]→ us) through thematic chain: devote → save → servant → servant. Path: [31:32] → [37:128] → [37:111] → [23:109]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "15:40",
+      "9:1",
+      "99:6"
+    ],
+    "bridge_keywords": [
+      "devote",
+      "except",
+      "worshiper",
+      "issue"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [99:6] (the people —[states]→ from every direction) through thematic chain: devote → except → worshiper → issue. Path: [31:32] → [15:40] → [9:1] → [99:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "39:17",
+      "37:160",
+      "1:5"
+    ],
+    "bridge_keywords": [
+      "devote",
+      "discard",
+      "devote",
+      "alone",
+      "alone"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [1:5] (You Alone —[commands]→ for help) through thematic chain: devote → discard → devote → alone → alone. Path: [31:32] → [39:17] → [37:160] → [1:5]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "14:34",
+      "17:87",
+      "40:61"
+    ],
+    "bridge_keywords": [
+      "unappreciative",
+      "implore",
+      "blessing",
+      "blessing"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [40:61] (GOD —[describes]→ many blessings) through thematic chain: unappreciative → implore → blessing → blessing. Path: [31:32] → [14:34] → [17:87] → [40:61]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "11:43",
+      "11:66",
+      "57:25"
+    ],
+    "bridge_keywords": [
+      "save",
+      "wave",
+      "save",
+      "mercy",
+      "powerful",
+      "almighty"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [57:25] (GOD —[is]→ powerful) through thematic chain: save → wave → save → mercy → powerful → almighty. Path: [31:32] → [11:43] → [11:66] → [57:25]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "6:63",
+      "20:97",
+      "114:6"
+    ],
+    "bridge_keywords": [
+      "save",
+      "implore",
+      "time",
+      "sea",
+      "time",
+      "throw"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: save → implore → time → sea → time → throw. Path: [31:32] → [6:63] → [20:97] → [114:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "6:63",
+      "3:88",
+      "29:58"
+    ],
+    "bridge_keywords": [
+      "save",
+      "implore",
+      "eternally",
+      "abide",
+      "eternally"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [29:58] (those who believe and lead a righteous life, we —[will_receive]→ surely settle them in paradise) through thematic chain: save → implore → eternally → abide → eternally. Path: [31:32] → [6:63] → [3:88] → [29:58]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "31:32",
+      "6:63",
+      "14:5",
+      "114:6"
+    ],
+    "bridge_keywords": [
+      "save",
+      "implore",
+      "darkness",
+      "appreciative",
+      "light",
+      "moses"
+    ],
+    "conclusion": "[31:32] (they —[states]→ GOD) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: save → implore → darkness → appreciative → light → moses. Path: [31:32] → [6:63] → [14:5] → [114:6]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "22:2",
+      "19:30",
+      "73:17"
+    ],
+    "bridge_keywords": [
+      "though",
+      "awesome",
+      "infant",
+      "infant"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [73:17] (You —[states]→ a day) through thematic chain: though → awesome → infant → infant. Path: [13:13] → [22:2] → [19:30] → [73:17]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "114:6",
+      "21:24",
+      "35:31"
+    ],
+    "bridge_keywords": [
+      "though",
+      "strike",
+      "message",
+      "generation",
+      "consummate",
+      "previous"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [35:31] (GOD —[is]→ fully cognizant of his servants) through thematic chain: though → strike → message → generation → consummate → previous. Path: [13:13] → [114:6] → [21:24] → [35:31]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "114:6",
+      "38:75",
+      "34:20"
+    ],
+    "bridge_keywords": [
+      "though",
+      "strike",
+      "satan",
+      "rebel",
+      "satan"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [34:20] (They —[commands]→ him) through thematic chain: though → strike → satan → rebel → satan. Path: [13:13] → [114:6] → [38:75] → [34:20]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "114:6",
+      "38:75",
+      "6:93"
+    ],
+    "bridge_keywords": [
+      "though",
+      "strike",
+      "satan",
+      "rebel",
+      "hand",
+      "arrogant"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [6:93] (You —[states]→ the transgressors) through thematic chain: though → strike → satan → rebel → hand → arrogant. Path: [13:13] → [114:6] → [38:75] → [6:93]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "114:6",
+      "19:58",
+      "96:19"
+    ],
+    "bridge_keywords": [
+      "though",
+      "strike",
+      "noah",
+      "descendant",
+      "prostrate",
+      "fall"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [96:19] (You —[commands]→ prostrate) through thematic chain: though → strike → noah → descendant → prostrate → fall. Path: [13:13] → [114:6] → [19:58] → [96:19]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "114:6",
+      "53:7",
+      "81:23"
+    ],
+    "bridge_keywords": [
+      "though",
+      "strike",
+      "highest",
+      "horizon"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [81:23] (He —[states]→ him) through thematic chain: though → strike → highest → horizon. Path: [13:13] → [114:6] → [53:7] → [81:23]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "56:76",
+      "58:16",
+      "47:1"
+    ],
+    "bridge_keywords": [
+      "awesome",
+      "oath",
+      "repel",
+      "path"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [47:1] (Those who disbelieve and repel from the path —[states]→ their works) through thematic chain: awesome → oath → repel → path. Path: [13:13] → [56:76] → [58:16] → [47:1]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "56:76",
+      "89:5",
+      "5:100"
+    ],
+    "bridge_keywords": [
+      "awesome",
+      "oath",
+      "possess",
+      "intelligence"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [5:100] (You —[commands]→ GOD) through thematic chain: awesome → oath → possess → intelligence. Path: [13:13] → [56:76] → [89:5] → [5:100]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "56:76",
+      "5:108",
+      "66:3"
+    ],
+    "bridge_keywords": [
+      "awesome",
+      "oath",
+      "disregard",
+      "part"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [66:3] (one of them —[states]→ it) through thematic chain: awesome → oath → disregard → part. Path: [13:13] → [56:76] → [5:108] → [66:3]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "39:75",
+      "45:36",
+      "1:2"
+    ],
+    "bridge_keywords": [
+      "angel",
+      "praise",
+      "universe",
+      "praise",
+      "universe",
+      "praise"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [1:2] (Praise —[states]→ to GOD ,) through thematic chain: angel → praise → universe → praise → universe → praise. Path: [13:13] → [39:75] → [45:36] → [1:2]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "39:75",
+      "4:9",
+      "27:66"
+    ],
+    "bridge_keywords": [
+      "angel",
+      "praise",
+      "equitable",
+      "concern"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [27:66] (their knowledge concerning the Hereafter —[describes]→ In fact) through thematic chain: angel → praise → equitable → concern. Path: [13:13] → [39:75] → [4:9] → [27:66]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "39:75",
+      "69:43",
+      "107:7"
+    ],
+    "bridge_keywords": [
+      "angel",
+      "praise",
+      "universe",
+      "issue",
+      "forbid"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [107:7] (they —[prohibits]→ charity) through thematic chain: angel → praise → universe → issue → forbid. Path: [13:13] → [39:75] → [69:43] → [107:7]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:13",
+      "39:75",
+      "17:44",
+      "56:96"
+    ],
+    "bridge_keywords": [
+      "angel",
+      "praise",
+      "glorify",
+      "universe",
+      "glorify"
+    ],
+    "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [56:96] (You —[commands]→ the name of your Lord , the Great) through thematic chain: angel → praise → glorify → universe → glorify. Path: [13:13] → [39:75] → [17:44] → [56:96]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:11",
+      "78:23",
+      "15:65",
+      "7:143"
+    ],
+    "bridge_keywords": [
+      "stay",
+      "stay",
+      "stay",
+      "look"
+    ],
+    "conclusion": "[13:11] (They —[states]→ with you) connects to [7:143] (You —[states]→ Me) through thematic chain: stay → stay → stay → look. Path: [13:11] → [78:23] → [15:65] → [7:143]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:11",
+      "20:2",
+      "7:131",
+      "38:41"
+    ],
+    "bridge_keywords": [
+      "hardship",
+      "hardship",
+      "hardship",
+      "afflict"
+    ],
+    "conclusion": "[13:11] (They —[states]→ with you) connects to [38:41] (he —[describes]→ upon his Lord) through thematic chain: hardship → hardship → hardship → afflict. Path: [13:11] → [20:2] → [7:131] → [38:41]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:11",
+      "20:2",
+      "10:107",
+      "38:41"
+    ],
+    "bridge_keywords": [
+      "hardship",
+      "hardship",
+      "hardship",
+      "servant"
+    ],
+    "conclusion": "[13:11] (They —[states]→ with you) connects to [38:41] (he —[describes]→ upon his Lord) through thematic chain: hardship → hardship → hardship → servant. Path: [13:11] → [20:2] → [10:107] → [38:41]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:11",
+      "20:2",
+      "4:3",
+      "4:25"
+    ],
+    "bridge_keywords": [
+      "hardship",
+      "hardship",
+      "marry",
+      "may"
+    ],
+    "conclusion": "[13:11] (They —[states]→ with you) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: hardship → hardship → marry → may. Path: [13:11] → [20:2] → [4:3] → [4:25]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:11",
+      "48:11",
+      "9:81",
+      "9:83"
+    ],
+    "bridge_keywords": [
+      "stay",
+      "behind",
+      "u",
+      "stay",
+      "sedentary",
+      "stay"
+    ],
+    "conclusion": "[13:11] (They —[states]→ with you) connects to [9:83] (You —[commands]→ with the sedentary) through thematic chain: stay → behind → u → stay → sedentary → stay. Path: [13:11] → [48:11] → [9:81] → [9:83]",
+    "graph_distance": 3
+  },
+  {
+    "novelty_score": 97.5,
+    "rule": "thematic_bridge_3hop",
+    "premise_verses": [
+      "13:11",
+      "48:11",
+      "15:65",
+      "7:143"
+    ],
+    "bridge_keywords": [
+      "stay",
+      "behind",
+      "family",
+      "stay",
+      "stay",
+      "look"
+    ],
+    "conclusion": "[13:11] (They —[states]→ with you) connects to [7:143] (You —[states]→ Me) through thematic chain: stay → behind → family → stay → stay → look. Path: [13:11] → [48:11] → [15:65] → [7:143]",
+    "graph_distance": 3
+  }
+]
