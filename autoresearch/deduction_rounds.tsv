@@ -75,3 +75,5 @@ round	timestamp	novel_found	total_novel	elapsed	strategy	mutations
 74	2026-03-29T23:21:52.543736	369	21069	12.8	high_connectivity	min_novelty: 70 -> 50; max_neighbors_hop3: 6 -> 5
 75	2026-03-29T23:22:05.836518	139	21208	13.3	high_connectivity	transitive_max_chains: 800 -> 300; max_neighbors_hop3: 5 -> 6
 76	2026-03-29T23:22:18.801933	141	21349	13.0	high_connectivity	no changes
+77	2026-03-29T23:22:31.906122	150	21499	13.1	high_connectivity	min_novelty: 50 -> 40
+78	2026-03-29T23:22:45.307390	138	21637	13.4	high_connectivity	no changes
