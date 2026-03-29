@@ -1,0 +1,18 @@
+{
+  "score": 68.4369,
+  "params": {
+    "keyword_prefix_match_len": 5,
+    "keyword_min_score": 0.1,
+    "keyword_max_results": 0,
+    "traverse_seed_limit": 10,
+    "traverse_hop1_limit": 20,
+    "traverse_hop2_limit": 10,
+    "traverse_default_hops": 2,
+    "traverse_min_edge_score": 0.0,
+    "hop1_score_boost": 0.1,
+    "hop2_score_boost": 0.05,
+    "dedup_strategy": "keep_highest",
+    "max_total_results": 50
+  },
+  "experiment": 233
+}
