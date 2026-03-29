@@ -34,33 +34,20 @@ csv.field_size_limit(sys.maxsize)
 # ══════════════════════════════════════════════════════════════════════════════
 
 PARAMS = {
-    # TF-IDF vectorizer settings
-    "min_df": 2,              # min document frequency (int: absolute count)
-    "max_df": 300,            # max document frequency (int: absolute count)
-    "min_tfidf_score": 0.04,  # minimum TF-IDF score to create a MENTIONS edge
-    "max_features": 50000,    # max vocabulary size
-
-    # Graph topology
-    "max_edges_per_verse": 12,   # cap RELATED_TO edges per verse
-    "max_verse_freq": 300,       # skip keywords in more than this many verses for RELATED_TO
-    "edge_weight_method": "geometric_mean",  # "geometric_mean", "harmonic_mean", or "min"
-
-    # Stopwords
-    "extra_stopwords": [],       # additional words to exclude
-    "min_token_length": 3,       # minimum token character length
-
-    # Lemmatization
-    "lemma_verb_first": True,    # Try verb lemma before noun
-
-    # Sublinear TF
-    "sublinear_tf": False,       # Use sublinear tf scaling (1 + log(tf))
-
-    # Ngram range
-    "ngram_min": 1,              # minimum n-gram size
-    "ngram_max": 1,              # maximum n-gram size (1=unigrams, 2=bigrams)
-
-    # Norm
-    "norm": "l2",                # normalization: "l1", "l2", or None
+    "min_df": 2,
+    "max_df": 300,
+    "min_tfidf_score": 0.01,
+    "max_features": 80000,
+    "max_edges_per_verse": 30,
+    "max_verse_freq": 100,
+    "edge_weight_method": "geometric_mean",
+    "extra_stopwords": [],
+    "min_token_length": 2,
+    "lemma_verb_first": True,
+    "sublinear_tf": True,
+    "ngram_min": 1,
+    "ngram_max": 2,
+    "norm": "l2",
 }
 
 # ══════════════════════════════════════════════════════════════════════════════

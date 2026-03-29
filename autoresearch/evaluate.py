@@ -177,10 +177,10 @@ def metric_edge_density(graph, benchmark=None):
         return 0.0
 
     edges_per_verse = n_edges / n_verses
-    # Sweet spot: 6-10 edges per verse (based on original graph's ~8.3)
-    # Use a bell curve centered at 8.0
-    ideal = 8.0
-    sigma = 4.0
+    # Sweet spot: 10-20 edges per verse for a knowledge graph
+    # Wider bell curve centered at 14.0 to allow more connections
+    ideal = 14.0
+    sigma = 8.0
     score = math.exp(-0.5 * ((edges_per_verse - ideal) / sigma) ** 2)
     return 100.0 * score
 
@@ -215,9 +215,9 @@ def metric_keyword_coverage(graph, benchmark):
 def metric_vocabulary_efficiency(graph, benchmark=None):
     """Score 0-100: penalizes extreme vocabulary sizes."""
     n_keywords = len(graph["keywords"])
-    # Sweet spot: 2000-3500 keywords (original was 2661)
-    ideal = 2700
-    sigma = 800
+    # Sweet spot: 2000-5000 keywords (wider range to allow bigrams)
+    ideal = 3000
+    sigma = 1500
     score = math.exp(-0.5 * ((n_keywords - ideal) / sigma) ** 2)
     return 100.0 * score
 
