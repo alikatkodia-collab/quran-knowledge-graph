@@ -1155,3 +1155,11 @@ experiment	score	best	kept	mutations
 54	71.8300	71.8300	True	min_insight_support: 2 -> 2
 55	71.8300	71.8300	True	min_insight_support: 2 -> 4; quality_weight_meaningfulness: 0.15 -> 0.23; quality_weight_surah_diversity: 0.15 -> 0.078
 56	71.8300	71.8300	True	quality_weight_rule_bonus: 0.15 -> 0.225
+57	71.8300	71.8300	True	quality_weight_surah_diversity: 0.15 -> 0.057; quality_weight_specificity: 0.194 -> 0.292
+58	71.8300	71.8300	True	quality_weight_coherence: 0.2 -> 0.25
+59	71.8300	71.8300	True	quality_weight_relevance: 0.15 -> 0.238
+60	71.8300	71.8300	True	quality_weight_specificity: 0.194 -> 0.108
+61	71.8300	71.8300	True	min_insight_support: 2 -> 2
+62	71.8300	71.8300	True	quality_weight_surah_diversity: 0.15 -> 0.229; quality_weight_meaningfulness: 0.15 -> 0.09; quality_weight_coherence: 0.2 -> 0.294
+63	71.8300	71.8300	True	quality_weight_surah_diversity: 0.15 -> 0.198
+64	71.8300	71.8300	True	quality_weight_relevance: 0.15 -> 0.116; quality_weight_specificity: 0.194 -> 0.269; min_insight_support: 2 -> 4
