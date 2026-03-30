@@ -1,0 +1,4034 @@
+{
+  "nodes": [
+    {
+      "id": "monotheism_and_gods_nature",
+      "label": "Monotheism And Gods Nature",
+      "description": "God's nature, attributes, oneness, and sovereignty",
+      "verse_count": 108618
+    },
+    {
+      "id": "prophecy_and_revelation",
+      "label": "Prophecy And Revelation",
+      "description": "Prophetic mission, revelation, scripture, and divine communication",
+      "verse_count": 44074
+    },
+    {
+      "id": "moral_law_and_ethics",
+      "label": "Moral Law And Ethics",
+      "description": "Moral principles, ethical conduct, and commandments",
+      "verse_count": 37132
+    },
+    {
+      "id": "worship_and_ritual",
+      "label": "Worship And Ritual",
+      "description": "Acts of worship, prayer, fasting, pilgrimage, and ritual practice",
+      "verse_count": 25057
+    },
+    {
+      "id": "afterlife_and_judgment",
+      "label": "Afterlife And Judgment",
+      "description": "Day of Judgment, paradise, hell, resurrection, and accountability",
+      "verse_count": 44614
+    },
+    {
+      "id": "creation_and_cosmology",
+      "label": "Creation And Cosmology",
+      "description": "Creation of universe, humans, nature, and natural phenomena",
+      "verse_count": 21528
+    },
+    {
+      "id": "prophetic_narratives",
+      "label": "Prophetic Narratives",
+      "description": "Stories of prophets and historical narratives",
+      "verse_count": 9718
+    },
+    {
+      "id": "social_law",
+      "label": "Social Law",
+      "description": "Family law, marriage, divorce, inheritance, and social contracts",
+      "verse_count": 7486
+    },
+    {
+      "id": "covenant_and_obedience",
+      "label": "Covenant And Obedience",
+      "description": "Divine covenant, faith, obedience, and disbelief",
+      "verse_count": 22457
+    },
+    {
+      "id": "divine_mercy_and_forgiveness",
+      "label": "Divine Mercy And Forgiveness",
+      "description": "God's mercy, forgiveness, repentance, and redemption",
+      "verse_count": 8802
+    },
+    {
+      "id": "warfare_and_struggle",
+      "label": "Warfare And Struggle",
+      "description": "Armed struggle, persecution, migration, and defense",
+      "verse_count": 4640
+    },
+    {
+      "id": "knowledge_and_wisdom",
+      "label": "Knowledge And Wisdom",
+      "description": "Pursuit of knowledge, wisdom, reflection, and understanding",
+      "verse_count": 5290
+    },
+    {
+      "id": "mathematical_miracle",
+      "label": "Mathematical Miracle",
+      "description": "Khalifa's mathematical miracle of 19 and Quranic numerology",
+      "verse_count": 363
+    }
+  ],
+  "edges": [
+    {
+      "source": "monotheism_and_gods_nature",
+      "target": "prophecy_and_revelation",
+      "weight": 10695,
+      "avg_quality": 75.9,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "69:25",
+            "84:10",
+            "3:187"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "receive",
+            "receive"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → re"
+        },
+        {
+          "verses": [
+            "87:18",
+            "54:52",
+            "84:10",
+            "3:187"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "receive",
+            "behind"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → be"
+        },
+        {
+          "verses": [
+            "87:18",
+            "7:145",
+            "7:171",
+            "114:6"
+          ],
+          "bridge": [
+            "teaching",
+            "uphold",
+            "strongly",
+            "think"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: t"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "monotheism_and_gods_nature",
+      "weight": 10190,
+      "avg_quality": 74.5,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "69:19",
+            "84:7",
+            "39:67"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "hand",
+            "hand"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → r"
+        },
+        {
+          "verses": [
+            "87:18",
+            "69:19",
+            "36:71",
+            "16:5"
+          ],
+          "bridge": [
+            "record",
+            "hand",
+            "create",
+            "livestock"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [16:5] (He —[creates]→ the livestock) through thematic chain: record → hand → create"
+        },
+        {
+          "verses": [
+            "87:18",
+            "69:25",
+            "84:10",
+            "3:187"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "receive",
+            "receive"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → re"
+        }
+      ]
+    },
+    {
+      "source": "monotheism_and_gods_nature",
+      "target": "moral_law_and_ethics",
+      "weight": 8745,
+      "avg_quality": 74.8,
+      "examples": [
+        {
+          "verses": [
+            "63:10",
+            "63:11",
+            "6:93",
+            "61:7"
+          ],
+          "bridge": [
+            "delay",
+            "death",
+            "soul",
+            "time"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [61:7] (GOD —[states]→ the evil people) through thematic chain: delay → death → soul → time"
+        },
+        {
+          "verses": [
+            "63:10",
+            "2:195",
+            "20:69",
+            "51:39"
+          ],
+          "bridge": [
+            "charitable",
+            "hand",
+            "throw",
+            "magician"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [51:39] (he —[states]→ in arrogance) through thematic chain: charitable → hand → throw → ma"
+        },
+        {
+          "verses": [
+            "63:10",
+            "23:99",
+            "14:17",
+            "45:10"
+          ],
+          "bridge": [
+            "death",
+            "death",
+            "await",
+            "retribution"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [45:10] (Their earnings —[states]→ them) through thematic chain: death → death → await → re"
+        }
+      ]
+    },
+    {
+      "source": "monotheism_and_gods_nature",
+      "target": "worship_and_ritual",
+      "weight": 6213,
+      "avg_quality": 77.1,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "7:145",
+            "7:171",
+            "114:6"
+          ],
+          "bridge": [
+            "teaching",
+            "uphold",
+            "strongly",
+            "think"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: t"
+        },
+        {
+          "verses": [
+            "87:18",
+            "20:52",
+            "18:61",
+            "114:6"
+          ],
+          "bridge": [
+            "record",
+            "forget",
+            "reach",
+            "meet"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: r"
+        },
+        {
+          "verses": [
+            "63:10",
+            "2:195",
+            "20:69",
+            "51:39"
+          ],
+          "bridge": [
+            "charitable",
+            "hand",
+            "throw",
+            "magician"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [51:39] (he —[states]→ in arrogance) through thematic chain: charitable → hand → throw → ma"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "monotheism_and_gods_nature",
+      "weight": 5098,
+      "avg_quality": 74.4,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "44:11",
+            "64:5",
+            "16:104"
+          ],
+          "bridge": [
+            "retribution",
+            "painful",
+            "retribution",
+            "painful"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [16:104] (GOD —[commands]→ them) through thematic chain: retribution → painf"
+        },
+        {
+          "verses": [
+            "24:40",
+            "2:257",
+            "33:43",
+            "89:22"
+          ],
+          "bridge": [
+            "darkness",
+            "light",
+            "darkness",
+            "light"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [89:22] (GOD —[states]→ with the angels in row after row) through thematic chain: darknes"
+        },
+        {
+          "verses": [
+            "31:7",
+            "27:80",
+            "8:21",
+            "8:20"
+          ],
+          "bridge": [
+            "turn",
+            "deaf",
+            "hear",
+            "hear"
+          ],
+          "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [8:20] (You Who Believe —[commands]→ GOD and His messenger) through thematic chain: turn → deaf → h"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "monotheism_and_gods_nature",
+      "weight": 5030,
+      "avg_quality": 74.2,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "69:19",
+            "84:7",
+            "39:67"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "hand",
+            "hand"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → r"
+        },
+        {
+          "verses": [
+            "87:18",
+            "69:19",
+            "36:71",
+            "16:5"
+          ],
+          "bridge": [
+            "record",
+            "hand",
+            "create",
+            "livestock"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [16:5] (He —[creates]→ the livestock) through thematic chain: record → hand → create"
+        },
+        {
+          "verses": [
+            "87:18",
+            "78:29",
+            "84:7",
+            "39:67"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "hand",
+            "right"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → r"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "moral_law_and_ethics",
+      "weight": 2816,
+      "avg_quality": 74.7,
+      "examples": [
+        {
+          "verses": [
+            "63:10",
+            "63:11",
+            "6:93",
+            "61:7"
+          ],
+          "bridge": [
+            "delay",
+            "death",
+            "soul",
+            "time"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [61:7] (GOD —[states]→ the evil people) through thematic chain: delay → death → soul → time"
+        },
+        {
+          "verses": [
+            "59:15",
+            "39:51",
+            "54:39",
+            "87:12"
+          ],
+          "bridge": [
+            "suffer",
+            "consequence",
+            "suffer",
+            "suffer"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [87:12] (he —[states]→ the great Hellfire) through thematic chain: suffer → "
+        },
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "2:147",
+            "22:53"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [22:53] (He —[describes]→ the devil 's scheme) through thematic chain: fate "
+        }
+      ]
+    },
+    {
+      "source": "prophecy_and_revelation",
+      "target": "worship_and_ritual",
+      "weight": 2613,
+      "avg_quality": 80.0,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "7:145",
+            "7:171",
+            "114:6"
+          ],
+          "bridge": [
+            "teaching",
+            "uphold",
+            "strongly",
+            "think"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: t"
+        },
+        {
+          "verses": [
+            "87:18",
+            "20:52",
+            "18:61",
+            "114:6"
+          ],
+          "bridge": [
+            "record",
+            "forget",
+            "reach",
+            "meet"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: r"
+        },
+        {
+          "verses": [
+            "63:10",
+            "17:52",
+            "114:6",
+            "21:24"
+          ],
+          "bridge": [
+            "short",
+            "realize",
+            "short",
+            "message"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [21:24] (they —[describes]→ other gods) through thematic chain: short → realize → short → m"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "prophecy_and_revelation",
+      "weight": 2431,
+      "avg_quality": 74.5,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "69:25",
+            "84:10",
+            "3:187"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "receive",
+            "receive"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → re"
+        },
+        {
+          "verses": [
+            "87:18",
+            "54:52",
+            "84:10",
+            "3:187"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "receive",
+            "behind"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [3:187] (You —[commands]→ it) through thematic chain: record → record → receive → be"
+        },
+        {
+          "verses": [
+            "59:15",
+            "65:9",
+            "71:24",
+            "11:63"
+          ],
+          "bridge": [
+            "suffer",
+            "decision",
+            "loss",
+            "loss"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [11:63] (Who —[states]→ me) through thematic chain: suffer → decision → loss"
+        }
+      ]
+    },
+    {
+      "source": "moral_law_and_ethics",
+      "target": "prophecy_and_revelation",
+      "weight": 2399,
+      "avg_quality": 75.0,
+      "examples": [
+        {
+          "verses": [
+            "63:10",
+            "23:99",
+            "14:17",
+            "45:10"
+          ],
+          "bridge": [
+            "death",
+            "death",
+            "await",
+            "retribution"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [45:10] (Their earnings —[states]→ them) through thematic chain: death → death → await → re"
+        },
+        {
+          "verses": [
+            "63:10",
+            "23:99",
+            "33:16",
+            "39:42"
+          ],
+          "bridge": [
+            "death",
+            "death",
+            "death",
+            "live"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [39:42] (GOD —[states]→ the souls) through thematic chain: death → death → death → live. Pa"
+        },
+        {
+          "verses": [
+            "24:40",
+            "65:11",
+            "33:43",
+            "89:22"
+          ],
+          "bridge": [
+            "darkness",
+            "light",
+            "darkness",
+            "light"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [89:22] (GOD —[states]→ with the angels in row after row) through thematic chain: darknes"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "monotheism_and_gods_nature",
+      "weight": 2201,
+      "avg_quality": 74.4,
+      "examples": [
+        {
+          "verses": [
+            "66:8",
+            "98:8",
+            "3:195",
+            "112:4"
+          ],
+          "bridge": [
+            "garden",
+            "flow",
+            "reward",
+            "flow"
+          ],
+          "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [112:4] (None —[states]→ Him) through thematic chain: garden → flow → reward → flow → equal. P"
+        },
+        {
+          "verses": [
+            "66:8",
+            "39:69",
+            "2:281",
+            "53:41"
+          ],
+          "bridge": [
+            "prophet",
+            "light",
+            "without",
+            "injustice"
+          ],
+          "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [53:41] (they —[states]→ for such works) through thematic chain: prophet → light → without → i"
+        },
+        {
+          "verses": [
+            "31:32",
+            "24:40",
+            "56:67",
+            "59:8"
+          ],
+          "bridge": [
+            "violent",
+            "wave",
+            "deprive",
+            "deprive"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [59:8] (You —[commands]→ to the needy who immigrated) through thematic chain: violent → wave → deprive → dep"
+        }
+      ]
+    },
+    {
+      "source": "monotheism_and_gods_nature",
+      "target": "prophetic_narratives",
+      "weight": 2079,
+      "avg_quality": 74.1,
+      "examples": [
+        {
+          "verses": [
+            "24:40",
+            "2:19",
+            "14:24",
+            "66:10"
+          ],
+          "bridge": [
+            "darkness",
+            "another",
+            "example",
+            "sky"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [66:10] (GOD —[states]→ as examples of those who disbelieved the wife of) through themati"
+        },
+        {
+          "verses": [
+            "92:11",
+            "69:28",
+            "17:37",
+            "7:143"
+          ],
+          "bridge": [
+            "help",
+            "cannot",
+            "cannot",
+            "cannot"
+          ],
+          "conclusion": "[92:11] (His Money —[states]→ him) connects to [7:143] (You —[states]→ Me) through thematic chain: help → cannot → cannot → cannot → mountain. Path: ["
+        },
+        {
+          "verses": [
+            "71:17",
+            "50:7",
+            "52:10",
+            "7:143"
+          ],
+          "bridge": [
+            "plant",
+            "earth",
+            "mountain",
+            "mountain"
+          ],
+          "conclusion": "[71:17] (GOD —[states]→ you) connects to [7:143] (You —[states]→ Me) through thematic chain: plant → earth → mountain → mountain. Path: [71:17] → [50:"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "creation_and_cosmology",
+      "weight": 1833,
+      "avg_quality": 73.9,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "69:19",
+            "84:7",
+            "39:67"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "hand",
+            "hand"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → r"
+        },
+        {
+          "verses": [
+            "87:18",
+            "69:19",
+            "36:71",
+            "16:5"
+          ],
+          "bridge": [
+            "record",
+            "hand",
+            "create",
+            "livestock"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [16:5] (He —[creates]→ the livestock) through thematic chain: record → hand → create"
+        },
+        {
+          "verses": [
+            "87:18",
+            "78:29",
+            "84:7",
+            "39:67"
+          ],
+          "bridge": [
+            "record",
+            "record",
+            "hand",
+            "right"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [39:67] (They —[prohibits]→ the greatness of GOD) through thematic chain: record → r"
+        }
+      ]
+    },
+    {
+      "source": "monotheism_and_gods_nature",
+      "target": "social_law",
+      "weight": 1704,
+      "avg_quality": 74.8,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "10:102",
+            "2:280",
+            "4:25"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "wait",
+            "know"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: fate → "
+        },
+        {
+          "verses": [
+            "92:11",
+            "26:93",
+            "52:46",
+            "46:8"
+          ],
+          "bridge": [
+            "help",
+            "help",
+            "protect",
+            "scheme"
+          ],
+          "conclusion": "[92:11] (His Money —[states]→ him) connects to [46:8] (He —[states]→ as a witness between me and you) through thematic chain: help → help → protect → "
+        },
+        {
+          "verses": [
+            "13:11",
+            "20:2",
+            "4:3",
+            "4:25"
+          ],
+          "bridge": [
+            "hardship",
+            "hardship",
+            "marry",
+            "may"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: hardship → hardship → marry → may."
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "covenant_and_obedience",
+      "weight": 1628,
+      "avg_quality": 74.5,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "22:53"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [22:53] (He —[describes]→ the devil 's scheme) through thematic chain: fate "
+        },
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "73:17"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [73:17] (You —[states]→ a day) through thematic chain: fate → counterpart → "
+        },
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "29:48"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [29:48] (You —[states]→ the previous scriptures) through thematic chain: fat"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "prophecy_and_revelation",
+      "weight": 1503,
+      "avg_quality": 74.6,
+      "examples": [
+        {
+          "verses": [
+            "87:18",
+            "7:145",
+            "2:93",
+            "49:2"
+          ],
+          "bridge": [
+            "teaching",
+            "uphold",
+            "strongly",
+            "raise"
+          ],
+          "conclusion": "[87:18] (This —[describes]→ in the earlier teachings) connects to [49:2] (You Who Believe —[commands]→ your voices above the voice of the prophet) thr"
+        },
+        {
+          "verses": [
+            "24:40",
+            "2:257",
+            "33:43",
+            "89:22"
+          ],
+          "bridge": [
+            "darkness",
+            "light",
+            "darkness",
+            "light"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [89:22] (GOD —[states]→ with the angels in row after row) through thematic chain: darknes"
+        },
+        {
+          "verses": [
+            "31:7",
+            "27:80",
+            "8:21",
+            "8:20"
+          ],
+          "bridge": [
+            "turn",
+            "deaf",
+            "hear",
+            "hear"
+          ],
+          "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [8:20] (You Who Believe —[commands]→ GOD and His messenger) through thematic chain: turn → deaf → h"
+        }
+      ]
+    },
+    {
+      "source": "moral_law_and_ethics",
+      "target": "worship_and_ritual",
+      "weight": 1351,
+      "avg_quality": 75.8,
+      "examples": [
+        {
+          "verses": [
+            "63:10",
+            "2:195",
+            "20:69",
+            "51:39"
+          ],
+          "bridge": [
+            "charitable",
+            "hand",
+            "throw",
+            "magician"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [51:39] (he —[states]→ in arrogance) through thematic chain: charitable → hand → throw → ma"
+        },
+        {
+          "verses": [
+            "31:7",
+            "7:133",
+            "28:39",
+            "5:12"
+          ],
+          "bridge": [
+            "arrogance",
+            "arrogance",
+            "right",
+            "continue"
+          ],
+          "conclusion": "[31:7] (he —[prohibits]→ in arrogance) connects to [5:12] (GOD —[states]→ a covenant) through thematic chain: arrogance → arrogance → right → continue"
+        },
+        {
+          "verses": [
+            "31:32",
+            "39:17",
+            "37:160",
+            "1:5"
+          ],
+          "bridge": [
+            "devote",
+            "discard",
+            "devote",
+            "alone"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [1:5] (You Alone —[commands]→ for help) through thematic chain: devote → discard → devote → alone → alone. P"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "monotheism_and_gods_nature",
+      "weight": 1180,
+      "avg_quality": 74.1,
+      "examples": [
+        {
+          "verses": [
+            "24:40",
+            "2:19",
+            "50:19",
+            "62:8"
+          ],
+          "bridge": [
+            "darkness",
+            "another",
+            "death",
+            "evade"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [62:8] (He —[states]→ you) through thematic chain: darkness → another → death → evade → d"
+        },
+        {
+          "verses": [
+            "59:5",
+            "5:47",
+            "28:56",
+            "5:42"
+          ],
+          "bridge": [
+            "wicked",
+            "accordance",
+            "accordance",
+            "cannot"
+          ],
+          "conclusion": "[59:5] (He —[states]→ the wicked) connects to [5:42] (You —[decrees]→ among them) through thematic chain: wicked → accordance → accordance → cannot → "
+        },
+        {
+          "verses": [
+            "39:42",
+            "16:61",
+            "44:39",
+            "36:38"
+          ],
+          "bridge": [
+            "end",
+            "time",
+            "specific",
+            "specific"
+          ],
+          "conclusion": "[39:42] (GOD —[states]→ the souls) connects to [36:38] (The sun —[states]→ into a specific location) through thematic chain: end → time → specific → s"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "moral_law_and_ethics",
+      "weight": 1110,
+      "avg_quality": 75.1,
+      "examples": [
+        {
+          "verses": [
+            "46:14",
+            "2:82",
+            "26:129",
+            "43:74"
+          ],
+          "bridge": [
+            "forever",
+            "abide",
+            "forever",
+            "forever"
+          ],
+          "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [43:74] (the guilty —[warns]→ in the retribution of Gehenna) through thema"
+        },
+        {
+          "verses": [
+            "46:14",
+            "2:82",
+            "88:10",
+            "25:75"
+          ],
+          "bridge": [
+            "forever",
+            "abide",
+            "paradise",
+            "paradise"
+          ],
+          "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [25:75] (they —[promises]→ with joyous greetings and peace) through themat"
+        },
+        {
+          "verses": [
+            "46:14",
+            "18:107",
+            "88:10",
+            "25:75"
+          ],
+          "bridge": [
+            "abide",
+            "deserve",
+            "paradise",
+            "paradise"
+          ],
+          "conclusion": "[46:14] (They —[promises]→ Paradise , where they abide forever) connects to [25:75] (they —[promises]→ with joyous greetings and peace) through themat"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "prophecy_and_revelation",
+      "weight": 1106,
+      "avg_quality": 74.2,
+      "examples": [
+        {
+          "verses": [
+            "71:17",
+            "18:45",
+            "79:31",
+            "23:20"
+          ],
+          "bridge": [
+            "plant",
+            "earth",
+            "produce",
+            "water"
+          ],
+          "conclusion": "[71:17] (GOD —[states]→ you) connects to [23:20] (A Tree Native To Sinai —[states]→ oil) through thematic chain: plant → earth → produce → water → pro"
+        },
+        {
+          "verses": [
+            "13:13",
+            "39:75",
+            "45:36",
+            "1:2"
+          ],
+          "bridge": [
+            "angel",
+            "praise",
+            "universe",
+            "praise"
+          ],
+          "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [1:2] (Praise —[states]→ to GOD ,) through thematic chain: angel → praise → universe → praise →"
+        },
+        {
+          "verses": [
+            "13:13",
+            "39:75",
+            "17:44",
+            "56:96"
+          ],
+          "bridge": [
+            "angel",
+            "praise",
+            "glorify",
+            "universe"
+          ],
+          "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [56:96] (You —[commands]→ the name of your Lord , the Great) through thematic chain: angel → pr"
+        }
+      ]
+    },
+    {
+      "source": "monotheism_and_gods_nature",
+      "target": "warfare_and_struggle",
+      "weight": 1092,
+      "avg_quality": 74.7,
+      "examples": [
+        {
+          "verses": [
+            "13:11",
+            "48:11",
+            "9:81",
+            "9:83"
+          ],
+          "bridge": [
+            "stay",
+            "behind",
+            "u",
+            "stay"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [9:83] (You —[commands]→ with the sedentary) through thematic chain: stay → behind → u → stay → sedenta"
+        },
+        {
+          "verses": [
+            "13:11",
+            "9:43",
+            "9:90",
+            "9:83"
+          ],
+          "bridge": [
+            "stay",
+            "behind",
+            "permission",
+            "stay"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [9:83] (You —[commands]→ with the sedentary) through thematic chain: stay → behind → permission → stay "
+        },
+        {
+          "verses": [
+            "4:21",
+            "4:81",
+            "7:89",
+            "33:65"
+          ],
+          "bridge": [
+            "pledge",
+            "put",
+            "trust",
+            "supporter"
+          ],
+          "conclusion": "[4:21] (You —[describes]→ it) connects to [33:65] (They —[states]→ no lord) through thematic chain: pledge → put → trust → supporter. Path: [4:21] → ["
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "worship_and_ritual",
+      "weight": 837,
+      "avg_quality": 74.8,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "19:59",
+            "74:43",
+            "14:39"
+          ],
+          "bridge": [
+            "suffer",
+            "consequence",
+            "salat",
+            "contact"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [14:39] (Praise —[states]→ despite my old age , Ismail and Isaac) through th"
+        },
+        {
+          "verses": [
+            "59:15",
+            "19:59",
+            "70:34",
+            "14:39"
+          ],
+          "bridge": [
+            "suffer",
+            "consequence",
+            "salat",
+            "contact"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [14:39] (Praise —[states]→ despite my old age , Ismail and Isaac) through th"
+        },
+        {
+          "verses": [
+            "59:15",
+            "19:59",
+            "87:15",
+            "56:96"
+          ],
+          "bridge": [
+            "suffer",
+            "consequence",
+            "salat",
+            "contact"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [56:96] (You —[commands]→ the name of your Lord , the Great) through themati"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "moral_law_and_ethics",
+      "weight": 760,
+      "avg_quality": 73.9,
+      "examples": [
+        {
+          "verses": [
+            "63:10",
+            "11:55",
+            "39:63",
+            "65:9"
+          ],
+          "bridge": [
+            "delay",
+            "give",
+            "decision",
+            "decision"
+          ],
+          "conclusion": "[63:10] (You —[commands]→ from our provisions) connects to [65:9] (They —[states]→ the consequences of their decisions) through thematic chain: delay "
+        },
+        {
+          "verses": [
+            "17:33",
+            "5:30",
+            "70:12",
+            "42:11"
+          ],
+          "bridge": [
+            "kill",
+            "brother",
+            "spouse"
+          ],
+          "conclusion": "[17:33] (You —[commands]→ any person) connects to [42:11] (He —[creates]→ for the animals) through thematic chain: kill → brother → spouse. Path: [17:"
+        },
+        {
+          "verses": [
+            "12:21",
+            "12:51",
+            "107:7"
+          ],
+          "bridge": [
+            "forbid",
+            "joseph",
+            "know",
+            "wife"
+          ],
+          "conclusion": "BECAUSE The one who bought him in Egypt states to his wife [12:21], and this connects via 'joseph' → 'forbid', THEREFORE The one who bought him in Egy"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "worship_and_ritual",
+      "weight": 655,
+      "avg_quality": 74.8,
+      "examples": [
+        {
+          "verses": [
+            "92:11",
+            "70:24",
+            "2:40",
+            "76:7"
+          ],
+          "bridge": [
+            "money",
+            "part",
+            "reverence",
+            "fulfill"
+          ],
+          "conclusion": "[92:11] (His Money —[states]→ him) connects to [76:7] (They —[describes]→ their pledges) through thematic chain: money → part → reverence → fulfill. P"
+        },
+        {
+          "verses": [
+            "4:43",
+            "30:31",
+            "87:15",
+            "56:96"
+          ],
+          "bridge": [
+            "observe",
+            "salat",
+            "observe",
+            "salat"
+          ],
+          "conclusion": "[4:43] (You Who Believe —[commands]→ the Contact Prayers ( Salat )) connects to [56:96] (You —[commands]→ the name of your Lord , the Great) through t"
+        },
+        {
+          "verses": [
+            "4:43",
+            "70:23",
+            "7:170",
+            "58:13"
+          ],
+          "bridge": [
+            "salat",
+            "observe",
+            "salat",
+            "observe"
+          ],
+          "conclusion": "[4:43] (You Who Believe —[commands]→ the Contact Prayers ( Salat )) connects to [58:13] (GOD —[commands]→ your repentance) through thematic chain: sal"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "worship_and_ritual",
+      "weight": 609,
+      "avg_quality": 75.5,
+      "examples": [
+        {
+          "verses": [
+            "31:32",
+            "6:63",
+            "20:97",
+            "114:6"
+          ],
+          "bridge": [
+            "save",
+            "implore",
+            "time",
+            "sea"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: save → implore → time → s"
+        },
+        {
+          "verses": [
+            "31:32",
+            "6:63",
+            "14:5",
+            "114:6"
+          ],
+          "bridge": [
+            "save",
+            "implore",
+            "darkness",
+            "appreciative"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: save → implore → darkness"
+        },
+        {
+          "verses": [
+            "59:5",
+            "55:6",
+            "2:34",
+            "41:37"
+          ],
+          "bridge": [
+            "tree",
+            "prostrate",
+            "fall",
+            "prostrate"
+          ],
+          "conclusion": "[59:5] (He —[states]→ the wicked) connects to [41:37] (You —[commands]→ prostrate) through thematic chain: tree → prostrate → fall → prostrate. Path: "
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "prophetic_narratives",
+      "weight": 607,
+      "avg_quality": 74.1,
+      "examples": [
+        {
+          "verses": [
+            "59:5",
+            "44:43",
+            "14:24",
+            "66:10"
+          ],
+          "bridge": [
+            "tree",
+            "tree",
+            "cite",
+            "example"
+          ],
+          "conclusion": "[59:5] (He —[states]→ the wicked) connects to [66:10] (GOD —[states]→ as examples of those who disbelieved the wife of) through thematic chain: tree →"
+        },
+        {
+          "verses": [
+            "3:59",
+            "37:53",
+            "13:5",
+            "47:4"
+          ],
+          "bridge": [
+            "dust",
+            "dust",
+            "get",
+            "get"
+          ],
+          "conclusion": "[3:59] (He —[creates]→ him) connects to [47:4] (You —[states]→ the necks) through thematic chain: dust → dust → get → get → disbelieve. Path: [3:59] →"
+        },
+        {
+          "verses": [
+            "47:30",
+            "19:29",
+            "18:60",
+            "66:10"
+          ],
+          "bridge": [
+            "talk",
+            "point",
+            "two",
+            "servant"
+          ],
+          "conclusion": "[47:30] (You —[states]→ them) connects to [66:10] (GOD —[states]→ as examples of those who disbelieved the wife of) through thematic chain: talk → poi"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "divine_mercy_and_forgiveness",
+      "weight": 599,
+      "avg_quality": 75.0,
+      "examples": [
+        {
+          "verses": [
+            "66:8",
+            "98:8",
+            "3:195",
+            "112:4"
+          ],
+          "bridge": [
+            "garden",
+            "flow",
+            "reward",
+            "flow"
+          ],
+          "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [112:4] (None —[states]→ Him) through thematic chain: garden → flow → reward → flow → equal. P"
+        },
+        {
+          "verses": [
+            "66:8",
+            "39:69",
+            "2:281",
+            "53:41"
+          ],
+          "bridge": [
+            "prophet",
+            "light",
+            "without",
+            "injustice"
+          ],
+          "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [53:41] (they —[states]→ for such works) through thematic chain: prophet → light → without → i"
+        },
+        {
+          "verses": [
+            "31:32",
+            "11:43",
+            "11:66",
+            "57:25"
+          ],
+          "bridge": [
+            "save",
+            "wave",
+            "save",
+            "mercy"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [57:25] (GOD —[is]→ powerful) through thematic chain: save → wave → save → mercy → powerful → almighty. Path"
+        }
+      ]
+    },
+    {
+      "source": "prophecy_and_revelation",
+      "target": "prophetic_narratives",
+      "weight": 591,
+      "avg_quality": 74.8,
+      "examples": [
+        {
+          "verses": [
+            "13:11",
+            "20:2",
+            "7:131",
+            "38:41"
+          ],
+          "bridge": [
+            "hardship",
+            "hardship",
+            "hardship",
+            "afflict"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [38:41] (he —[describes]→ upon his Lord) through thematic chain: hardship → hardship → hardship → affli"
+        },
+        {
+          "verses": [
+            "59:5",
+            "5:47",
+            "80:42",
+            "61:5"
+          ],
+          "bridge": [
+            "wicked",
+            "accordance",
+            "wicked",
+            "wicked"
+          ],
+          "conclusion": "[59:5] (He —[states]→ the wicked) connects to [61:5] (GOD —[states]→ their hearts) through thematic chain: wicked → accordance → wicked → wicked. Path"
+        },
+        {
+          "verses": [
+            "4:21",
+            "9:8",
+            "80:42",
+            "61:5"
+          ],
+          "bridge": [
+            "pledge",
+            "wicked",
+            "wicked"
+          ],
+          "conclusion": "[4:21] (You —[describes]→ it) connects to [61:5] (GOD —[states]→ their hearts) through thematic chain: pledge → wicked → wicked. Path: [4:21] → [9:8] "
+        }
+      ]
+    },
+    {
+      "source": "moral_law_and_ethics",
+      "target": "social_law",
+      "weight": 561,
+      "avg_quality": 75.5,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "10:102",
+            "2:280",
+            "4:25"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "wait",
+            "know"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: fate → "
+        },
+        {
+          "verses": [
+            "49:11",
+            "2:228",
+            "4:22",
+            "4:25"
+          ],
+          "bridge": [
+            "woman",
+            "another",
+            "woman",
+            "marry"
+          ],
+          "conclusion": "[49:11] (You Who Believe —[commands]→ other people) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: woman → another →"
+        },
+        {
+          "verses": [
+            "49:3",
+            "57:18",
+            "30:39",
+            "2:276"
+          ],
+          "bridge": [
+            "recompense",
+            "deserve",
+            "reward",
+            "manifold"
+          ],
+          "conclusion": "[49:3] (They —[describes]→ forgiveness and a great recompense) connects to [2:276] (GOD —[states]→ usury) through thematic chain: recompense → deserve"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "social_law",
+      "weight": 462,
+      "avg_quality": 74.5,
+      "examples": [
+        {
+          "verses": [
+            "92:11",
+            "26:93",
+            "52:46",
+            "46:8"
+          ],
+          "bridge": [
+            "help",
+            "help",
+            "protect",
+            "scheme"
+          ],
+          "conclusion": "[92:11] (His Money —[states]→ him) connects to [46:8] (He —[states]→ as a witness between me and you) through thematic chain: help → help → protect → "
+        },
+        {
+          "verses": [
+            "65:9",
+            "77:14",
+            "47:19",
+            "48:5"
+          ],
+          "bridge": [
+            "decision",
+            "decision",
+            "woman",
+            "men"
+          ],
+          "conclusion": "[65:9] (They —[states]→ the consequences of their decisions) connects to [48:5] (He —[states]→ the believing men and women) through thematic chain: de"
+        },
+        {
+          "verses": [
+            "2:276",
+            "2:275",
+            "22:76"
+          ],
+          "bridge": [
+            "control",
+            "past",
+            "usury"
+          ],
+          "conclusion": "BECAUSE GOD states usury [2:276], and this connects via 'usury' → 'past', THEREFORE GOD's states relates to their past and their future [22:76]"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "moral_law_and_ethics",
+      "weight": 412,
+      "avg_quality": 74.4,
+      "examples": [
+        {
+          "verses": [
+            "4:21",
+            "48:10",
+            "9:75",
+            "62:4"
+          ],
+          "bridge": [
+            "pledge",
+            "pledge",
+            "grace"
+          ],
+          "conclusion": "[4:21] (You —[describes]→ it) connects to [62:4] (GOD —[is]→ possessor of infinite grace) through thematic chain: pledge → pledge → grace. Path: [4:21"
+        },
+        {
+          "verses": [
+            "17:33",
+            "5:30",
+            "2:154",
+            "30:50"
+          ],
+          "bridge": [
+            "kill",
+            "kill",
+            "dead"
+          ],
+          "conclusion": "[17:33] (You —[commands]→ any person) connects to [30:50] (You —[commands]→ GOD 's continuous mercy) through thematic chain: kill → kill → dead. Path:"
+        },
+        {
+          "verses": [
+            "17:33",
+            "81:9",
+            "2:154",
+            "30:50"
+          ],
+          "bridge": [
+            "kill",
+            "kill",
+            "dead"
+          ],
+          "conclusion": "[17:33] (You —[commands]→ any person) connects to [30:50] (You —[commands]→ GOD 's continuous mercy) through thematic chain: kill → kill → dead. Path:"
+        }
+      ]
+    },
+    {
+      "source": "moral_law_and_ethics",
+      "target": "prophetic_narratives",
+      "weight": 400,
+      "avg_quality": 73.4,
+      "examples": [
+        {
+          "verses": [
+            "24:40",
+            "2:19",
+            "14:24",
+            "66:10"
+          ],
+          "bridge": [
+            "darkness",
+            "another",
+            "example",
+            "sky"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [66:10] (GOD —[states]→ as examples of those who disbelieved the wife of) through themati"
+        },
+        {
+          "verses": [
+            "59:5",
+            "44:43",
+            "14:24",
+            "66:10"
+          ],
+          "bridge": [
+            "tree",
+            "tree",
+            "cite",
+            "example"
+          ],
+          "conclusion": "[59:5] (He —[states]→ the wicked) connects to [66:10] (GOD —[states]→ as examples of those who disbelieved the wife of) through thematic chain: tree →"
+        },
+        {
+          "verses": [
+            "76:30",
+            "7:159",
+            "3:72",
+            "12:21"
+          ],
+          "bridge": [
+            "accordance",
+            "follower",
+            "maybe"
+          ],
+          "conclusion": "[76:30] (GOD —[is]→ omniscient) connects to [12:21] (The one who bought him in Egypt —[states]→ to his wife) through thematic chain: accordance → foll"
+        }
+      ]
+    },
+    {
+      "source": "prophecy_and_revelation",
+      "target": "social_law",
+      "weight": 369,
+      "avg_quality": 74.7,
+      "examples": [
+        {
+          "verses": [
+            "13:11",
+            "20:2",
+            "4:3",
+            "4:25"
+          ],
+          "bridge": [
+            "hardship",
+            "hardship",
+            "marry",
+            "may"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [4:25] (GOD —[describes]→ about your belief) through thematic chain: hardship → hardship → marry → may."
+        },
+        {
+          "verses": [
+            "13:11",
+            "20:2",
+            "4:3",
+            "93:9"
+          ],
+          "bridge": [
+            "hardship",
+            "hardship",
+            "orphan"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [93:9] (You —[commands]→ the orphan) through thematic chain: hardship → hardship → orphan. Path: [13:11"
+        },
+        {
+          "verses": [
+            "63:8",
+            "63:1",
+            "100:7"
+          ],
+          "bridge": [
+            "witness",
+            "know",
+            "messenger",
+            "bear"
+          ],
+          "conclusion": "BECAUSE They states that [63:8], and this connects via 'hypocrite' → 'witness', THEREFORE They's states relates to witness [100:7]"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "prophecy_and_revelation",
+      "weight": 357,
+      "avg_quality": 74.0,
+      "examples": [
+        {
+          "verses": [
+            "59:5",
+            "5:47",
+            "28:56",
+            "5:42"
+          ],
+          "bridge": [
+            "wicked",
+            "accordance",
+            "accordance",
+            "cannot"
+          ],
+          "conclusion": "[59:5] (He —[states]→ the wicked) connects to [5:42] (You —[decrees]→ among them) through thematic chain: wicked → accordance → accordance → cannot → "
+        },
+        {
+          "verses": [
+            "39:42",
+            "13:31",
+            "6:2",
+            "42:14"
+          ],
+          "bridge": [
+            "time",
+            "predetermine",
+            "predetermine",
+            "continue"
+          ],
+          "conclusion": "[39:42] (GOD —[states]→ the souls) connects to [42:14] (they —[states]→ into sects) through thematic chain: time → predetermine → predetermine → conti"
+        },
+        {
+          "verses": [
+            "35:31",
+            "35:19",
+            "39:9",
+            "50:40"
+          ],
+          "bridge": [
+            "seer",
+            "equal",
+            "meditate",
+            "prostrate"
+          ],
+          "conclusion": "[35:31] (GOD —[is]→ fully cognizant of his servants) connects to [50:40] (You —[commands]→ on His name) through thematic chain: seer → equal → meditat"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "prophecy_and_revelation",
+      "weight": 350,
+      "avg_quality": 74.1,
+      "examples": [
+        {
+          "verses": [
+            "31:32",
+            "24:40",
+            "56:67",
+            "59:8"
+          ],
+          "bridge": [
+            "violent",
+            "wave",
+            "deprive",
+            "deprive"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [59:8] (You —[commands]→ to the needy who immigrated) through thematic chain: violent → wave → deprive → dep"
+        },
+        {
+          "verses": [
+            "13:11",
+            "20:2",
+            "10:107",
+            "38:41"
+          ],
+          "bridge": [
+            "hardship",
+            "hardship",
+            "hardship",
+            "servant"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [38:41] (he —[describes]→ upon his Lord) through thematic chain: hardship → hardship → hardship → serva"
+        },
+        {
+          "verses": [
+            "6:120",
+            "45:14",
+            "28:86",
+            "38:15"
+          ],
+          "bridge": [
+            "pay",
+            "earn",
+            "expect",
+            "expect"
+          ],
+          "conclusion": "[6:120] (You —[commands]→ obvious sins) connects to [38:15] (These people —[prohibits]→ a single blow , from which they never) through thematic chain:"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "creation_and_cosmology",
+      "weight": 341,
+      "avg_quality": 73.2,
+      "examples": [
+        {
+          "verses": [
+            "80:19",
+            "38:72",
+            "96:19"
+          ],
+          "bridge": [
+            "fall",
+            "prostrate",
+            "design"
+          ],
+          "conclusion": "BECAUSE He creates him [80:19], and this connects via 'design' → 'prostrate', THEREFORE He's creates relates to prostrate [96:19]"
+        },
+        {
+          "verses": [
+            "26:166",
+            "96:6",
+            "11:67",
+            "13:31"
+          ],
+          "bridge": [
+            "transgress",
+            "transgress",
+            "dead",
+            "disaster"
+          ],
+          "conclusion": "[26:166] (You —[describes]→ the wives that your Lord has created for) connects to [13:31] (GOD —[states]→ all things) through thematic chain: transgre"
+        },
+        {
+          "verses": [
+            "70:6",
+            "23:72",
+            "36:21",
+            "26:145"
+          ],
+          "bridge": [
+            "far",
+            "ask",
+            "wage",
+            "ask"
+          ],
+          "conclusion": "[70:6] (they —[states]→ it) connects to [26:145] (My Wage —[prohibits]→ from the Lord of the universe) through thematic chain: far → ask → wage → ask "
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "prophetic_narratives",
+      "weight": 337,
+      "avg_quality": 73.7,
+      "examples": [
+        {
+          "verses": [
+            "92:11",
+            "69:28",
+            "17:37",
+            "7:143"
+          ],
+          "bridge": [
+            "help",
+            "cannot",
+            "cannot",
+            "cannot"
+          ],
+          "conclusion": "[92:11] (His Money —[states]→ him) connects to [7:143] (You —[states]→ Me) through thematic chain: help → cannot → cannot → cannot → mountain. Path: ["
+        },
+        {
+          "verses": [
+            "71:17",
+            "50:7",
+            "52:10",
+            "7:143"
+          ],
+          "bridge": [
+            "plant",
+            "earth",
+            "mountain",
+            "mountain"
+          ],
+          "conclusion": "[71:17] (GOD —[states]→ you) connects to [7:143] (You —[states]→ Me) through thematic chain: plant → earth → mountain → mountain. Path: [71:17] → [50:"
+        },
+        {
+          "verses": [
+            "13:11",
+            "78:23",
+            "15:65",
+            "7:143"
+          ],
+          "bridge": [
+            "stay",
+            "stay",
+            "stay",
+            "look"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [7:143] (You —[states]→ Me) through thematic chain: stay → stay → stay → look. Path: [13:11] → [78:23] "
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "knowledge_and_wisdom",
+      "weight": 255,
+      "avg_quality": 74.3,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "29:48"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [29:48] (You —[states]→ the previous scriptures) through thematic chain: fat"
+        },
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "27:66"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [27:66] (their knowledge concerning the Hereafter —[describes]→ In fact) thr"
+        },
+        {
+          "verses": [
+            "35:31",
+            "35:19",
+            "22:61",
+            "27:66"
+          ],
+          "bridge": [
+            "seer",
+            "seer",
+            "fact"
+          ],
+          "conclusion": "[35:31] (GOD —[is]→ fully cognizant of his servants) connects to [27:66] (their knowledge concerning the Hereafter —[describes]→ In fact) through them"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "warfare_and_struggle",
+      "weight": 253,
+      "avg_quality": 75.2,
+      "examples": [
+        {
+          "verses": [
+            "13:11",
+            "48:11",
+            "9:81",
+            "9:83"
+          ],
+          "bridge": [
+            "stay",
+            "behind",
+            "u",
+            "stay"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [9:83] (You —[commands]→ with the sedentary) through thematic chain: stay → behind → u → stay → sedenta"
+        },
+        {
+          "verses": [
+            "110:1",
+            "48:5",
+            "48:25"
+          ],
+          "bridge": [
+            "woman",
+            "admit",
+            "triumph",
+            "men"
+          ],
+          "conclusion": "BECAUSE Triumph states from GOD , and victory [110:1], and this connects via 'triumph' → 'woman', THEREFORE Triumph's states relates to into His mercy"
+        },
+        {
+          "verses": [
+            "66:8",
+            "98:8",
+            "3:195",
+            "47:4"
+          ],
+          "bridge": [
+            "garden",
+            "flow",
+            "reward",
+            "flow"
+          ],
+          "conclusion": "[66:8] (You —[commands]→ a firm repentance) connects to [47:4] (You —[states]→ the necks) through thematic chain: garden → flow → reward → flow → anot"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "divine_mercy_and_forgiveness",
+      "weight": 249,
+      "avg_quality": 73.3,
+      "examples": [
+        {
+          "verses": [
+            "31:32",
+            "37:128",
+            "37:111",
+            "23:109"
+          ],
+          "bridge": [
+            "devote",
+            "save",
+            "servant",
+            "servant"
+          ],
+          "conclusion": "[31:32] (they —[states]→ GOD) connects to [23:109] (A Group Of My Servants Used To Say —[promises]→ us) through thematic chain: devote → save → servan"
+        },
+        {
+          "verses": [
+            "49:11",
+            "27:23",
+            "7:81",
+            "48:25"
+          ],
+          "bridge": [
+            "woman",
+            "woman",
+            "woman",
+            "men"
+          ],
+          "conclusion": "[49:11] (You Who Believe —[commands]→ other people) connects to [48:25] (GOD —[promises]→ into His mercy whomever) through thematic chain: woman → wom"
+        },
+        {
+          "verses": [
+            "22:38",
+            "12:52",
+            "7:56",
+            "26:126"
+          ],
+          "bridge": [
+            "betrayer",
+            "hope",
+            "reverence"
+          ],
+          "conclusion": "[22:38] (GOD —[commands]→ those who believe) connects to [26:126] (You —[commands]→ GOD) through thematic chain: betrayer → hope → reverence. Path: [2"
+        }
+      ]
+    },
+    {
+      "source": "prophetic_narratives",
+      "target": "worship_and_ritual",
+      "weight": 244,
+      "avg_quality": 76.1,
+      "examples": [
+        {
+          "verses": [
+            "13:13",
+            "37:30",
+            "71:27",
+            "20:79"
+          ],
+          "bridge": [
+            "power",
+            "wicked",
+            "mislead"
+          ],
+          "conclusion": "[13:13] (The thunder —[states]→ His glory) connects to [20:79] (he —[states]→ them) through thematic chain: power → wicked → mislead. Path: [13:13] → "
+        },
+        {
+          "verses": [
+            "3:59",
+            "36:60",
+            "20:115",
+            "93:3"
+          ],
+          "bridge": [
+            "adam",
+            "adam",
+            "forget"
+          ],
+          "conclusion": "[3:59] (He —[creates]→ him) connects to [93:3] (GOD —[prohibits]→ you) through thematic chain: adam → adam → forget. Path: [3:59] → [36:60] → [20:115]"
+        },
+        {
+          "verses": [
+            "26:218",
+            "25:64",
+            "19:58",
+            "75:31"
+          ],
+          "bridge": [
+            "meditate",
+            "night",
+            "prostrate",
+            "fall"
+          ],
+          "conclusion": "[26:218] (Who —[states]→ you) connects to [75:31] (he —[commands]→ neither the charity , nor the contact prayers) through thematic chain: meditate → n"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "prophetic_narratives",
+      "weight": 237,
+      "avg_quality": 73.9,
+      "examples": [
+        {
+          "verses": [
+            "22:38",
+            "2:152",
+            "14:6",
+            "26:157"
+          ],
+          "bridge": [
+            "unappreciative",
+            "unappreciative",
+            "remember",
+            "slaughter"
+          ],
+          "conclusion": "[22:38] (GOD —[commands]→ those who believe) connects to [26:157] (They —[states]→ her) through thematic chain: unappreciative → unappreciative → reme"
+        },
+        {
+          "verses": [
+            "26:41",
+            "10:79",
+            "85:18",
+            "22:42"
+          ],
+          "bridge": [
+            "pharaoh",
+            "magician",
+            "pharaoh",
+            "thamoud"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [22:42] (they —[describes]→ you , the people of Noah) through thematic chain: pharaoh → magician →"
+        },
+        {
+          "verses": [
+            "4:164",
+            "83:17",
+            "72:4",
+            "69:44"
+          ],
+          "bridge": [
+            "tell",
+            "use",
+            "utter"
+          ],
+          "conclusion": "[4:164] (GOD —[states]→ to Moses) connects to [69:44] (he —[states]→ any other teachings) through thematic chain: tell → use → utter. Path: [4:164] → "
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "knowledge_and_wisdom",
+      "weight": 232,
+      "avg_quality": 73.8,
+      "examples": [
+        {
+          "verses": [
+            "24:40",
+            "2:19",
+            "50:19",
+            "62:8"
+          ],
+          "bridge": [
+            "darkness",
+            "another",
+            "death",
+            "evade"
+          ],
+          "conclusion": "[24:40] (Darkness Upon Darkness - —[states]→ it) connects to [62:8] (He —[states]→ you) through thematic chain: darkness → another → death → evade → d"
+        },
+        {
+          "verses": [
+            "39:42",
+            "16:61",
+            "44:39",
+            "36:38"
+          ],
+          "bridge": [
+            "end",
+            "time",
+            "specific",
+            "specific"
+          ],
+          "conclusion": "[39:42] (GOD —[states]→ the souls) connects to [36:38] (The sun —[states]→ into a specific location) through thematic chain: end → time → specific → s"
+        },
+        {
+          "verses": [
+            "39:42",
+            "47:27",
+            "26:81",
+            "57:2"
+          ],
+          "bridge": [
+            "end",
+            "death",
+            "death",
+            "put"
+          ],
+          "conclusion": "[39:42] (GOD —[states]→ the souls) connects to [57:2] (He —[states]→ life and death) through thematic chain: end → death → death → put → death → life."
+        }
+      ]
+    },
+    {
+      "source": "prophecy_and_revelation",
+      "target": "warfare_and_struggle",
+      "weight": 232,
+      "avg_quality": 75.6,
+      "examples": [
+        {
+          "verses": [
+            "13:11",
+            "9:43",
+            "9:90",
+            "9:83"
+          ],
+          "bridge": [
+            "stay",
+            "behind",
+            "permission",
+            "stay"
+          ],
+          "conclusion": "[13:11] (They —[states]→ with you) connects to [9:83] (You —[commands]→ with the sedentary) through thematic chain: stay → behind → permission → stay "
+        },
+        {
+          "verses": [
+            "49:3",
+            "57:16",
+            "3:146",
+            "8:65"
+          ],
+          "bridge": [
+            "heart",
+            "whose",
+            "many",
+            "become"
+          ],
+          "conclusion": "[49:3] (They —[describes]→ forgiveness and a great recompense) connects to [8:65] (You —[commands]→ the believers) through thematic chain: heart → who"
+        },
+        {
+          "verses": [
+            "49:3",
+            "3:159",
+            "3:146",
+            "8:65"
+          ],
+          "bridge": [
+            "forgiveness",
+            "become",
+            "love",
+            "become"
+          ],
+          "conclusion": "[49:3] (They —[describes]→ forgiveness and a great recompense) connects to [8:65] (You —[commands]→ the believers) through thematic chain: forgiveness"
+        }
+      ]
+    },
+    {
+      "source": "moral_law_and_ethics",
+      "target": "warfare_and_struggle",
+      "weight": 218,
+      "avg_quality": 74.1,
+      "examples": [
+        {
+          "verses": [
+            "49:3",
+            "57:16",
+            "3:146",
+            "8:65"
+          ],
+          "bridge": [
+            "heart",
+            "whose",
+            "many",
+            "become"
+          ],
+          "conclusion": "[49:3] (They —[describes]→ forgiveness and a great recompense) connects to [8:65] (You —[commands]→ the believers) through thematic chain: heart → who"
+        },
+        {
+          "verses": [
+            "53:41",
+            "25:68",
+            "2:191",
+            "4:101"
+          ],
+          "bridge": [
+            "pay",
+            "sacred",
+            "kill",
+            "attack"
+          ],
+          "conclusion": "[53:41] (they —[states]→ for such works) connects to [4:101] (You —[commands]→ no error) through thematic chain: pay → sacred → kill → attack → disbel"
+        },
+        {
+          "verses": [
+            "4:78",
+            "40:11",
+            "33:16",
+            "70:37"
+          ],
+          "bridge": [
+            "death",
+            "live",
+            "death",
+            "live"
+          ],
+          "conclusion": "[4:78] (Death —[describes]→ with you) connects to [70:37] (they —[states]→ to the left) through thematic chain: death → live → death → live → flee. Pa"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "warfare_and_struggle",
+      "weight": 208,
+      "avg_quality": 75.7,
+      "examples": [
+        {
+          "verses": [
+            "4:21",
+            "4:81",
+            "7:89",
+            "33:65"
+          ],
+          "bridge": [
+            "pledge",
+            "put",
+            "trust",
+            "supporter"
+          ],
+          "conclusion": "[4:21] (You —[describes]→ it) connects to [33:65] (They —[states]→ no lord) through thematic chain: pledge → put → trust → supporter. Path: [4:21] → ["
+        },
+        {
+          "verses": [
+            "4:89",
+            "8:15",
+            "27:17",
+            "33:9"
+          ],
+          "bridge": [
+            "encounter",
+            "mobilize",
+            "mobilize",
+            "soldier"
+          ],
+          "conclusion": "[4:89] (You —[commands]→ them) connects to [33:9] (GOD —[is]→ seer of everything you do) through thematic chain: encounter → mobilize → mobilize → sol"
+        },
+        {
+          "verses": [
+            "4:89",
+            "8:15",
+            "74:51",
+            "70:37"
+          ],
+          "bridge": [
+            "encounter",
+            "mobilize",
+            "flee",
+            "flee"
+          ],
+          "conclusion": "[4:89] (You —[commands]→ them) connects to [70:37] (they —[states]→ to the left) through thematic chain: encounter → mobilize → flee → flee. Path: [4:"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "divine_mercy_and_forgiveness",
+      "weight": 207,
+      "avg_quality": 74.3,
+      "examples": [
+        {
+          "verses": [
+            "33:5",
+            "11:41",
+            "2:33",
+            "4:149"
+          ],
+          "bridge": [
+            "merciful",
+            "name",
+            "name",
+            "declare"
+          ],
+          "conclusion": "[33:5] (You —[commands]→ your adopted children names that preserve their relationship) connects to [4:149] (GOD —[is]→ pardoner) through thematic chai"
+        },
+        {
+          "verses": [
+            "75:26",
+            "13:14",
+            "71:10",
+            "4:106"
+          ],
+          "bridge": [
+            "reach",
+            "implore",
+            "forgiveness",
+            "implore"
+          ],
+          "conclusion": "[75:26] (( the soul ) —[states]→ the throat) connects to [4:106] (You —[commands]→ GOD) through thematic chain: reach → implore → forgiveness → implor"
+        },
+        {
+          "verses": [
+            "6:139",
+            "23:21",
+            "4:160",
+            "5:3"
+          ],
+          "bridge": [
+            "belly",
+            "livestock",
+            "food",
+            "use"
+          ],
+          "conclusion": "[6:139] (they —[describes]→ their wives) connects to [5:3] (Animals that die of themselves —[promises]→ those ) strangled , struck with an object) thr"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "moral_law_and_ethics",
+      "weight": 196,
+      "avg_quality": 74.2,
+      "examples": [
+        {
+          "verses": [
+            "47:30",
+            "55:41",
+            "83:24",
+            "83:22"
+          ],
+          "bridge": [
+            "recognize",
+            "look",
+            "recognize",
+            "bliss"
+          ],
+          "conclusion": "[47:30] (You —[states]→ them) connects to [83:22] (The righteous —[describes]→ bliss) through thematic chain: recognize → look → recognize → bliss. Pa"
+        },
+        {
+          "verses": [
+            "42:24",
+            "10:69",
+            "78:35"
+          ],
+          "bridge": [
+            "fabricate",
+            "lie"
+          ],
+          "conclusion": "BECAUSE He describes your mind [42:24], and this connects via 'fabricate' → 'lie', THEREFORE He's describes relates to any nonsense or lies [78:35]"
+        },
+        {
+          "verses": [
+            "13:16",
+            "2:102",
+            "4:176",
+            "26:165"
+          ],
+          "bridge": [
+            "benefit",
+            "two",
+            "share",
+            "two"
+          ],
+          "conclusion": "[13:16] (they —[describes]→ idols besides GOD who created creations similar to) connects to [26:165] (You —[describes]→ sex) through thematic chain: b"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "social_law",
+      "weight": 187,
+      "avg_quality": 75.4,
+      "examples": [
+        {
+          "verses": [
+            "6:120",
+            "53:41",
+            "60:10"
+          ],
+          "bridge": [
+            "pay",
+            "fully"
+          ],
+          "conclusion": "BECAUSE Those Who Have Earned Sins describes for their transgressions [6:120], and this connects via 'pay' → 'pay', THEREFORE Those Who Have Earned Si"
+        },
+        {
+          "verses": [
+            "100:7",
+            "29:12",
+            "68:23"
+          ],
+          "bridge": [
+            "way",
+            "bear"
+          ],
+          "conclusion": "BECAUSE He states witness [100:7], and this connects via 'bear' → 'way', THEREFORE He's states relates to to each other [68:23]"
+        },
+        {
+          "verses": [
+            "33:19",
+            "4:20",
+            "33:49"
+          ],
+          "bridge": [
+            "deal",
+            "another",
+            "marry",
+            "anything"
+          ],
+          "conclusion": "BECAUSE they describes you [33:19], and this connects via 'deal' → 'another', THEREFORE they's describes relates to them [33:49]"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "worship_and_ritual",
+      "weight": 170,
+      "avg_quality": 75.4,
+      "examples": [
+        {
+          "verses": [
+            "4:146",
+            "5:39",
+            "4:17",
+            "33:1"
+          ],
+          "bridge": [
+            "repent",
+            "reform",
+            "repent",
+            "redeem"
+          ],
+          "conclusion": "[4:146] (GOD —[promises]→ the believers) connects to [33:1] (You —[commands]→ GOD) through thematic chain: repent → reform → repent → redeem → omnisci"
+        },
+        {
+          "verses": [
+            "22:38",
+            "12:52",
+            "7:56",
+            "70:27"
+          ],
+          "bridge": [
+            "betrayer",
+            "hope",
+            "reverence"
+          ],
+          "conclusion": "[22:38] (GOD —[commands]→ those who believe) connects to [70:27] (They —[states]→ their Lord 's requital) through thematic chain: betrayer → hope → re"
+        },
+        {
+          "verses": [
+            "22:38",
+            "12:52",
+            "7:56",
+            "26:126"
+          ],
+          "bridge": [
+            "betrayer",
+            "hope",
+            "reverence"
+          ],
+          "conclusion": "[22:38] (GOD —[commands]→ those who believe) connects to [26:126] (You —[commands]→ GOD) through thematic chain: betrayer → hope → reverence. Path: [2"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "social_law",
+      "weight": 147,
+      "avg_quality": 73.5,
+      "examples": [
+        {
+          "verses": [
+            "4:129",
+            "21:90",
+            "13:14",
+            "75:26"
+          ],
+          "bridge": [
+            "situation",
+            "righteousness",
+            "respond",
+            "implore"
+          ],
+          "conclusion": "[4:129] (GOD —[is]→ forgiver) connects to [75:26] (( the soul ) —[states]→ the throat) through thematic chain: situation → righteousness → respond → i"
+        },
+        {
+          "verses": [
+            "26:41",
+            "4:12",
+            "42:50",
+            "13:3"
+          ],
+          "bridge": [
+            "pay",
+            "get",
+            "male",
+            "female"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [13:3] (He —[creates]→ them) through thematic chain: pay → get → male → female → male → female. Pa"
+        },
+        {
+          "verses": [
+            "4:15",
+            "27:23",
+            "27:44",
+            "75:29"
+          ],
+          "bridge": [
+            "woman",
+            "palace",
+            "leg"
+          ],
+          "conclusion": "[4:15] (You —[commands]→ four witnesses against them) connects to [75:29] (Each Leg —[states]→ motionless) through thematic chain: woman → palace → le"
+        }
+      ]
+    },
+    {
+      "source": "social_law",
+      "target": "worship_and_ritual",
+      "weight": 140,
+      "avg_quality": 73.6,
+      "examples": [
+        {
+          "verses": [
+            "22:19",
+            "4:1",
+            "33:35",
+            "48:5"
+          ],
+          "bridge": [
+            "two",
+            "regard",
+            "woman",
+            "men"
+          ],
+          "conclusion": "[22:19] (they —[warns]→ clothes of fire tailored for them) connects to [48:5] (He —[states]→ the believing men and women) through thematic chain: two "
+        },
+        {
+          "verses": [
+            "62:9",
+            "62:11",
+            "15:90",
+            "4:20"
+          ],
+          "bridge": [
+            "better",
+            "business",
+            "deal",
+            "deal"
+          ],
+          "conclusion": "[62:9] (You Who Believe —[commands]→ to the commemoration of GOD) connects to [4:20] (You —[commands]→ anything you had given her) through thematic ch"
+        },
+        {
+          "verses": [
+            "26:41",
+            "4:11",
+            "4:1",
+            "33:35"
+          ],
+          "bridge": [
+            "pay",
+            "get",
+            "woman",
+            "two"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [33:35] (GOD —[describes]→ forgiveness and a great recompense) through thematic chain: pay → get →"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "knowledge_and_wisdom",
+      "weight": 124,
+      "avg_quality": 73.5,
+      "examples": [
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "29:48"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [29:48] (You —[states]→ the previous scriptures) through thematic chain: fat"
+        },
+        {
+          "verses": [
+            "59:15",
+            "34:54",
+            "22:55",
+            "27:66"
+          ],
+          "bridge": [
+            "fate",
+            "counterpart",
+            "doubt",
+            "harbor"
+          ],
+          "conclusion": "[59:15] (They —[states]→ the consequences of their decisions) connects to [27:66] (their knowledge concerning the Hereafter —[describes]→ In fact) thr"
+        },
+        {
+          "verses": [
+            "22:38",
+            "2:152",
+            "33:34",
+            "33:2"
+          ],
+          "bridge": [
+            "unappreciative",
+            "remember",
+            "cognizant"
+          ],
+          "conclusion": "[22:38] (GOD —[commands]→ those who believe) connects to [33:2] (GOD —[is]→ fully cognizant of everything you all do) through thematic chain: unapprec"
+        }
+      ]
+    },
+    {
+      "source": "warfare_and_struggle",
+      "target": "worship_and_ritual",
+      "weight": 121,
+      "avg_quality": 73.1,
+      "examples": [
+        {
+          "verses": [
+            "46:28",
+            "93:3",
+            "18:63",
+            "4:103"
+          ],
+          "bridge": [
+            "abandon",
+            "forget",
+            "sit",
+            "remember"
+          ],
+          "conclusion": "[46:28] (they —[states]→ them) connects to [4:103] (You —[commands]→ GOD) through thematic chain: abandon → forget → sit → remember. Path: [46:28] → ["
+        },
+        {
+          "verses": [
+            "53:41",
+            "25:68",
+            "2:191",
+            "4:101"
+          ],
+          "bridge": [
+            "pay",
+            "sacred",
+            "kill",
+            "attack"
+          ],
+          "conclusion": "[53:41] (they —[states]→ for such works) connects to [4:101] (You —[commands]→ no error) through thematic chain: pay → sacred → kill → attack → disbel"
+        },
+        {
+          "verses": [
+            "6:139",
+            "60:11",
+            "13:21",
+            "16:2"
+          ],
+          "bridge": [
+            "wive",
+            "reverence",
+            "join",
+            "reverence"
+          ],
+          "conclusion": "[6:139] (they —[describes]→ their wives) connects to [16:2] (You —[commands]→ Me) through thematic chain: wive → reverence → join → reverence → comman"
+        }
+      ]
+    },
+    {
+      "source": "prophetic_narratives",
+      "target": "social_law",
+      "weight": 108,
+      "avg_quality": 73.4,
+      "examples": [
+        {
+          "verses": [
+            "26:41",
+            "4:12",
+            "15:44",
+            "4:176"
+          ],
+          "bridge": [
+            "pay",
+            "get",
+            "share",
+            "get"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [4:176] (she —[states]→ half the inheritance) through thematic chain: pay → get → share → get → sh"
+        },
+        {
+          "verses": [
+            "26:41",
+            "4:11",
+            "58:2",
+            "4:149"
+          ],
+          "bridge": [
+            "pay",
+            "get",
+            "woman",
+            "know"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [4:149] (GOD —[is]→ pardoner) through thematic chain: pay → get → woman → know → declare → pardone"
+        },
+        {
+          "verses": [
+            "26:43",
+            "8:37",
+            "19:28",
+            "4:23"
+          ],
+          "bridge": [
+            "throw",
+            "bad",
+            "father",
+            "mother"
+          ],
+          "conclusion": "[26:43] (MOSES —[describes]→ to them) connects to [4:23] (You —[describes]→ the daughter) through thematic chain: throw → bad → father → mother. Path:"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "prophetic_narratives",
+      "weight": 78,
+      "avg_quality": 73.4,
+      "examples": [
+        {
+          "verses": [
+            "5:3",
+            "4:160",
+            "6:140",
+            "4:157"
+          ],
+          "bridge": [
+            "food",
+            "prohibit",
+            "prohibit",
+            "due"
+          ],
+          "conclusion": "[5:3] (Animals that die of themselves —[promises]→ those ) strangled , struck with an object) connects to [4:157] (they —[prohibits]→ him) through the"
+        },
+        {
+          "verses": [
+            "9:27",
+            "87:14",
+            "91:9",
+            "43:28"
+          ],
+          "bridge": [
+            "redeem",
+            "redeem",
+            "successful",
+            "redeem"
+          ],
+          "conclusion": "[9:27] (GOD —[is]→ forgiver) connects to [43:28] (they —[promises]→ their souls) through thematic chain: redeem → redeem → successful → redeem. Path: "
+        },
+        {
+          "verses": [
+            "65:9",
+            "11:96",
+            "20:5",
+            "2:163"
+          ],
+          "bridge": [
+            "profound",
+            "authority",
+            "gracious"
+          ],
+          "conclusion": "[65:9] (They —[states]→ the consequences of their decisions) connects to [2:163] (GOD —[is]→ one god) through thematic chain: profound → authority → g"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "prophetic_narratives",
+      "weight": 67,
+      "avg_quality": 72.4,
+      "examples": [
+        {
+          "verses": [
+            "26:41",
+            "4:11",
+            "15:44",
+            "4:176"
+          ],
+          "bridge": [
+            "pay",
+            "get",
+            "share",
+            "get"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [4:176] (she —[states]→ half the inheritance) through thematic chain: pay → get → share → get → sh"
+        },
+        {
+          "verses": [
+            "26:141",
+            "53:51",
+            "51:43",
+            "4:164"
+          ],
+          "bridge": [
+            "thamoud",
+            "thamoud",
+            "tell"
+          ],
+          "conclusion": "[26:141] (Thamoud —[states]→ the messengers) connects to [4:164] (GOD —[states]→ to Moses) through thematic chain: thamoud → thamoud → tell. Path: [26"
+        },
+        {
+          "verses": [
+            "4:164",
+            "24:28",
+            "24:30",
+            "33:2"
+          ],
+          "bridge": [
+            "tell",
+            "everything",
+            "fully",
+            "cognizant"
+          ],
+          "conclusion": "[4:164] (GOD —[states]→ to Moses) connects to [33:2] (GOD —[is]→ fully cognizant of everything you all do) through thematic chain: tell → everything →"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "social_law",
+      "weight": 62,
+      "avg_quality": 75.8,
+      "examples": [
+        {
+          "verses": [
+            "33:5",
+            "11:41",
+            "41:32",
+            "4:99"
+          ],
+          "bridge": [
+            "merciful",
+            "name",
+            "merciful",
+            "forgiver"
+          ],
+          "conclusion": "[33:5] (You —[commands]→ your adopted children names that preserve their relationship) connects to [4:99] (GOD —[is]→ pardoner) through thematic chain"
+        },
+        {
+          "verses": [
+            "4:129",
+            "4:23",
+            "4:176",
+            "26:165"
+          ],
+          "bridge": [
+            "merciful",
+            "marry",
+            "woman",
+            "sister"
+          ],
+          "conclusion": "[4:129] (GOD —[is]→ forgiver) connects to [26:165] (You —[describes]→ sex) through thematic chain: merciful → marry → woman → sister → male. Path: [4:"
+        },
+        {
+          "verses": [
+            "75:39",
+            "4:11",
+            "58:2",
+            "4:149"
+          ],
+          "bridge": [
+            "male",
+            "female",
+            "woman",
+            "know"
+          ],
+          "conclusion": "[75:39] (He —[creates]→ it) connects to [4:149] (GOD —[is]→ pardoner) through thematic chain: male → female → woman → know → declare → pardoner. Path:"
+        }
+      ]
+    },
+    {
+      "source": "mathematical_miracle",
+      "target": "monotheism_and_gods_nature",
+      "weight": 62,
+      "avg_quality": 74.1,
+      "examples": [
+        {
+          "verses": [
+            "34:39",
+            "3:26",
+            "7:128",
+            "2:105"
+          ],
+          "bridge": [
+            "provision",
+            "choose",
+            "choose",
+            "grant"
+          ],
+          "conclusion": "[34:39] (He —[describes]→ the provisions for whomever He chooses from among) connects to [2:105] (GOD —[states]→ His blessings) through thematic chain"
+        },
+        {
+          "verses": [
+            "12:49",
+            "18:25",
+            "2:240",
+            "2:203"
+          ],
+          "bridge": [
+            "year",
+            "stay",
+            "year",
+            "stay"
+          ],
+          "conclusion": "[12:49] (a year that brings relief for the people —[states]→ After that) connects to [2:203] (You —[commands]→ GOD) through thematic chain: year → sta"
+        },
+        {
+          "verses": [
+            "13:24",
+            "74:7",
+            "20:34",
+            "2:203"
+          ],
+          "bridge": [
+            "steadfastly",
+            "commemorate",
+            "commemorate"
+          ],
+          "conclusion": "[13:24] (Peace —[states]→ upon you) connects to [2:203] (You —[commands]→ GOD) through thematic chain: steadfastly → commemorate → commemorate. Path: "
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "knowledge_and_wisdom",
+      "weight": 60,
+      "avg_quality": 73.2,
+      "examples": [
+        {
+          "verses": [
+            "4:113",
+            "2:251",
+            "2:243",
+            "33:19"
+          ],
+          "bridge": [
+            "wisdom",
+            "teach",
+            "grace",
+            "shower"
+          ],
+          "conclusion": "[4:113] (some of them —[promises]→ you) connects to [33:19] (they —[describes]→ you) through thematic chain: wisdom → teach → grace → shower → death →"
+        },
+        {
+          "verses": [
+            "4:113",
+            "2:251",
+            "3:164",
+            "33:34"
+          ],
+          "bridge": [
+            "wisdom",
+            "teach",
+            "wisdom",
+            "teach"
+          ],
+          "conclusion": "[4:113] (some of them —[promises]→ you) connects to [33:34] (GOD —[is]→ sublime) through thematic chain: wisdom → teach → wisdom → teach → recite → wi"
+        },
+        {
+          "verses": [
+            "4:113",
+            "26:99",
+            "38:62",
+            "62:7"
+          ],
+          "bridge": [
+            "mislead",
+            "wicked",
+            "wicked"
+          ],
+          "conclusion": "[4:113] (some of them —[promises]→ you) connects to [62:7] (They —[prohibits]→ for it) through thematic chain: mislead → wicked → wicked. Path: [4:113"
+        }
+      ]
+    },
+    {
+      "source": "social_law",
+      "target": "warfare_and_struggle",
+      "weight": 52,
+      "avg_quality": 74.3,
+      "examples": [
+        {
+          "verses": [
+            "4:24",
+            "4:33",
+            "4:135",
+            "26:182"
+          ],
+          "bridge": [
+            "due",
+            "marriage",
+            "witness",
+            "relative"
+          ],
+          "conclusion": "[4:24] (All other categories —[describes]→ in marriage) connects to [26:182] (You —[commands]→ with an equitable scale) through thematic chain: due → "
+        },
+        {
+          "verses": [
+            "4:24",
+            "4:23",
+            "4:176",
+            "26:165"
+          ],
+          "bridge": [
+            "woman",
+            "marry",
+            "woman",
+            "sister"
+          ],
+          "conclusion": "[4:24] (All other categories —[describes]→ in marriage) connects to [26:165] (You —[describes]→ sex) through thematic chain: woman → marry → woman → s"
+        },
+        {
+          "verses": [
+            "26:41",
+            "53:41",
+            "60:10",
+            "4:24"
+          ],
+          "bridge": [
+            "pay",
+            "pay",
+            "fully",
+            "commit"
+          ],
+          "conclusion": "[26:41] (they —[describes]→ to Pharaoh) connects to [4:24] (All other categories —[describes]→ in marriage) through thematic chain: pay → pay → fully "
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "warfare_and_struggle",
+      "weight": 48,
+      "avg_quality": 72.8,
+      "examples": [
+        {
+          "verses": [
+            "22:5",
+            "75:37",
+            "84:4",
+            "4:91"
+          ],
+          "bridge": [
+            "drop",
+            "eject",
+            "erupt"
+          ],
+          "conclusion": "[22:5] (You —[creates]→ maturity) connects to [4:91] (You —[states]→ others who wish to make peace with you) through thematic chain: drop → eject → er"
+        },
+        {
+          "verses": [
+            "36:77",
+            "80:19",
+            "64:3"
+          ],
+          "bridge": [
+            "drop",
+            "tiny",
+            "design",
+            "create"
+          ],
+          "conclusion": "BECAUSE he states into an ardent enemy [36:77], and this connects via 'create' → 'create', THEREFORE he's states relates to the heavens and the earth "
+        },
+        {
+          "verses": [
+            "83:16",
+            "20:39",
+            "11:37",
+            "10:12"
+          ],
+          "bridge": [
+            "throw",
+            "watchful",
+            "eye",
+            "eye"
+          ],
+          "conclusion": "[83:16] (they —[warns]→ into Hell) connects to [10:12] (he —[states]→ us) through thematic chain: throw → watchful → eye → eye → implore. Path: [83:16"
+        }
+      ]
+    },
+    {
+      "source": "prophetic_narratives",
+      "target": "warfare_and_struggle",
+      "weight": 46,
+      "avg_quality": 73.3,
+      "examples": [
+        {
+          "verses": [
+            "4:91",
+            "11:69",
+            "56:91",
+            "29:26"
+          ],
+          "bridge": [
+            "peace",
+            "soon",
+            "peace",
+            "lot"
+          ],
+          "conclusion": "[4:91] (You —[states]→ others who wish to make peace with you) connects to [29:26] (Lot —[commands]→ with him) through thematic chain: peace → soon → "
+        },
+        {
+          "verses": [
+            "4:91",
+            "11:69",
+            "15:52",
+            "44:55"
+          ],
+          "bridge": [
+            "peace",
+            "soon",
+            "peace",
+            "peace"
+          ],
+          "conclusion": "[4:91] (You —[states]→ others who wish to make peace with you) connects to [44:55] (They —[states]→ all kinds of fruits , in perfect peace) through th"
+        },
+        {
+          "verses": [
+            "4:91",
+            "11:69",
+            "51:25",
+            "44:55"
+          ],
+          "bridge": [
+            "peace",
+            "soon",
+            "peace",
+            "peace"
+          ],
+          "conclusion": "[4:91] (You —[states]→ others who wish to make peace with you) connects to [44:55] (They —[states]→ all kinds of fruits , in perfect peace) through th"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "social_law",
+      "weight": 42,
+      "avg_quality": 75.4,
+      "examples": [
+        {
+          "verses": [
+            "47:30",
+            "55:41",
+            "74:41",
+            "2:276"
+          ],
+          "bridge": [
+            "recognize",
+            "look",
+            "guilty",
+            "guilty"
+          ],
+          "conclusion": "[47:30] (You —[states]→ them) connects to [2:276] (GOD —[states]→ usury) through thematic chain: recognize → look → guilty → guilty. Path: [47:30] → ["
+        },
+        {
+          "verses": [
+            "65:6",
+            "2:231",
+            "18:25",
+            "12:49"
+          ],
+          "bridge": [
+            "woman",
+            "home",
+            "three",
+            "stay"
+          ],
+          "conclusion": "[65:6] (You —[commands]→ on them) connects to [12:49] (a year that brings relief for the people —[states]→ After that) through thematic chain: woman →"
+        },
+        {
+          "verses": [
+            "4:23",
+            "4:176",
+            "2:102",
+            "2:282"
+          ],
+          "bridge": [
+            "woman",
+            "sister",
+            "share",
+            "two"
+          ],
+          "conclusion": "[4:23] (You —[describes]→ the daughter) connects to [2:282] (You Who Believe —[commands]→ it) through thematic chain: woman → sister → share → two → t"
+        }
+      ]
+    },
+    {
+      "source": "mathematical_miracle",
+      "target": "prophecy_and_revelation",
+      "weight": 41,
+      "avg_quality": 73.8,
+      "examples": [
+        {
+          "verses": [
+            "26:32",
+            "44:47",
+            "67:7",
+            "46:29"
+          ],
+          "bridge": [
+            "throw",
+            "throw",
+            "get",
+            "hear"
+          ],
+          "conclusion": "[26:32] (He —[states]→ his staff) connects to [46:29] (they —[describes]→ to their people) through thematic chain: throw → throw → get → hear. Path: ["
+        },
+        {
+          "verses": [
+            "33:26",
+            "44:47",
+            "67:7",
+            "46:29"
+          ],
+          "bridge": [
+            "take",
+            "throw",
+            "throw",
+            "get"
+          ],
+          "conclusion": "[33:26] (He —[creates]→ their allies) connects to [46:29] (they —[describes]→ to their people) through thematic chain: take → throw → throw → get → he"
+        },
+        {
+          "verses": [
+            "34:39",
+            "3:26",
+            "7:128",
+            "2:105"
+          ],
+          "bridge": [
+            "provision",
+            "choose",
+            "choose",
+            "grant"
+          ],
+          "conclusion": "[34:39] (He —[describes]→ the provisions for whomever He chooses from among) connects to [2:105] (GOD —[states]→ His blessings) through thematic chain"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "warfare_and_struggle",
+      "weight": 39,
+      "avg_quality": 73.8,
+      "examples": [
+        {
+          "verses": [
+            "49:3",
+            "3:159",
+            "3:146",
+            "8:65"
+          ],
+          "bridge": [
+            "forgiveness",
+            "become",
+            "love",
+            "become"
+          ],
+          "conclusion": "[49:3] (They —[describes]→ forgiveness and a great recompense) connects to [8:65] (You —[commands]→ the believers) through thematic chain: forgiveness"
+        },
+        {
+          "verses": [
+            "4:91",
+            "8:39",
+            "4:146",
+            "39:3"
+          ],
+          "bridge": [
+            "alone",
+            "fight",
+            "devote",
+            "religion"
+          ],
+          "conclusion": "[4:91] (You —[states]→ others who wish to make peace with you) connects to [39:3] (GOD —[decrees]→ them) through thematic chain: alone → fight → devot"
+        },
+        {
+          "verses": [
+            "2:218",
+            "94:7",
+            "57:10",
+            "8:4"
+          ],
+          "bridge": [
+            "strive",
+            "strive",
+            "rank",
+            "attain"
+          ],
+          "conclusion": "[2:218] (Those Who Believe , And Those Who Emigrate —[commands]→ GOD 's mercy) connects to [8:4] (They —[states]→ high ranks at their Lord , as well) "
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "warfare_and_struggle",
+      "weight": 36,
+      "avg_quality": 77.0,
+      "examples": [
+        {
+          "verses": [
+            "18:26",
+            "17:55",
+            "33:13",
+            "22:40"
+          ],
+          "bridge": [
+            "knower",
+            "earth",
+            "others",
+            "prophet"
+          ],
+          "conclusion": "[18:26] (He —[states]→ all secrets in the heavens and the earth) connects to [22:40] (They —[describes]→ for no reason other than saying , \" Our) thro"
+        },
+        {
+          "verses": [
+            "34:13",
+            "17:55",
+            "33:13",
+            "22:40"
+          ],
+          "bridge": [
+            "david",
+            "knowledge",
+            "others",
+            "prophet"
+          ],
+          "conclusion": "[34:13] (They —[creates]→ anything he wanted - niches , statues ,) connects to [22:40] (They —[describes]→ for no reason other than saying , \" Our) th"
+        },
+        {
+          "verses": [
+            "60:8",
+            "2:190",
+            "61:4",
+            "59:14"
+          ],
+          "bridge": [
+            "love",
+            "fight",
+            "love",
+            "fight"
+          ],
+          "conclusion": "[60:8] (GOD —[prohibits]→ you) connects to [59:14] (Their —[states]→ formidable) through thematic chain: love → fight → love → fight → fight → wall. P"
+        }
+      ]
+    },
+    {
+      "source": "afterlife_and_judgment",
+      "target": "mathematical_miracle",
+      "weight": 28,
+      "avg_quality": 73.0,
+      "examples": [
+        {
+          "verses": [
+            "26:32",
+            "44:47",
+            "67:7",
+            "46:29"
+          ],
+          "bridge": [
+            "throw",
+            "throw",
+            "get",
+            "hear"
+          ],
+          "conclusion": "[26:32] (He —[states]→ his staff) connects to [46:29] (they —[describes]→ to their people) through thematic chain: throw → throw → get → hear. Path: ["
+        },
+        {
+          "verses": [
+            "33:26",
+            "44:47",
+            "67:7",
+            "46:29"
+          ],
+          "bridge": [
+            "take",
+            "throw",
+            "throw",
+            "get"
+          ],
+          "conclusion": "[33:26] (He —[creates]→ their allies) connects to [46:29] (they —[describes]→ to their people) through thematic chain: take → throw → throw → get → he"
+        },
+        {
+          "verses": [
+            "12:49",
+            "5:26",
+            "26:99",
+            "38:62"
+          ],
+          "bridge": [
+            "year",
+            "wicked",
+            "wicked"
+          ],
+          "conclusion": "[12:49] (a year that brings relief for the people —[states]→ After that) connects to [38:62] (They —[prohibits]→ people we used to count among the wic"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "worship_and_ritual",
+      "weight": 24,
+      "avg_quality": 72.5,
+      "examples": [
+        {
+          "verses": [
+            "33:34",
+            "4:94",
+            "62:10"
+          ],
+          "bridge": [
+            "cognizant",
+            "seek",
+            "remember"
+          ],
+          "conclusion": "BECAUSE GOD is sublime [33:34], and this connects via 'cognizant' → 'seek', THEREFORE GOD's is relates to through the land [62:10]"
+        },
+        {
+          "verses": [
+            "31:34",
+            "10:49",
+            "21:66",
+            "88:22"
+          ],
+          "bridge": [
+            "hour",
+            "end",
+            "benefit",
+            "possess"
+          ],
+          "conclusion": "[31:34] (GOD —[is]→ the knowledge about the hour (end of the world)) connects to [88:22] (You —[describes]→ no power over them) through thematic chain"
+        },
+        {
+          "verses": [
+            "38:21",
+            "26:96",
+            "38:69",
+            "16:50"
+          ],
+          "bridge": [
+            "feud",
+            "feud",
+            "high"
+          ],
+          "conclusion": "[38:21] (You —[describes]→ news of the feuding men who sneaked into) connects to [16:50] (They —[describes]→ their Lord , high above them) through the"
+        }
+      ]
+    },
+    {
+      "source": "creation_and_cosmology",
+      "target": "mathematical_miracle",
+      "weight": 16,
+      "avg_quality": 74.4,
+      "examples": [
+        {
+          "verses": [
+            "12:49",
+            "5:26",
+            "26:99",
+            "38:62"
+          ],
+          "bridge": [
+            "year",
+            "wicked",
+            "wicked"
+          ],
+          "conclusion": "[12:49] (a year that brings relief for the people —[states]→ After that) connects to [38:62] (They —[prohibits]→ people we used to count among the wic"
+        },
+        {
+          "verses": [
+            "39:44",
+            "9:116",
+            "25:3",
+            "5:76"
+          ],
+          "bridge": [
+            "belong",
+            "earth",
+            "death",
+            "control"
+          ],
+          "conclusion": "[39:44] (You —[states]→ to Him) connects to [5:76] (GOD —[is]→ hearer) through thematic chain: belong → earth → death → control → benefit → beside. Pa"
+        },
+        {
+          "verses": [
+            "88:22",
+            "72:24",
+            "76:22",
+            "14:16"
+          ],
+          "bridge": [
+            "power",
+            "await",
+            "await"
+          ],
+          "conclusion": "[88:22] (You —[describes]→ no power over them) connects to [14:16] (he —[warns]→ putrid water) through thematic chain: power → await → await. Path: [8"
+        }
+      ]
+    },
+    {
+      "source": "mathematical_miracle",
+      "target": "worship_and_ritual",
+      "weight": 7,
+      "avg_quality": 71.8,
+      "examples": [
+        {
+          "verses": [
+            "12:49",
+            "18:25",
+            "2:240",
+            "2:203"
+          ],
+          "bridge": [
+            "year",
+            "stay",
+            "year",
+            "stay"
+          ],
+          "conclusion": "[12:49] (a year that brings relief for the people —[states]→ After that) connects to [2:203] (You —[commands]→ GOD) through thematic chain: year → sta"
+        },
+        {
+          "verses": [
+            "13:24",
+            "74:7",
+            "20:34",
+            "2:203"
+          ],
+          "bridge": [
+            "steadfastly",
+            "commemorate",
+            "commemorate"
+          ],
+          "conclusion": "[13:24] (Peace —[states]→ upon you) connects to [2:203] (You —[commands]→ GOD) through thematic chain: steadfastly → commemorate → commemorate. Path: "
+        },
+        {
+          "verses": [
+            "39:61",
+            "2:203",
+            "18:12",
+            "58:19"
+          ],
+          "bridge": [
+            "maintain",
+            "righteousness",
+            "two",
+            "stay"
+          ],
+          "conclusion": "[39:61] (He —[promises]→ them) connects to [58:19] (The devil —[describes]→ them) through thematic chain: maintain → righteousness → two → stay → part"
+        }
+      ]
+    },
+    {
+      "source": "covenant_and_obedience",
+      "target": "mathematical_miracle",
+      "weight": 6,
+      "avg_quality": 68.4,
+      "examples": [
+        {
+          "verses": [
+            "46:29",
+            "72:9",
+            "26:223",
+            "29:12"
+          ],
+          "bridge": [
+            "order",
+            "listen",
+            "listen",
+            "liar"
+          ],
+          "conclusion": "[46:29] (they —[describes]→ to their people) connects to [29:12] (Those Who Disbelieved —[commands]→ to those who believed , \" If you follow) through "
+        },
+        {
+          "verses": [
+            "40:82",
+            "30:42",
+            "27:20",
+            "85:17"
+          ],
+          "bridge": [
+            "note",
+            "earth",
+            "note",
+            "note"
+          ],
+          "conclusion": "[40:82] (they —[describes]→ the earth) connects to [85:17] (You —[states]→ the history of the troops) through thematic chain: note → earth → note → no"
+        },
+        {
+          "verses": [
+            "40:82",
+            "30:42",
+            "27:20",
+            "27:22"
+          ],
+          "bridge": [
+            "note",
+            "earth",
+            "note",
+            "hoopoe"
+          ],
+          "conclusion": "[40:82] (they —[describes]→ the earth) connects to [27:22] (He —[states]→ for long) through thematic chain: note → earth → note → hoopoe. Path: [40:82"
+        }
+      ]
+    },
+    {
+      "source": "divine_mercy_and_forgiveness",
+      "target": "mathematical_miracle",
+      "weight": 5,
+      "avg_quality": 73.4,
+      "examples": [
+        {
+          "verses": [
+            "46:19",
+            "3:174",
+            "2:157",
+            "16:18"
+          ],
+          "bridge": [
+            "attain",
+            "deserve",
+            "blessing",
+            "deserve"
+          ],
+          "conclusion": "[46:19] (They all —[describes]→ the ranks they have deserved) connects to [16:18] (You —[states]→ them) through thematic chain: attain → deserve → ble"
+        },
+        {
+          "verses": [
+            "16:18",
+            "18:72",
+            "74:56",
+            "35:37"
+          ],
+          "bridge": [
+            "cannot",
+            "cannot",
+            "righteousness",
+            "take"
+          ],
+          "conclusion": "[16:18] (You —[states]→ them) connects to [35:37] (They —[states]→ Our Lord ,) through thematic chain: cannot → cannot → righteousness → take. Path: ["
+        },
+        {
+          "verses": [
+            "16:18",
+            "2:192",
+            "2:199",
+            "4:96"
+          ],
+          "bridge": [
+            "merciful",
+            "forgiver",
+            "merciful",
+            "forgiver"
+          ],
+          "conclusion": "[16:18] (You —[states]→ them) connects to [4:96] (The higher ranks —[promises]→ from Him) through thematic chain: merciful → forgiver → merciful → for"
+        }
+      ]
+    },
+    {
+      "source": "knowledge_and_wisdom",
+      "target": "mathematical_miracle",
+      "weight": 4,
+      "avg_quality": 71.3,
+      "examples": [
+        {
+          "verses": [
+            "75:29",
+            "12:47",
+            "12:43",
+            "65:12"
+          ],
+          "bridge": [
+            "next",
+            "seven",
+            "spike",
+            "know"
+          ],
+          "conclusion": "[75:29] (Each Leg —[states]→ motionless) connects to [65:12] (GOD —[creates]→ seven universes and the same number of earths) through thematic chain: n"
+        },
+        {
+          "verses": [
+            "83:23",
+            "37:179",
+            "27:28",
+            "31:2"
+          ],
+          "bridge": [
+            "watch",
+            "watch",
+            "letter"
+          ],
+          "conclusion": "[83:23] (they —[states]→ On luxurious furnishings) connects to [31:2] (These ( letters ) —[states]→ proofs of this book of wisdom) through thematic ch"
+        },
+        {
+          "verses": [
+            "28:2",
+            "31:2",
+            "44:4"
+          ],
+          "bridge": [
+            "letter",
+            "wisdom",
+            "book",
+            "proof"
+          ],
+          "conclusion": "BECAUSE These ( letters ) states proofs of this profound book [28:2], and this connects via 'proof' → 'wisdom', THEREFORE These ( letters )'s states r"
+        }
+      ]
+    },
+    {
+      "source": "mathematical_miracle",
+      "target": "social_law",
+      "weight": 2,
+      "avg_quality": 69.5,
+      "examples": [
+        {
+          "verses": [
+            "46:29",
+            "41:20",
+            "26:25",
+            "27:80"
+          ],
+          "bridge": [
+            "get",
+            "hear",
+            "hear",
+            "hear"
+          ],
+          "conclusion": "[46:29] (they —[describes]→ to their people) connects to [27:80] (You —[states]→ the dead) through thematic chain: get → hear → hear → hear. Path: [46"
+        },
+        {
+          "verses": [
+            "20:112",
+            "21:90",
+            "37:167",
+            "38:62"
+          ],
+          "bridge": [
+            "righteousness",
+            "fear",
+            "use",
+            "use"
+          ],
+          "conclusion": "[20:112] (they —[commands]→ no fear of injustice or adversity) connects to [38:62] (They —[prohibits]→ people we used to count among the wicked) throu"
+        }
+      ]
+    },
+    {
+      "source": "mathematical_miracle",
+      "target": "moral_law_and_ethics",
+      "weight": 2,
+      "avg_quality": 80.5,
+      "examples": [
+        {
+          "verses": [
+            "9:37",
+            "2:194",
+            "27:28",
+            "4:114"
+          ],
+          "bridge": [
+            "sacred",
+            "month",
+            "response",
+            "response"
+          ],
+          "conclusion": "[9:37] (They —[states]→ the Sacred Months and the regular months) connects to [4:114] (Anyone Who Does This —[states]→ a great recompense) through the"
+        },
+        {
+          "verses": [
+            "6:68",
+            "23:40",
+            "46:29",
+            "67:7"
+          ],
+          "bridge": [
+            "soon",
+            "soon",
+            "get",
+            "hear"
+          ],
+          "conclusion": "[6:68] (You —[commands]→ them) connects to [67:7] (they —[states]→ its furor) through thematic chain: soon → soon → get → hear. Path: [6:68] → [23:40]"
+        }
+      ]
+    }
+  ]
+}
