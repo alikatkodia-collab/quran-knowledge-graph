@@ -193,3 +193,12 @@ round	timestamp	novel_found	total_novel	elapsed	strategy	mutations
 65	2026-03-30T12:11:50.352551	496	27661	4.4	random	strategy: high_connectivity -> random; verses: 2000 -> 500
 66	2026-03-30T12:11:59.805008	223	27884	9.4	random	verses: 500 -> 6234; min_novelty: 40 -> 80; max_neighbors_hop1: 17 -> 19
 67	2026-03-30T12:12:04.097355	259	28143	4.3	random	verses: 6234 -> 500
+68	2026-03-30T12:12:07.232479	264	28407	3.1	by_surah	strategy: random -> by_surah; min_novelty: 80 -> 60
+69	2026-03-30T12:12:10.434596	252	28659	3.2	by_surah	max_neighbors_hop1: 19 -> 20
+70	2026-03-30T12:12:13.639131	217	28876	3.2	by_surah	no changes
+71	2026-03-30T12:12:16.912751	362	29238	3.3	by_surah	min_novelty: 60 -> 80; focus: specific -> all
+72	2026-03-30T12:12:26.105668	390	29628	9.2	by_surah	no changes
+73	2026-03-30T12:12:28.825733	402	30030	2.7	by_surah	focus: all -> surahs [16, 22, 28, 38, 42]...
+74	2026-03-30T12:12:37.586569	372	30402	8.8	by_surah	focus: specific -> all
+75	2026-03-30T12:12:39.860008	197	30599	2.3	by_surah	focus: all -> surahs [8, 12, 28, 46, 62]...
+76	2026-03-30T12:12:42.263791	107	30706	2.4	by_surah	verses: 500 -> 3000; max_neighbors_hop2: 2 -> 3

@@ -199,3 +199,19 @@ experiment	score	best	kept	mutations
 98	70.7700	70.7700	True	min_insight_support: 4 -> 6; quality_weight_specificity: 0.297 -> 0.204
 99	70.7700	70.7700	True	min_quality_for_insights: 40 -> 40; quality_weight_rule_bonus: 0.15 -> 0.109
 100	70.7700	70.7700	True	quality_weight_surah_diversity: 0.106 -> 0.177; quality_weight_meaningfulness: 0.218 -> 0.246; quality_weight_rule_bonus: 0.15 -> 0.208
+1	68.9100	68.9100	True	quality_weight_rule_bonus: 0.15 -> 0.12; quality_weight_coherence: 0.2 -> 0.137; min_quality_for_graph: 50 -> 60
+2	68.9100	68.9100	True	quality_weight_meaningfulness: 0.15 -> 0.077
+3	68.9100	68.9100	True	quality_weight_relevance: 0.15 -> 0.084
+4	68.9100	68.9100	True	quality_weight_surah_diversity: 0.15 -> 0.198
+5	68.9100	68.9100	True	min_insight_support: 2 -> 2; quality_weight_coherence: 0.137 -> 0.101
+6	68.9300	68.9300	True	quality_weight_relevance: 0.15 -> 0.106; min_quality_for_graph: 60 -> 65
+7	68.9300	68.9300	True	quality_weight_surah_diversity: 0.15 -> 0.203
+8	69.0500	69.0500	True	min_quality_for_graph: 65 -> 70
+9	68.9100	69.0500	False	quality_weight_surah_diversity: 0.15 -> 0.07; min_quality_for_graph: 70 -> 60; quality_weight_relevance: 0.106 -> 0.143
+10	69.0500	69.0500	True	quality_weight_specificity: 0.2 -> 0.269; quality_weight_surah_diversity: 0.15 -> 0.175
+11	69.0500	69.0500	True	quality_weight_coherence: 0.137 -> 0.093; quality_weight_meaningfulness: 0.15 -> 0.114
+12	68.8600	69.0500	False	min_quality_for_graph: 70 -> 80
+13	68.9300	69.0500	False	min_quality_for_graph: 70 -> 65
+14	69.0500	69.0500	True	min_insight_support: 2 -> 4; quality_weight_meaningfulness: 0.15 -> 0.217
+15	69.1000	69.1000	True	min_quality_for_insights: 55 -> 50; quality_weight_relevance: 0.106 -> 0.05
+16	69.1000	69.1000	True	quality_weight_coherence: 0.137 -> 0.111; quality_weight_specificity: 0.2 -> 0.237
