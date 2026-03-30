@@ -1,9 +1,9 @@
 {
-  "score": 71.61,
+  "score": 71.83,
   "params": {
-    "min_quality_for_graph": 50,
+    "min_quality_for_graph": 75,
     "min_quality_for_insights": 40,
-    "quality_weight_specificity": 0.251,
+    "quality_weight_specificity": 0.194,
     "quality_weight_surah_diversity": 0.15,
     "quality_weight_meaningfulness": 0.15,
     "quality_weight_coherence": 0.2,

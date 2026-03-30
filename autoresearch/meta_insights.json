@@ -2,203 +2,203 @@
   "hub_verses": [
     {
       "verse_id": "114:6",
-      "deduction_count": 3359
+      "deduction_count": 3474
     },
     {
       "verse_id": "21:24",
-      "deduction_count": 746
+      "deduction_count": 817
     },
     {
       "verse_id": "19:58",
-      "deduction_count": 608
+      "deduction_count": 638
     },
     {
       "verse_id": "75:31",
-      "deduction_count": 366
-    },
-    {
-      "verse_id": "98:8",
-      "deduction_count": 279
+      "deduction_count": 382
     },
     {
       "verse_id": "68:3",
-      "deduction_count": 278
+      "deduction_count": 313
+    },
+    {
+      "verse_id": "98:8",
+      "deduction_count": 312
     },
     {
       "verse_id": "4:24",
-      "deduction_count": 274
+      "deduction_count": 293
     },
     {
       "verse_id": "4:25",
-      "deduction_count": 264
+      "deduction_count": 283
     },
     {
       "verse_id": "6:93",
-      "deduction_count": 260
-    },
-    {
-      "verse_id": "78:31",
-      "deduction_count": 256
-    },
-    {
-      "verse_id": "4:176",
-      "deduction_count": 250
+      "deduction_count": 278
     },
     {
       "verse_id": "34:4",
-      "deduction_count": 244
+      "deduction_count": 274
     },
     {
-      "verse_id": "5:85",
-      "deduction_count": 240
+      "verse_id": "4:176",
+      "deduction_count": 273
     },
     {
-      "verse_id": "58:22",
-      "deduction_count": 238
+      "verse_id": "78:31",
+      "deduction_count": 272
     },
     {
       "verse_id": "5:64",
-      "deduction_count": 233
+      "deduction_count": 267
     },
     {
-      "verse_id": "18:31",
-      "deduction_count": 229
+      "verse_id": "5:85",
+      "deduction_count": 260
+    },
+    {
+      "verse_id": "58:22",
+      "deduction_count": 249
     },
     {
       "verse_id": "18:50",
-      "deduction_count": 221
+      "deduction_count": 247
     },
     {
-      "verse_id": "10:3",
-      "deduction_count": 215
+      "verse_id": "18:31",
+      "deduction_count": 241
     },
     {
       "verse_id": "6:139",
-      "deduction_count": 212
+      "deduction_count": 240
     },
     {
       "verse_id": "5:12",
-      "deduction_count": 207
-    },
-    {
-      "verse_id": "10:49",
-      "deduction_count": 206
-    },
-    {
-      "verse_id": "26:25",
-      "deduction_count": 205
-    },
-    {
-      "verse_id": "73:20",
-      "deduction_count": 201
-    },
-    {
-      "verse_id": "14:39",
-      "deduction_count": 200
-    },
-    {
-      "verse_id": "61:12",
-      "deduction_count": 200
-    },
-    {
-      "verse_id": "65:11",
-      "deduction_count": 199
-    },
-    {
-      "verse_id": "57:18",
-      "deduction_count": 199
-    },
-    {
-      "verse_id": "49:9",
-      "deduction_count": 198
-    },
-    {
-      "verse_id": "59:11",
-      "deduction_count": 196
-    },
-    {
-      "verse_id": "57:10",
-      "deduction_count": 196
-    },
-    {
-      "verse_id": "6:144",
-      "deduction_count": 196
-    },
-    {
-      "verse_id": "20:128",
-      "deduction_count": 195
-    },
-    {
-      "verse_id": "59:8",
-      "deduction_count": 195
-    },
-    {
-      "verse_id": "4:23",
-      "deduction_count": 194
-    },
-    {
-      "verse_id": "5:110",
-      "deduction_count": 193
-    },
-    {
-      "verse_id": "3:195",
-      "deduction_count": 192
-    },
-    {
-      "verse_id": "26:144",
-      "deduction_count": 191
-    },
-    {
-      "verse_id": "24:33",
-      "deduction_count": 190
-    },
-    {
-      "verse_id": "5:2",
-      "deduction_count": 189
-    },
-    {
-      "verse_id": "57:1",
-      "deduction_count": 189
-    },
-    {
-      "verse_id": "59:7",
-      "deduction_count": 187
+      "deduction_count": 236
     },
     {
       "verse_id": "9:36",
-      "deduction_count": 187
+      "deduction_count": 231
     },
     {
-      "verse_id": "38:75",
-      "deduction_count": 186
+      "verse_id": "3:195",
+      "deduction_count": 227
     },
     {
-      "verse_id": "49:1",
-      "deduction_count": 186
+      "verse_id": "5:110",
+      "deduction_count": 226
+    },
+    {
+      "verse_id": "14:39",
+      "deduction_count": 225
+    },
+    {
+      "verse_id": "61:12",
+      "deduction_count": 221
+    },
+    {
+      "verse_id": "5:2",
+      "deduction_count": 219
+    },
+    {
+      "verse_id": "10:3",
+      "deduction_count": 218
+    },
+    {
+      "verse_id": "26:25",
+      "deduction_count": 217
+    },
+    {
+      "verse_id": "59:11",
+      "deduction_count": 216
+    },
+    {
+      "verse_id": "60:9",
+      "deduction_count": 214
+    },
+    {
+      "verse_id": "4:23",
+      "deduction_count": 213
     },
     {
       "verse_id": "13:16",
-      "deduction_count": 185
+      "deduction_count": 212
     },
     {
-      "verse_id": "99:5",
-      "deduction_count": 185
+      "verse_id": "65:11",
+      "deduction_count": 210
     },
     {
-      "verse_id": "10:5",
-      "deduction_count": 185
+      "verse_id": "49:9",
+      "deduction_count": 210
     },
     {
-      "verse_id": "49:8",
-      "deduction_count": 184
+      "verse_id": "6:144",
+      "deduction_count": 210
     },
     {
-      "verse_id": "48:5",
-      "deduction_count": 182
+      "verse_id": "10:49",
+      "deduction_count": 210
     },
     {
       "verse_id": "11:3",
-      "deduction_count": 180
+      "deduction_count": 208
+    },
+    {
+      "verse_id": "68:38",
+      "deduction_count": 208
+    },
+    {
+      "verse_id": "47:4",
+      "deduction_count": 207
+    },
+    {
+      "verse_id": "58:2",
+      "deduction_count": 207
+    },
+    {
+      "verse_id": "57:1",
+      "deduction_count": 207
+    },
+    {
+      "verse_id": "57:18",
+      "deduction_count": 206
+    },
+    {
+      "verse_id": "20:128",
+      "deduction_count": 204
+    },
+    {
+      "verse_id": "10:5",
+      "deduction_count": 204
+    },
+    {
+      "verse_id": "24:33",
+      "deduction_count": 202
+    },
+    {
+      "verse_id": "73:20",
+      "deduction_count": 202
+    },
+    {
+      "verse_id": "49:8",
+      "deduction_count": 201
+    },
+    {
+      "verse_id": "59:8",
+      "deduction_count": 201
+    },
+    {
+      "verse_id": "27:66",
+      "deduction_count": 200
+    },
+    {
+      "verse_id": "38:75",
+      "deduction_count": 198
+    },
+    {
+      "verse_id": "3:174",
+      "deduction_count": 198
     }
   ],
   "structural_patterns": [
@@ -207,350 +207,350 @@
         "almighty",
         "wise"
       ],
-      "count": 1900
+      "count": 2037
     },
     {
       "keyword_pair": [
         "contact",
         "prayer"
       ],
-      "count": 1881
+      "count": 1988
     },
     {
       "keyword_pair": [
         "observe",
         "salat"
       ],
-      "count": 1755
+      "count": 1850
     },
     {
       "keyword_pair": [
         "contact",
         "observe"
       ],
-      "count": 1567
+      "count": 1692
     },
     {
       "keyword_pair": [
         "omniscient",
         "wise"
       ],
-      "count": 1340
+      "count": 1539
     },
     {
       "keyword_pair": [
         "flow",
         "stream"
       ],
-      "count": 1338
+      "count": 1430
     },
     {
       "keyword_pair": [
         "men",
         "woman"
       ],
-      "count": 1239
+      "count": 1392
     },
     {
       "keyword_pair": [
         "persevere",
         "steadfastly"
       ],
-      "count": 1161
+      "count": 1265
     },
     {
       "keyword_pair": [
         "observe",
         "prayer"
       ],
-      "count": 1143
+      "count": 1218
     },
     {
       "keyword_pair": [
         "contact",
         "salat"
       ],
-      "count": 965
+      "count": 1008
     },
     {
       "keyword_pair": [
         "heed",
         "take"
       ],
-      "count": 948
-    },
-    {
-      "keyword_pair": [
-        "abide",
-        "forever"
-      ],
-      "count": 827
+      "count": 992
     },
     {
       "keyword_pair": [
         "hearer",
         "omniscient"
       ],
-      "count": 797
+      "count": 933
+    },
+    {
+      "keyword_pair": [
+        "abide",
+        "forever"
+      ],
+      "count": 881
     },
     {
       "keyword_pair": [
         "abide",
         "stream"
       ],
-      "count": 734
+      "count": 801
+    },
+    {
+      "keyword_pair": [
+        "reward",
+        "righteous"
+      ],
+      "count": 796
     },
     {
       "keyword_pair": [
         "wise",
         "wise"
       ],
-      "count": 734
-    },
-    {
-      "keyword_pair": [
-        "reward",
-        "righteous"
-      ],
-      "count": 712
-    },
-    {
-      "keyword_pair": [
-        "doubt",
-        "harbor"
-      ],
-      "count": 690
-    },
-    {
-      "keyword_pair": [
-        "generation",
-        "truth"
-      ],
-      "count": 683
-    },
-    {
-      "keyword_pair": [
-        "painful",
-        "retribution"
-      ],
-      "count": 677
-    },
-    {
-      "keyword_pair": [
-        "deserve",
-        "deserve"
-      ],
-      "count": 675
-    },
-    {
-      "keyword_pair": [
-        "prayer",
-        "salat"
-      ],
-      "count": 670
+      "count": 793
     },
     {
       "keyword_pair": [
         "fall",
         "prostrate"
       ],
-      "count": 661
+      "count": 768
+    },
+    {
+      "keyword_pair": [
+        "doubt",
+        "harbor"
+      ],
+      "count": 764
+    },
+    {
+      "keyword_pair": [
+        "painful",
+        "retribution"
+      ],
+      "count": 761
+    },
+    {
+      "keyword_pair": [
+        "generation",
+        "truth"
+      ],
+      "count": 744
+    },
+    {
+      "keyword_pair": [
+        "deserve",
+        "deserve"
+      ],
+      "count": 741
     },
     {
       "keyword_pair": [
         "female",
         "male"
       ],
-      "count": 659
+      "count": 740
+    },
+    {
+      "keyword_pair": [
+        "prayer",
+        "salat"
+      ],
+      "count": 703
     },
     {
       "keyword_pair": [
         "observe",
         "observe"
       ],
-      "count": 642
-    },
-    {
-      "keyword_pair": [
-        "almighty",
-        "almighty"
-      ],
-      "count": 610
-    },
-    {
-      "keyword_pair": [
-        "contact",
-        "israel"
-      ],
-      "count": 599
-    },
-    {
-      "keyword_pair": [
-        "contact",
-        "contact"
-      ],
-      "count": 599
+      "count": 686
     },
     {
       "keyword_pair": [
         "help",
         "help"
       ],
-      "count": 586
+      "count": 683
     },
     {
       "keyword_pair": [
-        "generation",
-        "previous"
+        "almighty",
+        "almighty"
       ],
-      "count": 582
+      "count": 661
     },
     {
       "keyword_pair": [
         "obey",
         "reverence"
       ],
-      "count": 580
+      "count": 643
     },
     {
       "keyword_pair": [
         "reward",
         "reward"
       ],
-      "count": 537
+      "count": 637
     },
     {
       "keyword_pair": [
-        "cite",
-        "example"
+        "generation",
+        "previous"
       ],
-      "count": 529
+      "count": 633
+    },
+    {
+      "keyword_pair": [
+        "contact",
+        "contact"
+      ],
+      "count": 633
     },
     {
       "keyword_pair": [
         "forgiver",
         "merciful"
       ],
-      "count": 526
+      "count": 631
+    },
+    {
+      "keyword_pair": [
+        "contact",
+        "israel"
+      ],
+      "count": 629
     },
     {
       "keyword_pair": [
         "omniscient",
         "omniscient"
       ],
-      "count": 520
-    },
-    {
-      "keyword_pair": [
-        "deserve",
-        "righteous"
-      ],
-      "count": 516
-    },
-    {
-      "keyword_pair": [
-        "choose",
-        "whomever"
-      ],
-      "count": 511
-    },
-    {
-      "keyword_pair": [
-        "woman",
-        "woman"
-      ],
-      "count": 502
+      "count": 596
     },
     {
       "keyword_pair": [
         "alone",
         "worship"
       ],
-      "count": 483
+      "count": 587
     },
     {
       "keyword_pair": [
-        "fabricate",
-        "lie"
+        "choose",
+        "whomever"
       ],
-      "count": 472
+      "count": 568
     },
     {
       "keyword_pair": [
-        "charity",
-        "salat"
+        "deserve",
+        "righteous"
       ],
-      "count": 449
+      "count": 564
+    },
+    {
+      "keyword_pair": [
+        "woman",
+        "woman"
+      ],
+      "count": 557
+    },
+    {
+      "keyword_pair": [
+        "cite",
+        "example"
+      ],
+      "count": 556
     },
     {
       "keyword_pair": [
         "whomever",
         "whomever"
       ],
-      "count": 444
+      "count": 503
     },
     {
       "keyword_pair": [
-        "astray",
-        "far"
+        "fabricate",
+        "lie"
       ],
-      "count": 434
-    },
-    {
-      "keyword_pair": [
-        "reverence",
-        "reverence"
-      ],
-      "count": 434
+      "count": 495
     },
     {
       "keyword_pair": [
         "anything",
         "anything"
       ],
-      "count": 432
+      "count": 478
     },
     {
       "keyword_pair": [
-        "stream",
-        "stream"
+        "reverence",
+        "reverence"
       ],
-      "count": 419
+      "count": 475
     },
     {
       "keyword_pair": [
-        "deserve",
-        "reward"
+        "charity",
+        "salat"
       ],
-      "count": 402
+      "count": 468
+    },
+    {
+      "keyword_pair": [
+        "astray",
+        "far"
+      ],
+      "count": 466
     },
     {
       "keyword_pair": [
         "life",
         "righteous"
       ],
-      "count": 397
+      "count": 462
+    },
+    {
+      "keyword_pair": [
+        "stream",
+        "stream"
+      ],
+      "count": 448
+    },
+    {
+      "keyword_pair": [
+        "deserve",
+        "reward"
+      ],
+      "count": 441
     },
     {
       "keyword_pair": [
         "hear",
         "hear"
       ],
-      "count": 392
+      "count": 433
     },
     {
       "keyword_pair": [
-        "prayer",
-        "prayer"
+        "grant",
+        "victory"
       ],
-      "count": 381
+      "count": 421
     },
     {
       "keyword_pair": [
         "put",
         "trust"
       ],
-      "count": 376
+      "count": 401
     }
   ],
   "category_pair_quality": [
@@ -567,128 +567,112 @@
         "prophecy_and_revelation",
         "worship_and_ritual"
       ],
-      "avg_quality": 71.73,
-      "count": 5564
+      "avg_quality": 71.27,
+      "count": 5963
     },
     {
       "categories": [
         "afterlife_and_judgment",
         "moral_law_and_ethics"
       ],
-      "avg_quality": 70.0,
-      "count": 6140
+      "avg_quality": 69.75,
+      "count": 6957
     },
     {
       "categories": [
         "afterlife_and_judgment",
         "covenant_and_obedience"
       ],
-      "avg_quality": 69.23,
-      "count": 3613
+      "avg_quality": 68.97,
+      "count": 4072
     },
     {
       "categories": [
         "afterlife_and_judgment",
         "prophecy_and_revelation"
       ],
-      "avg_quality": 68.65,
-      "count": 5393
+      "avg_quality": 68.48,
+      "count": 6136
     },
     {
       "categories": [
         "afterlife_and_judgment",
         "prophetic_narratives"
       ],
-      "avg_quality": 68.59,
-      "count": 1407
-    },
-    {
-      "categories": [
-        "afterlife_and_judgment",
-        "monotheism_and_gods_nature"
-      ],
-      "avg_quality": 68.27,
-      "count": 22751
+      "avg_quality": 68.38,
+      "count": 1531
     },
     {
       "categories": [
         "prophecy_and_revelation",
         "social_law"
       ],
-      "avg_quality": 68.16,
-      "count": 757
+      "avg_quality": 68.24,
+      "count": 863
+    },
+    {
+      "categories": [
+        "afterlife_and_judgment",
+        "monotheism_and_gods_nature"
+      ],
+      "avg_quality": 68.06,
+      "count": 25683
     },
     {
       "categories": [
         "prophecy_and_revelation",
         "prophetic_narratives"
       ],
-      "avg_quality": 68.05,
-      "count": 1404
-    },
-    {
-      "categories": [
-        "monotheism_and_gods_nature",
-        "prophecy_and_revelation"
-      ],
-      "avg_quality": 68.04,
-      "count": 24354
-    },
-    {
-      "categories": [
-        "monotheism_and_gods_nature",
-        "worship_and_ritual"
-      ],
-      "avg_quality": 67.96,
-      "count": 14015
+      "avg_quality": 68.03,
+      "count": 1578
     },
     {
       "categories": [
         "covenant_and_obedience",
         "prophecy_and_revelation"
       ],
-      "avg_quality": 67.96,
-      "count": 3689
+      "avg_quality": 67.92,
+      "count": 4198
     },
     {
       "categories": [
-        "creation_and_cosmology",
-        "prophetic_narratives"
+        "monotheism_and_gods_nature",
+        "prophecy_and_revelation"
       ],
-      "avg_quality": 67.57,
-      "count": 741
-    },
-    {
-      "categories": [
-        "creation_and_cosmology",
-        "moral_law_and_ethics"
-      ],
-      "avg_quality": 67.53,
-      "count": 1728
-    },
-    {
-      "categories": [
-        "moral_law_and_ethics",
-        "prophetic_narratives"
-      ],
-      "avg_quality": 67.5,
-      "count": 1132
-    },
-    {
-      "categories": [
-        "afterlife_and_judgment",
-        "worship_and_ritual"
-      ],
-      "avg_quality": 67.44,
-      "count": 1949
+      "avg_quality": 67.82,
+      "count": 27336
     },
     {
       "categories": [
         "covenant_and_obedience",
         "warfare_and_struggle"
       ],
-      "avg_quality": 67.35,
-      "count": 377
+      "avg_quality": 67.47,
+      "count": 463
+    },
+    {
+      "categories": [
+        "monotheism_and_gods_nature",
+        "worship_and_ritual"
+      ],
+      "avg_quality": 67.44,
+      "count": 15578
+    },
+    {
+      "categories": [
+        "creation_and_cosmology",
+        "moral_law_and_ethics"
+      ],
+      "avg_quality": 67.39,
+      "count": 1927
+    },
+    {
+      "categories": [
+        "creation_and_cosmology",
+        "prophetic_narratives"
+      ],
+      "avg_quality": 67.37,
+      "count": 817
     },
     {
       "categories": [
@@ -700,154 +684,179 @@
     },
     {
       "categories": [
+        "afterlife_and_judgment",
+        "worship_and_ritual"
+      ],
+      "avg_quality": 67.32,
+      "count": 2175
+    },
+    {
+      "categories": [
         "creation_and_cosmology",
         "prophecy_and_revelation"
       ],
-      "avg_quality": 67.28,
-      "count": 2648
-    },
-    {
-      "categories": [
-        "covenant_and_obedience",
-        "prophetic_narratives"
-      ],
-      "avg_quality": 67.22,
-      "count": 495
-    },
-    {
-      "categories": [
-        "afterlife_and_judgment",
-        "divine_mercy_and_forgiveness"
-      ],
-      "avg_quality": 67.21,
-      "count": 1276
-    },
-    {
-      "categories": [
-        "afterlife_and_judgment",
-        "social_law"
-      ],
-      "avg_quality": 67.2,
-      "count": 970
-    },
-    {
-      "categories": [
-        "divine_mercy_and_forgiveness",
-        "moral_law_and_ethics"
-      ],
-      "avg_quality": 67.16,
-      "count": 831
-    },
-    {
-      "categories": [
-        "afterlife_and_judgment",
-        "creation_and_cosmology"
-      ],
-      "avg_quality": 67.06,
-      "count": 4143
-    },
-    {
-      "categories": [
-        "monotheism_and_gods_nature",
-        "moral_law_and_ethics"
-      ],
-      "avg_quality": 67.03,
-      "count": 20103
-    },
-    {
-      "categories": [
-        "moral_law_and_ethics",
-        "worship_and_ritual"
-      ],
-      "avg_quality": 66.99,
-      "count": 3344
+      "avg_quality": 67.25,
+      "count": 2918
     },
     {
       "categories": [
         "afterlife_and_judgment",
         "warfare_and_struggle"
       ],
-      "avg_quality": 66.96,
-      "count": 548
+      "avg_quality": 67.08,
+      "count": 634
     },
     {
       "categories": [
-        "prophetic_narratives",
-        "worship_and_ritual"
+        "afterlife_and_judgment",
+        "creation_and_cosmology"
       ],
-      "avg_quality": 66.76,
-      "count": 536
+      "avg_quality": 67.01,
+      "count": 4643
+    },
+    {
+      "categories": [
+        "afterlife_and_judgment",
+        "social_law"
+      ],
+      "avg_quality": 66.99,
+      "count": 1105
+    },
+    {
+      "categories": [
+        "afterlife_and_judgment",
+        "divine_mercy_and_forgiveness"
+      ],
+      "avg_quality": 66.97,
+      "count": 1450
+    },
+    {
+      "categories": [
+        "moral_law_and_ethics",
+        "prophetic_narratives"
+      ],
+      "avg_quality": 66.87,
+      "count": 1241
+    },
+    {
+      "categories": [
+        "covenant_and_obedience",
+        "prophetic_narratives"
+      ],
+      "avg_quality": 66.87,
+      "count": 542
+    },
+    {
+      "categories": [
+        "monotheism_and_gods_nature",
+        "moral_law_and_ethics"
+      ],
+      "avg_quality": 66.75,
+      "count": 22865
+    },
+    {
+      "categories": [
+        "divine_mercy_and_forgiveness",
+        "moral_law_and_ethics"
+      ],
+      "avg_quality": 66.63,
+      "count": 972
     },
     {
       "categories": [
         "covenant_and_obedience",
         "monotheism_and_gods_nature"
       ],
-      "avg_quality": 66.67,
-      "count": 11876
+      "avg_quality": 66.58,
+      "count": 13486
+    },
+    {
+      "categories": [
+        "moral_law_and_ethics",
+        "worship_and_ritual"
+      ],
+      "avg_quality": 66.46,
+      "count": 3813
+    },
+    {
+      "categories": [
+        "moral_law_and_ethics",
+        "prophecy_and_revelation"
+      ],
+      "avg_quality": 66.32,
+      "count": 6237
     },
     {
       "categories": [
         "creation_and_cosmology",
         "worship_and_ritual"
       ],
-      "avg_quality": 66.61,
-      "count": 1438
+      "avg_quality": 66.28,
+      "count": 1613
     }
   ],
   "deduction_clusters": [
     {
       "surah_pair": [
+        "2",
+        "9"
+      ],
+      "num_deductions": 643,
+      "avg_quality": 72.09,
+      "best_conclusion": "[5:3] (Animals that die of themselves —[promises]→ those ) strangled , struck with an object) connects to [2:282] (You Who Believe —[commands]→ it) through thematic chain: religion → prohibit → last →"
+    },
+    {
+      "surah_pair": [
         "10",
         "7"
       ],
-      "num_deductions": 571,
-      "avg_quality": 72.56,
+      "num_deductions": 602,
+      "avg_quality": 72.58,
       "best_conclusion": "[10:88] (they —[states]→ them) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: others → retribution → world → hereafter → life → obligatory. Path: [10:88"
     },
     {
       "surah_pair": [
-        "10",
-        "6"
-      ],
-      "num_deductions": 531,
-      "avg_quality": 69.13,
-      "best_conclusion": "[10:59] (You —[states]→ lies) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: attribute → give → hand → arrogant → satan → rebel. Path: [10:59] → [6:93] "
-    },
-    {
-      "surah_pair": [
         "2",
         "7"
       ],
-      "num_deductions": 495,
-      "avg_quality": 74.32,
+      "num_deductions": 571,
+      "avg_quality": 73.28,
       "best_conclusion": "[2:243] (You —[describes]→ those who fled their homes) connects to [7:155] (MOSES —[states]→ seventy men) through thematic chain: grace → shower → retribution → painful → u → annihilate. Path: [2:243]"
-    },
-    {
-      "surah_pair": [
-        "2",
-        "9"
-      ],
-      "num_deductions": 473,
-      "avg_quality": 73.67,
-      "best_conclusion": "[5:3] (Animals that die of themselves —[promises]→ those ) strangled , struck with an object) connects to [2:282] (You Who Believe —[commands]→ it) through thematic chain: religion → prohibit → last →"
     },
     {
       "surah_pair": [
         "2",
         "5"
       ],
-      "num_deductions": 458,
-      "avg_quality": 61.89,
+      "num_deductions": 554,
+      "avg_quality": 61.8,
       "best_conclusion": "[24:58] (GOD —[states]→ the revelations for you) connects to [2:246] (You —[describes]→ the leaders of Israel) through thematic chain: wrong → room → right → enter → fight → moses. Path: [24:58] → [38"
+    },
+    {
+      "surah_pair": [
+        "10",
+        "6"
+      ],
+      "num_deductions": 544,
+      "avg_quality": 69.31,
+      "best_conclusion": "[10:59] (You —[states]→ lies) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: attribute → give → hand → arrogant → satan → rebel. Path: [10:59] → [6:93] "
+    },
+    {
+      "surah_pair": [
+        "2",
+        "4"
+      ],
+      "num_deductions": 499,
+      "avg_quality": 64.76,
+      "best_conclusion": "[4:102] (You —[describes]→ no error) connects to [2:213] (He —[decrees]→ the scripture) through thematic chain: take → shameful → others → uphold → receive → part. Path: [4:102] → [31:6] → [35:32] → ["
     },
     {
       "surah_pair": [
         "18",
         "7"
       ],
-      "num_deductions": 436,
-      "avg_quality": 57.26,
+      "num_deductions": 452,
+      "avg_quality": 57.67,
       "best_conclusion": "[7:160] (Each Community —[states]→ its water) connects to [18:18] (You —[describes]→ from them) through thematic chain: manna → eat → manna → quail → side → right. Path: [7:160] → [2:57] → [20:80] → ["
     },
     {
@@ -855,107 +864,44 @@
         "2",
         "8"
       ],
-      "num_deductions": 385,
-      "avg_quality": 68.76,
+      "num_deductions": 425,
+      "avg_quality": 68.8,
       "best_conclusion": "[3:170] (They —[commands]→ in GOD 's grace) connects to [8:72] (You —[commands]→ any support) through thematic chain: good → news → money → live → cause → strive. Path: [3:170] → [2:155] → [49:15] → ["
     },
     {
       "surah_pair": [
         "2",
-        "4"
+        "6"
       ],
-      "num_deductions": 379,
-      "avg_quality": 67.29,
-      "best_conclusion": "[4:102] (You —[describes]→ no error) connects to [2:213] (He —[decrees]→ the scripture) through thematic chain: take → shameful → others → uphold → receive → part. Path: [4:102] → [31:6] → [35:32] → ["
+      "num_deductions": 412,
+      "avg_quality": 71.77,
+      "best_conclusion": "[2:26] (GOD —[states]→ from the tiny mosquito and greater) connects to [59:9] (they —[describes]→ those who immigrated to them) through thematic chain: mislead → many → without → transgressor → help →"
     },
     {
       "surah_pair": [
         "26",
         "7"
       ],
-      "num_deductions": 345,
-      "avg_quality": 62.59,
+      "num_deductions": 354,
+      "avg_quality": 62.77,
       "best_conclusion": "[4:89] (You —[commands]→ them) connects to [7:49] (You —[commands]→ nothing to fear) through thematic chain: kill → consider → fear → fear → grieve. Path: [4:89] → [26:14] → [43:68] → [7:49]"
-    },
-    {
-      "surah_pair": [
-        "2",
-        "6"
-      ],
-      "num_deductions": 325,
-      "avg_quality": 73.61,
-      "best_conclusion": "[2:26] (GOD —[states]→ from the tiny mosquito and greater) connects to [59:9] (they —[describes]→ those who immigrated to them) through thematic chain: mislead → many → without → transgressor → help →"
     },
     {
       "surah_pair": [
         "16",
         "7"
       ],
-      "num_deductions": 300,
-      "avg_quality": 75.38,
+      "num_deductions": 344,
+      "avg_quality": 75.01,
       "best_conclusion": "[16:2] (You —[commands]→ Me) connects to [2:105] (GOD —[states]→ His blessings) through thematic chain: beside → send → servant → whomever → among → choose. Path: [16:2] → [39:36] → [7:128] → [2:105]"
-    },
-    {
-      "surah_pair": [
-        "20",
-        "7"
-      ],
-      "num_deductions": 257,
-      "avg_quality": 73.22,
-      "best_conclusion": "[29:12] (Those Who Disbelieved —[commands]→ to those who believed , \" If you follow) connects to [35:18] (No Soul —[states]→ the sins of another soul) through thematic chain: bear → cannot → resurrect"
-    },
-    {
-      "surah_pair": [
-        "10",
-        "4"
-      ],
-      "num_deductions": 255,
-      "avg_quality": 67.53,
-      "best_conclusion": "[4:13] (GOD —[commands]→ them) connects to [19:58] (they —[describes]→ prostrate) through thematic chain: greatest → triumph → joy → hereafter → noah → descendant. Path: [4:13] → [10:64] → [114:6] → ["
-    },
-    {
-      "surah_pair": [
-        "15",
-        "7"
-      ],
-      "num_deductions": 236,
-      "avg_quality": 67.45,
-      "best_conclusion": "[16:27] (He —[describes]→ them) connects to [7:49] (You —[commands]→ nothing to fear) through thematic chain: shame → fear → fear → grieve. Path: [16:27] → [15:69] → [43:68] → [7:49]"
-    },
-    {
-      "surah_pair": [
-        "11",
-        "7"
-      ],
-      "num_deductions": 231,
-      "avg_quality": 75.45,
-      "best_conclusion": "[7:101] (their messengers —[commands]→ with clear proofs) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: community → narrate → past → news → another → p"
-    },
-    {
-      "surah_pair": [
-        "17",
-        "7"
-      ],
-      "num_deductions": 229,
-      "avg_quality": 74.19,
-      "best_conclusion": "[17:46] (they —[states]→ in aversion) connects to [58:22] (He —[decrees]→ faith) through thematic chain: ear → understand → see → worse → flow → befriend. Path: [17:46] → [7:179] → [3:118] → [58:22]"
-    },
-    {
-      "surah_pair": [
-        "114",
-        "6"
-      ],
-      "num_deductions": 226,
-      "avg_quality": 80.56,
-      "best_conclusion": "[31:32] (they —[states]→ GOD) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: save → implore → darkness → appreciative → light → moses. Path: [31:32] → ["
     },
     {
       "surah_pair": [
         "3",
         "9"
       ],
-      "num_deductions": 225,
-      "avg_quality": 70.85,
+      "num_deductions": 319,
+      "avg_quality": 71.13,
       "best_conclusion": "[57:27] (they —[prohibits]→ hermitism which we never decreed for them) connects to [3:78] (they —[states]→ lies) through thematic chain: jesus → uphold → utter → disbelieve → utter → lie. Path: [57:27"
     },
     {
@@ -963,26 +909,80 @@
         "16",
         "9"
       ],
-      "num_deductions": 224,
-      "avg_quality": 74.12,
+      "num_deductions": 289,
+      "avg_quality": 73.69,
       "best_conclusion": "[2:146] (Those who received the scripture —[reveals]→ the truth herein) connects to [9:120] (they —[commands]→ priority) through thematic chain: conceal → declare → suffer → single. Path: [2:146] → [1"
+    },
+    {
+      "surah_pair": [
+        "20",
+        "7"
+      ],
+      "num_deductions": 278,
+      "avg_quality": 72.92,
+      "best_conclusion": "[39:8] (he —[describes]→ his Lord) connects to [5:8] (You —[commands]→ GOD) through thematic chain: afflict → implore → adversity → injustice. Path: [39:8] → [7:94] → [20:112] → [5:8]"
+    },
+    {
+      "surah_pair": [
+        "4",
+        "9"
+      ],
+      "num_deductions": 275,
+      "avg_quality": 67.79,
+      "best_conclusion": "[4:91] (You —[states]→ others who wish to make peace with you) connects to [9:120] (they —[commands]→ priority) through thematic chain: unless → fight → understand → behind → stay → war. Path: [4:91] "
+    },
+    {
+      "surah_pair": [
+        "10",
+        "4"
+      ],
+      "num_deductions": 274,
+      "avg_quality": 67.29,
+      "best_conclusion": "[4:13] (GOD —[commands]→ them) connects to [19:58] (they —[describes]→ prostrate) through thematic chain: greatest → triumph → joy → hereafter → noah → descendant. Path: [4:13] → [10:64] → [114:6] → ["
+    },
+    {
+      "surah_pair": [
+        "17",
+        "7"
+      ],
+      "num_deductions": 268,
+      "avg_quality": 74.04,
+      "best_conclusion": "[17:46] (they —[states]→ in aversion) connects to [58:22] (He —[decrees]→ faith) through thematic chain: ear → understand → see → worse → flow → befriend. Path: [17:46] → [7:179] → [3:118] → [58:22]"
+    },
+    {
+      "surah_pair": [
+        "11",
+        "7"
+      ],
+      "num_deductions": 262,
+      "avg_quality": 75.23,
+      "best_conclusion": "[7:101] (their messengers —[commands]→ with clear proofs) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: community → narrate → past → news → another → p"
+    },
+    {
+      "surah_pair": [
+        "15",
+        "7"
+      ],
+      "num_deductions": 254,
+      "avg_quality": 67.87,
+      "best_conclusion": "[16:27] (He —[describes]→ them) connects to [7:49] (You —[commands]→ nothing to fear) through thematic chain: shame → fear → fear → grieve. Path: [16:27] → [15:69] → [43:68] → [7:49]"
     },
     {
       "surah_pair": [
         "16",
         "6"
       ],
-      "num_deductions": 224,
-      "avg_quality": 74.03,
-      "best_conclusion": "[22:72] (You —[describes]→ wickedness) connects to [6:128] (You —[describes]→ multitudes of humans) through thematic chain: destiny → hell → miserable → abide → abide → forever. Path: [22:72] → [16:29"
+      "num_deductions": 247,
+      "avg_quality": 73.95,
+      "best_conclusion": "[5:48] (You —[commands]→ in accordance with GOD 's revelations) connects to [30:9] (they —[describes]→ the earth) through thematic chain: test → put → hardship → community → prosperous → consequently."
     },
     {
       "surah_pair": [
         "16",
         "4"
       ],
-      "num_deductions": 223,
-      "avg_quality": 60.44,
+      "num_deductions": 243,
+      "avg_quality": 60.03,
       "best_conclusion": "[16:31] (They —[describes]→ anything they wish therein) connects to [4:77] (they —[commands]→ the people) through thematic chain: river → eden → abide → gold → better → material. Path: [16:31] → [18:3"
     },
     {
@@ -990,86 +990,86 @@
         "12",
         "4"
       ],
-      "num_deductions": 222,
-      "avg_quality": 69.84,
+      "num_deductions": 241,
+      "avg_quality": 69.08,
       "best_conclusion": "[4:34] (The men —[creates]→ responsible for the women) connects to [16:112] (GOD —[states]→ the example of a community that used to) through thematic chain: experience → make → knowledgeable → example"
     },
     {
       "surah_pair": [
-        "23",
-        "7"
+        "114",
+        "6"
       ],
-      "num_deductions": 201,
-      "avg_quality": 71.29,
-      "best_conclusion": "[65:11] (GOD —[promises]→ him) connects to [6:70] (You —[commands]→ those who take their religion in vain) through thematic chain: abide → forever → lose → soul → consequence → disregard. Path: [65:11"
-    },
-    {
-      "surah_pair": [
-        "18",
-        "5"
-      ],
-      "num_deductions": 200,
-      "avg_quality": 59.68,
-      "best_conclusion": "[5:41] (Some —[states]→ to lies) connects to [39:23] (GOD —[states]→ for GOD 's message) through thematic chain: accept → jew → follow → knowledge → bestow → guidance. Path: [5:41] → [2:120] → [18:66]"
+      "num_deductions": 233,
+      "avg_quality": 80.5,
+      "best_conclusion": "[31:32] (they —[states]→ GOD) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: save → implore → darkness → appreciative → light → moses. Path: [31:32] → ["
     },
     {
       "surah_pair": [
         "12",
         "7"
       ],
-      "num_deductions": 197,
-      "avg_quality": 74.12,
+      "num_deductions": 231,
+      "avg_quality": 73.38,
       "best_conclusion": "[4:66] (they —[commands]→ it) connects to [6:30] (You —[states]→ them) through thematic chain: live → home → close → yes. Path: [4:66] → [12:23] → [7:114] → [6:30]"
     },
     {
       "surah_pair": [
-        "114",
-        "7"
-      ],
-      "num_deductions": 196,
-      "avg_quality": 85.43,
-      "best_conclusion": "[6:120] (You —[commands]→ obvious sins) connects to [114:6] (The reader —[states]→ the accuracy of this total) through thematic chain: pay → earn → efficient → resurrection → forgiver. Path: [6:120] →"
-    },
-    {
-      "surah_pair": [
         "10",
-        "8"
-      ],
-      "num_deductions": 193,
-      "avg_quality": 74.49,
-      "best_conclusion": "[3:154] (He —[states]→ upon you) connects to [10:73] (They —[creates]→ him) through thematic chain: peaceful → pacify → water → protect → drown → save. Path: [3:154] → [8:11] → [11:43] → [10:73]"
-    },
-    {
-      "surah_pair": [
-        "26",
-        "6"
-      ],
-      "num_deductions": 191,
-      "avg_quality": 65.7,
-      "best_conclusion": "[6:139] (they —[describes]→ their wives) connects to [4:104] (You —[prohibits]→ from GOD) through thematic chain: wive → transgress → suffer. Path: [6:139] → [26:166] → [52:47] → [4:104]"
-    },
-    {
-      "surah_pair": [
-        "4",
         "9"
       ],
-      "num_deductions": 186,
-      "avg_quality": 68.87,
-      "best_conclusion": "[4:91] (You —[states]→ others who wish to make peace with you) connects to [9:120] (they —[commands]→ priority) through thematic chain: unless → fight → understand → behind → stay → war. Path: [4:91] "
+      "num_deductions": 225,
+      "avg_quality": 74.89,
+      "best_conclusion": "[9:120] (they —[commands]→ priority) connects to [10:22] (You —[states]→ onto the ships) through thematic chain: recompense → fail → shower → mercy → sea → ship. Path: [9:120] → [12:56] → [30:46] → [1"
     },
     {
       "surah_pair": [
         "18",
         "9"
       ],
-      "num_deductions": 186,
-      "avg_quality": 74.27,
+      "num_deductions": 217,
+      "avg_quality": 74.21,
       "best_conclusion": "[18:16] (GOD —[promises]→ you) connects to [9:69] (You —[describes]→ like those before you have become preoccupied) through thematic chain: since → decision → blunder → heedless. Path: [18:16] → [6:11"
+    },
+    {
+      "surah_pair": [
+        "23",
+        "7"
+      ],
+      "num_deductions": 215,
+      "avg_quality": 71.23,
+      "best_conclusion": "[65:11] (GOD —[promises]→ him) connects to [6:70] (You —[commands]→ those who take their religion in vain) through thematic chain: abide → forever → lose → soul → consequence → disregard. Path: [65:11"
+    },
+    {
+      "surah_pair": [
+        "10",
+        "8"
+      ],
+      "num_deductions": 213,
+      "avg_quality": 73.97,
+      "best_conclusion": "[3:154] (He —[states]→ upon you) connects to [10:73] (They —[creates]→ him) through thematic chain: peaceful → pacify → water → protect → drown → save. Path: [3:154] → [8:11] → [11:43] → [10:73]"
+    },
+    {
+      "surah_pair": [
+        "26",
+        "9"
+      ],
+      "num_deductions": 213,
+      "avg_quality": 71.96,
+      "best_conclusion": "[9:91] (GOD —[is]→ forgiver) connects to [58:22] (He —[decrees]→ faith) through thematic chain: blame → blame → stream → abide. Path: [9:91] → [26:3] → [64:9] → [58:22]"
+    },
+    {
+      "surah_pair": [
+        "18",
+        "5"
+      ],
+      "num_deductions": 210,
+      "avg_quality": 59.89,
+      "best_conclusion": "[5:41] (Some —[states]→ to lies) connects to [39:23] (GOD —[states]→ for GOD 's message) through thematic chain: accept → jew → follow → knowledge → bestow → guidance. Path: [5:41] → [2:120] → [18:66]"
     }
   ],
-  "analysis_round": 45,
-  "timestamp": "2026-03-30T12:47:37.996512",
-  "total_deductions_analyzed": 72683,
+  "analysis_round": 47,
+  "timestamp": "2026-03-30T12:49:37.681613",
+  "total_deductions_analyzed": 81909,
   "current_weights": {
     "specificity": 0.2,
     "surah_diversity": 0.15,
@@ -1083,5 +1083,5 @@
     "min_quality_for_insights": 60,
     "top_categorized_keep": 500
   },
-  "insight_quality_score": 3719.07
+  "insight_quality_score": 3748.7
 }
