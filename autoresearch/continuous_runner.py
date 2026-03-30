@@ -207,6 +207,9 @@ def main():
         ("narrative_loop", "narrative_loop.py"),
         ("contradiction_loop", "contradiction_loop.py"),
         ("deepening_loop", "deepening_loop.py"),
+        ("rhetorical_loop", "rhetorical_loop.py"),
+        ("intertextuality_loop", "intertextuality_loop.py"),
+        ("linguistics_loop", "linguistics_loop.py"),
     ]:
         script_path = os.path.join(AUTORESEARCH_DIR, script_name)
         if os.path.exists(script_path):
