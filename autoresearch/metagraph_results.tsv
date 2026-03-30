@@ -790,3 +790,6 @@ experiment	score	best	kept	mutations
 89	70.7900	70.8100	False	min_quality_for_graph: 80 -> 75; quality_weight_specificity: 0.272 -> 0.225; quality_weight_relevance: 0.189 -> 0.254
 90	70.8100	70.8100	True	quality_weight_relevance: 0.189 -> 0.089; quality_weight_rule_bonus: 0.15 -> 0.19
 91	70.8100	70.8100	True	min_quality_for_insights: 40 -> 40
+92	70.8100	70.8100	True	quality_weight_relevance: 0.189 -> 0.252; min_quality_for_insights: 40 -> 40; quality_weight_surah_diversity: 0.15 -> 0.108
+93	70.8100	70.8100	True	min_insight_support: 4 -> 2; min_quality_for_graph: 80 -> 80
+94	70.8100	70.8100	True	min_quality_for_insights: 40 -> 40; quality_weight_surah_diversity: 0.15 -> 0.232
