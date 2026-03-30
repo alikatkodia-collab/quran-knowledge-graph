@@ -202,3 +202,8 @@ round	timestamp	novel_found	total_novel	elapsed	strategy	mutations
 74	2026-03-30T12:12:37.586569	372	30402	8.8	by_surah	focus: specific -> all
 75	2026-03-30T12:12:39.860008	197	30599	2.3	by_surah	focus: all -> surahs [8, 12, 28, 46, 62]...
 76	2026-03-30T12:12:42.263791	107	30706	2.4	by_surah	verses: 500 -> 3000; max_neighbors_hop2: 2 -> 3
+77	2026-03-30T12:12:44.726645	36	30742	2.5	by_surah	verses: 3000 -> 1500; transitive_max_chains: 800 -> 300; max_neighbors_hop2: 3 -> 4
+78	2026-03-30T12:12:47.113172	39	30781	2.4	by_surah	max_neighbors_hop1: 20 -> 19
+79	2026-03-30T12:12:49.463870	21	30802	2.3	by_surah	thematic_bridge_max: 500 -> 300
+80	2026-03-30T12:12:51.806439	127	30929	2.3	by_surah	shared_subject_max: 200 -> 500; min_novelty: 80 -> 50; max_neighbors_hop3: 11 -> 10
+81	2026-03-30T12:13:09.229169	663	31592	17.4	random	strategy: by_surah -> random; thematic_bridge_max: 300 -> 200; focus: specific -> all
