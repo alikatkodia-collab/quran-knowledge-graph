@@ -31,7 +31,22 @@ def load_json(path, default=None):
 
 def build_graph_data():
     """Build the data that /api/deductions/graph would return."""
-    from deductions_api import CATEGORY_COLORS
+    CATEGORY_COLORS = {
+        "monotheism_and_gods_nature": "#10b981",
+        "prophecy_and_revelation": "#3b82f6",
+        "moral_law_and_ethics": "#f59e0b",
+        "worship_and_ritual": "#8b5cf6",
+        "afterlife_and_judgment": "#ef4444",
+        "creation_and_cosmology": "#06b6d4",
+        "prophetic_narratives": "#f97316",
+        "social_law": "#ec4899",
+        "covenant_and_obedience": "#14b8a6",
+        "divine_mercy_and_forgiveness": "#a3e635",
+        "warfare_and_struggle": "#dc2626",
+        "knowledge_and_wisdom": "#818cf8",
+        "mathematical_miracle": "#fbbf24",
+        "uncategorized": "#475569",
+    }
     data = load_json(AUTORESEARCH / "meta_knowledge_graph.json", {"nodes": [], "edges": []})
     nodes = []
     for n in data.get("nodes", []):

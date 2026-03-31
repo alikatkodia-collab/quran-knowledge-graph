@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quran Knowledge Graph — Statistical Insights</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#060a14;--card:#0f1a2e;--green:#10b981;--gold:#f59e0b;
+    --text:#cbd5e1;--muted:#64748b;--bright:#f1f5f9;--border:#1e293b;
+  }
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth;overflow-y:scroll}
+  body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;line-height:1.6}
+  h1,h2,h3,h4{font-family:Georgia,serif;color:var(--bright)}
+  .slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 2rem;padding-top:4rem;position:relative}
+  .slide-inner{max-width:1100px;width:100%}
+  .slide-number{position:absolute;top:2rem;right:2rem;color:var(--muted);font-size:.85rem;font-family:Georgia,serif}
+
+  /* Slide indicator */
+  .indicator{position:fixed;right:1rem;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:8px}
+  .indicator .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);transition:all .3s;cursor:pointer;border:none;padding:0}
+  .indicator .dot.active{background:var(--green);transform:scale(1.5)}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
+  .stat-card{text-align:center}
+  .stat-card .value{font-size:2.2rem;font-weight:700;color:var(--green);font-family:Georgia,serif}
+  .stat-card .label{color:var(--muted);font-size:.9rem;margin-top:.25rem}
+  .stat-card .sublabel{color:var(--muted);font-size:.75rem}
+
+  /* Bar charts */
+  .bar-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem}
+  .bar-label{min-width:110px;text-align:right;font-size:.85rem;color:var(--text);white-space:nowrap}
+  .bar-track{flex:1;height:26px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;border-radius:4px;width:0;transition:width 1s ease;display:flex;align-items:center;padding-left:8px;font-size:.75rem;color:var(--bright);font-weight:600}
+  .bar-fill.green{background:linear-gradient(90deg,var(--green),#059669)}
+  .bar-fill.gold{background:linear-gradient(90deg,var(--gold),#d97706)}
+  .bar-value{font-size:.8rem;color:var(--muted);min-width:50px;text-align:left}
+
+  /* Vertical bars */
+  .vbar-container{display:flex;align-items:flex-end;justify-content:center;gap:2rem;height:260px;margin:2rem 0 .5rem;padding:0 1rem}
+  .vbar-col{display:flex;flex-direction:column;align-items:center;flex:1;max-width:140px;height:100%}
+  .vbar-val{font-size:.8rem;color:var(--bright);font-weight:600;margin-bottom:4px}
+  .vbar-wrap{flex:1;width:100%;display:flex;align-items:flex-end}
+  .vbar-fill{width:100%;border-radius:6px 6px 0 0;transition:height 1s ease;height:0}
+  .vbar-fill.green{background:linear-gradient(0deg,#059669,var(--green))}
+  .vbar-fill.gold{background:linear-gradient(0deg,#d97706,var(--gold))}
+  .vbar-label{font-size:.75rem;color:var(--muted);margin-top:8px;text-align:center;white-space:nowrap}
+  .vbar-pct{font-size:.7rem;color:var(--muted)}
+
+  /* Two columns */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+
+  /* Table */
+  .styled-table{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:.88rem}
+  .styled-table th{text-align:left;padding:.6rem .8rem;color:var(--muted);border-bottom:1px solid var(--border);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+  .styled-table td{padding:.55rem .8rem;border-bottom:1px solid var(--border)}
+  .styled-table tr:hover td{background:rgba(16,185,129,.04)}
+  .score{color:var(--green);font-weight:700;font-family:Georgia,serif}
+
+  /* Insight cards */
+  .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+  .insight-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:1.1rem 1.25rem}
+  .insight-card h4{font-size:.95rem;margin-bottom:.35rem;color:var(--bright)}
+  .insight-card p{font-size:.82rem;color:var(--muted);line-height:1.5}
+
+  /* Doughnut */
+  .doughnut-wrap{display:flex;align-items:center;justify-content:center;gap:3rem;margin-top:2rem;flex-wrap:wrap}
+  .doughnut-legend{display:flex;flex-direction:column;gap:1rem}
+  .legend-item{display:flex;align-items:center;gap:.75rem;font-size:1rem}
+  .legend-dot{width:14px;height:14px;border-radius:50%}
+  .callout{text-align:center;margin-top:2rem;font-size:1.3rem;font-family:Georgia,serif;color:var(--bright)}
+  .footer-quote{text-align:center;margin-top:1.5rem;font-style:italic;color:var(--muted);font-size:1.05rem;font-family:Georgia,serif}
+
+  /* Subtitle */
+  .subtitle{color:var(--muted);font-size:1.1rem;margin-top:.75rem}
+  .note{color:var(--muted);font-size:.85rem;margin-top:1rem;font-style:italic;text-align:center}
+  .section-title{font-size:1.8rem;margin-bottom:.25rem}
+  .title-big{font-size:2.6rem;margin-bottom:.5rem}
+
+  /* Visible animation class */
+  .slide.visible .bar-fill{width:var(--w)}
+  .slide.visible .vbar-fill{height:var(--h)}
+
+  /* Surah list */
+  .surah-list{list-style:none;margin-top:1rem}
+  .surah-list li{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.92rem}
+  .surah-list li .count{color:var(--green);font-weight:700;font-family:Georgia,serif}
+  .col-header{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;display:flex;justify-content:space-between}
+
+  @media(max-width:768px){
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
+    .two-col,.insight-grid{grid-template-columns:1fr}
+    .stat-card .value{font-size:1.6rem}
+    .title-big{font-size:1.8rem}
+    .section-title{font-size:1.4rem}
+    .bar-label{min-width:80px;font-size:.75rem}
+    .vbar-container{gap:1rem}
+    .doughnut-wrap{flex-direction:column}
+    .slide{padding:2rem 1rem}
+  }
+  @media(max-width:480px){
+    .stat-grid{grid-template-columns:1fr 1fr}
+    .insight-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header with tabs -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:200;padding:10px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;background:rgba(10,15,26,0.95);backdrop-filter:blur(8px)">
+  <h4 style="font-size:1.05em;font-weight:700;color:#10b981;white-space:nowrap;margin:0">Quran Knowledge Graph</h4>
+  <nav style="display:flex;gap:4px">
+    <a href="index.html" style="padding:4px 14px;border-radius:6px;font-size:.76em;font-weight:600;color:#64748b;text-decoration:none;border:1px solid transparent;transition:all .15s">Explorer</a>
+    <a href="stats.html" style="padding:4px 14px;border-radius:6px;font-size:.76em;font-weight:600;color:#10b981;text-decoration:none;border:1px solid #10b981;background:rgba(16,185,129,0.08);transition:all .15s">Stats</a>
+  </nav>
+</header>
+
+<!-- Slide Indicator -->
+<nav class="indicator" id="indicator"></nav>
+
+<!-- SLIDE 1: Title -->
+<section class="slide" id="slide-1">
+  <div class="slide-inner" style="text-align:center">
+    <div style="margin-bottom:2rem">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="28" stroke="#10b981" stroke-width="2" fill="none"/>
+        <circle cx="32" cy="16" r="4" fill="#10b981"/>
+        <circle cx="18" cy="40" r="4" fill="#f59e0b"/>
+        <circle cx="46" cy="40" r="4" fill="#f59e0b"/>
+        <circle cx="32" cy="32" r="3" fill="#cbd5e1"/>
+        <line x1="32" y1="16" x2="32" y2="32" stroke="#1e293b" stroke-width="1.5"/>
+        <line x1="18" y1="40" x2="32" y2="32" stroke="#1e293b" stroke-width="1.5"/>
+        <line x1="46" y1="40" x2="32" y2="32" stroke="#1e293b" stroke-width="1.5"/>
+        <line x1="32" y1="16" x2="18" y2="40" stroke="#1e293b" stroke-width="1"/>
+        <line x1="32" y1="16" x2="46" y2="40" stroke="#1e293b" stroke-width="1"/>
+      </svg>
+    </div>
+    <h1 class="title-big">Quran Knowledge Graph</h1>
+    <h2 style="font-size:1.6rem;color:var(--green);font-weight:400;margin-bottom:1.5rem">Statistical Insights</h2>
+    <p class="subtitle" style="font-size:1.15rem">
+      <span style="color:var(--green);font-weight:600">6,234</span> verses &bull;
+      <span style="color:var(--green);font-weight:600">2,661</span> keywords &bull;
+      <span style="color:var(--green);font-weight:600">51,733</span> thematic connections
+    </p>
+    <p style="color:var(--muted);margin-top:3rem;font-size:.85rem">Scroll down or press &darr; to explore</p>
+  </div>
+  <span class="slide-number">1 / 11</span>
+</section>
+
+<!-- SLIDE 2: Graph at a Glance -->
+<section class="slide" id="slide-2">
+  <div class="slide-inner">
+    <h2 class="section-title">The Graph at a Glance</h2>
+    <p class="subtitle">Core metrics from the Quran Knowledge Graph</p>
+    <div class="stat-grid">
+      <div class="card stat-card"><div class="value">6,234</div><div class="label">Verses</div><div class="sublabel">across 114 surahs</div></div>
+      <div class="card stat-card"><div class="value">2,661</div><div class="label">Keywords</div><div class="sublabel">extracted via TF-IDF</div></div>
+      <div class="card stat-card"><div class="value">45,064</div><div class="label">MENTIONS</div><div class="sublabel">verse&rarr;keyword edges</div></div>
+      <div class="card stat-card"><div class="value">51,733</div><div class="label">RELATED_TO</div><div class="sublabel">verse&harr;verse edges</div></div>
+      <div class="card stat-card"><div class="value" style="color:var(--gold)">93.7%</div><div class="label">Cross-Surah</div><div class="sublabel">connections span chapters</div></div>
+      <div class="card stat-card"><div class="value">7.27</div><div class="label">Avg Keywords</div><div class="sublabel">per verse</div></div>
+    </div>
+  </div>
+  <span class="slide-number">2 / 11</span>
+</section>
+
+<!-- SLIDE 3: Most Frequent Keywords -->
+<section class="slide" id="slide-3">
+  <div class="slide-inner">
+    <h2 class="section-title">Most Frequent Keywords</h2>
+    <p class="subtitle">Top 15 keywords by verse occurrence count</p>
+    <div style="margin-top:1.5rem">
+      <div class="bar-row"><span class="bar-label">disbelieve</span><div class="bar-track"><div class="bar-fill green" style="--w:100%"></div></div><span class="bar-value">298</span></div>
+      <div class="bar-row"><span class="bar-label">know</span><div class="bar-track"><div class="bar-fill green" style="--w:99.3%"></div></div><span class="bar-value">296</span></div>
+      <div class="bar-row"><span class="bar-label">send</span><div class="bar-track"><div class="bar-fill green" style="--w:93.6%"></div></div><span class="bar-value">279</span></div>
+      <div class="bar-row"><span class="bar-label">among</span><div class="bar-track"><div class="bar-fill green" style="--w:92.3%"></div></div><span class="bar-value">275</span></div>
+      <div class="bar-row"><span class="bar-label">righteous</span><div class="bar-track"><div class="bar-fill green" style="--w:91.9%"></div></div><span class="bar-value">274</span></div>
+      <div class="bar-row"><span class="bar-label">may</span><div class="bar-track"><div class="bar-fill green" style="--w:86.6%"></div></div><span class="bar-value">258</span></div>
+      <div class="bar-row"><span class="bar-label">life</span><div class="bar-track"><div class="bar-fill green" style="--w:84.6%"></div></div><span class="bar-value">252</span></div>
+      <div class="bar-row"><span class="bar-label">everything</span><div class="bar-track"><div class="bar-fill green" style="--w:81.5%"></div></div><span class="bar-value">243</span></div>
+      <div class="bar-row"><span class="bar-label">make</span><div class="bar-track"><div class="bar-fill green" style="--w:75.5%"></div></div><span class="bar-value">225</span></div>
+      <div class="bar-row"><span class="bar-label">would</span><div class="bar-track"><div class="bar-fill green" style="--w:75.5%"></div></div><span class="bar-value">225</span></div>
+      <div class="bar-row"><span class="bar-label">heaven</span><div class="bar-track"><div class="bar-fill green" style="--w:73.8%"></div></div><span class="bar-value">220</span></div>
+      <div class="bar-row"><span class="bar-label">revelation</span><div class="bar-track"><div class="bar-fill green" style="--w:70.1%"></div></div><span class="bar-value">209</span></div>
+      <div class="bar-row"><span class="bar-label">good</span><div class="bar-track"><div class="bar-fill green" style="--w:68.5%"></div></div><span class="bar-value">204</span></div>
+      <div class="bar-row"><span class="bar-label">see</span><div class="bar-track"><div class="bar-fill green" style="--w:67.8%"></div></div><span class="bar-value">202</span></div>
+      <div class="bar-row"><span class="bar-label">guide</span><div class="bar-track"><div class="bar-fill green" style="--w:66.4%"></div></div><span class="bar-value">198</span></div>
+    </div>
+  </div>
+  <span class="slide-number">3 / 11</span>
+</section>
+
+<!-- SLIDE 4: Keyword Distribution -->
+<section class="slide" id="slide-4">
+  <div class="slide-inner">
+    <h2 class="section-title">Keyword Distribution &mdash; The Long Tail</h2>
+    <p class="subtitle">How many verses does each keyword appear in?</p>
+    <div class="vbar-container">
+      <div class="vbar-col">
+        <div class="vbar-val">179</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:16%"></div></div>
+        <div class="vbar-label">1 verse</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">1,121</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:100%"></div></div>
+        <div class="vbar-label">2-5 verses</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">439</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:39.2%"></div></div>
+        <div class="vbar-label">6-10 verses</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">705</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:62.9%"></div></div>
+        <div class="vbar-label">11-50 verses</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">217</div>
+        <div class="vbar-wrap"><div class="vbar-fill gold" style="--h:19.4%"></div></div>
+        <div class="vbar-label">50+ verses</div>
+      </div>
+    </div>
+    <p class="note">42% of keywords appear in only 1&ndash;5 verses, while 8% appear in 50+ verses</p>
+  </div>
+  <span class="slide-number">4 / 11</span>
+</section>
+
+<!-- SLIDE 5: Longest vs Shortest Surahs -->
+<section class="slide" id="slide-5">
+  <div class="slide-inner">
+    <h2 class="section-title">Longest vs Shortest Surahs</h2>
+    <p class="subtitle">By verse count</p>
+    <div class="two-col">
+      <div class="card">
+        <div class="col-header"><span>Longest Surahs</span><span>Verses</span></div>
+        <ul class="surah-list">
+          <li><span>Al-Baqarah</span><span class="count">286</span></li>
+          <li><span>The Poets</span><span class="count">227</span></li>
+          <li><span>The Purgatory</span><span class="count">206</span></li>
+          <li><span>The Amramites</span><span class="count">200</span></li>
+          <li><span>The Arrangers</span><span class="count">182</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="col-header"><span>Shortest Surahs</span><span>Verses</span></div>
+        <ul class="surah-list">
+          <li><span>Triumph</span><span class="count" style="color:var(--gold)">3</span></li>
+          <li><span>Bounty</span><span class="count" style="color:var(--gold)">3</span></li>
+          <li><span>The Afternoon</span><span class="count" style="color:var(--gold)">3</span></li>
+          <li><span>Absoluteness</span><span class="count" style="color:var(--gold)">4</span></li>
+          <li><span>Quraish Tribe</span><span class="count" style="color:var(--gold)">4</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span class="slide-number">5 / 11</span>
+</section>
+
+<!-- SLIDE 6: Most Central Surahs -->
+<section class="slide" id="slide-6">
+  <div class="slide-inner">
+    <h2 class="section-title">Most Central Surahs</h2>
+    <p class="subtitle">By total cross-surah edges</p>
+    <div style="margin-top:1.5rem">
+      <div class="bar-row"><span class="bar-label">The Heifer</span><div class="bar-track"><div class="bar-fill green" style="--w:100%"></div></div><span class="bar-value">4,382</span></div>
+      <div class="bar-row"><span class="bar-label">The Purgatory</span><div class="bar-track"><div class="bar-fill green" style="--w:75.7%"></div></div><span class="bar-value">3,318</span></div>
+      <div class="bar-row"><span class="bar-label">The Amramites</span><div class="bar-track"><div class="bar-fill green" style="--w:74%"></div></div><span class="bar-value">3,244</span></div>
+      <div class="bar-row"><span class="bar-label">The Poets</span><div class="bar-track"><div class="bar-fill green" style="--w:72.4%"></div></div><span class="bar-value">3,171</span></div>
+      <div class="bar-row"><span class="bar-label">Livestock</span><div class="bar-track"><div class="bar-fill green" style="--w:65.2%"></div></div><span class="bar-value">2,855</span></div>
+      <div class="bar-row"><span class="bar-label">Women</span><div class="bar-track"><div class="bar-fill green" style="--w:63%"></div></div><span class="bar-value">2,759</span></div>
+      <div class="bar-row"><span class="bar-label">The Arrangers</span><div class="bar-track"><div class="bar-fill green" style="--w:61%"></div></div><span class="bar-value">2,673</span></div>
+      <div class="bar-row"><span class="bar-label">The Bee</span><div class="bar-track"><div class="bar-fill green" style="--w:51.1%"></div></div><span class="bar-value">2,238</span></div>
+      <div class="bar-row"><span class="bar-label">The Feast</span><div class="bar-track"><div class="bar-fill green" style="--w:47.3%"></div></div><span class="bar-value">2,071</span></div>
+      <div class="bar-row"><span class="bar-label">Jonah</span><div class="bar-track"><div class="bar-fill green" style="--w:45.3%"></div></div><span class="bar-value">1,983</span></div>
+    </div>
+  </div>
+  <span class="slide-number">6 / 11</span>
+</section>
+
+<!-- SLIDE 7: Connection Density -->
+<section class="slide" id="slide-7">
+  <div class="slide-inner">
+    <h2 class="section-title">Connection Density &mdash; Edges per Verse</h2>
+    <p class="subtitle">Which surahs are most and least interconnected?</p>
+    <div class="two-col" style="margin-top:1.5rem">
+      <div class="card">
+        <h3 style="font-size:1rem;color:var(--green);margin-bottom:1rem">Most Dense</h3>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">Mutual Blaming</span><div class="bar-track"><div class="bar-fill green" style="--w:100%"></div></div><span class="bar-value">24.89</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">The Key</span><div class="bar-track"><div class="bar-fill green" style="--w:81.5%"></div></div><span class="bar-value">20.29</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">Proof</span><div class="bar-track"><div class="bar-fill green" style="--w:80.8%"></div></div><span class="bar-value">20.13</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">Kneeling</span><div class="bar-track"><div class="bar-fill green" style="--w:78.8%"></div></div><span class="bar-value">19.62</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">Luqmaan</span><div class="bar-track"><div class="bar-fill green" style="--w:76.7%"></div></div><span class="bar-value">19.09</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1rem;color:var(--gold);margin-bottom:1rem">Least Dense</h3>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">Most Gracious</span><div class="bar-track"><div class="bar-fill gold" style="--w:32.7%"></div></div><span class="bar-value">8.13</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">Quraish Tribe</span><div class="bar-track"><div class="bar-fill gold" style="--w:38.2%"></div></div><span class="bar-value">9.50</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">The Afternoon</span><div class="bar-track"><div class="bar-fill gold" style="--w:42.8%"></div></div><span class="bar-value">10.67</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">The Backbiter</span><div class="bar-track"><div class="bar-fill gold" style="--w:44.6%"></div></div><span class="bar-value">11.11</span></div>
+        <div class="bar-row"><span class="bar-label" style="min-width:130px">People</span><div class="bar-track"><div class="bar-fill gold" style="--w:48.2%"></div></div><span class="bar-value">12.00</span></div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-number">7 / 11</span>
+</section>
+
+<!-- SLIDE 8: Strongest Verse Pairs -->
+<section class="slide" id="slide-8">
+  <div class="slide-inner">
+    <h2 class="section-title">Strongest Verse Pairs</h2>
+    <p class="subtitle">Highest connection scores in the graph</p>
+    <table class="styled-table">
+      <thead><tr><th>Verse Pair</th><th>Theme</th><th style="text-align:right">Score</th></tr></thead>
+      <tbody>
+        <tr><td>4:43 &harr; 5:6</td><td>Ablution rules</td><td style="text-align:right"><span class="score">3.82</span></td></tr>
+        <tr><td>2:136 &harr; 3:84</td><td>Prophets accepted</td><td style="text-align:right"><span class="score">3.52</span></td></tr>
+        <tr><td>16:115 &harr; 2:173</td><td>Forbidden foods</td><td style="text-align:right"><span class="score">3.28</span></td></tr>
+        <tr><td>4:11 &harr; 4:12</td><td>Inheritance law</td><td style="text-align:right"><span class="score">3.27</span></td></tr>
+        <tr><td>16:115 &harr; 6:145</td><td>Forbidden foods</td><td style="text-align:right"><span class="score">3.26</span></td></tr>
+        <tr><td>27:3 &harr; 31:4</td><td>Prayer &amp; charity</td><td style="text-align:right"><span class="score">3.15</span></td></tr>
+        <tr><td>27:10 &harr; 28:31</td><td>Moses and fire</td><td style="text-align:right"><span class="score">3.04</span></td></tr>
+        <tr><td>2:173 &harr; 6:145</td><td>Forbidden foods</td><td style="text-align:right"><span class="score">2.98</span></td></tr>
+        <tr><td>20:71 &harr; 26:49</td><td>Pharaoh threatens</td><td style="text-align:right"><span class="score">2.90</span></td></tr>
+        <tr><td>2:35 &harr; 7:19</td><td>Adam in paradise</td><td style="text-align:right"><span class="score">2.83</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <span class="slide-number">8 / 11</span>
+</section>
+
+<!-- SLIDE 9: Connection Score Distribution -->
+<section class="slide" id="slide-9">
+  <div class="slide-inner">
+    <h2 class="section-title">Connection Score Distribution</h2>
+    <p class="subtitle">How strong are the verse-to-verse connections?</p>
+    <div class="vbar-container" style="height:280px">
+      <div class="vbar-col">
+        <div class="vbar-val">1,846</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:4.5%"></div></div>
+        <div class="vbar-label">&lt;0.5</div>
+        <div class="vbar-pct">3.6%</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">41,221</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:100%"></div></div>
+        <div class="vbar-label">0.5&ndash;1.0</div>
+        <div class="vbar-pct">79.7%</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">7,426</div>
+        <div class="vbar-wrap"><div class="vbar-fill green" style="--h:18%"></div></div>
+        <div class="vbar-label">1.0&ndash;1.5</div>
+        <div class="vbar-pct">14.4%</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">1,046</div>
+        <div class="vbar-wrap"><div class="vbar-fill gold" style="--h:2.5%"></div></div>
+        <div class="vbar-label">1.5&ndash;2.0</div>
+        <div class="vbar-pct">2.0%</div>
+      </div>
+      <div class="vbar-col">
+        <div class="vbar-val">194</div>
+        <div class="vbar-wrap"><div class="vbar-fill gold" style="--h:0.5%"></div></div>
+        <div class="vbar-label">2.0+</div>
+        <div class="vbar-pct">0.4%</div>
+      </div>
+    </div>
+    <p class="note">Mean score: 0.81 &bull; 79.7% of connections fall in the 0.5&ndash;1.0 range</p>
+  </div>
+  <span class="slide-number">9 / 11</span>
+</section>
+
+<!-- SLIDE 10: Topological Insights -->
+<section class="slide" id="slide-10">
+  <div class="slide-inner">
+    <h2 class="section-title">Topological Insights</h2>
+    <p class="subtitle">Structural patterns in the knowledge graph</p>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <h4>93.7% cross-surah connections</h4>
+        <p>The Quran's themes are deeply woven across chapters, not siloed within them</p>
+      </div>
+      <div class="insight-card">
+        <h4>Surah 12 (Joseph) is uniquely isolated</h4>
+        <p>111 verses but only 12.26 edges/verse &mdash; its continuous narrative makes it thematically distinct</p>
+      </div>
+      <div class="insight-card">
+        <h4>Surah 55 (Most Gracious) is least dense</h4>
+        <p>8.13 edges/verse &mdash; its repetitive refrain structure creates internal similarity but less external connection</p>
+      </div>
+      <div class="insight-card">
+        <h4>Surah 64 (Mutual Blaming) is most connected</h4>
+        <p>24.89 edges/verse &mdash; its universal themes of belief, judgment, and obedience resonate across the entire Quran</p>
+      </div>
+      <div class="insight-card">
+        <h4>Near-complete keyword coverage</h4>
+        <p>Only 33 verses (0.5%) have no extracted keywords out of 6,234 total</p>
+      </div>
+      <div class="insight-card">
+        <h4>Forbidden food passages cluster tightly</h4>
+        <p>3 of the top 10 strongest verse pairs are about dietary prohibitions (2:173, 6:145, 16:115)</p>
+      </div>
+    </div>
+  </div>
+  <span class="slide-number">10 / 11</span>
+</section>
+
+<!-- SLIDE 11: Intra vs Inter-Surah -->
+<section class="slide" id="slide-11">
+  <div class="slide-inner" style="text-align:center">
+    <h2 class="section-title">Intra vs Inter-Surah Connections</h2>
+    <p class="subtitle">Where do the 51,733 edges go?</p>
+    <div class="doughnut-wrap">
+      <svg width="260" height="260" viewBox="0 0 260 260">
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#1e293b" stroke-width="32"/>
+        <!-- Inter-surah: 93.7% -->
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#10b981" stroke-width="32"
+          stroke-dasharray="588.9 628.3" stroke-dashoffset="0"
+          transform="rotate(-90 130 130)" stroke-linecap="round"/>
+        <!-- Intra-surah: 6.3% -->
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#f59e0b" stroke-width="32"
+          stroke-dasharray="39.6 628.3" stroke-dashoffset="-588.9"
+          transform="rotate(-90 130 130)" stroke-linecap="round"/>
+        <text x="130" y="122" text-anchor="middle" fill="#f1f5f9" font-family="Georgia,serif" font-size="28" font-weight="700">93.7%</text>
+        <text x="130" y="148" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="13">cross-surah</text>
+      </svg>
+      <div class="doughnut-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--green)"></div>
+          <div><strong style="color:var(--bright)">48,485</strong> <span style="color:var(--muted)">Inter-surah (93.7%)</span></div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--gold)"></div>
+          <div><strong style="color:var(--bright)">3,248</strong> <span style="color:var(--muted)">Intra-surah (6.3%)</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="callout">48,485 cross-surah edges vs only 3,248 within the same surah</p>
+    <p class="footer-quote">&ldquo;The Quran is a deeply interconnected web, not 114 isolated chapters&rdquo;</p>
+  </div>
+  <span class="slide-number">11 / 11</span>
+</section>
+
+<script>
+(function(){
+  const slides = document.querySelectorAll('.slide');
+  const indicator = document.getElementById('indicator');
+  const total = slides.length;
+
+  // Build indicator dots
+  for(let i = 0; i < total; i++){
+    const btn = document.createElement('button');
+    btn.className = 'dot';
+    btn.title = 'Slide '+(i+1);
+    btn.addEventListener('click', () => slides[i].scrollIntoView({behavior:'smooth'}));
+    indicator.appendChild(btn);
+  }
+  const dots = indicator.querySelectorAll('.dot');
+
+  // IntersectionObserver for slide visibility
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        const idx = Array.from(slides).indexOf(e.target);
+        dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  }, {threshold: 0.4});
+
+  slides.forEach(s => observer.observe(s));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowDown' || e.key === 'PageDown'){
+      e.preventDefault();
+      const current = getCurrentSlide();
+      if(current < total - 1) slides[current + 1].scrollIntoView({behavior:'smooth'});
+    } else if(e.key === 'ArrowUp' || e.key === 'PageUp'){
+      e.preventDefault();
+      const current = getCurrentSlide();
+      if(current > 0) slides[current - 1].scrollIntoView({behavior:'smooth'});
+    }
+  });
+
+  function getCurrentSlide(){
+    let closest = 0, minDist = Infinity;
+    slides.forEach((s, i) => {
+      const dist = Math.abs(s.getBoundingClientRect().top);
+      if(dist < minDist){ minDist = dist; closest = i; }
+    });
+    return closest;
+  }
+
+  // Activate first slide
+  dots[0].classList.add('active');
+  slides[0].classList.add('visible');
+})();
+</script>
+</body>
+</html>

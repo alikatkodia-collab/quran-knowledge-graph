@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quran Knowledge Graph: Autonomous Discovery</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css">
+<style>
+:root {
+  --accent: #10b981;
+  --accent-dim: #10b98144;
+  --bg: #060a14;
+  --bg-card: #0d1424;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+}
+.reveal-viewport { background: var(--bg); }
+.reveal { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
+.reveal h1, .reveal h2, .reveal h3 { color: var(--accent); font-weight: 700; text-transform: none; letter-spacing: -0.02em; }
+.reveal h1 { font-size: 2.2em; }
+.reveal h2 { font-size: 1.5em; margin-bottom: 0.6em; }
+.reveal h3 { font-size: 1.1em; color: var(--text); }
+.reveal p, .reveal li { font-size: 0.72em; line-height: 1.6; color: var(--text); }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li::before { content: "\25B8"; color: var(--accent); font-weight: bold; display: inline-block; width: 1.2em; }
+.reveal .subtitle { color: var(--text-dim); font-size: 0.65em; margin-top: 0.8em; font-weight: 400; }
+.reveal .accent { color: var(--accent); }
+.reveal .highlight-box {
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  padding: 0.6em 1em;
+  margin: 0.5em 0;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+  font-size: 0.65em;
+}
+.reveal .stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8em;
+  margin-top: 0.8em;
+}
+.reveal .stat-card {
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 0.8em;
+  text-align: center;
+}
+.reveal .stat-card .num { font-size: 1.6em; font-weight: 800; color: var(--accent); display: block; }
+.reveal .stat-card .label { font-size: 0.55em; color: var(--text-dim); }
+.reveal .verse-box {
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.5em 0.8em;
+  margin: 0.3em 0;
+  text-align: left;
+  font-size: 0.58em;
+  line-height: 1.5;
+}
+.reveal .verse-ref { color: var(--accent); font-weight: 700; }
+.reveal .chain-arrow {
+  color: var(--accent);
+  font-size: 1.2em;
+  margin: 0.1em 0;
+}
+.reveal .insight-text {
+  font-size: 0.55em;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 0.5em;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reveal .diagram-box {
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1em;
+  margin: 0.5em auto;
+  display: inline-block;
+}
+.reveal .flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin: 0.4em 0;
+}
+.reveal .flow-node {
+  background: var(--bg-card);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 0.4em 0.8em;
+  font-size: 0.6em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.reveal .flow-node.hub {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-size: 0.7em;
+  padding: 0.5em 1em;
+}
+.reveal .flow-arrow { color: var(--accent); font-size: 1.2em; font-weight: 700; }
+.reveal .bridge-chain {
+  font-size: 0.52em;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin: 0.2em 0;
+}
+.reveal .quality-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 20px;
+  padding: 0.15em 0.6em;
+  font-size: 0.55em;
+  font-weight: 700;
+  margin-left: 0.3em;
+}
+.reveal .three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6em;
+  margin-top: 0.6em;
+}
+.reveal .rule-card {
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 0.6em;
+  font-size: 0.55em;
+  text-align: center;
+}
+.reveal .rule-card .rule-title { color: var(--accent); font-weight: 700; font-size: 1.1em; margin-bottom: 0.3em; }
+.reveal section { padding: 0 1em; }
+.reveal .progress { color: var(--accent); }
+.reveal .controls button { color: var(--accent) !important; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section>
+  <h1 style="font-size:1.8em; margin-bottom:0.1em;">Quran Knowledge Graph</h1>
+  <h2 style="color:var(--text); font-size:1.1em; font-weight:400; margin-top:0;">Autonomous Discovery</h2>
+  <div style="width:80px; height:3px; background:var(--accent); margin:1em auto;"></div>
+  <p class="subtitle" style="font-size:0.7em;">Syllogistic Deduction Engine + AutoResearch Optimization</p>
+  <p style="font-size:0.5em; color:var(--text-dim); margin-top:2em;">Fully autonomous research pipeline &mdash; zero human intervention</p>
+</section>
+
+<!-- SLIDE 2: The Problem -->
+<section>
+  <h2>The Problem</h2>
+  <div class="stat-grid">
+    <div class="stat-card fragment">
+      <span class="num">6,234</span>
+      <span class="label">Verses</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">114</span>
+      <span class="label">Surahs (Chapters)</span>
+    </div>
+  </div>
+  <ul style="margin-top:1em;">
+    <li class="fragment">Deep thematic connections hidden across distant chapters</li>
+    <li class="fragment">Manual analysis is slow, incomplete, and subject to bias</li>
+    <li class="fragment">Traditional scholarship studies themes in isolation</li>
+  </ul>
+</section>
+
+<!-- SLIDE 3: The Solution -->
+<section>
+  <h2>The Solution</h2>
+  <div class="three-col">
+    <div class="rule-card fragment">
+      <div class="rule-title">Knowledge Graph</div>
+      <p style="margin:0;">TF-IDF keyword extraction + weighted graph edges connecting 6,234 verses</p>
+    </div>
+    <div class="rule-card fragment">
+      <div class="rule-title">AutoResearch</div>
+      <p style="margin:0;">Autonomous parameter optimization &mdash; 600+ experiments with zero human input</p>
+    </div>
+    <div class="rule-card fragment">
+      <div class="rule-title">Syllogistic Engine</div>
+      <p style="margin:0;">Treats every verse as an axiom, computes transitive logical deductions</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: AutoResearch Results -->
+<section>
+  <h2>AutoResearch: Graph Optimization</h2>
+  <div class="stat-grid">
+    <div class="stat-card fragment">
+      <span class="num">75.47 &rarr; 81.74</span>
+      <span class="label">Composite Score (+8.3%)</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">600</span>
+      <span class="label">Experiments Run</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">38</span>
+      <span class="label">Improvements Found</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">2.5&times;</span>
+      <span class="label">More Edges per Verse</span>
+    </div>
+  </div>
+  <div class="highlight-box fragment" style="margin-top:0.8em;">
+    <strong class="accent">Key Finding:</strong> 2.5&times; more edges per verse (11 &rarr; 28) dramatically improves cluster coherence. Denser graphs surface connections that sparse graphs miss entirely.
+  </div>
+</section>
+
+<!-- SLIDE 5: Retrieval Optimization -->
+<section>
+  <h2>AutoResearch: Retrieval Optimization</h2>
+  <div class="stat-grid">
+    <div class="stat-card fragment">
+      <span class="num">58.99 &rarr; 68.44</span>
+      <span class="label">Retrieval Score (+16%)</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">233</span>
+      <span class="label">Experiments Run</span>
+    </div>
+  </div>
+  <div class="highlight-box fragment" style="margin-top:0.8em;">
+    <strong class="accent">"Less is more"</strong> &mdash; Fewer, higher-quality results beat broad search. Optimal config returns 50 total results with aggressive deduplication (<code>keep_highest</code>).
+  </div>
+  <ul style="margin-top:0.6em;">
+    <li class="fragment">2-hop graph traversal with score boosting at each hop</li>
+    <li class="fragment">Seed limit of 10 keeps focus; hop limits prevent noise</li>
+  </ul>
+</section>
+
+<!-- SLIDE 6: Syllogistic Engine -->
+<section>
+  <h2>Syllogistic Deduction Engine</h2>
+  <div class="flow-row fragment">
+    <div class="flow-node">Verse A (axiom)</div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-node">Verse B (axiom)</div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node hub">Novel Conclusion</div>
+  </div>
+  <div class="three-col" style="margin-top:1em;">
+    <div class="rule-card fragment">
+      <div class="rule-title">Transitive Chains</div>
+      <p style="margin:0;">A&rarr;B&rarr;C: If verse A connects to B and B to C, deduce A&rarr;C</p>
+    </div>
+    <div class="rule-card fragment">
+      <div class="rule-title">Shared-Subject Synthesis</div>
+      <p style="margin:0;">Two verses about the same subject yield combined conclusions</p>
+    </div>
+    <div class="rule-card fragment">
+      <div class="rule-title">Thematic Bridges</div>
+      <p style="margin:0;">3-hop chains bridging distant surahs via shared keywords</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: 37,000+ Deductions -->
+<section>
+  <h2>37,000+ Deductions Generated</h2>
+  <div class="stat-grid">
+    <div class="stat-card fragment">
+      <span class="num">118K</span>
+      <span class="label">Deductions / Hour</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">92%</span>
+      <span class="label">Verses Referenced (5,744 of 6,234)</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">13</span>
+      <span class="label">Theological Categories</span>
+    </div>
+    <div class="stat-card fragment">
+      <span class="num">66%</span>
+      <span class="label">High Quality (score &gt; 70)</span>
+    </div>
+  </div>
+  <div class="highlight-box fragment" style="margin-top:0.8em;">
+    500+ cross-theme deductions with quality score above 75 &mdash; the most theologically meaningful connections.
+  </div>
+</section>
+
+<!-- SLIDE 8: Meta-Knowledge Graph -->
+<section>
+  <h2>Meta-Knowledge Graph</h2>
+  <p style="font-size:0.6em; color:var(--text-dim); margin-bottom:0.6em;">13 theme nodes connected by weighted deduction counts</p>
+  <div style="display:flex; align-items:center; justify-content:center; gap:0.3em; flex-wrap:wrap; margin-bottom:0.5em;">
+    <div class="flow-node" style="font-size:0.5em;">Prophecy</div>
+    <div class="flow-node" style="font-size:0.5em;">Afterlife</div>
+    <div class="flow-node" style="font-size:0.5em;">Moral Law</div>
+  </div>
+  <div style="display:flex; align-items:center; justify-content:center; gap:0.3em; flex-wrap:wrap; margin-bottom:0.3em;">
+    <div class="flow-node" style="font-size:0.5em;">Creation</div>
+    <div class="flow-arrow">&larr;</div>
+    <div class="flow-node hub" style="font-size:0.65em;">God's Nature</div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node" style="font-size:0.5em;">Worship</div>
+  </div>
+  <div style="display:flex; align-items:center; justify-content:center; gap:0.3em; flex-wrap:wrap; margin-top:0.3em;">
+    <div class="flow-node" style="font-size:0.5em;">Covenant</div>
+    <div class="flow-node" style="font-size:0.5em;">Social Law</div>
+    <div class="flow-node" style="font-size:0.5em;">History</div>
+  </div>
+  <div class="highlight-box fragment" style="margin-top:0.7em;">
+    <strong class="accent">Central Hub:</strong> God's Nature connects ALL other themes &mdash; confirming <em>tawhid</em> (monotheism) as the Quran's structural organizing principle.<br>
+    <strong class="accent">Strongest Edge:</strong> God's Nature &harr; Prophecy &mdash; <strong>10,695</strong> bridging deductions
+  </div>
+</section>
+
+<!-- SLIDE 9: Insight 1 -->
+<section>
+  <h2 style="font-size:1.2em;">Insight 1: Divine Rescue &harr; Prophetic Mission <span class="quality-badge">92.5</span></h2>
+  <div class="bridge-chain fragment">Chain: save &rarr; implore &rarr; darkness &rarr; appreciative &rarr; light &rarr; Moses</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[31:32]</span> People in violent waves who implore GOD sincerely but revert once saved
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[6:63]</span> People who promise eternal appreciation if saved from darkness
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[14:5]</span> Moses sent to lead people from darkness into light
+  </div>
+  <div class="insight-text fragment">
+    Physical rescue (storms) parallels prophetic rescue (spiritual darkness). Both require genuine appreciation, but people saved physically often fail to maintain promised gratitude. Moses's mission is the solution: permanent guidance rather than temporary rescue.
+  </div>
+</section>
+
+<!-- SLIDE 10: Insight 2 -->
+<section>
+  <h2 style="font-size:1.2em;">Insight 2: God's Will &harr; Social Justice <span class="quality-badge">92.5</span></h2>
+  <div class="bridge-chain fragment">Chain: omniscient &rarr; wise &rarr; charity &rarr; free &rarr; relative &rarr; orphan</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[76:30]</span> "Whatever you will is in accordance with GOD's will. GOD is Omniscient, Wise."
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[9:60]</span> Charity shall go to the poor, needy, new converts, to free slaves...
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[2:177]</span> Righteousness includes giving to relatives, orphans, the needy...
+  </div>
+  <div class="insight-text fragment">
+    God's omniscience and wisdom manifest concretely through the charity system. The connection is causal: because God is omniscient, He designed charity to address specific social needs. Abstract divine attributes have concrete social policy implications.
+  </div>
+</section>
+
+<!-- SLIDE 11: Insight 3 -->
+<section>
+  <h2 style="font-size:1.2em;">Insight 3: The Legislative Spine <span class="quality-badge">92.5</span></h2>
+  <div class="bridge-chain fragment">Chain: religion &rarr; prohibit &rarr; last &rarr; among &rarr; woman &rarr; cannot</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[5:3]</span> Prohibited foods (dead animals, blood, pigs, idolatrous dedications)
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[9:29]</span> Fighting those who don't prohibit what God has prohibited
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[4:25]</span> Marriage rules for those who cannot afford free believing women
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[2:282]</span> Financial transaction documentation requirements
+  </div>
+  <div class="insight-text fragment">
+    Dietary law, enforcement, marriage regulation, and financial transparency share a common logical backbone: the concept of divine limits ("prohibit" / "cannot") that structure all areas of human life under a single coherent legal framework.
+  </div>
+</section>
+
+<!-- SLIDE 12: Insight 4 -->
+<section>
+  <h2 style="font-size:1.2em;">Insight 4: Prostration &harr; Cosmic Enmity <span class="quality-badge">92.5</span></h2>
+  <div class="bridge-chain fragment">Chain: long &rarr; prostrate &rarr; fall &rarr; though &rarr; enemy</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[76:26]</span> "During the night, fall prostrate before Him"
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[18:50]</span> Angels prostrated before Adam, except Satan who became an enemy
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[60:1]</span> "You shall not befriend My enemies and your enemies"
+  </div>
+  <div class="insight-text fragment">
+    Prostration is not merely ritual &mdash; it is the defining act that separates allies from enemies of God. This cosmic division (angel vs. Satan) has direct bearing on human social relationships.
+  </div>
+</section>
+
+<!-- SLIDE 13: Insight 5 -->
+<section>
+  <h2 style="font-size:1.2em;">Insight 5: Life-Death &harr; Angelic Custody <span class="quality-badge">92.5</span></h2>
+  <div class="bridge-chain fragment">Chain: ultimately &rarr; return &rarr; death &rarr; put &rarr; charge</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[9:27]</span> "GOD redeems whomever He wills. GOD is Forgiver, Most Merciful."
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[2:28]</span> "You were dead, He gave you life, He puts you to death, He brings you back to life"
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[32:11]</span> "You will be put to death by the angel in whose charge you are placed"
+  </div>
+  <div class="insight-text fragment">
+    Redemption, mortality, and angelic administration are three facets of a single divine system &mdash; not independent theological topics. The transitive chain unifies them into one coherent argument.
+  </div>
+</section>
+
+<!-- SLIDE 14: Insight 6 -->
+<section>
+  <h2 style="font-size:1.2em;">Insight 6: Narration as Revelation <span class="quality-badge">92.5</span></h2>
+  <div class="bridge-chain fragment">Chain: community &rarr; narrate &rarr; past &rarr; news &rarr; present</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[7:101]</span> "We narrate to you the history of those communities"
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[11:100]</span> "This is news from the past communities that we narrate to you"
+  </div>
+  <div class="chain-arrow fragment">&darr;</div>
+  <div class="verse-box fragment">
+    <span class="verse-ref">[3:44]</span> "This is news from the past that we reveal to you. You were not there."
+  </div>
+  <div class="insight-text fragment">
+    The Quran frames historical narration as proof of divine communication &mdash; the Prophet could not have known these stories ("he was not there"), so their narration itself is evidence of revelation. This self-referential argument runs as a structural thread across multiple surahs.
+  </div>
+</section>
+
+<!-- SLIDE 15: Architecture -->
+<section>
+  <h2>Architecture: Infinite Loop</h2>
+  <div class="flow-row fragment">
+    <div class="flow-node">Build Graph</div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node">AutoResearch<br><span style="font-size:0.7em;color:var(--text-dim)">Optimize Params</span></div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node">Rebuild Graph</div>
+  </div>
+  <div style="text-align:center; margin:0.5em 0;" class="fragment">
+    <span class="flow-arrow" style="font-size:1.5em;">&darr;</span>
+  </div>
+  <div class="flow-row fragment">
+    <div class="flow-node">Infinite Deduction</div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node">Infinite Analysis</div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node hub">Meta-Graph</div>
+  </div>
+  <div style="text-align:center; margin:0.5em 0;" class="fragment">
+    <span class="flow-arrow" style="font-size:1.5em;">&darr;</span>
+  </div>
+  <div class="flow-row fragment">
+    <div class="flow-node">Curated Insights</div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-node">New Questions</div>
+    <div class="flow-arrow">&circlearrowright;</div>
+  </div>
+  <div class="highlight-box fragment" style="margin-top:0.7em;">
+    <strong class="accent">Runs indefinitely with no human intervention.</strong> Each cycle improves the graph, generates new deductions, and discovers new cross-theme connections.
+  </div>
+</section>
+
+<!-- SLIDE 16: Future Work -->
+<section>
+  <h2>Future Work</h2>
+  <ul>
+    <li class="fragment"><strong class="accent">Embedding Optimization</strong> &mdash; Replace TF-IDF with transformer embeddings for deeper semantic similarity</li>
+    <li class="fragment"><strong class="accent">Contradiction Detection</strong> &mdash; Identify verses that appear to conflict and surface reconciliation paths through the graph</li>
+    <li class="fragment"><strong class="accent">Comparative Analysis</strong> &mdash; Validate deductions against classical <em>tafsir</em> scholarship (Ibn Kathir, al-Tabari, al-Qurtubi)</li>
+    <li class="fragment"><strong class="accent">Multilingual Graphs</strong> &mdash; Build parallel knowledge graphs from Arabic source text</li>
+    <li class="fragment"><strong class="accent">Interactive Explorer</strong> &mdash; Web interface for browsing deduction chains in real time</li>
+  </ul>
+  <div style="width:80px; height:3px; background:var(--accent); margin:1.5em auto 0.5em;"></div>
+  <p style="font-size:0.55em; color:var(--text-dim);">Quran Knowledge Graph &mdash; Autonomous Discovery Engine</p>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<script type="module">
+import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js';
+Reveal.initialize({
+  hash: true,
+  transition: 'slide',
+  backgroundTransition: 'fade',
+  controlsTutorial: false,
+  progress: true,
+  center: true,
+  width: 1280,
+  height: 720,
+});
+</script>
+</body>
+</html>
