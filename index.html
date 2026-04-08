@@ -1247,6 +1247,22 @@
                 const body = currentBubble.querySelector('.bubble-body');
                 if (body) body.innerHTML = renderMarkdown(expandVrefLists(ev.d));
               }
+            } else if (ev.t === 'verification') {
+              if (currentBubble && ev.d) {
+                const v = ev.d;
+                const badge = document.createElement('div');
+                badge.style.cssText = 'font-size:0.72em;padding:3px 10px;border-radius:10px;margin-top:6px;display:inline-block;';
+                if (v.citation_precision >= 0.7) {
+                  badge.style.background = 'rgba(16,185,129,0.12)';
+                  badge.style.color = '#10b981';
+                  badge.textContent = `${v.supported}/${v.total_citations_checked} citations verified`;
+                } else {
+                  badge.style.background = 'rgba(245,158,11,0.12)';
+                  badge.style.color = '#f59e0b';
+                  badge.textContent = `${v.flagged_count} citation(s) need review (${v.supported}/${v.total_citations_checked} verified)`;
+                }
+                currentBubble.appendChild(badge);
+              }
             } else if (ev.t === 'warning') {
               if (currentBubble) {
                 const warn = document.createElement('div');

@@ -417,6 +417,15 @@ async def _agent_stream(message: str, history: list):
                 # Fetch verse texts for all refs in the response
                 refs   = _extract_verse_refs(full_text)
                 verses = _fetch_verses(session, refs)
+
+                # ── citation verification (NLI entailment check) ──
+                try:
+                    from citation_verifier import verify_response
+                    verification = verify_response(full_text, verses)
+                    q.put({"t": "verification", "d": verification})
+                except Exception as ve:
+                    print(f"  [verify] error: {ve}")
+
                 q.put({"t": "done", "verses": verses})
 
         except Exception as e:
