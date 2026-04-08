@@ -760,8 +760,8 @@ SYSTEM_PROMPT = cfg.system_prompt()
 
 # ── agentic tool-use loop ──────────────────────────────────────────────────────
 
-def dispatch_tool(session, tool_name: str, tool_input: dict) -> str:
-    """Call the appropriate graph function and return JSON string result."""
+def dispatch_tool(session, tool_name: str, tool_input: dict, user_query: str = None) -> str:
+    """Call the appropriate graph function, apply retrieval gating, return JSON."""
     try:
         if tool_name == "search_keyword":
             result = tool_search_keyword(session, **tool_input)
@@ -783,6 +783,15 @@ def dispatch_tool(session, tool_name: str, tool_input: dict) -> str:
             result = tool_compare_arabic_usage(session, **tool_input)
         else:
             result = {"error": f"Unknown tool: {tool_name}"}
+
+        # Retrieval quality gating: rerank + assess + reorder
+        if user_query and tool_name in ("search_keyword", "semantic_search", "traverse_topic"):
+            try:
+                from retrieval_gate import gate_tool_result
+                result = gate_tool_result(user_query, tool_name, result)
+            except Exception as e:
+                result["gate_error"] = str(e)
+
     except Exception as e:
         result = {"error": str(e)}
     return json.dumps(result, ensure_ascii=False)

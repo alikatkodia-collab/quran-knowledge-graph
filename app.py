@@ -322,7 +322,7 @@ async def _agent_stream(message: str, history: list):
                         if len(args_s) > 80:
                             args_s = args_s[:77] + "..."
 
-                        result_str = dispatch_tool(session, block.name, block.input)
+                        result_str = dispatch_tool(session, block.name, block.input, user_query=message)
 
                         try:
                             res = json.loads(result_str)

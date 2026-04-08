@@ -99,7 +99,7 @@ def run_question(question: str, session, client) -> str:
         tool_results = []
         for block in response.content:
             if block.type == "tool_use":
-                result_str = dispatch_tool(session, block.name, block.input)
+                result_str = dispatch_tool(session, block.name, block.input, user_query=question)
                 tool_results.append({
                     "type": "tool_result",
                     "tool_use_id": block.id,
