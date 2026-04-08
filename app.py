@@ -366,6 +366,54 @@ async def _agent_stream(message: str, history: list):
                     msgs.append({"role": "assistant", "content": resp.content})
                     msgs.append({"role": "user",      "content": tool_results})
 
+                # ── citation density check + re-generation trigger ──
+                paragraphs = [p for p in full_text.split('\n\n') if len(p.strip()) > 50]
+                uncited = [p for p in paragraphs if not _BRACKET_REF.search(p)]
+                citation_rate = 1 - len(uncited) / len(paragraphs) if paragraphs else 1.0
+
+                if citation_rate < 0.7 and paragraphs:
+                    # Re-generation: ask Claude to add citations
+                    q.put({"t": "tool", "name": "Citation check",
+                           "args": f"{len(uncited)}/{len(paragraphs)} uncited",
+                           "summary": "Re-generating with citations..."})
+
+                    msgs.append({"role": "assistant", "content": full_text})
+                    msgs.append({"role": "user", "content":
+                        "Your response has paragraphs without [sura:verse] citations. "
+                        "Please revise: add a specific verse citation to every claim, "
+                        "or remove unsupported claims. Keep the same structure."
+                    })
+
+                    retry_text = ""
+                    resp = ai.messages.create(
+                        model=CLAUDE_MODEL,
+                        max_tokens=cfg.llm_max_tokens(),
+                        system=SYSTEM_PROMPT,
+                        tools=TOOLS,
+                        messages=msgs,
+                    )
+                    for block in resp.content:
+                        if block.type == "text" and block.text.strip():
+                            retry_text += block.text
+
+                    if retry_text:
+                        # Check if retry improved citation rate
+                        retry_paras = [p for p in retry_text.split('\n\n') if len(p.strip()) > 50]
+                        retry_uncited = [p for p in retry_paras if not _BRACKET_REF.search(p)]
+                        retry_rate = 1 - len(retry_uncited) / len(retry_paras) if retry_paras else 1.0
+
+                        if retry_rate > citation_rate:
+                            # Use the improved version
+                            q.put({"t": "retry", "d": retry_text})
+                            full_text = retry_text
+
+                    # Warn if still below threshold
+                    retry_paras = [p for p in full_text.split('\n\n') if len(p.strip()) > 50]
+                    still_uncited = sum(1 for p in retry_paras if not _BRACKET_REF.search(p))
+                    if still_uncited > 0:
+                        q.put({"t": "warning",
+                               "d": f"{still_uncited} paragraph(s) lack verse citations"})
+
                 # Fetch verse texts for all refs in the response
                 refs   = _extract_verse_refs(full_text)
                 verses = _fetch_verses(session, refs)

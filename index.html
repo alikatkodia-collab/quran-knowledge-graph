@@ -1240,6 +1240,20 @@
               addTool(ev.name, ev.args, ev.summary);
             } else if (ev.t === 'graph_update') {
               applyGraphUpdate(ev);
+            } else if (ev.t === 'retry') {
+              // Re-generated response with better citations — replace content
+              fullText = ev.d;
+              if (currentBubble) {
+                const body = currentBubble.querySelector('.bubble-body');
+                if (body) body.innerHTML = renderMarkdown(expandVrefLists(ev.d));
+              }
+            } else if (ev.t === 'warning') {
+              if (currentBubble) {
+                const warn = document.createElement('div');
+                warn.style.cssText = 'font-size:0.72em;padding:3px 10px;border-radius:10px;margin-top:6px;display:inline-block;background:rgba(245,158,11,0.12);color:#f59e0b;';
+                warn.textContent = ev.d;
+                currentBubble.appendChild(warn);
+              }
             } else if (ev.t === 'done') {
               finalize(ev.verses || {});
               history.push({ role: 'assistant', content: fullText });
