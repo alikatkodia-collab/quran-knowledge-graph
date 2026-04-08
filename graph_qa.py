@@ -43,7 +43,7 @@ _load_env(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
 NEO4J_URI      = os.getenv("NEO4J_URI", "bolt://localhost:7687")
 NEO4J_USER     = os.getenv("NEO4J_USER", "neo4j")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "Bismillah19")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY", "")
 MODEL          = "claude-sonnet-4-5"
 

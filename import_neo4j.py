@@ -30,7 +30,7 @@ load_dotenv()
 
 URI      = os.getenv("NEO4J_URI", "bolt://localhost:7687")
 USER     = os.getenv("NEO4J_USER", "neo4j")
-PASSWORD = os.getenv("NEO4J_PASSWORD", "Bismillah19")
+PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 
 BATCH_SIZE = 500
 

@@ -1,31 +1,25 @@
 # Secrets
 .env
-*.key
-credentials*
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
-venv/
 .venv/
+venv/
 
-# Node
-node_modules/
-package-lock.json
+# Model cache
+*.bin
+*.onnx
+
+# OS
+Thumbs.db
+.DS_Store
 
 # IDE
 .vscode/
 .idea/
 
-# Logs
-*.log
-app_log.txt
-app_out.txt
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Generated
-quran_graph_stats.pptx
+# Large data (regenerable from source)
+data/quran-arabic-raw.json
+data/quran-morphology.txt
