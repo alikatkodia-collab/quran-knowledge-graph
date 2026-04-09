@@ -37,6 +37,9 @@ def llm_model() -> str:
 def llm_max_tokens() -> int:
     return _cfg["llm"]["max_tokens"]
 
+def llm_temperature() -> float:
+    return _cfg["llm"].get("temperature", 1.0)
+
 # ── Embedding ────────────────────────────────────────────────────────────────
 
 def embedding_model() -> str:

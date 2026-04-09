@@ -813,6 +813,7 @@ def run_agent_turn(
         response = client.messages.create(
             model=MODEL,
             max_tokens=cfg.llm_max_tokens(),
+            temperature=cfg.llm_temperature(),
             system=SYSTEM_PROMPT,
             tools=TOOLS,
             messages=conversation,

@@ -319,6 +319,7 @@ async def _agent_stream(message: str, history: list):
                     resp = ai.messages.create(
                         model=CLAUDE_MODEL,
                         max_tokens=cfg.llm_max_tokens(),
+                        temperature=cfg.llm_temperature(),
                         system=system_prompt,
                         tools=TOOLS,
                         messages=msgs,
@@ -408,6 +409,7 @@ async def _agent_stream(message: str, history: list):
                     resp = ai.messages.create(
                         model=CLAUDE_MODEL,
                         max_tokens=cfg.llm_max_tokens(),
+                        temperature=cfg.llm_temperature(),
                         system=SYSTEM_PROMPT,
                         tools=TOOLS,
                         messages=msgs,

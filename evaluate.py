@@ -84,6 +84,7 @@ def run_question(question: str, session, client) -> str:
         response = client.messages.create(
             model=cfg.llm_model(),
             max_tokens=cfg.llm_max_tokens(),
+            temperature=cfg.llm_temperature(),
             system=SYSTEM_PROMPT,
             tools=TOOLS,
             messages=msgs,
