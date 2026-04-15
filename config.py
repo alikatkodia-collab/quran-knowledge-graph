@@ -38,7 +38,7 @@ def llm_max_tokens() -> int:
     return _cfg["llm"]["max_tokens"]
 
 def llm_temperature() -> float:
-    return _cfg["llm"].get("temperature", 1.0)
+    return _cfg["llm"].get("temperature", 0.4)
 
 # ── Embedding ────────────────────────────────────────────────────────────────
 
@@ -107,6 +107,26 @@ def system_prompt() -> str:
         if p.exists():
             return p.read_text(encoding="utf-8").strip()
     return val
+
+# ── Etymology ───────────────────────────────────────────────────────────────
+
+def _etym(key: str):
+    return _cfg.get("etymology", {}).get(key)
+
+def etymology_word_lookup_max() -> int:
+    return _etym("word_lookup_max_results") or 50
+
+def etymology_root_family_max() -> int:
+    return _etym("root_family_max_lemmas") or 100
+
+def etymology_include_particles() -> bool:
+    return _etym("verse_words_include_particles") if _etym("verse_words_include_particles") is not None else True
+
+def etymology_semantic_domain_max() -> int:
+    return _etym("semantic_domain_max_roots") or 50
+
+def etymology_wujuh_max() -> int:
+    return _etym("wujuh_max_senses") or 20
 
 # ── Scoring thresholds ───────────────────────────────────────────────────────
 

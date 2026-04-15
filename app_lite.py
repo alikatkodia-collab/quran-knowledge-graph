@@ -1,10 +1,17 @@
 """
-Quran Graph — Web Chat App
+Quran Graph — LITE (Cheapest) Version
+
+Model: claude-haiku-4-5 (~10-20x cheaper than Sonnet)
+No hallucination reduction:
+  - No uncertainty probes
+  - No citation retry
+  - No NLI verification
+  - Lower max_tokens (1536 vs 3072)
+
+Port: 8084
 
 Usage:
-    py app.py
-
-Opens at http://localhost:8080
+    py app_lite.py
 """
 
 import asyncio
@@ -46,6 +53,11 @@ from chat import TOOLS, SYSTEM_PROMPT, dispatch_tool
 from answer_cache import save_answer, build_cache_context
 from tool_compressor import compress_tool_result
 
+# ── Lite config overrides ─────────────────────────────────────────────────────
+
+HAIKU_MODEL    = "claude-haiku-4-5-20251001"
+LITE_MAX_TOKENS = 1536  # half of full version — keeps responses concise + cheap
+
 # ── clients ────────────────────────────────────────────────────────────────────
 
 NEO4J_URI      = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
@@ -54,7 +66,10 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 NEO4J_DB       = os.getenv("NEO4J_DATABASE", "quran")
 ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY", "")
 ANTHROPIC_TOKEN = os.getenv("ANTHROPIC_OAUTH_TOKEN", "")
-CLAUDE_MODEL   = cfg.llm_model()
+
+print(f"[LITE] Model: {HAIKU_MODEL}")
+print(f"[LITE] Max tokens: {LITE_MAX_TOKENS}")
+print("[LITE] Hallucination reduction: NONE (cheapest mode)")
 
 print("Connecting to Neo4j...")
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
@@ -65,9 +80,7 @@ except Exception as e:
     print(f"  Neo4j unavailable: {e}\n  Graph tools will return errors until Neo4j is started.")
 
 if ANTHROPIC_TOKEN:
-    ai = anthropic.Anthropic(
-        auth_token=ANTHROPIC_TOKEN,
-    )
+    ai = anthropic.Anthropic(auth_token=ANTHROPIC_TOKEN)
     print("  Auth: OAuth token")
 else:
     ai = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
@@ -79,7 +92,6 @@ _BRACKET_REF = re.compile(r'(\d+:\d+)')
 _BRACKET_CONTEXT = re.compile(r'\[[\d:,\s]+\]')
 
 def _extract_verse_refs(text: str) -> set:
-    """Extract all verse refs like 2:255 from bracketed contexts [2:255] or [26:108, 26:110]."""
     refs = set()
     for block in _BRACKET_CONTEXT.findall(text):
         refs.update(_BRACKET_REF.findall(block))
@@ -122,12 +134,7 @@ TOOL_LABELS = {
 # ── graph extraction for 3D visualiser ────────────────────────────────────────
 
 def _graph_for_tool(name: str, inp: dict, result: dict):
-    """
-    Extract graph nodes + links from a tool result for the 3D visualiser.
-    Uses the data already in the tool result — no extra Neo4j queries needed.
-    Returns {"nodes": [...], "links": [...], "active": [...]} or None.
-    """
-    nodes = {}   # id -> node dict  (dedup by id)
+    nodes = {}
     links = []
     active = []
 
@@ -208,7 +215,6 @@ def _graph_for_tool(name: str, inp: dict, result: dict):
             sname = result.get("surah_name", "")
             for v_data in result.get("verses", [])[:cfg.vis("explore_surah_max_verses")]:
                 v = vnode(v_data["verse_id"], sname, v_data.get("text",""))
-            # mark first 5 as active
             active = list(nodes.keys())[:5]
 
         elif name == "search_arabic_root" and "root" in result:
@@ -248,8 +254,6 @@ def _graph_for_tool(name: str, inp: dict, result: dict):
                 for v_data in form_data.get("sample_verses", [])[:3]:
                     v = vnode(v_data["verse_id"], v_data.get("surah_name",""), v_data.get("text",""), v_data.get("arabic_text",""))
                     link(fnid, v, "appears_in")
-
-        # ── etymology tools ──────────────────────────────────────────
 
         elif name == "lookup_word" and result.get("found"):
             for lem_data in result.get("lemmas", [])[:5]:
@@ -366,7 +370,7 @@ def _graph_for_tool(name: str, inp: dict, result: dict):
 
 class ChatRequest(BaseModel):
     message: str
-    history: list  # [{"role": "user"|"assistant", "content": str}]
+    history: list
 
 
 @app.get("/")
@@ -381,15 +385,8 @@ async def stats():
     return HTMLResponse(html)
 
 
-@app.get("/cache-stats")
-async def get_cache_stats():
-    from answer_cache import cache_stats
-    return cache_stats()
-
-
 @app.get("/verses")
 async def all_verses():
-    """Return all verse IDs and surah numbers for the initial 3D graph."""
     with driver.session(database=NEO4J_DB) as s:
         result = s.run(
             "MATCH (v:Verse) RETURN v.reference AS id, v.sura AS surah, v.number AS num "
@@ -410,7 +407,7 @@ async def chat(req: ChatRequest):
 
 async def _agent_stream(message: str, history: list):
     import queue as tqueue
-    q: tqueue.SimpleQueue = tqueue.SimpleQueue()   # plain thread-safe queue
+    q: tqueue.SimpleQueue = tqueue.SimpleQueue()
 
     def run():
         try:
@@ -435,24 +432,12 @@ async def _agent_stream(message: str, history: list):
             except Exception as ce:
                 print(f"  [cache] lookup error: {ce}")
 
-            # ── semantic entropy: uncertainty check (disabled — saves 5 Haiku calls/question) ──
-            # To re-enable: uncomment the block below
-            # try:
-            #     from uncertainty import assess_uncertainty
-            #     uc = assess_uncertainty(message, ai, n_probes=5)
-            #     q.put({"t": "uncertainty", "d": uc})
-            #     if uc.get("should_abstain"):
-            #         system_prompt = SYSTEM_PROMPT + (
-            #             "\n\nIMPORTANT: HIGH UNCERTAINTY detected (entropy: %.2f). "
-            #             "Be extra cautious." % uc["entropy"])
-            # except Exception as ue:
-            #     print(f"  [uncertainty] error: {ue}")
-
+            # No uncertainty probes — straight to the agentic loop
             with driver.session(database=NEO4J_DB) as session:
                 while True:
                     resp = ai.messages.create(
-                        model=CLAUDE_MODEL,
-                        max_tokens=cfg.llm_max_tokens(),
+                        model=HAIKU_MODEL,
+                        max_tokens=LITE_MAX_TOKENS,
                         system=system_prompt,
                         tools=TOOLS,
                         messages=msgs,
@@ -511,7 +496,7 @@ async def _agent_stream(message: str, history: list):
                         except Exception:
                             pass
 
-                        # etymology panel — send structured data for rich rendering
+                        # etymology panel
                         _ETYMOLOGY_TOOLS = {"lookup_word", "explore_root_family",
                                             "get_verse_words", "search_semantic_field",
                                             "lookup_wujuh", "search_morphological_pattern"}
@@ -525,8 +510,6 @@ async def _agent_stream(message: str, history: list):
                             except Exception:
                                 pass
 
-                        # Use compressed result for conversation (saves ~60-70% tokens)
-                        # Full result_str already used above for graph + etymology
                         compressed = compress_tool_result(block.name, result_str)
                         tool_results.append({
                             "type":        "tool_result",
@@ -537,20 +520,9 @@ async def _agent_stream(message: str, history: list):
                     msgs.append({"role": "assistant", "content": resp.content})
                     msgs.append({"role": "user",      "content": tool_results})
 
-                # ── citation density check (disabled — saves a full re-generation call) ──
-                # To re-enable: uncomment the block below
-
-                # Fetch verse texts for all refs in the response
+                # No citation retry, no NLI verification — just fetch verses for tooltips
                 refs   = _extract_verse_refs(full_text)
                 verses = _fetch_verses(session, refs)
-
-                # ── citation verification (disabled — runs locally, no API cost, but adds latency) ──
-                # try:
-                #     from citation_verifier import verify_response
-                #     verification = verify_response(full_text, verses)
-                #     q.put({"t": "verification", "d": verification})
-                # except Exception as ve:
-                #     print(f"  [verify] error: {ve}")
 
                 # ── save to answer cache ──
                 try:
@@ -563,17 +535,16 @@ async def _agent_stream(message: str, history: list):
         except Exception as e:
             q.put({"t": "error", "d": str(e)})
         finally:
-            q.put(None)   # sentinel
+            q.put(None)
 
     thread = threading.Thread(target=run, daemon=True)
     thread.start()
 
-    # Poll the thread-safe queue without blocking the event loop
     while True:
         try:
             event = q.get_nowait()
         except Exception:
-            await asyncio.sleep(0.05)   # nothing yet — yield briefly
+            await asyncio.sleep(0.05)
             continue
         if event is None:
             break
@@ -582,6 +553,6 @@ async def _agent_stream(message: str, history: list):
 
 if __name__ == "__main__":
     import uvicorn
-    print("\nQuran Graph Web UI: http://localhost:8081\n")
-    webbrowser.open("http://localhost:8081")
-    uvicorn.run(app, host="0.0.0.0", port=8081, log_level="info")
+    print("\n[LITE] Quran Graph — Haiku Cheap Mode: http://localhost:8084\n")
+    webbrowser.open("http://localhost:8084")
+    uvicorn.run(app, host="0.0.0.0", port=8084, log_level="info")

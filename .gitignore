@@ -20,6 +20,34 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Large data (regenerable from source)
+# Node
+node_modules/
+package-lock.json
+
+# Generated data — all regenerable from the build pipeline
+# DB comes from the .dump file shared separately
+data/*.csv
+data/verses.json
 data/quran-arabic-raw.json
 data/quran-morphology.txt
+data/morph_patterns.json
+data/answer_cache.json
+
+# Log and output files
+*.log
+*.txt
+app_log.txt
+app_out.txt
+dashboard_output.txt
+autoresearch_local_output.txt
+autoresearch_local_log.jsonl
+autoresearch_log.jsonl
+
+# Backup / scratch files
+pipeline_config_backup.yaml
+*.pptx
+
+# Eval results (personal runs)
+eval_baseline.json
+eval_phase1_2_4.json
+eval_all_phases.json

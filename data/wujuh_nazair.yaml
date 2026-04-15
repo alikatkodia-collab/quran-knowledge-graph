@@ -1,0 +1,318 @@
+# Wujuh wa al-Naza'ir — Quranic Polysemy Database
+# Words carrying multiple distinct meanings across Quranic contexts
+#
+# Sources: Muqatil ibn Sulayman (d. 767), Ibn al-Jawzi (Nuzhat al-A'yun),
+#          al-Damaghani, al-Isfahani (al-Mufradat), classical tafsir tradition
+#
+# Each root entry lists distinct senses (wujuh) with sample verse references.
+# Naza'ir are words sharing the same sense across different roots.
+
+هدي:
+  lemma: هُدًى
+  senses:
+    - meaning: "Divine guidance to the straight path"
+      meaningAr: "الهداية الى الصراط المستقيم"
+      verses: ["2:2", "2:5", "2:120", "3:73", "6:71", "7:178"]
+    - meaning: "To show the way, direct"
+      meaningAr: "الدلالة والارشاد"
+      verses: ["1:6", "20:50", "87:3"]
+    - meaning: "The Quran itself as guidance"
+      meaningAr: "القرآن"
+      verses: ["2:185", "17:9", "27:2"]
+    - meaning: "Faith and belief"
+      meaningAr: "الايمان"
+      verses: ["2:16", "7:30", "18:13"]
+    - meaning: "Argument, proof"
+      meaningAr: "الحجة والبيان"
+      verses: ["6:84", "6:90"]
+    - meaning: "Sacrificial offering"
+      meaningAr: "ما يهدى من الانعام"
+      verses: ["2:196", "5:2", "5:95"]
+
+أمن:
+  lemma: آمَنَ
+  senses:
+    - meaning: "Belief in God and the Last Day"
+      meaningAr: "الايمان بالله واليوم الآخر"
+      verses: ["2:3", "2:62", "2:177", "4:136"]
+    - meaning: "Safety and security"
+      meaningAr: "الامان والامن"
+      verses: ["2:125", "6:81", "106:4"]
+    - meaning: "Trust, entrust"
+      meaningAr: "الائتمان"
+      verses: ["2:283", "3:75", "12:64"]
+
+كفر:
+  lemma: كَفَرَ
+  senses:
+    - meaning: "Disbelief in God's signs and revelations"
+      meaningAr: "الكفر بآيات الله"
+      verses: ["2:6", "2:89", "3:4", "4:136"]
+    - meaning: "Ingratitude for blessings"
+      meaningAr: "كفران النعمة"
+      verses: ["14:7", "27:40", "31:12"]
+    - meaning: "To cover, conceal (agricultural)"
+      meaningAr: "التغطية والستر"
+      verses: ["57:20"]
+    - meaning: "To disown, disassociate"
+      meaningAr: "التبرؤ"
+      verses: ["60:4", "14:22"]
+
+نور:
+  lemma: نُور
+  senses:
+    - meaning: "God's light — divine guidance and truth"
+      meaningAr: "نور الله - الهداية"
+      verses: ["24:35", "5:15", "9:32"]
+    - meaning: "The Quran as light"
+      meaningAr: "القرآن"
+      verses: ["4:174", "7:157", "64:8"]
+    - meaning: "Physical light (celestial)"
+      meaningAr: "الضوء الحسي"
+      verses: ["10:5", "71:16"]
+    - meaning: "Light on the Day of Judgment"
+      meaningAr: "نور يوم القيامة"
+      verses: ["57:12", "57:13", "66:8"]
+    - meaning: "Islam, faith"
+      meaningAr: "الاسلام والايمان"
+      verses: ["2:257", "6:122", "39:22"]
+
+ظلم:
+  lemma: ظُلْم
+  senses:
+    - meaning: "Associating partners with God (shirk)"
+      meaningAr: "الشرك"
+      verses: ["31:13", "6:82"]
+    - meaning: "Wronging oneself through sin"
+      meaningAr: "ظلم النفس بالمعصية"
+      verses: ["2:231", "7:23", "18:35"]
+    - meaning: "Wronging others, injustice"
+      meaningAr: "ظلم الناس"
+      verses: ["42:42", "26:227"]
+    - meaning: "Diminishing, reducing"
+      meaningAr: "النقص"
+      verses: ["18:33", "2:281"]
+
+فتن:
+  lemma: فِتْنَة
+  senses:
+    - meaning: "Trial, test from God"
+      meaningAr: "الابتلاء والاختبار"
+      verses: ["2:102", "29:2", "20:40"]
+    - meaning: "Persecution, oppression"
+      meaningAr: "الاضطهاد والتعذيب"
+      verses: ["2:191", "2:217", "8:39"]
+    - meaning: "Punishment, torment"
+      meaningAr: "العذاب"
+      verses: ["37:63", "51:14", "54:27"]
+    - meaning: "Seduction, temptation"
+      meaningAr: "الاغراء والاغواء"
+      verses: ["5:49", "7:27"]
+    - meaning: "Disbelief, polytheism"
+      meaningAr: "الكفر والشرك"
+      verses: ["2:193", "8:39"]
+
+أمر:
+  lemma: أَمْر
+  senses:
+    - meaning: "Divine command, decree"
+      meaningAr: "أمر الله وقضاؤه"
+      verses: ["7:54", "11:73", "16:1", "65:5"]
+    - meaning: "Affair, matter, situation"
+      meaningAr: "الشأن والحال"
+      verses: ["2:210", "3:128", "47:21"]
+    - meaning: "To command, order"
+      meaningAr: "الأمر والتكليف"
+      verses: ["2:67", "7:12", "16:90"]
+    - meaning: "Religion, faith"
+      meaningAr: "الدين"
+      verses: ["42:38", "9:48"]
+    - meaning: "Punishment, torment"
+      meaningAr: "العذاب"
+      verses: ["65:8", "54:50"]
+
+قلب:
+  lemma: قَلْب
+  senses:
+    - meaning: "Heart as seat of understanding and faith"
+      meaningAr: "القلب محل الفهم والايمان"
+      verses: ["2:7", "2:10", "2:74", "3:8", "22:46"]
+    - meaning: "To turn, reverse, transform"
+      meaningAr: "التحويل والانقلاب"
+      verses: ["3:144", "26:227", "5:21"]
+    - meaning: "Innermost self, conscience"
+      meaningAr: "الضمير والسريرة"
+      verses: ["50:37", "8:24"]
+
+سبل:
+  lemma: سَبِيل
+  senses:
+    - meaning: "God's path (Islam, obedience)"
+      meaningAr: "سبيل الله - طاعته ودينه"
+      verses: ["2:154", "2:195", "2:218", "3:13"]
+    - meaning: "Road, way, route (physical)"
+      meaningAr: "الطريق الحسي"
+      verses: ["4:15", "12:108", "25:17"]
+    - meaning: "Means, way to achieve something"
+      meaningAr: "الوسيلة"
+      verses: ["4:90", "5:16", "17:48"]
+    - meaning: "Argument, plea"
+      meaningAr: "الحجة"
+      verses: ["4:141", "42:41"]
+
+روح:
+  lemma: رُوح
+  senses:
+    - meaning: "Angel Gabriel"
+      meaningAr: "جبريل عليه السلام"
+      verses: ["2:87", "2:253", "5:110", "16:102", "26:193"]
+    - meaning: "The Quran / revelation"
+      meaningAr: "القرآن والوحي"
+      verses: ["16:2", "42:52"]
+    - meaning: "Human spirit / soul"
+      meaningAr: "روح الانسان"
+      verses: ["15:29", "17:85", "32:9"]
+    - meaning: "Mercy, comfort"
+      meaningAr: "الرحمة والراحة"
+      verses: ["12:87", "56:89", "58:22"]
+
+كلم:
+  lemma: كَلِمَة
+  senses:
+    - meaning: "God's word / decree"
+      meaningAr: "كلمة الله وقضاؤه"
+      verses: ["6:115", "10:64", "18:109"]
+    - meaning: "Word of punishment"
+      meaningAr: "كلمة العذاب"
+      verses: ["10:33", "39:71", "40:6"]
+    - meaning: "Jesus as a word from God"
+      meaningAr: "عيسى كلمة من الله"
+      verses: ["3:39", "3:45", "4:171"]
+    - meaning: "Speech, utterance"
+      meaningAr: "القول والكلام"
+      verses: ["2:59", "7:162", "23:100"]
+
+جعل:
+  lemma: جَعَلَ
+  senses:
+    - meaning: "To create, bring into existence"
+      meaningAr: "الخلق والايجاد"
+      verses: ["6:1", "21:30", "25:61"]
+    - meaning: "To appoint, designate"
+      meaningAr: "التعيين والتقرير"
+      verses: ["2:30", "2:124", "6:165"]
+    - meaning: "To make into, transform"
+      meaningAr: "التحويل والتصيير"
+      verses: ["2:22", "21:31", "43:56"]
+    - meaning: "To place, put"
+      meaningAr: "الوضع"
+      verses: ["7:10", "71:19"]
+    - meaning: "To attribute, ascribe (falsely)"
+      meaningAr: "الافتراء والنسبة"
+      verses: ["6:100", "16:57", "43:19"]
+
+ضرب:
+  lemma: ضَرَبَ
+  senses:
+    - meaning: "To strike, hit"
+      meaningAr: "الضرب الحسي"
+      verses: ["2:60", "8:12", "47:4"]
+    - meaning: "To set forth, coin (a parable)"
+      meaningAr: "ضرب المثل"
+      verses: ["2:26", "14:24", "16:75", "36:13"]
+    - meaning: "To travel, journey"
+      meaningAr: "السفر والسير"
+      verses: ["2:273", "3:156", "4:94"]
+    - meaning: "To cover, veil"
+      meaningAr: "الستر والحجب"
+      verses: ["18:11", "24:31"]
+    - meaning: "To impose, prescribe"
+      meaningAr: "الفرض والالزام"
+      verses: ["2:61", "3:112"]
+
+أيي:
+  lemma: آيَة
+  senses:
+    - meaning: "Verse of the Quran"
+      meaningAr: "آية من القرآن"
+      verses: ["2:106", "3:7", "11:1"]
+    - meaning: "Sign, miracle, evidence"
+      meaningAr: "العلامة والمعجزة"
+      verses: ["2:118", "3:49", "26:4"]
+    - meaning: "Lesson, example"
+      meaningAr: "العبرة"
+      verses: ["12:7", "23:50", "29:15"]
+    - meaning: "Sign in creation (natural phenomena)"
+      meaningAr: "آيات الله في الخلق"
+      verses: ["2:164", "3:190", "10:6", "45:3"]
+
+دين:
+  lemma: دِين
+  senses:
+    - meaning: "Religion, faith system"
+      meaningAr: "الملة والشريعة"
+      verses: ["2:256", "3:19", "5:3", "109:6"]
+    - meaning: "Judgment, reckoning (Day of)"
+      meaningAr: "الحساب والجزاء"
+      verses: ["1:4", "15:35", "37:20", "82:9"]
+    - meaning: "Obedience, submission"
+      meaningAr: "الطاعة والخضوع"
+      verses: ["16:52", "39:2", "40:65"]
+    - meaning: "Custom, way of life"
+      meaningAr: "العادة والسيرة"
+      verses: ["12:76"]
+
+نبأ:
+  lemma: نَبَأ
+  senses:
+    - meaning: "Prophet, one who receives revelation"
+      meaningAr: "النبي"
+      verses: ["2:246", "3:39", "19:30"]
+    - meaning: "News, important information"
+      meaningAr: "الخبر العظيم"
+      verses: ["6:5", "26:6", "38:67", "78:2"]
+    - meaning: "To inform, announce"
+      meaningAr: "الاخبار والاعلام"
+      verses: ["3:15", "6:143", "15:49"]
+
+عذب:
+  lemma: عَذاب
+  senses:
+    - meaning: "Punishment in the Hereafter"
+      meaningAr: "عذاب الآخرة"
+      verses: ["2:7", "2:10", "3:21", "4:56"]
+    - meaning: "Punishment in this world"
+      meaningAr: "عذاب الدنيا"
+      verses: ["7:141", "8:32", "29:34"]
+    - meaning: "Fresh, sweet (water)"
+      meaningAr: "الماء العذب"
+      verses: ["25:53", "35:12"]
+
+حكم:
+  lemma: حُكْم
+  senses:
+    - meaning: "Wisdom"
+      meaningAr: "الحكمة"
+      verses: ["2:269", "3:48", "31:12"]
+    - meaning: "Judgment, ruling"
+      meaningAr: "الحكم والقضاء"
+      verses: ["4:58", "5:42", "6:57"]
+    - meaning: "Authority, sovereignty"
+      meaningAr: "السلطة والملك"
+      verses: ["6:62", "12:40", "28:88"]
+    - meaning: "Prophethood"
+      meaningAr: "النبوة"
+      verses: ["3:79", "6:89", "45:16"]
+
+بلو:
+  lemma: بَلاء
+  senses:
+    - meaning: "Test, trial (good or bad)"
+      meaningAr: "الاختبار"
+      verses: ["2:49", "7:141", "37:106", "44:33"]
+    - meaning: "Blessing, favor (testing through good)"
+      meaningAr: "النعمة"
+      verses: ["8:17", "7:141"]
+    - meaning: "Affliction, calamity"
+      meaningAr: "المصيبة والشدة"
+      verses: ["14:6", "37:106"]

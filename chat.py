@@ -46,6 +46,7 @@ NEO4J_URI      = os.getenv("NEO4J_URI", "bolt://localhost:7687")
 NEO4J_USER     = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_TOKEN = os.getenv("ANTHROPIC_OAUTH_TOKEN", "")
 MODEL          = cfg.llm_model()
 
 # ── reuse lemmatizer ───────────────────────────────────────────────────────────
@@ -558,6 +559,404 @@ def tool_semantic_search(session, query: str, top_k: int = 40) -> dict:
     }
 
 
+# ── etymology tools ─────────────────────────────────────────────────────────────
+
+def tool_lookup_word(session, word: str) -> dict:
+    """Look up an Arabic word — root, lemma, pattern, morphology, occurrences."""
+    results = session.run("""
+        MATCH (w:WordToken)
+        WHERE w.arabicClean CONTAINS $word
+           OR w.translitBW CONTAINS $word
+           OR w.lemma CONTAINS $word
+        WITH w LIMIT 200
+        OPTIONAL MATCH (w)-[:HAS_LEMMA]->(l:Lemma)
+        OPTIONAL MATCH (l)-[:DERIVES_FROM]->(r:ArabicRoot)
+        OPTIONAL MATCH (w)-[:FOLLOWS_PATTERN]->(p:MorphPattern)
+        RETURN w.tokenId AS tokenId, w.verseId AS verseId,
+               w.arabicText AS arabicText, w.pos AS pos,
+               w.morphFeatures AS morphFeatures, w.wazn AS wazn,
+               l.lemma AS lemma, l.glossEn AS gloss,
+               r.root AS root, r.gloss AS rootGloss,
+               p.pattern AS pattern, p.label AS patternLabel,
+               p.meaningTendency AS meaningTendency
+        ORDER BY w.verseId
+    """, word=word).data()
+
+    if not results:
+        return {"word": word, "found": False, "message": "Word not found in the Quran"}
+
+    # Group by lemma
+    by_lemma = {}
+    for r in results:
+        lem = r['lemma'] or r['arabicText']
+        if lem not in by_lemma:
+            by_lemma[lem] = {
+                "lemma": lem,
+                "root": r['root'] or '',
+                "rootGloss": r['rootGloss'] or r['gloss'] or '',
+                "pattern": r['pattern'] or r['wazn'] or '',
+                "patternLabel": r['patternLabel'] or '',
+                "meaningTendency": r['meaningTendency'] or '',
+                "pos": r['pos'],
+                "occurrences": [],
+            }
+        if len(by_lemma[lem]['occurrences']) < 50:
+            by_lemma[lem]['occurrences'].append({
+                "verse_id": r['verseId'],
+                "token_id": r['tokenId'],
+                "arabic": r['arabicText'],
+                "morphology": r['morphFeatures'],
+            })
+
+    return {
+        "word": word,
+        "found": True,
+        "total_occurrences": len(results),
+        "lemmas": list(by_lemma.values()),
+    }
+
+
+def tool_explore_root_family(session, root: str) -> dict:
+    """Full derivative tree of a root — all lemmas grouped by pattern."""
+    results = session.run("""
+        MATCH (r:ArabicRoot)
+        WHERE r.root = $root OR r.rootBW = $root
+        OPTIONAL MATCH (l:Lemma)-[:DERIVES_FROM]->(r)
+        OPTIONAL MATCH (w:WordToken)-[:HAS_LEMMA]->(l)
+        OPTIONAL MATCH (w)-[:FOLLOWS_PATTERN]->(p:MorphPattern)
+        OPTIONAL MATCH (r)-[:IN_DOMAIN]->(d:SemanticDomain)
+        RETURN r.root AS root, r.gloss AS rootGloss, r.verseCount AS rootVerseCount,
+               l.lemma AS lemma, l.glossEn AS lemmaGloss, l.pos AS lemmaPos,
+               l.verseCount AS lemmaVerseCount,
+               w.verseId AS verseId, w.arabicText AS arabicText,
+               p.pattern AS pattern, p.label AS patternLabel,
+               d.domainId AS domainId, d.nameEn AS domainName
+        ORDER BY l.lemma, w.verseId
+    """, root=root).data()
+
+    if not results:
+        return {"root": root, "found": False, "message": "Root not found"}
+
+    root_info = {
+        "root": results[0]['root'],
+        "gloss": results[0]['rootGloss'] or '',
+        "verse_count": results[0]['rootVerseCount'] or 0,
+    }
+
+    # Collect domains
+    domains = {}
+    for r in results:
+        if r['domainId']:
+            domains[r['domainId']] = r['domainName']
+
+    # Group by lemma then pattern
+    lemma_map = {}
+    for r in results:
+        lem = r['lemma']
+        if not lem:
+            continue
+        if lem not in lemma_map:
+            lemma_map[lem] = {
+                "lemma": lem,
+                "gloss": r['lemmaGloss'] or '',
+                "pos": r['lemmaPos'] or '',
+                "verse_count": r['lemmaVerseCount'] or 0,
+                "pattern": r['pattern'] or '',
+                "pattern_label": r['patternLabel'] or '',
+                "sample_verses": [],
+            }
+        if r['verseId'] and len(lemma_map[lem]['sample_verses']) < 5:
+            # Avoid duplicate verses
+            existing = {v['verse_id'] for v in lemma_map[lem]['sample_verses']}
+            if r['verseId'] not in existing:
+                lemma_map[lem]['sample_verses'].append({
+                    "verse_id": r['verseId'],
+                    "arabic": r['arabicText'] or '',
+                })
+
+    return {
+        "root": root_info,
+        "found": True,
+        "semantic_domains": domains,
+        "total_lemmas": len(lemma_map),
+        "lemmas": sorted(lemma_map.values(), key=lambda x: -x['verse_count']),
+    }
+
+
+def tool_get_verse_words(session, verse_id: str) -> dict:
+    """Word-by-word breakdown of a verse."""
+    results = session.run("""
+        MATCH (w:WordToken {verseId: $vid})
+        OPTIONAL MATCH (w)-[:HAS_LEMMA]->(l:Lemma)
+        OPTIONAL MATCH (l)-[:DERIVES_FROM]->(r:ArabicRoot)
+        OPTIONAL MATCH (w)-[:FOLLOWS_PATTERN]->(p:MorphPattern)
+        RETURN w.tokenId AS tokenId, w.wordPos AS wordPos,
+               w.arabicText AS arabicText, w.pos AS pos,
+               w.morphFeatures AS morphFeatures, w.wazn AS wazn,
+               l.lemma AS lemma, l.glossEn AS gloss,
+               r.root AS root, r.gloss AS rootGloss,
+               p.pattern AS pattern, p.label AS patternLabel
+        ORDER BY w.wordPos
+    """, vid=verse_id).data()
+
+    if not results:
+        return {"verse_id": verse_id, "found": False, "message": "Verse not found or no word tokens"}
+
+    # Also get the verse text
+    verse = session.run("""
+        MATCH (v:Verse {verseId: $vid})
+        RETURN v.text AS text, v.surahName AS surahName, v.surah AS surah
+    """, vid=verse_id).single()
+
+    words = []
+    for r in results:
+        words.append({
+            "position": r['wordPos'],
+            "arabic": r['arabicText'],
+            "root": r['root'] or '',
+            "root_gloss": r['rootGloss'] or r['gloss'] or '',
+            "lemma": r['lemma'] or '',
+            "pos": r['pos'],
+            "pattern": r['pattern'] or r['wazn'] or '',
+            "pattern_label": r['patternLabel'] or '',
+            "morphology": r['morphFeatures'] or '',
+        })
+
+    return {
+        "verse_id": verse_id,
+        "found": True,
+        "surah_name": verse['surahName'] if verse else '',
+        "translation": verse['text'] if verse else '',
+        "word_count": len(words),
+        "words": words,
+    }
+
+
+def tool_search_semantic_field(session, domain: str) -> dict:
+    """Find all roots and words in a semantic domain."""
+    results = session.run("""
+        MATCH (d:SemanticDomain)
+        WHERE d.domainId = $domain
+           OR d.nameEn CONTAINS $domain
+           OR d.nameAr CONTAINS $domain
+        WITH d LIMIT 1
+        OPTIONAL MATCH (r:ArabicRoot)-[:IN_DOMAIN]->(d)
+        OPTIONAL MATCH (l:Lemma)-[:DERIVES_FROM]->(r)
+        RETURN d.domainId AS domainId, d.nameEn AS nameEn,
+               d.nameAr AS nameAr, d.description AS description,
+               r.root AS root, r.gloss AS rootGloss, r.verseCount AS rootVerseCount,
+               l.lemma AS lemma, l.glossEn AS lemmaGloss, l.verseCount AS lemmaVerseCount
+        ORDER BY r.verseCount DESC, l.verseCount DESC
+    """, domain=domain.lower()).data()
+
+    if not results or not results[0]['domainId']:
+        # Try fuzzy match
+        all_domains = session.run("""
+            MATCH (d:SemanticDomain)
+            RETURN d.domainId AS id, d.nameEn AS name, d.nameAr AS nameAr
+        """).data()
+        return {
+            "domain": domain,
+            "found": False,
+            "available_domains": [{"id": d['id'], "name": d['name'], "nameAr": d['nameAr']} for d in all_domains],
+        }
+
+    domain_info = {
+        "domainId": results[0]['domainId'],
+        "nameEn": results[0]['nameEn'],
+        "nameAr": results[0]['nameAr'],
+        "description": results[0]['description'],
+    }
+
+    # Group by root
+    root_map = {}
+    for r in results:
+        if not r['root']:
+            continue
+        if r['root'] not in root_map:
+            root_map[r['root']] = {
+                "root": r['root'],
+                "gloss": r['rootGloss'] or '',
+                "verse_count": r['rootVerseCount'] or 0,
+                "lemmas": [],
+            }
+        if r['lemma']:
+            existing = {l['lemma'] for l in root_map[r['root']]['lemmas']}
+            if r['lemma'] not in existing:
+                root_map[r['root']]['lemmas'].append({
+                    "lemma": r['lemma'],
+                    "gloss": r['lemmaGloss'] or '',
+                    "verse_count": r['lemmaVerseCount'] or 0,
+                })
+
+    return {
+        "domain": domain_info,
+        "found": True,
+        "total_roots": len(root_map),
+        "roots": sorted(root_map.values(), key=lambda x: -x['verse_count']),
+    }
+
+
+def tool_lookup_wujuh(session, root: str) -> dict:
+    """Show all distinct meanings (wujuh) of a polysemous word/root."""
+    # First check if we have wujuh data stored as node properties
+    # For now, load from the CSV data that was imported
+    import csv
+    from pathlib import Path
+    wujuh_csv = Path(__file__).parent / "data" / "wujuh_entries.csv"
+
+    if not wujuh_csv.exists():
+        return {"root": root, "found": False, "message": "Wujuh data not loaded"}
+
+    # Search for matching root
+    matches = []
+    with open(wujuh_csv, encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row['root'] == root or root in row.get('lemma', ''):
+                matches.append(row)
+
+    if not matches:
+        # Try to find verses with this root to provide context even without wujuh data
+        verse_data = session.run("""
+            MATCH (r:ArabicRoot)
+            WHERE r.root = $root OR r.rootBW = $root
+            OPTIONAL MATCH (v:Verse)-[:MENTIONS_ROOT]->(r)
+            RETURN r.root AS root, r.gloss AS gloss,
+                   v.verseId AS verseId, v.text AS text
+            ORDER BY v.verseId LIMIT 10
+        """, root=root).data()
+
+        if verse_data:
+            return {
+                "root": root,
+                "found": False,
+                "message": f"No wujuh (polysemy) data for this root yet. Root '{verse_data[0]['root']}' ({verse_data[0]['gloss']}) appears in {len(verse_data)} sample verses.",
+                "sample_verses": [{"verse_id": v['verseId'], "text": v['text']} for v in verse_data if v['verseId']],
+            }
+        return {"root": root, "found": False, "message": "Root not found"}
+
+    senses = []
+    for m in matches:
+        sample_verses = json.loads(m.get('sampleVerses', '[]'))
+        # Fetch verse texts for each sample
+        verse_texts = {}
+        if sample_verses:
+            vt_results = session.run("""
+                UNWIND $vids AS vid
+                MATCH (v:Verse {verseId: vid})
+                RETURN v.verseId AS verseId, v.text AS text
+            """, vids=sample_verses[:5]).data()
+            verse_texts = {v['verseId']: v['text'] for v in vt_results}
+
+        senses.append({
+            "sense_id": m['senseId'],
+            "meaning_en": m['meaningEn'],
+            "meaning_ar": m.get('meaningAr', ''),
+            "sample_verses": [
+                {"verse_id": vid, "text": verse_texts.get(vid, '')}
+                for vid in sample_verses[:5]
+            ],
+        })
+
+    return {
+        "root": root,
+        "lemma": matches[0].get('lemma', ''),
+        "found": True,
+        "total_senses": len(senses),
+        "senses": senses,
+    }
+
+
+def tool_search_morphological_pattern(session, pattern: str = None,
+                                       pos: str = None,
+                                       verb_form: str = None) -> dict:
+    """Find words by morphological pattern, POS, or verbal form."""
+    conditions = []
+    params = {}
+
+    if pattern:
+        conditions.append("(p.pattern = $pattern OR p.patternBW = $pattern)")
+        params['pattern'] = pattern
+    if pos:
+        conditions.append("w.pos = $pos")
+        params['pos'] = pos.upper()
+    if verb_form:
+        # verb_form could be "IV", "4", "Form IV", etc.
+        vf_num = verb_form.replace('Form ', '').replace('form ', '')
+        roman_to_num = {'I': '1', 'II': '2', 'III': '3', 'IV': '4', 'V': '5',
+                        'VI': '6', 'VII': '7', 'VIII': '8', 'IX': '9', 'X': '10', 'XI': '11'}
+        vf_num = roman_to_num.get(vf_num, vf_num)
+        conditions.append("w.morphFeatures CONTAINS $vf_str")
+        params['vf_str'] = f'"vf": "{vf_num}"'
+
+    if not conditions:
+        return {"error": "Provide at least one of: pattern, pos, verb_form"}
+
+    where_clause = " AND ".join(conditions)
+
+    if pattern:
+        query = f"""
+            MATCH (w:WordToken)-[:FOLLOWS_PATTERN]->(p:MorphPattern)
+            WHERE {where_clause}
+            OPTIONAL MATCH (w)-[:HAS_LEMMA]->(l:Lemma)
+            OPTIONAL MATCH (l)-[:DERIVES_FROM]->(r:ArabicRoot)
+            RETURN DISTINCT w.arabicText AS arabic, w.pos AS pos,
+                   l.lemma AS lemma, r.root AS root, r.gloss AS gloss,
+                   p.pattern AS pattern, p.label AS patternLabel,
+                   count(w) AS occurrences
+            ORDER BY occurrences DESC
+            LIMIT 100
+        """
+    else:
+        query = f"""
+            MATCH (w:WordToken)
+            WHERE {where_clause}
+            OPTIONAL MATCH (w)-[:HAS_LEMMA]->(l:Lemma)
+            OPTIONAL MATCH (l)-[:DERIVES_FROM]->(r:ArabicRoot)
+            OPTIONAL MATCH (w)-[:FOLLOWS_PATTERN]->(p:MorphPattern)
+            RETURN DISTINCT w.arabicText AS arabic, w.pos AS pos,
+                   l.lemma AS lemma, r.root AS root, r.gloss AS gloss,
+                   p.pattern AS pattern, p.label AS patternLabel,
+                   count(w) AS occurrences
+            ORDER BY occurrences DESC
+            LIMIT 100
+        """
+
+    results = session.run(query, **params).data()
+
+    if not results:
+        return {"found": False, "message": "No words match the given criteria",
+                "pattern": pattern, "pos": pos, "verb_form": verb_form}
+
+    # Group by root
+    by_root = {}
+    for r in results:
+        root_key = r['root'] or 'unknown'
+        if root_key not in by_root:
+            by_root[root_key] = {
+                "root": r['root'] or '',
+                "gloss": r['gloss'] or '',
+                "words": [],
+            }
+        by_root[root_key]['words'].append({
+            "arabic": r['arabic'],
+            "lemma": r['lemma'] or '',
+            "pos": r['pos'],
+            "pattern": r['pattern'] or '',
+            "occurrences": r['occurrences'],
+        })
+
+    return {
+        "found": True,
+        "pattern": pattern,
+        "pos": pos,
+        "verb_form": verb_form,
+        "total_distinct_words": len(results),
+        "by_root": sorted(by_root.values(), key=lambda x: -sum(w['occurrences'] for w in x['words'])),
+    }
+
+
 # ── tool schema (Anthropic tool_use format) ────────────────────────────────────
 
 TOOLS = [
@@ -752,6 +1151,127 @@ TOOLS = [
             },
             "required": ["root"]
         }
+    },
+    {
+        "name": "lookup_word",
+        "description": (
+            "Look up any Arabic word in the Quran. Returns the word's trilateral root, "
+            "lemma, morphological pattern (wazn), part of speech, grammatical features, "
+            "and all verse occurrences. Accepts Arabic script or Buckwalter transliteration. "
+            "Use this when a user asks about a specific Arabic word."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "word": {
+                    "type": "string",
+                    "description": "Arabic word to look up (e.g. 'رحيم' or 'rHym')"
+                }
+            },
+            "required": ["word"]
+        }
+    },
+    {
+        "name": "explore_root_family",
+        "description": (
+            "Show the full derivative tree of an Arabic root — all lemmas derived from it, "
+            "grouped by morphological pattern, with semantic domain membership and sample verses. "
+            "Reveals how a single root generates a family of related words. "
+            "Use this to explore the semantic architecture of a root."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "root": {
+                    "type": "string",
+                    "description": "Arabic root to explore (e.g. 'رحم' or 'rHm')"
+                }
+            },
+            "required": ["root"]
+        }
+    },
+    {
+        "name": "get_verse_words",
+        "description": (
+            "Get a complete word-by-word grammatical breakdown of a Quranic verse. "
+            "Returns each word with its Arabic text, root, lemma, morphological pattern, "
+            "English gloss, part of speech, and grammatical features (person, gender, number, case). "
+            "Use this when a user wants to understand the grammar or etymology of a specific verse."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "verse_id": {
+                    "type": "string",
+                    "description": "Verse ID in surah:verse format (e.g. '1:1')"
+                }
+            },
+            "required": ["verse_id"]
+        }
+    },
+    {
+        "name": "search_semantic_field",
+        "description": (
+            "Find all Arabic roots and words that belong to a semantic domain (e.g. 'mercy', "
+            "'knowledge', 'creation'). Returns the domain's roots with their derived lemmas "
+            "and verse counts. Based on al-Isfahani's classical categorization. "
+            "Use this to explore how the Quran expresses a concept through multiple roots."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "domain": {
+                    "type": "string",
+                    "description": "Semantic domain name or Arabic name (e.g. 'mercy', 'رحمة', 'knowledge')"
+                }
+            },
+            "required": ["domain"]
+        }
+    },
+    {
+        "name": "lookup_wujuh",
+        "description": (
+            "Show all distinct meanings (wujuh) of a polysemous root across the Quran. "
+            "Based on the classical Islamic discipline of al-wujuh wa al-naza'ir. "
+            "Returns each sense with its meaning and sample verses. "
+            "Use this when exploring how the same word carries different meanings in different contexts."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "root": {
+                    "type": "string",
+                    "description": "Arabic root to look up wujuh for (e.g. 'هدي' or 'hdy')"
+                }
+            },
+            "required": ["root"]
+        }
+    },
+    {
+        "name": "search_morphological_pattern",
+        "description": (
+            "Find Quranic words by morphological pattern (wazn), part of speech, or verbal form. "
+            "For example, find all words on the فَعِيل pattern (intensive adjectives like رحيم, عليم), "
+            "or all Form IV verbs (أَفْعَلَ — causative). Results grouped by root. "
+            "Use this to study how morphological patterns shape meaning."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "pattern": {
+                    "type": "string",
+                    "description": "Morphological pattern in Arabic (e.g. 'فَعِيل', 'فَعُول') or Buckwalter"
+                },
+                "pos": {
+                    "type": "string",
+                    "description": "Part of speech filter (e.g. 'V.PERF', 'N', 'ADJ', 'ACT_PCPL')"
+                },
+                "verb_form": {
+                    "type": "string",
+                    "description": "Verbal form number or Roman numeral (e.g. '4', 'IV', 'X')"
+                }
+            }
+        }
     }
 ]
 
@@ -781,6 +1301,18 @@ def dispatch_tool(session, tool_name: str, tool_input: dict, user_query: str = N
             result = tool_search_arabic_root(session, **tool_input)
         elif tool_name == "compare_arabic_usage":
             result = tool_compare_arabic_usage(session, **tool_input)
+        elif tool_name == "lookup_word":
+            result = tool_lookup_word(session, **tool_input)
+        elif tool_name == "explore_root_family":
+            result = tool_explore_root_family(session, **tool_input)
+        elif tool_name == "get_verse_words":
+            result = tool_get_verse_words(session, **tool_input)
+        elif tool_name == "search_semantic_field":
+            result = tool_search_semantic_field(session, **tool_input)
+        elif tool_name == "lookup_wujuh":
+            result = tool_lookup_wujuh(session, **tool_input)
+        elif tool_name == "search_morphological_pattern":
+            result = tool_search_morphological_pattern(session, **tool_input)
         else:
             result = {"error": f"Unknown tool: {tool_name}"}
 
@@ -813,7 +1345,6 @@ def run_agent_turn(
         response = client.messages.create(
             model=MODEL,
             max_tokens=cfg.llm_max_tokens(),
-            temperature=cfg.llm_temperature(),
             system=SYSTEM_PROMPT,
             tools=TOOLS,
             messages=conversation,
@@ -857,8 +1388,8 @@ def main():
     print("Claude can freely explore the graph using tools.")
     print()
 
-    if not ANTHROPIC_KEY:
-        print("Set ANTHROPIC_API_KEY in your .env file first.")
+    if not ANTHROPIC_KEY and not ANTHROPIC_TOKEN:
+        print("Set ANTHROPIC_API_KEY or ANTHROPIC_OAUTH_TOKEN in your .env file first.")
         sys.exit(1)
 
     print(f"Connecting to Neo4j at {NEO4J_URI}...")
@@ -870,7 +1401,10 @@ def main():
         print(f"  Connection failed: {e}")
         sys.exit(1)
 
-    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+    if ANTHROPIC_TOKEN:
+        client = anthropic.Anthropic(auth_token=ANTHROPIC_TOKEN)
+    else:
+        client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     conversation = []
 
     print("\nType your question (or 'quit' / 'clear'):\n")

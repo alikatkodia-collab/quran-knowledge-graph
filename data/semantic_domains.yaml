@@ -1,0 +1,385 @@
+# Semantic Domains for Quranic Arabic Roots
+# Based on al-Isfahani's categorization in al-Mufradat fi Gharib al-Quran
+# and classical Islamic lexicographic tradition
+#
+# Each domain groups roots that share a core semantic field.
+# Sources: al-Isfahani, Ibn Faris (Maqayis al-Lughah), Lane's Lexicon
+
+divinity:
+  arabic: الوهية
+  description: "God's names, attributes, and divine nature"
+  roots:
+    - "أله"    # God, divinity
+    - "ربب"    # lord, sustainer
+    - "قدس"    # holy, sacred
+    - "سبح"    # glorify, exalt
+    - "حمد"    # praise
+    - "عظم"    # great, magnificent
+    - "عزز"    # mighty, powerful
+    - "جبر"    # compel, almighty
+    - "وحد"    # one, unique
+    - "صمد"    # eternal, self-sufficient
+    - "بدع"    # originate, create anew
+    - "علو"    # exalted, most high
+
+mercy:
+  arabic: رحمة
+  description: "Compassion, mercy, divine nurturing"
+  roots:
+    - "رحم"    # mercy, compassion, womb
+    - "رأف"    # kindness, clemency
+    - "حنن"    # tenderness
+    - "عطف"    # inclination, sympathy
+    - "لطف"    # gentle, subtle
+    - "برر"    # righteous, kind
+    - "حلم"    # forbearance, clemency
+    - "عفو"    # pardon, efface
+    - "غفر"    # forgive, cover
+
+knowledge:
+  arabic: علم
+  description: "Knowledge, understanding, intellect, wisdom"
+  roots:
+    - "علم"    # know, knowledge
+    - "فقه"    # understand deeply
+    - "حكم"    # wisdom, judgment
+    - "فهم"    # comprehend
+    - "عقل"    # reason, intellect
+    - "درس"    # study
+    - "فكر"    # think, reflect
+    - "ذكر"    # remember, mention
+    - "لبب"    # core understanding
+    - "بصر"    # insight, vision
+    - "شعر"    # perceive, feel
+    - "خبر"    # know by experience
+
+faith:
+  arabic: ايمان
+  description: "Belief, trust, faith, certainty"
+  roots:
+    - "أمن"    # believe, safety, trust
+    - "يقن"    # certainty
+    - "صدق"    # truth, sincerity
+    - "وثق"    # trust, rely
+    - "توب"    # repent, return
+    - "سلم"    # submit, peace, Islam
+    - "تقو"    # God-consciousness, piety
+    - "خشع"    # humility, awe
+    - "خوف"    # fear (of God)
+    - "رجو"    # hope
+    - "وكل"    # trust, rely on God
+
+disbelief:
+  arabic: كفر
+  description: "Disbelief, denial, hypocrisy, ingratitude"
+  roots:
+    - "كفر"    # disbelieve, cover
+    - "شرك"    # associate (polytheism)
+    - "نفق"    # hypocrisy, spend
+    - "ضلل"    # go astray
+    - "كذب"    # lie, deny
+    - "جحد"    # deny, reject
+    - "فسق"    # transgress
+    - "طغو"    # transgress bounds
+    - "ظلم"    # wrong, oppress
+    - "فجر"    # wicked, dawn
+
+guidance:
+  arabic: هداية
+  description: "Guidance, path, direction"
+  roots:
+    - "هدي"    # guide, guidance
+    - "صرط"    # path
+    - "سبل"    # way, path
+    - "طرق"    # road, way
+    - "رشد"    # right direction
+    - "نور"    # light
+    - "بين"    # clear, manifest
+    - "فرق"    # distinguish, criterion
+
+scripture:
+  arabic: كتاب
+  description: "Revelation, scripture, divine communication"
+  roots:
+    - "كتب"    # write, book, prescribe
+    - "قرأ"    # read, recite, Quran
+    - "نزل"    # send down, reveal
+    - "وحي"    # inspire, revelation
+    - "أيي"    # sign, verse
+    - "ذكر"    # reminder, remembrance
+    - "بلغ"    # convey, deliver
+    - "تلو"    # recite, follow
+    - "فرق"    # criterion, distinguish
+    - "بشر"    # glad tidings
+
+prayer:
+  arabic: صلاة
+  description: "Worship, prayer, devotion, ritual"
+  roots:
+    - "صلو"    # prayer, contact
+    - "عبد"    # worship, serve
+    - "سجد"    # prostrate
+    - "ركع"    # bow
+    - "دعو"    # call upon, supplicate
+    - "زكو"    # purify, charity
+    - "صوم"    # fast
+    - "حجج"    # pilgrimage
+    - "نسك"    # ritual sacrifice
+    - "قنت"    # devout, obedient
+
+creation:
+  arabic: خلق
+  description: "Creation, cosmos, natural world"
+  roots:
+    - "خلق"    # create
+    - "بدع"    # originate
+    - "فطر"    # bring into being, innate nature
+    - "جعل"    # make, place
+    - "كون"    # be, exist
+    - "برأ"    # create, shape
+    - "صور"    # form, shape
+    - "أنش"    # produce, create
+
+cosmos:
+  arabic: كون
+  description: "Heaven, earth, celestial bodies"
+  roots:
+    - "سمو"    # heaven, sky, name
+    - "أرض"    # earth, land
+    - "شمس"    # sun
+    - "قمر"    # moon
+    - "نجم"    # star
+    - "فلك"    # orbit, celestial sphere
+    - "بحر"    # sea
+    - "جبل"    # mountain
+    - "نهر"    # river
+    - "مطر"    # rain
+
+time:
+  arabic: زمن
+  description: "Time, day, seasons, eschatology"
+  roots:
+    - "يوم"    # day
+    - "ليل"    # night
+    - "وقت"    # time, appointed time
+    - "ساع"    # hour
+    - "دهر"    # age, epoch
+    - "أجل"    # term, appointed time
+    - "عصر"    # time, age, afternoon
+
+afterlife:
+  arabic: آخرة
+  description: "Hereafter, resurrection, judgment, paradise, hellfire"
+  roots:
+    - "أخر"    # hereafter, last
+    - "بعث"    # resurrect, send
+    - "حشر"    # gather, assemble
+    - "حسب"    # reckon, account
+    - "جزي"    # reward, recompense
+    - "جنن"    # paradise, garden
+    - "نار"    # fire
+    - "عذب"    # punish, torment
+    - "نعم"    # blessing, bounty
+    - "ثوب"    # reward, return
+    - "موت"    # death
+    - "قبر"    # grave
+
+life:
+  arabic: حياة
+  description: "Life, death, soul, spirit"
+  roots:
+    - "حيو"    # life, living
+    - "موت"    # death
+    - "نفس"    # soul, self
+    - "روح"    # spirit, breath
+    - "قلب"    # heart
+    - "فؤد"    # inner heart
+    - "صدر"    # chest, breast
+    - "عمر"    # life, age
+
+human_nature:
+  arabic: انسان
+  description: "Humanity, nature, creation of humans"
+  roots:
+    - "أنس"    # human, humanity
+    - "بشر"    # human, glad tidings
+    - "ولد"    # child, born
+    - "خلق"    # create
+    - "طين"    # clay
+    - "نطف"    # drop (of fluid)
+    - "علق"    # clinging substance
+    - "صور"    # form, shape
+
+family:
+  arabic: أسرة
+  description: "Family, kinship, marriage"
+  roots:
+    - "أهل"    # family, people
+    - "ولد"    # child, beget
+    - "زوج"    # spouse, pair
+    - "نكح"    # marry
+    - "أبو"    # father
+    - "أمم"    # mother, community
+    - "أخو"    # brother
+    - "بنو"    # son, build
+    - "بنت"    # daughter
+    - "رحم"    # womb, kinship
+
+community:
+  arabic: أمة
+  description: "Community, people, nations, messengers"
+  roots:
+    - "قوم"    # people, stand
+    - "أمم"    # community, mother
+    - "ناس"    # people, humanity
+    - "شعب"    # people, nation
+    - "قبل"    # tribe, accept
+    - "رسل"    # messenger
+    - "نبأ"    # prophet, news
+    - "شهد"    # witness, testify
+    - "بلغ"    # convey
+
+justice:
+  arabic: عدل
+  description: "Justice, equity, oppression, wrong"
+  roots:
+    - "عدل"    # justice
+    - "قسط"    # equity, fairness
+    - "حقق"    # truth, right
+    - "ظلم"    # wrong, oppress
+    - "بغي"    # transgress, oppress
+    - "عدو"    # enmity, transgress
+    - "حكم"    # judge, rule
+    - "شهد"    # witness, testify
+    - "ميز"    # distinguish
+
+law:
+  arabic: شريعة
+  description: "Divine law, commandments, permissible and forbidden"
+  roots:
+    - "حلل"    # lawful, permitted
+    - "حرم"    # forbidden, sacred
+    - "أمر"    # command
+    - "نهي"    # forbid, prohibit
+    - "فرض"    # obligate, prescribe
+    - "حدد"    # limit, boundary
+    - "شرع"    # legislate, ordain
+    - "وجب"    # obligate
+
+provision:
+  arabic: رزق
+  description: "Sustenance, provision, wealth, spending"
+  roots:
+    - "رزق"    # sustain, provision
+    - "نفق"    # spend
+    - "مال"    # wealth, property
+    - "كسب"    # earn, acquire
+    - "تجر"    # trade, commerce
+    - "ربو"    # increase, usury
+    - "صدق"    # charity, truth
+    - "زكو"    # purify, charity
+    - "فقر"    # poverty
+    - "غنو"    # rich, self-sufficient
+
+warfare:
+  arabic: جهاد
+  description: "Striving, warfare, defense, patience"
+  roots:
+    - "جهد"    # strive, effort
+    - "قتل"    # fight, kill
+    - "حرب"    # war
+    - "نصر"    # help, victory
+    - "فتح"    # open, conquer, victory
+    - "صبر"    # patience, persevere
+    - "هجر"    # emigrate, abandon
+
+gratitude:
+  arabic: شكر
+  description: "Gratitude, thankfulness, ingratitude"
+  roots:
+    - "شكر"    # thanks, gratitude
+    - "حمد"    # praise
+    - "كفر"    # ingratitude, disbelieve
+
+trial:
+  arabic: ابتلاء
+  description: "Testing, trial, affliction"
+  roots:
+    - "فتن"    # trial, test
+    - "بلو"    # test, afflict
+    - "مسس"    # touch, afflict
+    - "ضرر"    # harm, adversity
+    - "صبر"    # patience
+    - "كرب"    # distress
+
+speech:
+  arabic: كلام
+  description: "Speech, language, communication"
+  roots:
+    - "قول"    # say, speech
+    - "كلم"    # speak, word
+    - "نطق"    # utter, speak
+    - "لسن"    # tongue, language
+    - "سأل"    # ask, question
+    - "جوب"    # answer, respond
+    - "دعو"    # call, invite
+    - "نبأ"    # inform, news
+
+sight:
+  arabic: بصر
+  description: "Vision, sight, perception"
+  roots:
+    - "بصر"    # see, insight
+    - "نظر"    # look, consider
+    - "رأي"    # see, opinion
+    - "عين"    # eye, spring
+    - "شهد"    # witness
+
+hearing:
+  arabic: سمع
+  description: "Hearing, listening, obedience"
+  roots:
+    - "سمع"    # hear, listen
+    - "أذن"    # ear, permit
+    - "نصت"    # listen attentively
+    - "طوع"    # obey willingly
+    - "عصو"    # disobey
+
+movement:
+  arabic: حركة
+  description: "Movement, travel, journey"
+  roots:
+    - "سير"    # walk, travel
+    - "مشي"    # walk
+    - "سفر"    # journey, travel
+    - "هجر"    # emigrate
+    - "خرج"    # go out, exit
+    - "دخل"    # enter
+    - "رجع"    # return
+    - "أتي"    # come
+
+sustenance:
+  arabic: طعام
+  description: "Food, drink, sustenance"
+  roots:
+    - "طعم"    # food, taste
+    - "شرب"    # drink
+    - "أكل"    # eat
+    - "ماء"    # water
+    - "لبن"    # milk
+    - "عسل"    # honey
+    - "ثمر"    # fruit
+    - "زرع"    # cultivate, plant
+    - "حرث"    # till, cultivate
+
+covenant:
+  arabic: عهد
+  description: "Covenant, promise, pledge"
+  roots:
+    - "عهد"    # covenant, promise
+    - "وعد"    # promise
+    - "ميث"    # solemn covenant
+    - "عقد"    # contract, tie
+    - "حلف"    # swear, oath
+    - "قسم"    # oath, divide
+    - "بيع"    # pledge, sell

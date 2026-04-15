@@ -132,6 +132,112 @@
     .tool-block > summary:hover { color: #334155; }
     .tool-result { color: #334155; font-size: 0.78em; padding-top: 3px; padding-left: 12px; }
 
+    /* etymology panels */
+    .etym-panel {
+      background: linear-gradient(135deg, #0c1222 0%, #111827 100%);
+      border: 1px solid #1e3a5f;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 8px 0;
+      font-size: 0.88em;
+      line-height: 1.6;
+    }
+    .etym-panel-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e3a5f;
+    }
+    .etym-panel-header .ar-main {
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+      font-size: 1.6em;
+      color: #e2e8f0;
+      direction: rtl;
+    }
+    .etym-panel-header .en-gloss {
+      color: #94a3b8;
+      font-size: 0.95em;
+    }
+    .etym-tag {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 10px;
+      font-size: 0.78em;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+    .etym-tag-root { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .etym-tag-pattern { background: rgba(251,146,60,0.15); color: #fb923c; }
+    .etym-tag-pos { background: rgba(99,102,241,0.15); color: #818cf8; }
+    .etym-tag-domain { background: rgba(244,114,182,0.15); color: #f472b6; }
+    .etym-tag-count { background: rgba(16,185,129,0.12); color: #10b981; }
+    .etym-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(30,58,95,0.4);
+    }
+    .etym-row:last-child { border-bottom: none; }
+    .etym-row .ar {
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+      font-size: 1.2em;
+      color: #e2e8f0;
+      direction: rtl;
+      min-width: 80px;
+      text-align: right;
+      cursor: pointer;
+    }
+    .etym-row .ar:hover { color: #7dd3fc; }
+    .etym-row .gloss { color: #94a3b8; flex: 1; }
+    .etym-row .count { color: #475569; font-size: 0.85em; white-space: nowrap; }
+    .etym-row .vref-link {
+      color: #10b981; cursor: pointer; font-size: 0.85em;
+      text-decoration: underline dotted; margin-left: 4px;
+    }
+    .etym-row .vref-link:hover { color: #6ee7b7; }
+    .etym-interlinear {
+      display: flex;
+      gap: 0;
+      direction: rtl;
+      overflow-x: auto;
+      padding: 8px 0;
+    }
+    .etym-word-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4px 10px;
+      border-left: 1px solid rgba(30,58,95,0.3);
+      min-width: 60px;
+      cursor: pointer;
+    }
+    .etym-word-col:last-child { border-left: none; }
+    .etym-word-col:hover { background: rgba(125,211,252,0.08); border-radius: 6px; }
+    .etym-word-col .w-ar {
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+      font-size: 1.4em;
+      color: #e2e8f0;
+      line-height: 1.8;
+    }
+    .etym-word-col .w-gloss { color: #94a3b8; font-size: 0.78em; }
+    .etym-word-col .w-root { color: #f59e0b; font-size: 0.72em; font-family: 'Amiri', serif; }
+    .etym-word-col .w-pos { color: #475569; font-size: 0.68em; text-transform: uppercase; }
+    .etym-sense {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(30,58,95,0.3);
+    }
+    .etym-sense:last-child { border-bottom: none; }
+    .etym-sense-num { color: #f59e0b; font-weight: 700; margin-right: 6px; }
+    .etym-sense-meaning { color: #e2e8f0; }
+    .etym-sense-meaning-ar {
+      font-family: 'Amiri', serif; color: #94a3b8;
+      direction: rtl; display: inline; margin-right: 8px;
+    }
+    .etym-sense-verses { margin-top: 3px; font-size: 0.85em; }
+
     /* verse refs */
     .vref {
       color: #10b981; font-weight: 700; cursor: help;
@@ -308,6 +414,10 @@
           <div class="legend-item"><div class="legend-dot" style="background:#0f4c3a"></div><span>Verse (idle)</span></div>
           <div class="legend-item"><div class="legend-dot" style="background:#6ee7b7"></div><span>Verse (active)</span></div>
           <div class="legend-item"><div class="legend-dot" style="background:#d97706"></div><span>Keyword</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div><span>Arabic Root</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#c084fc"></div><span>Lemma</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#fb923c"></div><span>Pattern</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#f472b6"></div><span>Semantic Domain</span></div>
         </div>
         <button id="clear-graph-btn" onclick="clearGraph()">Clear connections</button>
         <div id="wasd-hint">W/S — forward/back<br>A/D — strafe<br>Q/E — up/down</div>
@@ -356,10 +466,16 @@
     const C_KEYWORD_IDLE   = new THREE.Color('#d97706');
     const C_ARABIC_ROOT    = new THREE.Color('#f59e0b');   // amber for Arabic root nodes
     const C_ARABIC_FORM    = new THREE.Color('#d97706');   // darker amber for derived forms
+    const C_LEMMA          = new THREE.Color('#c084fc');   // purple for lemma nodes
+    const C_MORPH_PATTERN  = new THREE.Color('#fb923c');   // orange for pattern nodes
+    const C_SEMANTIC_DOM   = new THREE.Color('#f472b6');   // pink for semantic domain nodes
 
     function nodeBaseColor(node) {
       if (node.type === 'arabicRoot') return C_ARABIC_ROOT;
       if (node.type === 'arabicForm') return C_ARABIC_FORM;
+      if (node.type === 'lemma') return C_LEMMA;
+      if (node.type === 'morphPattern') return C_MORPH_PATTERN;
+      if (node.type === 'semanticDomain') return C_SEMANTIC_DOM;
       if (node.type === 'keyword') return node.active ? C_KEYWORD_ACTIVE : C_KEYWORD_IDLE;
       if (node.active)       return C_VERSE_ACTIVE;
       if (node.inConv)       return C_VERSE_CONV;
@@ -373,7 +489,12 @@
       canvas.width = w; canvas.height = h;
       const ctx = canvas.getContext('2d');
       ctx.font = 'bold 24px monospace';
-      ctx.fillStyle = type === 'keyword' ? '#fde68a' : (type === 'arabicRoot' || type === 'arabicForm') ? '#fbbf24' : '#a7f3d0';
+      ctx.fillStyle = type === 'keyword' ? '#fde68a'
+        : (type === 'arabicRoot' || type === 'arabicForm') ? '#fbbf24'
+        : type === 'lemma' ? '#c084fc'
+        : type === 'morphPattern' ? '#fb923c'
+        : type === 'semanticDomain' ? '#f472b6'
+        : '#a7f3d0';
       ctx.shadowColor = '#000'; ctx.shadowBlur = 5;
       ctx.fillText(text, 6, 38);
       const tex = new THREE.CanvasTexture(canvas);
@@ -800,7 +921,27 @@
               ar.style.marginBottom = '8px';
               ar.style.paddingBottom = '8px';
               ar.style.borderBottom = '1px solid #1e293b';
-              ar.textContent = node.arabicText;
+              // Make each Arabic word clickable for etymology lookup
+              const words = node.arabicText.split(/\s+/);
+              words.forEach((word, i) => {
+                if (i > 0) ar.appendChild(document.createTextNode(' '));
+                const span = document.createElement('span');
+                span.className = 'arabic-word';
+                span.textContent = word;
+                span.style.cursor = 'pointer';
+                span.style.borderBottom = '1px dotted #666';
+                span.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  const chatInput = document.getElementById('input');
+                  if (chatInput) {
+                    chatInput.value = `Look up the word ${word}`;
+                    sendMessage();
+                  }
+                });
+                span.addEventListener('mouseenter', () => { span.style.color = '#7dd3fc'; });
+                span.addEventListener('mouseleave', () => { span.style.color = ''; });
+                ar.appendChild(span);
+              });
               bodyEl.appendChild(ar);
             }
             const en = document.createElement('div');
@@ -809,6 +950,15 @@
           } else if (node.type === 'arabicRoot') {
             titleEl.textContent = `Root: ${node.label}`;
             bodyEl.textContent = node.gloss || 'Arabic root node';
+          } else if (node.type === 'lemma') {
+            titleEl.textContent = `Lemma: ${node.label}`;
+            bodyEl.textContent = node.gloss || 'Derived word form';
+          } else if (node.type === 'morphPattern') {
+            titleEl.textContent = `Pattern: ${node.label}`;
+            bodyEl.textContent = 'Morphological pattern (wazn)';
+          } else if (node.type === 'semanticDomain') {
+            titleEl.textContent = `Domain: ${node.label}`;
+            bodyEl.textContent = 'Semantic field grouping related roots';
           } else {
             titleEl.textContent = `Keyword: ${node.label}`;
             bodyEl.textContent = 'Click a verse node to read its text.';
@@ -1095,6 +1245,7 @@
       }
 
       return {
+        bubble,
         addText(delta) {
           ensureTextEl();
           currentText += delta;
@@ -1114,6 +1265,12 @@
           allTextEls.forEach(el => wrapVerseRefs(el, verses));
           scrollBottom();
         },
+        addEtymologyPanel(tool, result) {
+          removeThinking();
+          currentTextEl = null; currentText = '';
+          const panel = renderEtymologyPanel(tool, result);
+          if (panel) { bubble.appendChild(panel); scrollBottom(); }
+        },
         setError(msg) {
           removeThinking();
           const e = document.createElement('div');
@@ -1121,6 +1278,196 @@
           e.textContent = 'Error: ' + msg; bubble.appendChild(e);
         },
       };
+    }
+
+    // ── etymology panel renderers ─────────────────────────────────────────────
+    function lookupWordInChat(word) {
+      const inp = document.getElementById('input');
+      if (inp) { inp.value = `Look up the word ${word}`; sendMessage(); }
+    }
+
+    function makeVrefSpan(vid) {
+      const s = document.createElement('span');
+      s.className = 'vref-link';
+      s.textContent = `[${vid}]`;
+      s.onclick = () => {
+        const inp = document.getElementById('input');
+        if (inp) { inp.value = `Show me verse ${vid}`; sendMessage(); }
+      };
+      return s;
+    }
+
+    function renderEtymologyPanel(tool, r) {
+      if (!r || r.error) return null;
+      const div = document.createElement('div');
+      div.className = 'etym-panel';
+
+      if (tool === 'lookup_word' && r.found) {
+        const lem = r.lemmas && r.lemmas[0];
+        if (!lem) return null;
+        // Header
+        div.innerHTML = `<div class="etym-panel-header">
+          <span class="ar-main">${esc(lem.lemma || r.word)}</span>
+          <span class="en-gloss">${esc(lem.rootGloss || '')}</span>
+        </div>`;
+        // Tags
+        const tags = document.createElement('div');
+        tags.style.marginBottom = '8px';
+        if (lem.root) tags.innerHTML += `<span class="etym-tag etym-tag-root">Root: ${esc(lem.root)}</span>`;
+        if (lem.pattern) tags.innerHTML += `<span class="etym-tag etym-tag-pattern">${esc(lem.pattern)}</span>`;
+        if (lem.pos) tags.innerHTML += `<span class="etym-tag etym-tag-pos">${esc(lem.pos)}</span>`;
+        tags.innerHTML += `<span class="etym-tag etym-tag-count">${r.total_occurrences} occurrences</span>`;
+        if (lem.patternLabel) tags.innerHTML += `<div style="color:#94a3b8;font-size:0.82em;margin-top:4px">${esc(lem.meaningTendency || lem.patternLabel)}</div>`;
+        div.appendChild(tags);
+        // Occurrence list (group by surah)
+        const bySurah = {};
+        for (const occ of (lem.occurrences || [])) {
+          const s = occ.verse_id.split(':')[0];
+          bySurah[s] = (bySurah[s] || 0) + 1;
+        }
+        if (Object.keys(bySurah).length > 0) {
+          const oDiv = document.createElement('div');
+          oDiv.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px;margin-top:6px';
+          for (const [s, c] of Object.entries(bySurah).sort((a,b) => b[1]-a[1]).slice(0, 20)) {
+            const chip = document.createElement('span');
+            chip.className = 'etym-tag etym-tag-count';
+            chip.textContent = `Surah ${s}: ${c}`;
+            oDiv.appendChild(chip);
+          }
+          div.appendChild(oDiv);
+        }
+        // Other lemmas
+        if (r.lemmas.length > 1) {
+          const more = document.createElement('div');
+          more.style.cssText = 'margin-top:10px;padding-top:8px;border-top:1px solid #1e3a5f';
+          more.innerHTML = '<div style="color:#475569;font-size:0.78em;margin-bottom:4px">Also found as:</div>';
+          for (const l of r.lemmas.slice(1, 6)) {
+            const row = document.createElement('div');
+            row.className = 'etym-row';
+            row.innerHTML = `<span class="ar" onclick="lookupWordInChat('${esc(l.lemma)}')">${esc(l.lemma)}</span>
+              <span class="gloss">${esc(l.rootGloss || '')}</span>
+              <span class="count">${(l.occurrences||[]).length} occ.</span>`;
+            more.appendChild(row);
+          }
+          div.appendChild(more);
+        }
+
+      } else if (tool === 'explore_root_family' && r.found) {
+        const root = r.root || {};
+        div.innerHTML = `<div class="etym-panel-header">
+          <span class="ar-main">${esc(root.root || '')}</span>
+          <span class="en-gloss">${esc(root.gloss || '')} — ${root.verse_count || 0} verses</span>
+        </div>`;
+        // Domain tags
+        const doms = r.semantic_domains || {};
+        if (Object.keys(doms).length) {
+          const dDiv = document.createElement('div');
+          dDiv.style.marginBottom = '8px';
+          for (const name of Object.values(doms)) {
+            dDiv.innerHTML += `<span class="etym-tag etym-tag-domain">${esc(name)}</span>`;
+          }
+          div.appendChild(dDiv);
+        }
+        // Lemma rows
+        for (const l of (r.lemmas || []).slice(0, 15)) {
+          const row = document.createElement('div');
+          row.className = 'etym-row';
+          const patBadge = l.pattern ? `<span class="etym-tag etym-tag-pattern" style="font-size:0.7em">${esc(l.pattern)}</span>` : '';
+          row.innerHTML = `<span class="ar" onclick="lookupWordInChat('${esc(l.lemma)}')">${esc(l.lemma)}</span>
+            <span class="gloss">${esc(l.gloss || '')} ${patBadge}</span>
+            <span class="count">${l.verse_count} verses</span>`;
+          div.appendChild(row);
+        }
+
+      } else if (tool === 'get_verse_words' && r.found) {
+        div.innerHTML = `<div class="etym-panel-header">
+          <span style="color:#10b981;font-weight:700">[${esc(r.verse_id)}]</span>
+          <span class="en-gloss">${esc(r.surah_name || '')}</span>
+        </div>`;
+        // Interlinear display
+        const inter = document.createElement('div');
+        inter.className = 'etym-interlinear';
+        for (const w of (r.words || [])) {
+          const col = document.createElement('div');
+          col.className = 'etym-word-col';
+          col.onclick = () => lookupWordInChat(w.arabic);
+          col.innerHTML = `<span class="w-ar">${esc(w.arabic)}</span>
+            <span class="w-gloss">${esc(w.root_gloss || w.lemma || '')}</span>
+            <span class="w-root">${esc(w.root || '')}</span>
+            <span class="w-pos">${esc(w.pos || '')}</span>`;
+          inter.appendChild(col);
+        }
+        div.appendChild(inter);
+        // Translation
+        if (r.translation) {
+          const tr = document.createElement('div');
+          tr.style.cssText = 'color:#94a3b8;font-size:0.85em;margin-top:8px;padding-top:8px;border-top:1px solid #1e3a5f;font-style:italic';
+          tr.textContent = r.translation;
+          div.appendChild(tr);
+        }
+
+      } else if (tool === 'search_semantic_field' && r.found) {
+        const dom = r.domain || {};
+        div.innerHTML = `<div class="etym-panel-header">
+          <span class="ar-main">${esc(dom.nameAr || '')}</span>
+          <span class="en-gloss">${esc(dom.nameEn || '')} — ${esc(dom.description || '')}</span>
+        </div>`;
+        div.innerHTML += `<span class="etym-tag etym-tag-domain">${r.total_roots} roots in this domain</span>`;
+        for (const rt of (r.roots || []).slice(0, 20)) {
+          const row = document.createElement('div');
+          row.className = 'etym-row';
+          row.innerHTML = `<span class="ar" onclick="lookupWordInChat('${esc(rt.root)}')">${esc(rt.root)}</span>
+            <span class="gloss">${esc(rt.gloss || '')}</span>
+            <span class="count">${rt.verse_count} verses</span>`;
+          div.appendChild(row);
+        }
+
+      } else if (tool === 'lookup_wujuh' && r.found) {
+        div.innerHTML = `<div class="etym-panel-header">
+          <span class="ar-main">${esc(r.root || '')}</span>
+          <span class="en-gloss">${r.total_senses} distinct meanings in the Quran</span>
+        </div>`;
+        for (const [i, sense] of (r.senses || []).entries()) {
+          const sd = document.createElement('div');
+          sd.className = 'etym-sense';
+          let html = `<span class="etym-sense-num">${i+1}.</span>`;
+          html += `<span class="etym-sense-meaning">${esc(sense.meaning_en)}</span>`;
+          if (sense.meaning_ar) html += ` <span class="etym-sense-meaning-ar">${esc(sense.meaning_ar)}</span>`;
+          sd.innerHTML = html;
+          // Sample verse refs
+          const vDiv = document.createElement('div');
+          vDiv.className = 'etym-sense-verses';
+          for (const sv of (sense.sample_verses || []).slice(0, 4)) {
+            vDiv.appendChild(makeVrefSpan(sv.verse_id));
+            vDiv.appendChild(document.createTextNode(' '));
+          }
+          sd.appendChild(vDiv);
+          div.appendChild(sd);
+        }
+
+      } else if (tool === 'search_morphological_pattern' && r.found) {
+        const pat = r.pattern || r.pos || r.verb_form || '';
+        div.innerHTML = `<div class="etym-panel-header">
+          <span class="ar-main">${esc(pat)}</span>
+          <span class="en-gloss">${r.total_distinct_words} distinct words</span>
+        </div>`;
+        for (const rt of (r.by_root || []).slice(0, 15)) {
+          const row = document.createElement('div');
+          row.className = 'etym-row';
+          const wordList = (rt.words || []).slice(0, 3).map(w =>
+            `<span class="ar" style="font-size:1em;min-width:auto;cursor:pointer" onclick="lookupWordInChat('${esc(w.lemma || w.arabic)}')">${esc(w.arabic)}</span>`
+          ).join(' ');
+          row.innerHTML = `<span style="color:#f59e0b;min-width:40px">${esc(rt.root)}</span>
+            <span style="display:flex;gap:8px;direction:rtl">${wordList}</span>
+            <span class="gloss" style="flex:1">${esc(rt.gloss || '')}</span>
+            <span class="count">${(rt.words||[]).reduce((a,w)=>a+w.occurrences,0)}×</span>`;
+          div.appendChild(row);
+        }
+
+      } else {
+        return null;
+      }
+      return div;
     }
 
     // ── verse tooltip ────────────────────────────────────────────────────────────
@@ -1209,7 +1556,7 @@
       addUserBubble(message);
       history.push({ role: 'user', content: message });
 
-      const { addText, addTool, finalize, setError } = createAssistantBubble();
+      const { bubble: currentBubble, addText, addTool, addEtymologyPanel, finalize, setError } = createAssistantBubble();
       let fullText = '';
 
       try {
@@ -1238,6 +1585,8 @@
               fullText += ev.d; addText(ev.d);
             } else if (ev.t === 'tool') {
               addTool(ev.name, ev.args, ev.summary);
+            } else if (ev.t === 'etymology_panel') {
+              addEtymologyPanel(ev.tool, ev.result);
             } else if (ev.t === 'graph_update') {
               applyGraphUpdate(ev);
             } else if (ev.t === 'retry') {
