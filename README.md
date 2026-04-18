@@ -1,6 +1,12 @@
-# Quran Knowledge Graph
+<p align="center">
+  <img src="docs/logo.png" width="280" alt="Quran Knowledge Graph — 6,234 verses on a Fibonacci sphere">
+</p>
 
-An AI-powered Quran explorer connecting all 6,234 verses from Rashad Khalifa's translation (*The Final Testament*) through a Neo4j knowledge graph with Arabic morphology, etymology, and 3D visualization. Ask questions in natural language and get answers grounded in specific verse citations.
+<h1 align="center">Quran Knowledge Graph</h1>
+
+<p align="center">
+An AI-powered Quran explorer connecting all 6,234 verses from Rashad Khalifa's translation (<em>The Final Testament</em>) through a Neo4j knowledge graph with Arabic morphology, etymology, and 3D visualization. Ask questions in natural language and get answers grounded in specific verse citations.
+</p>
 
 ## What It Does
 
