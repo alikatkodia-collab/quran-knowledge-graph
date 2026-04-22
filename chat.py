@@ -530,7 +530,21 @@ def tool_query_typed_edges(session, verse_id: str, edge_type: str = None) -> dic
 
 
 def tool_semantic_search(session, query: str, top_k: int = 40) -> dict:
-    """Find verses conceptually similar to a query using vector embeddings."""
+    """
+    Find verses conceptually similar to a query using vector embeddings,
+    then enrich each hit with connected graph structure in the same pass.
+
+    Returns per verse:
+      - similarity score
+      - text + surah context
+      - related verses (RELATED_TO edges, top 5)
+      - Arabic roots present (top 5)
+      - typed edges (SUPPORTS / ELABORATES / QUALIFIES / CONTRASTS / REPEATS)
+
+    This is a VectorCypherRetriever pattern — one tool call gets semantic
+    hits plus their graph context, reducing the need for follow-up get_verse
+    calls on every hit.
+    """
     model = _get_sem_model()
     vec = model.encode([query], normalize_embeddings=True, convert_to_numpy=True)[0].tolist()
 
@@ -538,23 +552,45 @@ def tool_semantic_search(session, query: str, top_k: int = 40) -> dict:
         CALL db.index.vector.queryNodes('verse_embedding', $k, $vec)
         YIELD node, score
         WHERE node.verseId IS NOT NULL
+        WITH node, score ORDER BY score DESC
+        // Graph enrichment in the same pass (VectorCypherRetriever pattern)
+        OPTIONAL MATCH (node)-[:RELATED_TO]-(related:Verse)
+        WITH node, score, collect(DISTINCT related.reference)[0..5] AS related_verses
+        OPTIONAL MATCH (node)-[:MENTIONS_ROOT]->(root:ArabicRoot)
+        WITH node, score, related_verses,
+             collect(DISTINCT root.root)[0..5] AS arabic_roots
+        OPTIONAL MATCH (node)-[typed:SUPPORTS|ELABORATES|QUALIFIES|CONTRASTS|REPEATS]-(te:Verse)
+        WITH node, score, related_verses, arabic_roots,
+             [x IN collect(DISTINCT {type: type(typed), target: te.reference})
+              WHERE x.type IS NOT NULL AND x.target IS NOT NULL][0..5] AS typed_edges
         RETURN node.verseId AS verseId, node.surahName AS surahName,
-               node.surah AS surah, node.text AS text, score
+               node.surah AS surah, node.text AS text, score,
+               related_verses, arabic_roots, typed_edges
     """, k=top_k, vec=vec).data()
 
     by_surah = {}
     for r in results:
         sname = f"Surah {r['surah']}: {r['surahName']}"
-        by_surah.setdefault(sname, []).append({
+        entry = {
             "verse_id": r["verseId"],
             "similarity": round(r["score"], 4),
             "text": r["text"],
-        })
+        }
+        # Only include enrichment fields when non-empty — keeps payload lean
+        if r["related_verses"]:
+            entry["related_verses"] = r["related_verses"]
+        if r["arabic_roots"]:
+            entry["arabic_roots"] = r["arabic_roots"]
+        if r["typed_edges"]:
+            entry["typed_edges"] = r["typed_edges"]
+        by_surah.setdefault(sname, []).append(entry)
 
     return {
         "query": query,
         "total_verses": len(results),
-        "note": "Results ranked by conceptual similarity, not keyword presence",
+        "note": ("Results ranked by semantic similarity. Each hit includes its "
+                 "related verses, Arabic roots present, and any typed edges "
+                 "(SUPPORTS/ELABORATES/QUALIFIES/CONTRASTS/REPEATS) in one pass."),
         "by_surah": by_surah,
     }
 
