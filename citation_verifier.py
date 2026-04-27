@@ -88,32 +88,122 @@ def _strip_framing(claim: str) -> str:
 
 
 # ── claim decomposition ──────────────────────────────────────────────────────
+#
+# Two modes:
+#   "regex"  (default) — sentence split via regex, one claim per sentence
+#   "atomic" — FActScore-style atomization via OpenRouter LLM. Each sentence
+#              is split into multiple independently-verifiable propositions,
+#              each tagged with the citations from the parent sentence.
+#
+# Switch via CITATION_DECOMPOSE=atomic|regex env var.
 
 _CITE_REF = re.compile(r'\[(\d+:\d+)\]')
 
-def decompose_claims(text: str) -> list[dict]:
+DECOMPOSE_MODE = os.environ.get("CITATION_DECOMPOSE", "regex").strip().lower()
+
+
+def _decompose_sentence_atomic(sentence: str) -> list[str]:
+    """
+    Break a single sentence into atomic factual claims via OpenRouter.
+    Falls back to [sentence] on any error.
+
+    Inspired by FActScore (Min et al., EMNLP 2023): each atomic claim should
+    be (a) a complete sentence, (b) independently verifiable, (c) free of
+    pronouns and relative clauses that depend on context.
+    """
+    api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not api_key:
+        return [sentence]
+
+    try:
+        import requests
+    except ImportError:
+        return [sentence]
+
+    system = (
+        "You are a fact-decomposition system. Given a sentence about the Quran, "
+        "break it into independent atomic factual claims. Each atomic claim must "
+        "be (a) a complete sentence on its own, (b) independently verifiable "
+        "against a single Quranic verse, (c) free of pronouns ('it', 'they', 'this') "
+        "by replacing them with their referents, (d) free of opinions, hedging, "
+        "or unverifiable assertions. Skip pure exhortations, opinions, and "
+        "stylistic flourishes. If the sentence has only one factual proposition, "
+        "return it as the only item. If the sentence is purely opinion or "
+        "introductory framing with no verifiable content, return an empty list. "
+        "Output strict JSON: {\"atoms\": [\"first claim.\", \"second claim.\"]}"
+    )
+    user = f"Decompose this sentence:\n\n{sentence.strip()}"
+
+    try:
+        r = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            json={
+                "model": os.environ.get("DECOMPOSE_MODEL", "openai/gpt-oss-120b:free"),
+                "messages": [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user},
+                ],
+                "temperature": 0.0,
+                "max_tokens": 600,
+                "response_format": {"type": "json_object"},
+            },
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "http://localhost:8085",
+                "X-Title": "QKG claim decomposition",
+            },
+            timeout=60,
+        )
+        r.raise_for_status()
+        body = r.json()["choices"][0]["message"]["content"] or "{}"
+        parsed = json.loads(body)
+        atoms = parsed.get("atoms") or []
+        # Sanity check
+        if not isinstance(atoms, list):
+            return [sentence]
+        cleaned = [str(a).strip() for a in atoms if isinstance(a, str) and len(str(a).strip()) > 10]
+        return cleaned or [sentence]
+    except Exception as e:
+        # On any failure, fall back to the original sentence as one atom
+        # so the verifier can still proceed
+        return [sentence]
+
+
+def decompose_claims(text: str, mode: str = None) -> list[dict]:
     """
     Split response text into atomic claims, each with its cited verse references.
-    Uses regex-based extraction (no LLM call needed).
+
+    mode: "regex" (default, fast, no API) | "atomic" (FActScore-style, LLM)
+    Falls back to "regex" if "atomic" decomposition fails.
 
     Returns list of {"claim": str, "citations": list[str]}
     """
+    use_mode = (mode or DECOMPOSE_MODE).lower()
     claims = []
-    # Split into sentences (rough but fast)
-    sentences = re.split(r'(?<=[.!?])\s+', text)
 
+    # First, do the regex-based sentence split — same in both modes
+    sentences = re.split(r'(?<=[.!?])\s+', text)
     for sentence in sentences:
         sentence = sentence.strip()
         if len(sentence) < 20:
-            continue  # skip short fragments
-
+            continue
         refs = _CITE_REF.findall(sentence)
-        if refs:
-            # Remove the citation brackets to get the clean claim text
-            clean = _CITE_REF.sub('', sentence).strip()
-            clean = re.sub(r'\s{2,}', ' ', clean)
-            if len(clean) > 15:
-                claims.append({"claim": clean, "citations": list(set(refs))})
+        if not refs:
+            continue
+        clean_sentence = _CITE_REF.sub('', sentence).strip()
+        clean_sentence = re.sub(r'\s{2,}', ' ', clean_sentence)
+        if len(clean_sentence) <= 15:
+            continue
+
+        if use_mode == "atomic":
+            # Decompose into atomic claims; each shares the parent sentence's citations
+            atoms = _decompose_sentence_atomic(clean_sentence)
+            for atom in atoms:
+                claims.append({"claim": atom, "citations": list(set(refs))})
+        else:
+            # Default regex mode: one claim per sentence
+            claims.append({"claim": clean_sentence, "citations": list(set(refs))})
 
     return claims
 
