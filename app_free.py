@@ -455,6 +455,64 @@ async def get_cache_stats():
     return cache_stats()
 
 
+# ── Sefaria-inspired ref resolver / linker API ────────────────────────────────
+
+class ResolveRefsRequest(BaseModel):
+    text: str
+
+@app.post("/api/resolve_refs")
+async def api_resolve_refs(req: ResolveRefsRequest):
+    """Find Quranic citations in the given text, return resolved verseIds."""
+    from ref_resolver import resolve_refs
+    matches = resolve_refs(req.text)
+    return {
+        "input_length": len(req.text),
+        "match_count": len(matches),
+        "matches": [
+            {"start": m.start, "end": m.end, "raw": m.raw,
+             "verse_id": m.canonical, "kind": m.kind, "confidence": m.confidence}
+            for m in matches
+        ],
+    }
+
+@app.get("/api/verse/{verse_id}")
+async def api_get_verse(verse_id: str):
+    """Return one verse by reference (e.g. '2:255')."""
+    if ":" not in verse_id:
+        return {"error": "verseId must be in format 'surah:verseNum'"}
+    with driver.session(database=NEO4J_DB) as s:
+        row = s.run("""
+            MATCH (v:Verse)
+            WHERE v.reference = $vid OR v.verseId = $vid
+            RETURN v.reference AS id, v.text AS text,
+                   v.arabicText AS arabic, v.surahName AS surahName,
+                   v.surah AS surah, v.verseNum AS verseNum
+            LIMIT 1
+        """, vid=verse_id).single()
+    if not row or not row.get("id"):
+        return {"error": f"verse {verse_id} not found"}
+    return {
+        "verse_id": row["id"],
+        "surah": row["surah"],
+        "surah_name": row["surahName"],
+        "verse_num": row["verseNum"],
+        "text": row["text"],
+        "arabic": row["arabic"],
+    }
+
+
+@app.get("/quran_linker.js")
+async def quran_linker_js():
+    """Single-file JS widget — drops into any page to auto-link Quranic refs."""
+    from fastapi.responses import Response
+    from pathlib import Path as _P
+    js_path = _P(__file__).parent / "static" / "quran_linker.js"
+    if not js_path.exists():
+        return Response(content="// quran_linker.js not built yet", media_type="application/javascript")
+    return Response(content=js_path.read_text(encoding="utf-8"),
+                    media_type="application/javascript")
+
+
 DEEP_DIVE_MODEL = "qwen3:14b"  # escalation model for complex questions
 
 
