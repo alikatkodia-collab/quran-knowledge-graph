@@ -1,0 +1,338 @@
+{
+  "computed_at": "2026-04-27T10:03:04.474483+00:00",
+  "nodes": 6231,
+  "edges": 51798,
+  "edge_density": 0.002669,
+  "connected_components": {
+    "count": 1,
+    "largest_size": 6231,
+    "isolated_nodes": 0
+  },
+  "degree": {
+    "max": 83,
+    "mean": 16.63,
+    "median": 15,
+    "p90": 24,
+    "p99": 39,
+    "histogram_top10": [
+      {
+        "degree": 12,
+        "verses": 1221
+      },
+      {
+        "degree": 13,
+        "verses": 828
+      },
+      {
+        "degree": 14,
+        "verses": 678
+      },
+      {
+        "degree": 15,
+        "verses": 613
+      },
+      {
+        "degree": 16,
+        "verses": 431
+      },
+      {
+        "degree": 17,
+        "verses": 380
+      },
+      {
+        "degree": 18,
+        "verses": 332
+      },
+      {
+        "degree": 19,
+        "verses": 252
+      },
+      {
+        "degree": 20,
+        "verses": 245
+      },
+      {
+        "degree": 21,
+        "verses": 170
+      }
+    ]
+  },
+  "powerlaw": {
+    "alpha": 1.426,
+    "n_used": 6220,
+    "min_deg": 2,
+    "interpretation": "heavy-tailed but not classical scale-free"
+  },
+  "top_hubs": [
+    {
+      "verseId": "72:20",
+      "degree": 83
+    },
+    {
+      "verseId": "2:213",
+      "degree": 65
+    },
+    {
+      "verseId": "24:64",
+      "degree": 62
+    },
+    {
+      "verseId": "23:59",
+      "degree": 60
+    },
+    {
+      "verseId": "64:4",
+      "degree": 57
+    },
+    {
+      "verseId": "3:29",
+      "degree": 56
+    },
+    {
+      "verseId": "21:110",
+      "degree": 53
+    },
+    {
+      "verseId": "74:43",
+      "degree": 52
+    },
+    {
+      "verseId": "28:62",
+      "degree": 52
+    },
+    {
+      "verseId": "70:23",
+      "degree": 51
+    },
+    {
+      "verseId": "2:103",
+      "degree": 51
+    },
+    {
+      "verseId": "23:9",
+      "degree": 51
+    },
+    {
+      "verseId": "85:20",
+      "degree": 50
+    },
+    {
+      "verseId": "65:11",
+      "degree": 50
+    },
+    {
+      "verseId": "7:197",
+      "degree": 48
+    },
+    {
+      "verseId": "40:65",
+      "degree": 47
+    },
+    {
+      "verseId": "16:86",
+      "degree": 47
+    },
+    {
+      "verseId": "10:63",
+      "degree": 47
+    },
+    {
+      "verseId": "17:9",
+      "degree": 47
+    },
+    {
+      "verseId": "13:27",
+      "degree": 47
+    },
+    {
+      "verseId": "73:20",
+      "degree": 46
+    },
+    {
+      "verseId": "72:2",
+      "degree": 45
+    },
+    {
+      "verseId": "16:20",
+      "degree": 45
+    },
+    {
+      "verseId": "12:98",
+      "degree": 45
+    },
+    {
+      "verseId": "84:25",
+      "degree": 44
+    },
+    {
+      "verseId": "6:100",
+      "degree": 44
+    },
+    {
+      "verseId": "8:3",
+      "degree": 43
+    },
+    {
+      "verseId": "6:117",
+      "degree": 43
+    },
+    {
+      "verseId": "23:51",
+      "degree": 43
+    },
+    {
+      "verseId": "29:9",
+      "degree": 43
+    }
+  ],
+  "top_bridges": [
+    {
+      "verseId": "24:64",
+      "betweenness": 0.00537
+    },
+    {
+      "verseId": "72:20",
+      "betweenness": 0.00526
+    },
+    {
+      "verseId": "2:213",
+      "betweenness": 0.0045
+    },
+    {
+      "verseId": "24:55",
+      "betweenness": 0.00398
+    },
+    {
+      "verseId": "3:179",
+      "betweenness": 0.00389
+    },
+    {
+      "verseId": "73:20",
+      "betweenness": 0.00336
+    },
+    {
+      "verseId": "2:253",
+      "betweenness": 0.00328
+    },
+    {
+      "verseId": "6:100",
+      "betweenness": 0.00317
+    },
+    {
+      "verseId": "20:41",
+      "betweenness": 0.00317
+    },
+    {
+      "verseId": "16:2",
+      "betweenness": 0.00315
+    },
+    {
+      "verseId": "42:48",
+      "betweenness": 0.00311
+    },
+    {
+      "verseId": "42:52",
+      "betweenness": 0.00309
+    },
+    {
+      "verseId": "29:17",
+      "betweenness": 0.00303
+    },
+    {
+      "verseId": "74:25",
+      "betweenness": 0.00291
+    },
+    {
+      "verseId": "6:70",
+      "betweenness": 0.00282
+    },
+    {
+      "verseId": "37:167",
+      "betweenness": 0.0028
+    },
+    {
+      "verseId": "7:198",
+      "betweenness": 0.00277
+    },
+    {
+      "verseId": "40:65",
+      "betweenness": 0.00274
+    },
+    {
+      "verseId": "7:197",
+      "betweenness": 0.00272
+    },
+    {
+      "verseId": "13:27",
+      "betweenness": 0.00269
+    },
+    {
+      "verseId": "4:74",
+      "betweenness": 0.00266
+    },
+    {
+      "verseId": "65:11",
+      "betweenness": 0.00263
+    },
+    {
+      "verseId": "6:155",
+      "betweenness": 0.00263
+    },
+    {
+      "verseId": "29:47",
+      "betweenness": 0.00258
+    },
+    {
+      "verseId": "29:9",
+      "betweenness": 0.00254
+    },
+    {
+      "verseId": "5:54",
+      "betweenness": 0.00248
+    },
+    {
+      "verseId": "70:39",
+      "betweenness": 0.0024
+    },
+    {
+      "verseId": "39:70",
+      "betweenness": 0.00237
+    },
+    {
+      "verseId": "9:74",
+      "betweenness": 0.00235
+    },
+    {
+      "verseId": "3:113",
+      "betweenness": 0.00234
+    }
+  ],
+  "communities": {
+    "method": "greedy_modularity",
+    "count": 16,
+    "modularity": 0.5324,
+    "size_distribution": {
+      "max": 955,
+      "median": 243,
+      "min": 21,
+      "top10": [
+        955,
+        918,
+        918,
+        667,
+        604,
+        512,
+        368,
+        260,
+        243,
+        200
+      ]
+    },
+    "interpretation": "well-defined communities"
+  },
+  "avg_shortest_path": {
+    "sampled_pairs": 200,
+    "mean": 3.795,
+    "max": 6
+  }
+}

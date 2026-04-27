@@ -917,6 +917,25 @@ async def _agent_stream(message: str, history: list,
                 except Exception as ce:
                     print(f"  [cache] save error: {ce}")
 
+                # ── Optional: NLI citation verification + persistence ──
+                # Off by default (loads cross-encoder/nli-deberta-v3-xsmall, adds 5-30s).
+                # Enable: export ENABLE_CITATION_VERIFY=1 (or set in .env) before launch.
+                if os.getenv("ENABLE_CITATION_VERIFY", "0") == "1" and verses and full_text:
+                    try:
+                        from citation_verifier import verify_response
+                        v_result = verify_response(full_text, verses)
+                        q.put({"t": "verification", "d": v_result})
+                        if rec is not None:
+                            try:
+                                rec.log_citation_checks(v_result)
+                            except Exception as _le:
+                                print(f"  [reasoning_memory] citation log failed: {_le}")
+                        print(f"  [verify] precision={v_result.get('citation_precision')} "
+                              f"checked={v_result.get('total_citations_checked')} "
+                              f"flagged={v_result.get('flagged_count')}")
+                    except Exception as ve:
+                        print(f"  [verify] error: {ve}")
+
                 # Finalize the reasoning-memory trace
                 if rec is not None:
                     try:

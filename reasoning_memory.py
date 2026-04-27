@@ -106,6 +106,10 @@ class ReasoningMemory:
             s.run("CREATE INDEX trace_id IF NOT EXISTS FOR (t:ReasoningTrace) ON (t.traceId)")
             s.run("CREATE INDEX toolcall_id IF NOT EXISTS FOR (tc:ToolCall) ON (tc.callId)")
             s.run("CREATE INDEX toolcall_name IF NOT EXISTS FOR (tc:ToolCall) ON (tc.tool_name)")
+            # Citation checks (NLI verdicts persisted from citation_verifier.py)
+            s.run("CREATE INDEX citation_check_id IF NOT EXISTS FOR (cc:CitationCheck) ON (cc.checkId)")
+            s.run("CREATE INDEX citation_check_ref IF NOT EXISTS FOR (cc:CitationCheck) ON (cc.ref)")
+            s.run("CREATE INDEX citation_check_label IF NOT EXISTS FOR (cc:CitationCheck) ON (cc.nli_label)")
             # Vector index — fails silently on already-existing ones
             try:
                 s.run("""
@@ -236,3 +240,66 @@ class QueryRecorder:
                 MATCH (t:ReasoningTrace {traceId: $tid})
                 SET t.status = 'failed', t.error_summary = $err
             """, tid=self.trace_id, err=error[:500])
+
+    def log_citation_checks(self, verifier_result: dict):
+        """
+        Persist NLI verification verdicts from citation_verifier.verify_response().
+
+        Stores ONE :CitationCheck node per claim×citation pair the verifier
+        returned a verdict for, plus a summary on the trace.
+
+        Schema:
+          (:ReasoningTrace)-[:HAS_CITATION_CHECK]->(:CitationCheck {
+              checkId, claim, ref, nli_label, nli_score, supported, ts
+          })
+
+        verifier_result is the dict returned by citation_verifier.verify_response().
+        We use its `flagged` list (failures) directly. To also persist successes
+        we'd need verifier to return them — for now we record the aggregate
+        precision/counts on the trace so we can compute false-positive rate later.
+        """
+        if not verifier_result:
+            return
+
+        # Trace-level summary (cheap, always set)
+        with self.memory.driver.session(database=self.memory.db) as s:
+            s.run("""
+                MATCH (t:ReasoningTrace {traceId: $tid})
+                SET t.cite_precision = $prec,
+                    t.cite_total_claims = $claims,
+                    t.cite_total_checked = $checked,
+                    t.cite_supported = $supported,
+                    t.cite_flagged_count = $flagged
+            """, tid=self.trace_id,
+                 prec=float(verifier_result.get("citation_precision", 0.0)),
+                 claims=int(verifier_result.get("total_claims", 0)),
+                 checked=int(verifier_result.get("total_citations_checked", 0)),
+                 supported=int(verifier_result.get("supported", 0)),
+                 flagged=int(verifier_result.get("flagged_count", 0)))
+
+        # Per-flagged-claim CitationCheck nodes (only failures, to keep size bounded)
+        flagged = verifier_result.get("flagged") or []
+        if not flagged:
+            return
+        ts = _now_iso()
+        rows = []
+        for f in flagged:
+            rows.append({
+                "checkId": str(uuid.uuid4()),
+                "claim":   str(f.get("claim", ""))[:300],
+                "ref":     str(f.get("ref", "")),
+                "nli_label": str(f.get("nli_label", "")),
+                "nli_score": float(f.get("nli_score", 0.0)),
+                "supported": False,
+            })
+        with self.memory.driver.session(database=self.memory.db) as s:
+            s.run("""
+                MATCH (t:ReasoningTrace {traceId: $tid})
+                UNWIND $rows AS row
+                CREATE (cc:CitationCheck {
+                    checkId: row.checkId, claim: row.claim, ref: row.ref,
+                    nli_label: row.nli_label, nli_score: row.nli_score,
+                    supported: row.supported, ts: datetime($ts)
+                })
+                CREATE (t)-[:HAS_CITATION_CHECK]->(cc)
+            """, tid=self.trace_id, rows=rows, ts=ts)
