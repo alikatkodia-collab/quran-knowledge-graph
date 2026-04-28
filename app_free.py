@@ -118,6 +118,21 @@ OLLAMA_TOOLS = [
                        "properties": {"scope": {"type": "string", "enum": ["global", "sura", "verse"]},
                                       "target": {"type": "string", "description": "sura number or verseId — required unless scope=global"}},
                        "required": ["scope"]}}},
+    {"type": "function", "function": {
+        "name": "recall_similar_query",
+        "description": "Find past similar queries from the reasoning memory; returns the tools they used and the answer they produced. Use as a playbook hint, not a final answer.",
+        "parameters": {"type": "object",
+                       "properties": {"query": {"type": "string"},
+                                      "top_k": {"type": "integer", "default": 3},
+                                      "min_sim": {"type": "number", "default": 0.65}},
+                       "required": ["query"]}}},
+    {"type": "function", "function": {
+        "name": "run_cypher",
+        "description": "Execute a READ-ONLY Cypher query for long-tail graph questions. Schema: Verse(verseId, text, arabicText), Sura, Keyword, ArabicRoot, Lemma; edges MENTIONS, RELATED_TO, MENTIONS_ROOT, SIMILAR_PHRASE, NEXT_VERSE, CONTAINS, SUPPORTS/ELABORATES/QUALIFIES/CONTRASTS/REPEATS. Forbidden: CREATE/MERGE/DELETE/SET/REMOVE/DETACH.",
+        "parameters": {"type": "object",
+                       "properties": {"query": {"type": "string", "description": "MATCH/RETURN query"},
+                                      "row_limit": {"type": "integer", "description": "default 100, max 500"}},
+                       "required": ["query"]}}},
 ]
 
 # Parse --model early so it's available at module level

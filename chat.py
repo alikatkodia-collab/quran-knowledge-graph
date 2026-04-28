@@ -1018,6 +1018,170 @@ def tool_search_morphological_pattern(session, pattern: str = None,
     }
 
 
+def tool_recall_similar_query(session, query: str, top_k: int = 3,
+                              min_sim: float = 0.65) -> dict:
+    """
+    Surface past similar queries from the reasoning_memory subgraph as a
+    "playbook" for the current question. Uses the query_embedding vector
+    index (MiniLM 384-dim) on (:Query) nodes.
+
+    For each similar past query returns:
+      - the question text
+      - similarity score
+      - the answer that was produced (cited verses + brief excerpt)
+      - the tool sequence that led to that answer (which tools, in what order)
+
+    Use when:
+      - a question feels familiar / repetitive ("how is patience taught?",
+        "what about prayer?")
+      - you want to know what graph paths worked before
+      - you want to check if the cache likely has a relevant answer
+
+    Don't use when the question is novel / domain-specific or the agent
+    has already retrieved a strong answer via direct tools.
+
+    Returns dict with: ok, query, similar_queries: [...]
+    """
+    if not query or not isinstance(query, str):
+        return {"ok": False, "error": "query must be a non-empty string"}
+
+    # Embed the input query with the MiniLM model that wrote the index
+    try:
+        from sentence_transformers import SentenceTransformer
+        m = _sem_models.get("all-MiniLM-L6-v2")
+        if m is None:
+            m = SentenceTransformer("all-MiniLM-L6-v2")
+            _sem_models["all-MiniLM-L6-v2"] = m
+        vec = m.encode(query, normalize_embeddings=True).tolist()
+    except Exception as e:
+        return {"ok": False, "error": f"embed failed: {e}"}
+
+    try:
+        rows = session.run("""
+            CALL db.index.vector.queryNodes('query_embedding', $k, $vec)
+            YIELD node, score WHERE score >= $min
+            OPTIONAL MATCH (node)-[:PRODUCED]->(a:Answer)
+            OPTIONAL MATCH (node)-[:TRIGGERED]->(t:ReasoningTrace)
+            OPTIONAL MATCH (t)-[hs:HAS_STEP]->(tc:ToolCall)
+            WITH node, score, a, t,
+                 collect({
+                     order: hs.order, turn: tc.turn,
+                     tool_name: tc.tool_name, args: tc.args_json,
+                     ok: tc.ok, summary: tc.summary
+                 }) AS steps
+            RETURN node.text AS past_question,
+                   node.timestamp AS ts,
+                   round(score, 4) AS similarity,
+                   a.text AS answer_text,
+                   a.cited_verses AS cited_verses,
+                   t.citation_count AS n_cites,
+                   t.status AS status,
+                   [s IN steps WHERE s.tool_name IS NOT NULL] AS tool_sequence
+            ORDER BY similarity DESC
+        """, k=top_k, vec=vec, min=min_sim).data()
+    except Exception as e:
+        return {"ok": False, "error": f"index query failed: {e}",
+                "hint": "query_embedding index may be missing; "
+                        "ensure reasoning_memory.ensure_schema() ran"}
+
+    out = []
+    for r in rows:
+        # Trim answer for compactness — agent gets a hint, not the full text
+        answer_excerpt = (r.get("answer_text") or "")[:600]
+        out.append({
+            "past_question": r["past_question"],
+            "similarity": r["similarity"],
+            "status": r.get("status"),
+            "n_citations": r.get("n_cites"),
+            "cited_verses": r.get("cited_verses") or [],
+            "answer_excerpt": answer_excerpt,
+            "tool_sequence": [
+                {"tool": s["tool_name"], "args": s["args"][:120], "ok": s["ok"]}
+                for s in (r["tool_sequence"] or [])
+            ][:10],   # cap at 10 tool steps
+        })
+    return {
+        "ok": True,
+        "query": query,
+        "n_similar": len(out),
+        "similar_queries": out,
+        "note": ("These are the closest past queries this agent has answered. "
+                 "Use the tool_sequence as a hint for which tools to call. "
+                 "The answer_excerpt is from a past run and may need verification."),
+    }
+
+
+def tool_run_cypher(session, query: str, params: dict = None,
+                    row_limit: int = 100) -> dict:
+    """
+    Execute a read-only Cypher query against the Quran graph.
+
+    Safety wrapper:
+      - denylists write/admin clauses (CREATE, DELETE, MERGE, SET, REMOVE,
+        DETACH, LOAD CSV, CALL apoc.refactor, CALL dbms, CALL db.create*)
+      - injects/enforces a `LIMIT` clause if not present
+      - timeouts via underlying Neo4j session config
+      - returns rows + a brief schema header so the LLM can self-correct
+
+    Use cases this unlocks:
+      - Long-tail user questions the 15 specialised tools don't cover
+      - Aggregations across the graph (count, group, percentile)
+      - Multi-hop traversals not covered by find_path / explore_root_family
+      - Schema introspection ("how many ArabicRoot nodes are there?")
+
+    Returns dict with: ok, rows, columns, n_rows, query_executed, error?
+    """
+    if not query or not isinstance(query, str):
+        return {"ok": False, "error": "query must be a non-empty string"}
+
+    q = query.strip()
+    q_upper = q.upper()
+
+    # Denylist of write / admin clauses
+    forbidden = [
+        r"\bCREATE\b", r"\bMERGE\b", r"\bDELETE\b", r"\bDETACH\b",
+        r"\bSET\b", r"\bREMOVE\b", r"\bLOAD\s+CSV\b",
+        r"\bCALL\s+APOC\.REFACTOR", r"\bCALL\s+APOC\.PERIODIC",
+        r"\bCALL\s+APOC\.NODES\.DELETE", r"\bCALL\s+APOC\.LOAD",
+        r"\bCALL\s+DBMS", r"\bDROP\b", r"\bCALL\s+DB\.CREATE",
+        r"\bCALL\s+DB\.DROP", r"\bCALL\s+DB\.INDEX\.VECTOR\.CREATE",
+        r"\bUSE\s+", r"\bSTART\b", r"\bSTOP\b", r"\bCONSTRAINT\b",
+        r"\bINDEX\s+ON\b", r"\bINDEX\s+FOR\b",
+    ]
+    import re as _re
+    for pat in forbidden:
+        if _re.search(pat, q, _re.IGNORECASE):
+            return {
+                "ok": False,
+                "error": f"forbidden clause detected (matched {pat!r})",
+                "hint": "tool_run_cypher is read-only. Use only MATCH / "
+                        "OPTIONAL MATCH / RETURN / WITH / WHERE / ORDER BY / "
+                        "LIMIT / UNWIND / collect() / count() / etc."
+            }
+
+    # Soft cap: if the query has no LIMIT clause, append one
+    if not _re.search(r"\bLIMIT\b\s+\d+", q, _re.IGNORECASE):
+        q = q.rstrip(";").rstrip() + f" LIMIT {min(int(row_limit or 100), 500)}"
+
+    try:
+        result = session.run(q, **(params or {}))
+        rows = result.data()
+    except Exception as e:
+        return {"ok": False, "error": str(e)[:300], "query_executed": q}
+
+    # Best-effort columns from first row
+    cols = list(rows[0].keys()) if rows else []
+    return {
+        "ok": True,
+        "query_executed": q,
+        "n_rows": len(rows),
+        "columns": cols,
+        "rows": rows[:row_limit],
+        "note": ("Read-only Cypher. Use MATCH/OPTIONAL MATCH and RETURN. "
+                 "Don't include CREATE/MERGE/DELETE/SET/REMOVE/DETACH."),
+    }
+
+
 def tool_get_code19_features(session, scope: str, target: str = None) -> dict:
     """
     Retrieve Khalifa-style Code-19 mathematical features.
@@ -1452,6 +1616,64 @@ TOOLS = [
         }
     },
     {
+        "name": "recall_similar_query",
+        "description": (
+            "Surface past similar queries this agent has answered, with the "
+            "tools they used and the answers they produced. Use when the "
+            "current question feels familiar / repetitive — the past run is "
+            "a playbook, not a final answer. Past tool sequences are hints "
+            "for which retrieval paths worked. Don't use as the only "
+            "retrieval method; verify answer_excerpt with direct tools."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string",
+                          "description": "The current question text"},
+                "top_k": {"type": "integer", "default": 3,
+                          "description": "How many past matches to return"},
+                "min_sim": {"type": "number", "default": 0.65,
+                            "description": "Minimum cosine similarity (MiniLM)"}
+            },
+            "required": ["query"]
+        }
+    },
+    {
+        "name": "run_cypher",
+        "description": (
+            "Execute a READ-ONLY Cypher query against the Quran graph. "
+            "Use this for the long-tail of questions the specialised tools "
+            "don't cover: aggregations, custom multi-hop traversals, schema "
+            "introspection, percentile queries, etc. "
+            "Schema reminder — Verse(verseId, surah, verseNum, text, arabicText, "
+            "arabicPlain, surahName, embedding_m3 (1024d BGE-M3)), "
+            "Sura(number, name), Keyword(keyword), ArabicRoot(root), Lemma(lemma), "
+            "MorphPattern(pattern), SemanticDomain(name). "
+            "Edges: MENTIONS{score, from_tfidf, to_tfidf}, RELATED_TO{score}, "
+            "MENTIONS_ROOT, SIMILAR_PHRASE, NEXT_VERSE, CONTAINS, "
+            "and typed: SUPPORTS, ELABORATES, QUALIFIES, CONTRASTS, REPEATS. "
+            "FORBIDDEN: CREATE/MERGE/DELETE/SET/REMOVE/DETACH/LOAD CSV. Always "
+            "include a LIMIT — one will be appended if missing."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Cypher query (read-only). Example: "
+                                   "'MATCH (v:Verse)-[:MENTIONS]->(k:Keyword {keyword: \"patience\"}) "
+                                   "RETURN v.verseId, v.text ORDER BY v.surah LIMIT 20'"
+                },
+                "row_limit": {
+                    "type": "integer",
+                    "description": "Max rows to return (default 100, max 500)",
+                    "default": 100
+                }
+            },
+            "required": ["query"]
+        }
+    },
+    {
         "name": "get_code19_features",
         "description": (
             "Retrieve Khalifa-style Code-19 mathematical features (verse counts, "
@@ -1618,6 +1840,10 @@ def dispatch_tool(session, tool_name: str, tool_input: dict, user_query: str = N
             result = tool_search_morphological_pattern(session, **tool_input)
         elif tool_name == "get_code19_features":
             result = tool_get_code19_features(session, **tool_input)
+        elif tool_name == "run_cypher":
+            result = tool_run_cypher(session, **tool_input)
+        elif tool_name == "recall_similar_query":
+            result = tool_recall_similar_query(session, **tool_input)
         else:
             result = {"error": f"Unknown tool: {tool_name}"}
 
