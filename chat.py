@@ -1018,6 +1018,72 @@ def tool_search_morphological_pattern(session, pattern: str = None,
     }
 
 
+def tool_concept_search(session, concept: str, top_k: int = 30) -> dict:
+    """
+    Search by canonical concept — automatically expands to all surface
+    variants ("patience" finds verses for "patient", "patiently", etc.).
+
+    Solves the entity-resolution gap Eifrem flagged: queries for "forgive"
+    were missing "forgiveness" / "forgiver" hits because they're separate
+    Keyword nodes. The Concept layer collapses surface tokens via Porter
+    stemming (see build_concepts.py).
+
+    Returns verses grouped by surah, with which surface keyword(s) matched.
+    """
+    if not concept or not isinstance(concept, str):
+        return {"error": "concept must be a non-empty string"}
+
+    # Match concept by name OR by stem OR via any keyword that NORMALIZES_TO it
+    rows = session.run("""
+        OPTIONAL MATCH (c:Concept) WHERE toLower(c.name) = toLower($q) OR c.stem = $q
+        OPTIONAL MATCH (k0:Keyword) WHERE toLower(k0.keyword) = toLower($q)
+        OPTIONAL MATCH (k0)-[:NORMALIZES_TO]->(cAlt:Concept)
+        WITH coalesce(c, cAlt) AS concept
+        WHERE concept IS NOT NULL
+        MATCH (k:Keyword)-[:NORMALIZES_TO]->(concept)
+        OPTIONAL MATCH (v:Verse)-[m:MENTIONS]->(k)
+        WITH concept, k, v, m
+        ORDER BY coalesce(m.from_tfidf, m.score, 0.0) DESC
+        WITH concept, collect(DISTINCT k.keyword) AS surface_forms,
+             collect(DISTINCT {verse_id: v.verseId,
+                               surah: v.surah, surahName: v.surahName,
+                               text: v.text, score: m.score, kw: k.keyword}) AS hits
+        RETURN concept.name AS name, concept.stem AS stem,
+               concept.n_keywords AS n_keywords,
+               surface_forms,
+               hits[0..$k] AS top_hits
+    """, q=concept, k=top_k).data()
+    if not rows or rows[0]["name"] is None:
+        return {"found": False, "concept": concept,
+                "hint": "concept not found — try plain keyword variants via search_keyword"}
+
+    r = rows[0]
+    by_surah = {}
+    for h in r["top_hits"]:
+        if not h or not h.get("verse_id"):
+            continue
+        sname = f"Surah {h['surah']}: {h['surahName']}"
+        by_surah.setdefault(sname, []).append({
+            "verse_id": h["verse_id"],
+            "text": h["text"],
+            "matched_keyword": h["kw"],
+            "score": round(float(h["score"] or 0.0), 3),
+        })
+
+    return {
+        "found": True,
+        "concept": r["name"],
+        "stem": r["stem"],
+        "surface_forms": sorted(r["surface_forms"]),
+        "n_keyword_variants": r["n_keywords"],
+        "total_hits": len(r["top_hits"]),
+        "note": ("This concept-based search expands across all surface "
+                 "variants of the keyword. matched_keyword shows which "
+                 "form (patience / patient / patiently) hit each verse."),
+        "by_surah": by_surah,
+    }
+
+
 def tool_hybrid_search(session, query: str, top_k: int = 20,
                        lang: str = "en", k_rrf: int = 60) -> dict:
     """
@@ -1741,6 +1807,25 @@ TOOLS = [
         }
     },
     {
+        "name": "concept_search",
+        "description": (
+            "Search by canonical CONCEPT (auto-expands across surface "
+            "variants). Beats search_keyword when the user asks about "
+            "'forgiveness' but the verses use 'forgive', 'forgiver', "
+            "'forgiveness' — concept_search finds them all in one call. "
+            "Use this as the default for thematic English keywords."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "concept": {"type": "string",
+                            "description": "Concept name or any surface variant"},
+                "top_k": {"type": "integer", "default": 30}
+            },
+            "required": ["concept"]
+        }
+    },
+    {
         "name": "hybrid_search",
         "description": (
             "Hybrid retrieval: BM25 (lexical) + BGE-M3 (dense vector), fused "
@@ -1994,6 +2079,8 @@ def dispatch_tool(session, tool_name: str, tool_input: dict, user_query: str = N
             result = tool_recall_similar_query(session, **tool_input)
         elif tool_name == "hybrid_search":
             result = tool_hybrid_search(session, **tool_input)
+        elif tool_name == "concept_search":
+            result = tool_concept_search(session, **tool_input)
         else:
             result = {"error": f"Unknown tool: {tool_name}"}
 
