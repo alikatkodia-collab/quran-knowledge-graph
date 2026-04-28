@@ -1018,6 +1018,131 @@ def tool_search_morphological_pattern(session, pattern: str = None,
     }
 
 
+def tool_hybrid_search(session, query: str, top_k: int = 20,
+                       lang: str = "en", k_rrf: int = 60) -> dict:
+    """
+    Hybrid retrieval: BM25 lexical + BGE-M3 dense, fused via reciprocal
+    rank fusion (RRF), then enriched with graph context. This is the
+    Eifrem pattern: vector + BM25 -> seed nodes -> traverse.
+
+    Args:
+        query  : natural-language question (English) or Arabic phrase
+        top_k  : final top-K verses returned (after fusion)
+        lang   : "en" -> uses verse_text_fulltext + verse_embedding_m3
+                 "ar" -> uses verse_arabic_fulltext + verse_embedding_m3_ar
+        k_rrf  : RRF constant; higher = flatter fusion (default 60 per
+                 Cormack-Clarke-Buettcher 2009)
+
+    Returns top-K verses with their RRF score, BM25 rank, dense rank,
+    related verses (RELATED_TO), Arabic roots, and typed edges.
+    """
+    if not query or not isinstance(query, str):
+        return {"error": "query must be a non-empty string"}
+
+    lang = (lang or "en").lower()
+    if lang == "ar":
+        ft_index = "verse_arabic_fulltext"
+        vec_index = "verse_embedding_m3_ar"
+    else:
+        ft_index = "verse_text_fulltext"
+        vec_index = "verse_embedding_m3"
+
+    # Embed once
+    model = _get_sem_model_for(vec_index)
+    vec = model.encode([query], normalize_embeddings=True,
+                       convert_to_numpy=True)[0].tolist()
+
+    # Pull both rankings: take top-100 from each
+    cand_n = max(top_k * 5, 50)
+
+    bm25 = session.run(f"""
+        CALL db.index.fulltext.queryNodes($idx, $q) YIELD node, score
+        WHERE node.verseId IS NOT NULL
+        RETURN node.verseId AS id, score
+        ORDER BY score DESC LIMIT $n
+    """, idx=ft_index, q=query, n=cand_n).data()
+
+    dense = session.run(f"""
+        CALL db.index.vector.queryNodes($idx, $n, $vec)
+        YIELD node, score
+        WHERE node.verseId IS NOT NULL
+        RETURN node.verseId AS id, score
+        ORDER BY score DESC
+    """, idx=vec_index, n=cand_n, vec=vec).data()
+
+    # Reciprocal rank fusion
+    rrf: dict[str, float] = {}
+    bm_rank: dict[str, int] = {}
+    dense_rank: dict[str, int] = {}
+    for i, r in enumerate(bm25, 1):
+        vid = r["id"]
+        bm_rank[vid] = i
+        rrf[vid] = rrf.get(vid, 0.0) + 1.0 / (k_rrf + i)
+    for i, r in enumerate(dense, 1):
+        vid = r["id"]
+        dense_rank[vid] = i
+        rrf[vid] = rrf.get(vid, 0.0) + 1.0 / (k_rrf + i)
+
+    if not rrf:
+        return {"query": query, "lang": lang, "total_verses": 0, "by_surah": {}}
+
+    fused = sorted(rrf.items(), key=lambda x: -x[1])[:top_k]
+    top_ids = [vid for vid, _ in fused]
+
+    # Enrich with graph context (same pattern as tool_semantic_search)
+    enriched = session.run("""
+        UNWIND $ids AS vid
+        MATCH (node:Verse {verseId: vid})
+        OPTIONAL MATCH (node)-[:RELATED_TO]-(related:Verse)
+        WITH node, vid, collect(DISTINCT related.reference)[0..5] AS related_verses
+        OPTIONAL MATCH (node)-[:MENTIONS_ROOT]->(root:ArabicRoot)
+        WITH node, vid, related_verses,
+             collect(DISTINCT root.root)[0..5] AS arabic_roots
+        OPTIONAL MATCH (node)-[typed:SUPPORTS|ELABORATES|QUALIFIES|CONTRASTS|REPEATS]-(te:Verse)
+        WITH node, vid, related_verses, arabic_roots,
+             [x IN collect(DISTINCT {type: type(typed), target: te.reference})
+              WHERE x.type IS NOT NULL AND x.target IS NOT NULL][0..5] AS typed_edges
+        RETURN node.verseId AS verseId, node.surahName AS surahName,
+               node.surah AS surah, node.text AS text,
+               related_verses, arabic_roots, typed_edges
+    """, ids=top_ids).data()
+    by_id = {r["verseId"]: r for r in enriched}
+
+    by_surah: dict[str, list] = {}
+    for vid, score in fused:
+        node = by_id.get(vid)
+        if not node:
+            continue
+        sname = f"Surah {node['surah']}: {node['surahName']}"
+        entry = {
+            "verse_id": vid,
+            "rrf_score": round(score, 5),
+            "bm25_rank": bm_rank.get(vid),
+            "dense_rank": dense_rank.get(vid),
+            "text": node["text"],
+        }
+        if node["related_verses"]:
+            entry["related_verses"] = node["related_verses"]
+        if node["arabic_roots"]:
+            entry["arabic_roots"] = node["arabic_roots"]
+        if node["typed_edges"]:
+            entry["typed_edges"] = node["typed_edges"]
+        by_surah.setdefault(sname, []).append(entry)
+
+    return {
+        "query": query,
+        "lang": lang,
+        "total_verses": len(top_ids),
+        "fusion": "RRF (k=" + str(k_rrf) + ")",
+        "indexes_used": {"bm25": ft_index, "dense": vec_index},
+        "note": ("Reciprocal-rank-fused BM25 + dense vector hits, then "
+                 "enriched with graph context (related verses, Arabic roots, "
+                 "typed edges). Per-hit ranks shown so you can see which "
+                 "signal is doing the work for each verse."),
+        "by_surah": by_surah,
+    }
+
+
 def tool_recall_similar_query(session, query: str, top_k: int = 3,
                               min_sim: float = 0.65) -> dict:
     """
@@ -1616,6 +1741,29 @@ TOOLS = [
         }
     },
     {
+        "name": "hybrid_search",
+        "description": (
+            "Hybrid retrieval: BM25 (lexical) + BGE-M3 (dense vector), fused "
+            "via reciprocal rank fusion, then enriched with graph context "
+            "(related verses, Arabic roots, typed edges). Better than "
+            "semantic_search for queries with rare/specific words like "
+            "proper names, Arabic terms, or specific phrasings — BM25 catches "
+            "exact lexical hits that pure embedding similarity may miss. "
+            "Set lang='ar' for Arabic queries."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string"},
+                "top_k": {"type": "integer", "default": 20},
+                "lang": {"type": "string", "enum": ["en", "ar"], "default": "en"},
+                "k_rrf": {"type": "integer", "default": 60,
+                          "description": "RRF constant; default 60"}
+            },
+            "required": ["query"]
+        }
+    },
+    {
         "name": "recall_similar_query",
         "description": (
             "Surface past similar queries this agent has answered, with the "
@@ -1844,6 +1992,8 @@ def dispatch_tool(session, tool_name: str, tool_input: dict, user_query: str = N
             result = tool_run_cypher(session, **tool_input)
         elif tool_name == "recall_similar_query":
             result = tool_recall_similar_query(session, **tool_input)
+        elif tool_name == "hybrid_search":
+            result = tool_hybrid_search(session, **tool_input)
         else:
             result = {"error": f"Unknown tool: {tool_name}"}
 
