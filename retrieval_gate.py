@@ -5,20 +5,39 @@ Cross-encoder reranking, quality assessment, lost-in-middle reordering,
 and Corrective RAG fallback.
 
 Used by chat.py to post-process tool results before feeding them to Claude.
+
+Reranker model is multilingual by default (BAAI/bge-reranker-v2-m3) to
+match the BGE-M3 retrieval path and to handle Arabic queries. The legacy
+ms-marco-MiniLM-L-6-v2 (English-only) was actively HURTING our QRCD
+numbers (hit@10 fell from 0.64 -> 0.32 on Arabic queries in the
+ablation eval). Override via env: RERANKER_MODEL=...
+
+Also: set RERANKER_MODEL=none (or RERANK_DISABLED=1) to skip reranking
+entirely. The ablation showed vector-only ranks better than legacy
+rerank on QRCD; multilingual rerank should fix that, but the kill switch
+is here for safety.
 """
 
+import os
 from sentence_transformers import CrossEncoder
 
 import config as cfg
 
 # ── cross-encoder reranker (loaded once) ─────────────────────────────────────
 
+_DEFAULT_RERANKER = "BAAI/bge-reranker-v2-m3"
+RERANKER_MODEL = os.environ.get("RERANKER_MODEL", _DEFAULT_RERANKER).strip()
+RERANK_DISABLED = (RERANKER_MODEL.lower() in ("none", "off", "disabled") or
+                    os.environ.get("RERANK_DISABLED", "0") == "1")
+
 _reranker = None
 
 def _get_reranker():
     global _reranker
+    if RERANK_DISABLED:
+        return None
     if _reranker is None:
-        _reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+        _reranker = CrossEncoder(RERANKER_MODEL)
     return _reranker
 
 
@@ -32,6 +51,9 @@ def rerank_verses(query: str, verses: list[dict], top_k: int = 20) -> list[dict]
         return verses
 
     model = _get_reranker()
+    if model is None:   # rerank explicitly disabled
+        return verses[:top_k]
+
     pairs = [(query, v.get("text", "")) for v in verses]
     scores = model.predict(pairs)
 
