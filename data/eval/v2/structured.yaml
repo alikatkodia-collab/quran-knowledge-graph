@@ -45,13 +45,31 @@
 - id: structured-002
   bucket: STRUCTURED
   question: "Which surahs open with mysterious letters (muqatta'at), and what patterns connect them?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:1"]
+    tools_used_must_include: ["run_cypher"]
+    tools_used_must_not_include: []
+    answer_substring_required: ["29"]
   rubric_weights:
     citation_accuracy: 0.5
     answer_completeness: 0.2
     tool_path_correctness: 0.2
     framing_appropriateness: 0.1
-  notes: "29 muqatta'at surahs. Should query Sura.mysterious_letters via run_cypher. Asserts pending."
+  notes: |
+    Mysterious-letters sub-shape. Anchor 2:1 ("A. L. M." — the
+    first muqatta'at occurrence in canonical order). Pin requires
+    run_cypher because the right tool is querying
+    Sura.mysterious_letters across all 114 surahs — no specialised
+    tool surfaces this enumeration directly. get_code19_features
+    is also relevant (Khalifa connects muqatta'at to Code-19 via
+    letter counts) but not pinned because the question's primary
+    ask is the enumeration, not the arithmetic.
+    Substring "29" pins the canonical count of muqatta'at surahs —
+    failure to surface this number indicates the agent didn't
+    actually enumerate.
+    Failure mode: agent lists from training data, misses the long
+    tail (the rarer ones — Maryam's Kaf Ha Ya Ain Sad, etc.) or
+    confabulates the count.
   added: 2026-05-17
   added_by: operator
 
