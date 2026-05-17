@@ -170,6 +170,11 @@
     Failure mode: shallow paraphrase ("the Quran calls itself a
     guidance, a reminder…") without citing the self-description
     verses verbatim.
+    Commit hygiene note (2026-05-17): the original commit for this
+    question accidentally bundled 13 unrelated research files
+    staged elsewhere; reset and re-committed cleanly. All
+    subsequent commits on this branch use path-scoped
+    `git commit <path> -m '...'` to prevent recurrence.
   added: 2026-05-17
   added_by: operator
 
@@ -380,6 +385,10 @@
     Failure mode: agent stops at the famous closing-surah trumpet
     imagery without surfacing the cosmic-collapse + accountability
     sequence in the longer treatments.
+    Phase 4d any_of candidate: substring {"Day of Judgment", "Day
+    of Resurrection", "Day of the Last", "Last Day"} — Khalifa
+    renders yawm al-din / al-qiyama / al-akhir variably across
+    the text.
   added: 2026-05-17
   added_by: operator
 
