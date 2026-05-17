@@ -257,13 +257,26 @@
 - id: abstract-010
   bucket: ABSTRACT
   question: "What is the Quran's view of justice?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["4:135"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["justice", "adl", "ع-د-ل"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: justice. [AR] root ع-د-ل / adl (also qist). Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: justice. [AR] root ع-د-ل / adl. Three-substring AR gate.
+    Note: qist (ق-س-ط) is an adjacent root the Quran also uses for
+    justice — if many answers cite qist verses and miss adl ones,
+    this becomes an any_of candidate in Phase 4d.
+    Anchor candidates considered: 4:135 (Khalifa: "you shall be
+    absolutely equitable, and observe GOD, when you serve as
+    witnesses, even against yourselves" — definitive justice
+    command), 5:8 (be just even with those you hate), 16:90 (GOD
+    enjoins justice and charity). Picked 4:135.
   added: 2026-05-17
   added_by: operator
 
