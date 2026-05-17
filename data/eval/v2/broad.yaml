@@ -521,13 +521,27 @@
 - id: broad-020
   bucket: BROAD
   question: "What does the Quran tell us about Noah?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Noah"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Nuh; tests narrative across multiple surahs (esp. 71). Asserts pending."
+  notes: |
+    Prophet-bio sub-shape. hybrid_search pin (proper noun grammar).
+    cites_must_include empty by design — Noah is across Surah 71
+    (Nuh), Surah Hud (11), Al-Ankabut (29:14), and ~30 other refs.
+    Phase 4d any_of candidate: substring "Noah" vs "Nuh"
+    (transliterated form).
+    Failure mode: agent recounts the flood without surfacing the
+    long preaching mission (950 years per 29:14), the dialogue
+    with the son (11:42-46), and Noah's own surah's structure
+    (71:5-9 the preaching, 71:10-12 the call to repentance,
+    71:25-26 the supplication).
   added: 2026-05-17
   added_by: operator
 
