@@ -274,13 +274,31 @@
 - id: broad-011
   bucket: BROAD
   question: "Explain the structure of the Quran."
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: []
+    answer_substring_required: ["114"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Meta question; should describe surah counts, Makki/Madani, etc. Asserts pending."
+  notes: |
+    Meta question — should describe surah counts, Makki/Madani,
+    chronological vs canonical order, verse counts, muqatta'at,
+    etc. Substring "114" pins the canonical surah count — a clean
+    factual gate (no false-positive risk; "114" is unlikely to
+    appear in a structure answer for any reason other than the
+    surah count).
+    run_cypher is NOT forbidden for this question — structure
+    questions can legitimately benefit from aggregation queries
+    over Sura nodes (verse counts, classification distributions).
+    The Meccan/Medinan backfill recently landed on main; with it,
+    a "verses per Madinan surah" Cypher query is a reasonable
+    retrieval path.
+    Failure mode: agent answers without citing the 114-surah count
+    or the Makki/Madani division.
   added: 2026-05-17
   added_by: operator
 
