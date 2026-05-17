@@ -88,13 +88,25 @@
 - id: concrete-004
   bucket: CONCRETE
   question: "What befell Lot's people according to the Quran?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["11:77"]
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Lot"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.35
     tool_path_correctness: 0.3
     framing_appropriateness: 0.1
-  notes: "Qawm Lut; tests narrative synthesis across Hud, Ash-Shu'ara, Al-Ankabut. Asserts pending."
+  notes: |
+    Named-entity sub-shape (proper noun "Lot") -> hybrid_search pin.
+    Tests narrative synthesis across Surah Hud, Ash-Shu'ara,
+    Al-Ankabut.
+    Anchor candidates considered: 11:77 (Khalifa: messengers arrive
+    at Lot's house — opens the most narrative version), 26:160-175
+    (Lot in Ash-Shu'ara), 29:28-35 (Al-Ankabut framing). Picked
+    11:77 because Surah Hud holds the most prose-narrative
+    treatment.
   added: 2026-05-17
   added_by: operator
 
