@@ -124,13 +124,29 @@
 - id: abstract-005
   bucket: ABSTRACT
   question: "What does the Quran say about patience?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:153"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["patience", "sabr"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: patience. [AR] root s-b-r / sabr. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: patience. [AR] root ص-ب-ر / sabr.
+    Required substrings: "patience" (English topic) AND "sabr"
+    (the AR augmentation signal). Until the parallel system-prompt
+    change ships, this question will fail on the search_arabic_root
+    tool requirement and on the "sabr" substring — intended
+    baseline-then-improve signal.
+    Anchor candidates considered: 2:153 (Khalifa: "Seek help through
+    perseverance and the contact prayer. GOD is with those who
+    steadfastly persevere" — most iconic single anchor), 2:155
+    (test of patience), 39:10 (steadfast receive recompense
+    generously). Picked 2:153 as most canonical. Promote to any_of
+    cluster in Phase 4d if it proves brittle.
   added: 2026-05-17
   added_by: operator
 
