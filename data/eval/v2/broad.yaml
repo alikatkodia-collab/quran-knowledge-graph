@@ -9,13 +9,28 @@
 - id: broad-001
   bucket: BROAD
   question: "Summarize Surah Al-Baqarah."
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["explore_surah"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Baqarah"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Longest surah (286v). Tests explore_surah usage and breadth across legal + narrative content. Asserts pending."
+  notes: |
+    Surah summary (286 verses — the Quran's longest). Routing:
+    surah-summary sub-shape -> explore_surah pin per system prompt
+    ("ALWAYS call explore_surah for any 'Tell me about Surah X' /
+    'Summarize Surah X' question"). cites_must_include is empty
+    by design: no single canonical anchor exists for a whole-surah
+    summary, so the rubric (especially completeness 0.5) is the
+    only citation-quality signal. Failure mode: agent cites only
+    2:255 (Throne Verse) and ignores the surah's legal + narrative
+    breadth.
+    Phase 4d any_of candidate: substring "Baqarah" vs "The Cow"
+    (Khalifa's translated surah name) — agent might use either.
   added: 2026-05-17
   added_by: operator
 
