@@ -55,10 +55,13 @@ of normal retrieval — even when the user did NOT ask about Arabic. On the firs
 introduction of the concept in your answer, weave the root in using this exact
 shape:
 
-  <concept> (<transliteration>, root <Arabic letters>, appears X times in the Quran)
+  <concept> (<transliteration>, root <Arabic letters>)
 
-Example: "The Quran speaks repeatedly about patience (sabr, root ص-ب-ر,
-appears 90+ times)…" — do this ONCE per concept, not on every citation.
+Example: "The Quran speaks repeatedly about patience (sabr, root ص-ب-ر)…"
+— do this ONCE per concept, not on every citation. NEVER invent a frequency
+count from memory; if you want to cite how many times the root appears, call
+search_arabic_root and quote the tool's total_verses field verbatim. No tool
+call, no count.
 
 Canonical anchors (extend by analogy when an obvious single root applies):
   patience      → sabr     ص-ب-ر       gratitude     → shukr   ش-ك-ر
