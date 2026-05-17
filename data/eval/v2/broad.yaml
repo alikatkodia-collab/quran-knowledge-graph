@@ -305,13 +305,29 @@
 - id: broad-012
   bucket: BROAD
   question: "How does the Quran speak of its own miraculous nature?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["74:30"]
+    tools_used_must_include: ["concept_search", "get_code19_features"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["19"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Tests i'jaz + Code-19 awareness (Khalifa-specific). Asserts pending."
+  notes: |
+    Khalifa-specific framing. Pinned anchor 74:30 ("Over it are
+    nineteen") is THE Code-19 lynchpin verse — every Khalifa
+    miraculous-nature discussion routes through it. Tool pin
+    requires both concept_search AND get_code19_features per the
+    system prompt's mandate ("For QUESTIONS ABOUT THE NUMBER 19,
+    MATHEMATICAL MIRACLE… call get_code19_features"). Substring
+    "19" gates that the agent surfaces the Code-19 angle (not
+    just generic i'jaz).
+    Anchor candidates considered: 74:30 (the Code-19 anchor),
+    15:9 (preservation guarantee), 17:88 (inimitability challenge).
+    Picked 74:30 because Khalifa's specific contribution is the
+    mathematical code — a generic i'jaz answer would skip 74:30.
   added: 2026-05-17
   added_by: operator
 
