@@ -166,12 +166,27 @@
 - id: concrete-007
   bucket: CONCRETE
   question: "How is Pharaoh depicted across the Quran?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["28:38"]
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Pharaoh"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.35
     tool_path_correctness: 0.3
     framing_appropriateness: 0.1
-  notes: "Fir'awn; tests recurring antagonist across multiple surahs. Asserts pending."
+  notes: |
+    Named-entity sub-shape (proper noun "Pharaoh") -> hybrid_search
+    pin. Recurring antagonist across many surahs (7, 10, 11, 20,
+    26, 28, 40, 43, 79, etc.).
+    Anchor candidates considered: 28:38 (Khalifa: Pharaoh's
+    self-deification: "I am your only god" — iconic and Khalifa-
+    distinctive in rendering), 79:24 ("I am your Lord, most high"),
+    7:103 (the Moses-vs-Pharaoh confrontation opens). Picked
+    28:38 because Pharaoh's self-deification is the moral hinge
+    of the Quranic portrayal.
+    Phase 4d any_of candidate: substring "Pharaoh" vs "Fir'awn"
+    (transliterated form) — Khalifa uses "Pharaoh."
   added: 2026-05-17
   added_by: operator
