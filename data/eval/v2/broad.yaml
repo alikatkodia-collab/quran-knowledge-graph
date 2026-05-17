@@ -361,13 +361,25 @@
 - id: broad-014
   bucket: BROAD
   question: "What is the Quran's portrayal of the Day of Judgment?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Judgment"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Heavy eschatology; tests breadth. Asserts pending."
+  notes: |
+    Theme-survey sub-shape. Heavy eschatology — Surahs 75 (Al-
+    Qiyama), 99 (Az-Zalzala), 101 (Al-Qaria), 81 (At-Takwir) all
+    deep-dive on this; plus 2:177, 22:1-2, 39:67-75 scattered
+    throughout. No single canonical anchor — rubric is the
+    quality signal.
+    Failure mode: agent stops at the famous closing-surah trumpet
+    imagery without surfacing the cosmic-collapse + accountability
+    sequence in the longer treatments.
   added: 2026-05-17
   added_by: operator
 
