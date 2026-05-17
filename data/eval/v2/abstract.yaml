@@ -593,13 +593,24 @@
 - id: abstract-023
   bucket: ABSTRACT
   question: "How does the Quran depict the mercy of God?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["7:156"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["mercy", "rahma", "ر-ح-م"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: mercy / rahma. [AR] root ر-ح-م / rahma. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: mercy / rahma. [AR] root ر-ح-م / rahma. Three-substring
+    AR gate.
+    Anchor candidates considered: 7:156 (Khalifa: "My mercy
+    encompasses all things" — the iconic unbounded-mercy verse),
+    6:54 ("Your Lord has decreed that mercy is His attribute"),
+    39:53 (also a mercy verse, but already used as forgiveness
+    anchor in abstract-002). Picked 7:156.
   added: 2026-05-17
   added_by: operator
 
