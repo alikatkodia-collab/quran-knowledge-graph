@@ -492,13 +492,25 @@
 - id: abstract-019
   bucket: ABSTRACT
   question: "What consequences does the Quran tie to following Satan?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["14:22"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["devil"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: consequences of following Satan. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: consequences of following Satan. Substring "devil"
+    matches Khalifa's preferred rendering.
+    Anchor candidates considered: 14:22 (Khalifa: the devil disowns
+    his followers on Judgment Day — "I had no power over you, you
+    responded to me. Therefore, do not blame me; blame only
+    yourselves" — most iconic single-verse consequences statement),
+    4:119-120 (Satan's false promises lead to loss), 22:4 (whoever
+    befriends him will be led astray to hell). Picked 14:22.
   added: 2026-05-17
   added_by: operator
 
