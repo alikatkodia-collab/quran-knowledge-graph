@@ -69,13 +69,29 @@
 - id: abstract-003
   bucket: ABSTRACT
   question: "How does the Quran portray gratitude?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["14:7"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["thank", "shukr"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: gratitude. [AR] root sh-k-r / shukr. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: gratitude. [AR] root ش-ك-ر / shukr.
+    Required substrings: "thank" (Khalifa renders shukr as
+    "thank/appreciate") AND "shukr" (the AR augmentation signal).
+    Until the parallel system-prompt change for Arabic augmentation
+    lands, this question will fail on the search_arabic_root tool
+    requirement and on the "shukr" substring — that's the intended
+    baseline signal.
+    Anchor candidates considered: 14:7 (Khalifa: "The more you thank
+    Me, the more I give you" — most iconic), 2:152 ("remember Me
+    and be thankful to Me"), 31:12 (Luqman's wisdom on gratitude).
+    Picked 14:7 as most canonical. Promote to any_of cluster in
+    Phase 4d if it proves brittle.
   added: 2026-05-17
   added_by: operator
 
