@@ -76,13 +76,32 @@
 - id: structured-003
   bucket: STRUCTURED
   question: "Which surahs are Meccan and which are Medinan?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["run_cypher"]
+    tools_used_must_not_include: []
+    answer_substring_required: ["Meccan", "Medinan", "86", "28"]
   rubric_weights:
     citation_accuracy: 0.5
     answer_completeness: 0.2
     tool_path_correctness: 0.2
     framing_appropriateness: 0.1
-  notes: "FORCING FUNCTION — revelation_location not yet on Sura nodes. Will fail until parallel backfill session lands. Asserts pending."
+  notes: |
+    Meccan/Medinan-list sub-shape. The data backfill landed on main
+    (revelation_location / revelation_order / revelation_location_source
+    are now on every Sura node). This is real measurement signal,
+    not a forcing-function failure.
+    Pin run_cypher because the right tool is querying
+    Sura.revelation_location across all 114 nodes — no specialised
+    tool surfaces this enumeration directly.
+    Four-substring gate ("Meccan", "Medinan", "86", "28") — all
+    required. Hedging-to-approximate ("about 90 Meccan, 30 Medinan")
+    is exactly the failure mode the count substrings catch. Data
+    is precise per the Egyptian standard; the agent has query
+    access and should report exact counts.
+    Phase 4d any_of candidate: substring "Makki" / "Madani"
+    (alternate transliterations) — Khalifa uses "Meccan" / "Medinan"
+    but agent training data may surface the alternates.
   added: 2026-05-17
   added_by: operator
 
