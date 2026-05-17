@@ -359,13 +359,27 @@
 - id: abstract-014
   bucket: ABSTRACT
   question: "How does the Quran address doubt and certainty?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:2"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["certainty", "yaqeen", "ي-ق-ن"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: doubt / certainty (Khalifa-relevant, yaqeen). [AR] root ي-ق-ن / yaqeen. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: doubt and certainty. [AR] root ي-ق-ن / yaqeen.
+    Three-substring AR gate uses "certainty" (the yaqeen
+    translation pair) rather than "doubt"; the AR augmentation
+    angle is the certainty side, not the doubt side.
+    Anchor candidates considered: 2:2 (Khalifa: "This scripture is
+    infallible; a beacon for the righteous" — opens the Quran's
+    main body with "no doubt" framing), 2:4 ("attained certainty
+    about the Hereafter"), 56:95 ("this is the certain truth").
+    Picked 2:2 for its structural prominence as the no-doubt
+    opener.
   added: 2026-05-17
   added_by: operator
 
