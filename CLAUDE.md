@@ -95,7 +95,9 @@ POST /chat (app_free.py:8085)
 
 **Verse properties (post-2026-04):** `verseId`, `text`, `arabicText`, `arabicPlain`, `surah`, `verseNum`, `surahName`, `embedding` (legacy MiniLM 384d), `embedding_m3` (BGE-M3 EN 1024d), `embedding_m3_ar` (BGE-M3 AR 1024d), `embedding_model`, `embedding_source_hash`, `embedded_at`, `position_in_sura`, `is_initial_verse`, `letter_qaf` / `letter_nun` / etc. (Code-19 features).
 
-**Sura properties:** `number`, `verses_count`, `mysterious_letters`, `ml_letter_counts_json`, `ml_div_19_json`, `mod19_verse_count`.
+**Sura properties:** `number`, `verses_count`, `mysterious_letters`, `ml_letter_counts_json`, `ml_div_19_json`, `mod19_verse_count`, `revelation_location` ("Meccan"|"Medinan"), `revelation_location_source` ("egyptian_standard_2026"), `revelation_order` (1..114).
+
+**Disputed Meccan/Medinan classifications:** five surahs are classified differently across the classical literature — 13 Ar-Ra'd, 22 Al-Hajj, 55 Ar-Rahman, 76 Al-Insan, 99 Az-Zalzalah. The graph follows the standard Egyptian (Cairo / King Fuad 1924) edition exclusively, which places all five as Medinan. The `revelation_location_source` property records this provenance so alternative classifications can be added later without ambiguity.
 
 **Key relationships:**
 - `MENTIONS {score, from_tfidf, to_tfidf, data_source, generated_by}` (41K) — Verse->Keyword, Sefaria-style bidirectional TF-IDF
