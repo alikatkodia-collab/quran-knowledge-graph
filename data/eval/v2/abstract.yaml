@@ -644,12 +644,25 @@
 - id: abstract-025
   bucket: ABSTRACT
   question: "Why does the Quran emphasise honouring one's parents?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["17:23"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["parent"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: honouring parents. Should anchor on 17:23-24. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: honouring parents. Substring "parent" matches
+    parent/parents/parental.
+    Anchor candidates considered: 17:23 (Khalifa: "Your Lord has
+    decreed that... your parents shall be honored" — definitive
+    commandment, paired immediately with worship-only-God), 31:14
+    (we enjoined the human being to honour his parents), 46:15
+    (be appreciative to your parents). Picked 17:23 because the
+    pairing with monotheism in the same verse signals its
+    foundational status.
   added: 2026-05-17
   added_by: operator
