@@ -62,13 +62,26 @@
 - id: concrete-003
   bucket: CONCRETE
   question: "Tell me about the people of Aad."
-  asserts: {}
+  asserts:
+    cites_must_include: ["7:65"]
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Aad"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.35
     tool_path_correctness: 0.3
     framing_appropriateness: 0.1
-  notes: "Less-common named group; tests whether agent finds Surah Hud + Al-Ahqaf. Asserts pending."
+  notes: |
+    Named-entity sub-shape (proper noun "Aad") -> hybrid_search pin.
+    Less-common named group; failure mode = agent confabulates
+    from training data rather than retrieving the specific verses.
+    Anchor candidates considered: 7:65-72 (Hud sent to Aad —
+    concise narrative), 46:21-25 (the punishment wind, Khalifa-
+    iconic), 41:15-16 (Aad's arrogance). Picked 7:65 as the
+    cleanest opening of the Aad narrative.
+    Phase 4d any_of candidate: substring "Aad" vs "Ad" (Khalifa
+    spelling varies) vs "people of Aad" — agent might use any.
   added: 2026-05-17
   added_by: operator
 
