@@ -225,13 +225,25 @@
 - id: broad-009
   bucket: BROAD
   question: "What is the central message of Surah Al-Kahf?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["explore_surah"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Kahf"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Story-heavy surah; tests narrative synthesis. Asserts pending."
+  notes: |
+    Surah summary (110 verses — Makki, story-heavy). Routing:
+    surah-summary -> explore_surah pin. cites_must_include empty
+    by design. Four narratives interweave: Companions of the Cave,
+    Owner of the Two Gardens, Moses + the servant, Dhul-Qarnayn.
+    Failure mode: agent recounts only the Cave story (the most
+    famous) and treats the other three as appendices.
+    Phase 4d any_of candidate: substring "Kahf" vs "The Cave"
+    (Khalifa's translated surah name).
   added: 2026-05-17
   added_by: operator
 
