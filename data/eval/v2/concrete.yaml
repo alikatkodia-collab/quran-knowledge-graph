@@ -113,13 +113,27 @@
 - id: concrete-005
   bucket: CONCRETE
   question: "Who is Dhul-Qarnayn?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["18:83"]
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Qarnayn"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.35
     tool_path_correctness: 0.3
     framing_appropriateness: 0.1
-  notes: "Surah Al-Kahf 18:83-98; tests specific narrative. Asserts pending."
+  notes: |
+    Named-entity sub-shape (proper noun) -> hybrid_search pin.
+    Single canonical location: 18:83-98 in Surah Al-Kahf — the
+    only place Dhul-Qarnayn is named.
+    Substring "Qarnayn" matches "Dhul-Qarnayn" / "Dhu al-Qarnayn"
+    / "Zul-Qarnayn" via prefix.
+    Anchor candidates considered: 18:83 (opening of the narrative),
+    18:86 (the first journey), 18:96 (the iron-and-copper barrier).
+    Picked 18:83 as the opening.
+    Failure mode: agent imports extra-Quranic Alexander-the-Great
+    identification without flagging the Quranic ambiguity.
   added: 2026-05-17
   added_by: operator
 
