@@ -413,13 +413,29 @@
 - id: broad-016
   bucket: BROAD
   question: "Tell me about Abraham in the Quran."
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Abraham"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Father-of-prophets; tests breadth. Asserts pending."
+  notes: |
+    Prophet-bio sub-shape. Routing: hybrid_search (BM25 catches the
+    proper noun cleanly) per operator's grammar rule. concept_search
+    is NOT forbidden. cites_must_include empty by design — Abraham's
+    biography spans many surahs (2, 6, 14, 19, 21, 26, 37, 51, 60,
+    87) and no single anchor is canonical.
+    Phase 4d any_of candidate: substring "Abraham" vs "Ibrahim"
+    (transliterated form) — Khalifa uses "Abraham" but the agent
+    might use either or both.
+    Failure mode: agent treats Abraham as a single-surah figure
+    rather than a recurring archetype (the model of pure
+    monotheism in 16:120, the questioner of Nimrod in 2:258, the
+    Kaaba builder in 2:127, the sacrifice in 37:102).
   added: 2026-05-17
   added_by: operator
 
