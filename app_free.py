@@ -489,16 +489,14 @@ def _preload_model():
 if __name__ == "__main__":
     _model_status["model"] = OLLAMA_MODEL
 
-    if PREFER_OPENROUTER and OPENROUTER_API_KEY:
-        print(f"\n[FREE] Default backend: OpenRouter ({OPENROUTER_MODEL})")
-        print(f"[FREE] Local fallback model: {OLLAMA_MODEL}")
-    elif PREFER_OPENROUTER and not OPENROUTER_API_KEY:
-        print(f"\n[FREE] --openrouter requested but OPENROUTER_API_KEY is not set.")
-        print(f"[FREE] Falling back to local model: {OLLAMA_MODEL}")
-    else:
-        print(f"\n[FREE] Model: {OLLAMA_MODEL}")
-    print(f"[FREE] Cost: $0.00 (local)")
-    print(f"[FREE] Quran Graph: http://localhost:{OLLAMA_PORT}\n")
+    from startup_banner import format_startup_banner
+    print(format_startup_banner(
+        prefer_openrouter=PREFER_OPENROUTER,
+        openrouter_api_key=OPENROUTER_API_KEY,
+        openrouter_model=OPENROUTER_MODEL,
+        ollama_model=OLLAMA_MODEL,
+        port=OLLAMA_PORT,
+    ))
 
     # Start model pre-load in background so the UI is available immediately
     threading.Thread(target=_preload_model, daemon=True).start()
