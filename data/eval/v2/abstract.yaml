@@ -335,13 +335,24 @@
 - id: abstract-013
   bucket: ABSTRACT
   question: "What guidance does the Quran offer on trusting in God?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["65:3"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["trust", "tawakkul", "و-ك-ل"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: trust / tawakkul. [AR] root و-ك-ل / tawakkul. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: trust in God / tawakkul. [AR] root و-ك-ل / tawakkul.
+    Three-substring AR-augmentation gate.
+    Anchor candidates considered: 65:3 (Khalifa: "Anyone who trusts
+    in GOD, He suffices him" — most iconic single-line statement),
+    3:159 ("once you make a decision... trust in GOD"), 8:2 (true
+    believers... trust in their Lord). Picked 65:3 for compactness
+    and explicit reciprocity.
   added: 2026-05-17
   added_by: operator
 
