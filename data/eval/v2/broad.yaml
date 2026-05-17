@@ -92,13 +92,28 @@
 - id: broad-004
   bucket: BROAD
   question: "Give me an overview of Surah Al-Imran."
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["explore_surah"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Imran"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "200-verse Madinan surah; tests cross-section synthesis. Asserts pending."
+  notes: |
+    Surah summary (200-verse Madinan surah). Routing: surah-summary
+    sub-shape -> explore_surah pin. cites_must_include empty by
+    design. Substring "Imran" matches "Al-Imran" / "Aal-Imran" /
+    "Imran" — case-insensitive substring catches any common form.
+    Failure mode: agent treats the surah as a Mary-and-Jesus
+    biography and misses the doctrinal sections (3:7 on
+    interpretation, 3:64 on common-ground theology, 3:103 on
+    unity, 3:159 on consultation).
+    Phase 4d any_of candidate: substring "Imran" vs "Amran" —
+    Khalifa specifically uses "Amran" (no I); if the agent
+    strictly follows Khalifa it may bypass "Imran" entirely.
   added: 2026-05-17
   added_by: operator
 
