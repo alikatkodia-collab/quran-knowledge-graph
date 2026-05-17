@@ -412,13 +412,27 @@
 - id: abstract-016
   bucket: ABSTRACT
   question: "How does the Quran characterise Satan and the ways he misleads people?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["35:6"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["devil", "shaytan", "ش-ط-ن"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: Satan, misleading. [AR] root ش-ط-ن / shaytan. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: Satan + misleading. [AR] root ش-ط-ن / shaytan. Three-
+    substring AR gate. Substring uses "devil" (Khalifa's preferred
+    rendering of shaytan) rather than "Satan" — Khalifa generally
+    uses lowercase "devil" except when referencing the proper name
+    Iblis. If many answers use only "Satan" and miss "devil", this
+    becomes a Phase 4d any_of candidate.
+    Anchor candidates considered: 35:6 (Khalifa: "the devil is your
+    enemy, so treat him as an enemy" — most direct command), 7:16-17
+    (Satan: "I will set up traps... on Your straight path"), 17:53
+    (the devil is the human's most ardent enemy). Picked 35:6.
   added: 2026-05-17
   added_by: operator
 
