@@ -48,6 +48,7 @@ python classify_edges.py          # Typed edges (SUPPORTS, ELABORATES, etc.)
 
 # Newer (2026-04+):
 python build_code19_features.py        # Khalifa Code-19 arithmetic features
+python build_revelation_metadata.py    # Meccan/Medinan + revelation_order on Sura nodes (Egyptian standard)
 python build_fulltext_index.py         # BM25 indexes (verse_text + verse_arabic)
 python build_concepts.py               # Porter-stem ER -> :Concept nodes
 python import_mutashabihat.py          # CC0 mutashabihat -> :SIMILAR_PHRASE edges
