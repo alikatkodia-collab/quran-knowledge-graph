@@ -231,13 +231,26 @@
 - id: abstract-009
   bucket: ABSTRACT
   question: "What does the Quran reveal about hypocrisy?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:8"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["hypocri"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: hypocrisy (nifaq). Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: hypocrisy (nifaq). Substring "hypocri" matches
+    hypocrite/hypocrites/hypocrisy/hypocritical.
+    Anchor candidates considered: 2:8 (Khalifa: "Some people say,
+    'We believe in GOD and the Last Day,' while they are not
+    believers" — opening passage on hypocrisy), 63:1 (Surah
+    Al-Munafiqun: hypocrites' false testimony), 4:142 (hypocrites
+    try to deceive GOD). Picked 2:8 as the most canonical opening
+    anchor; Surah 63 is the deep-dive but 2:8 is the first
+    extended treatment in the Quran's order.
   added: 2026-05-17
   added_by: operator
 
