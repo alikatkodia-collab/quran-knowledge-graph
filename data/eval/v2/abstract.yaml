@@ -308,13 +308,27 @@
 - id: abstract-012
   bucket: ABSTRACT
   question: "Walk me through the Quran's description of the path of righteousness."
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:177"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["righteous"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: path of righteousness. Should anchor on 2:177. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: path of righteousness. Substring "righteous" matches
+    righteous/righteously/righteousness. Note: 2:177 is also
+    abstract-001's anchor (charity) — same verse legitimately
+    grounds both since it defines righteousness in terms of
+    charity-giving conduct.
+    Anchor candidates considered: 2:177 (Khalifa's definitional
+    "righteousness" verse), 1:6 (Fatiha's "guide us to the straight
+    path"), 90:11-18 ("the difficult path: freeing the slave...
+    feeding the orphan"). Picked 2:177 as the most explicit
+    definitional verse.
   added: 2026-05-17
   added_by: operator
 
