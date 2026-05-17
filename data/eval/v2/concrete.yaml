@@ -9,13 +9,27 @@
 - id: concrete-001
   bucket: CONCRETE
   question: "Tell me about Paradise."
-  asserts: {}
+  asserts:
+    cites_must_include: ["47:15"]
+    tools_used_must_include: ["hybrid_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Paradise", "janna", "ج-ن-ن"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.35
     tool_path_correctness: 0.3
     framing_appropriateness: 0.1
-  notes: "Janna theme; [AR] root ج-ن-ن / janna (also firdaws). Should invoke descriptive verses (55, 56, 76). Asserts pending."
+  notes: |
+    Named-entity sub-shape (proper noun "Paradise") -> hybrid_search
+    pin per system-prompt CONCRETE routing. [AR] root ج-ن-ن / janna.
+    Three-substring AR gate.
+    Anchor candidates considered: 47:15 (Khalifa: "the allegory of
+    Paradise that is promised for the righteous" — definitive
+    descriptive verse), 55:46 (two gardens for those who reverence
+    their Lord), 76:5-22 (Khalifa's vivid Paradise description).
+    Picked 47:15 for the explicit "allegory of Paradise" framing.
+    Phase 4d any_of candidate: substring "janna" vs "Garden" vs
+    "Paradise" — Khalifa uses all three across the text.
   added: 2026-05-17
   added_by: operator
 
