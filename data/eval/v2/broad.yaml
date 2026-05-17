@@ -386,13 +386,27 @@
 - id: broad-015
   bucket: BROAD
   question: "What is the Quran's perspective on the Torah and the Gospel?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Torah"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Tests inter-scriptural framing. Asserts pending."
+  notes: |
+    Per operator's grammar rule: proper nouns (Torah, Gospel) ->
+    hybrid_search pin. Tests inter-scriptural framing — should
+    surface 5:44-48 (Torah, Gospel, and the Quran each as guidance),
+    3:3-4 (revealed in truth), 5:13 (corruption of the scriptures).
+    cites_must_include empty (no single canonical anchor).
+    Substring "Torah" sufficient (if Torah is mentioned, Gospel
+    is almost certainly also mentioned given the question).
+    Phase 4d any_of candidate: {hybrid_search, concept_search} —
+    this is the bucket-vs-tool-pin edge case operator flagged.
+    Re-evaluate after first run.
   added: 2026-05-17
   added_by: operator
 
