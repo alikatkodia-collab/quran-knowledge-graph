@@ -1,0 +1,64 @@
+# Eval v2 — STRUCTURED bucket (4 questions).
+#
+# Tests questions with a structural / numerical / Code-19 anchor that
+# the user genuinely needs the graph to answer. Failure mode: agent
+# confabulates from training data instead of querying the graph's
+# structural metadata. Heavy citation_accuracy weighting since the
+# right answer is precise.
+#
+# Questions 3-4 (Meccan / Medinan) currently FORCE A FAIL — the
+# revelation_location property is not yet on Sura nodes. A parallel
+# session is backfilling that metadata; until it lands, these
+# questions are intentionally below the floor.
+
+- id: structured-001
+  bucket: STRUCTURED
+  question: "How many times does the letter Qaf appear in Surah Qaf, and how does this relate to the Code-19 system?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.5
+    answer_completeness: 0.2
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.1
+  notes: "Famous Khalifa Code-19 claim (Qaf = 57 = 19 x 3 in Surah 50). Should call get_code19_features. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: structured-002
+  bucket: STRUCTURED
+  question: "Which surahs open with mysterious letters (muqatta'at), and what patterns connect them?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.5
+    answer_completeness: 0.2
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.1
+  notes: "29 muqatta'at surahs. Should query Sura.mysterious_letters via run_cypher. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: structured-003
+  bucket: STRUCTURED
+  question: "Which surahs are Meccan and which are Medinan?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.5
+    answer_completeness: 0.2
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.1
+  notes: "FORCING FUNCTION — revelation_location not yet on Sura nodes. Will fail until parallel backfill session lands. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: structured-004
+  bucket: STRUCTURED
+  question: "What are the thematic differences between Meccan and Medinan revelations?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.5
+    answer_completeness: 0.2
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.1
+  notes: "FORCING FUNCTION — depends on Meccan/Medinan tagging. Will fail until backfill lands. Asserts pending."
+  added: 2026-05-17
+  added_by: operator

@@ -1,0 +1,338 @@
+# Eval v2 — ABSTRACT bucket (25 questions).
+#
+# Tests thematic / conceptual questions with no proper nouns. Real-user
+# shape: open-ended "what does the Quran say about X" prompts where X
+# is a virtue, vice, or theological concept. Failure mode: agent
+# semantic-searches and returns thematically-adjacent verses without
+# anchoring in high-confidence keyword hits.
+#
+# 10 questions are flagged [AR] in notes — these expect Arabic-root
+# augmentation (root substring required + search_arabic_root tool call).
+# The agent-side behaviour change that produces this augmentation
+# is being implemented in a parallel session; until it ships, [AR]
+# questions will score low, which is the intended baseline signal.
+
+- id: abstract-001
+  bucket: ABSTRACT
+  question: "Tell me what the Quran says about charity."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: charity. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-002
+  bucket: ABSTRACT
+  question: "What does the Quran teach about forgiveness?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: forgiveness (bidirectional — divine and interpersonal). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-003
+  bucket: ABSTRACT
+  question: "How does the Quran portray gratitude?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: gratitude. [AR] root sh-k-r / shukr. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-004
+  bucket: ABSTRACT
+  question: "Describe what the Quran reveals about sin."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: sin (minor vs major distinctions). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-005
+  bucket: ABSTRACT
+  question: "What does the Quran say about patience?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: patience. [AR] root s-b-r / sabr. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-006
+  bucket: ABSTRACT
+  question: "How is humility presented in the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: humility. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-007
+  bucket: ABSTRACT
+  question: "What is the Quran's teaching on repentance?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: repentance. [AR] root t-w-b / tawba. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-008
+  bucket: ABSTRACT
+  question: "How does the Quran describe true belief?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: true belief (iman). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-009
+  bucket: ABSTRACT
+  question: "What does the Quran reveal about hypocrisy?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: hypocrisy (nifaq). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-010
+  bucket: ABSTRACT
+  question: "What is the Quran's view of justice?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: justice. [AR] root ع-د-ل / adl (also qist). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-011
+  bucket: ABSTRACT
+  question: "How does the Quran warn about the consequences of arrogance?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: arrogance + its consequences (compound). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-012
+  bucket: ABSTRACT
+  question: "Walk me through the Quran's description of the path of righteousness."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: path of righteousness. Should anchor on 2:177. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-013
+  bucket: ABSTRACT
+  question: "What guidance does the Quran offer on trusting in God?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: trust / tawakkul. [AR] root و-ك-ل / tawakkul. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-014
+  bucket: ABSTRACT
+  question: "How does the Quran address doubt and certainty?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: doubt / certainty (Khalifa-relevant, yaqeen). [AR] root ي-ق-ن / yaqeen. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-015
+  bucket: ABSTRACT
+  question: "What does sincere worship look like according to the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: sincere worship / ikhlas. [AR] root خ-ل-ص / ikhlas. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-016
+  bucket: ABSTRACT
+  question: "How does the Quran characterise Satan and the ways he misleads people?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: Satan, misleading. [AR] root ش-ط-ن / shaytan. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-017
+  bucket: ABSTRACT
+  question: "What lessons does the Quran offer about being led astray (dalal)?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: going astray / dalal. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-018
+  bucket: ABSTRACT
+  question: "Explain how the Quran describes the whisperings of Satan (waswasa)."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: waswasa. Should anchor on 114 (An-Nas). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-019
+  bucket: ABSTRACT
+  question: "What consequences does the Quran tie to following Satan?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: consequences of following Satan. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-020
+  bucket: ABSTRACT
+  question: "How does the Quran discuss wealth and worldly attachment?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: wealth, dunya, attachment. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-021
+  bucket: ABSTRACT
+  question: "Trace the Quran's depiction of death and the soul."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: death, nafs, ruh. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-022
+  bucket: ABSTRACT
+  question: "Discuss what the Quran says about reflection and contemplation."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: tadabbur, tafakkur. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-023
+  bucket: ABSTRACT
+  question: "How does the Quran depict the mercy of God?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: mercy / rahma. [AR] root ر-ح-م / rahma. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-024
+  bucket: ABSTRACT
+  question: "What insight does the Quran provide about prayer (salat)?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: prayer / salat. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-025
+  bucket: ABSTRACT
+  question: "Why does the Quran emphasise honouring one's parents?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Theme: honouring parents. Should anchor on 17:23-24. Asserts pending."
+  added: 2026-05-17
+  added_by: operator

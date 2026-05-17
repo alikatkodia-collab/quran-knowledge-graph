@@ -1,0 +1,98 @@
+# Eval v2 — CONCRETE bucket (7 questions).
+#
+# Tests named non-prophet entities, named events, and named places.
+# Prophet biographies (Abraham, Moses, Jesus, Muhammad, Noah) moved to
+# BROAD because the answer space is survey-shaped, not pinpoint.
+# Failure mode: agent semantic-searches when keyword would land
+# cleanly on the proper noun.
+
+- id: concrete-001
+  bucket: CONCRETE
+  question: "Tell me about Paradise."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Janna theme; [AR] root ج-ن-ن / janna (also firdaws). Should invoke descriptive verses (55, 56, 76). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-002
+  bucket: CONCRETE
+  question: "How does the Quran identify and describe the hypocrites?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Munafiqun; should anchor on Surah Al-Munafiqun (63) + 2:8-20. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-003
+  bucket: CONCRETE
+  question: "Tell me about the people of Aad."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Less-common named group; tests whether agent finds Surah Hud + Al-Ahqaf. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-004
+  bucket: CONCRETE
+  question: "What befell Lot's people according to the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Qawm Lut; tests narrative synthesis across Hud, Ash-Shu'ara, Al-Ankabut. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-005
+  bucket: CONCRETE
+  question: "Who is Dhul-Qarnayn?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Surah Al-Kahf 18:83-98; tests specific narrative. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-006
+  bucket: CONCRETE
+  question: "Tell the story of the Cave (Ashab al-Kahf) as the Quran presents it."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Surah 18; tests whether agent stays grounded vs spiritualizes. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-007
+  bucket: CONCRETE
+  question: "How is Pharaoh depicted across the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Fir'awn; tests recurring antagonist across multiple surahs. Asserts pending."
+  added: 2026-05-17
+  added_by: operator

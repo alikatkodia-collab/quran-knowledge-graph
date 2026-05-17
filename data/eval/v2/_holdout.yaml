@@ -1,0 +1,213 @@
+# SEALED 2026-05-17 — do not read this file during tuning.
+# Held-out set for periodic calibration only. Treat as sealed
+# ground truth; rereading during prompt / retrieval / model
+# changes invalidates the independence signal.
+#
+# 15 held-out questions (6 ABSTRACT-shaped, 5 BROAD-shaped,
+# 3 CONCRETE-shaped, 1 STRUCTURED-shaped). 3 are flagged [AR]
+# with anchors deliberately NOT in the system prompt's canonical
+# table — they test "extend by analogy" independently from the
+# main set's table-bound 10.
+#
+# Run this set only when:
+#   * suspecting overfitting of the main set
+#   * a quarterly calibration check
+#   * after a major retrieval / model change before declaring victory
+#
+# When you read this file outside those windows, the held-out
+# signal is gone. Author replacement questions if that happens.
+
+- id: abstract-held-001
+  bucket: ABSTRACT
+  question: "Where does envy (hasad) appear in the Quranic moral landscape?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theme: envy / hasad. Less-common virtue, tests breadth on minor themes."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-held-002
+  bucket: ABSTRACT
+  question: "How does the Quran describe lying and deception?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theme: lying / deception. Sin-category theme not in main set."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-held-003
+  bucket: ABSTRACT
+  question: "What place does the fear of God (taqwa) hold in the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theme: taqwa. [AR] root و-ق-ي / taqwa — anchor NOT in main system-prompt table; tests extend-by-analogy."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-held-004
+  bucket: ABSTRACT
+  question: "How does the Quran encourage generosity?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theme: generosity. [AR] expect karam / ك-ر-م OR jud / ج-و-د (either passes; tests anchor-choice judgement when two roots compete). Adjacent to charity — tests whether agent distinguishes them."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-held-005
+  bucket: ABSTRACT
+  question: "How does the Quran describe peace and reconciliation?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theme: salam, sulh."
+  added: 2026-05-17
+  added_by: operator
+
+- id: abstract-held-006
+  bucket: ABSTRACT
+  question: "When the Quran discusses anger, what does it advise about self-control?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.4
+    tool_path_correctness: 0.15
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theme: anger / self-control. [AR] expect ghadab / غ-ض-ب — anchor NOT in main system-prompt table; tests extend-by-analogy. Composite theme."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-held-001
+  bucket: BROAD
+  question: "Summarize Surah Maryam."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Held-out. Different surah than main set; story-driven (Mary, Zechariah, Jesus)."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-held-002
+  bucket: BROAD
+  question: "What recurring lesson does Surah Ar-Rahman drive home?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Held-out. Tests recurrent-refrain handling ('which of your Lord's favours will you deny?')."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-held-003
+  bucket: BROAD
+  question: "Tell me about Solomon (Sulayman) in the Quran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Held-out. Different prophet than main set; tests breadth on a non-marquee prophet."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-held-004
+  bucket: BROAD
+  question: "What roles do angels play in the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Held-out. Theological category (mala'ika); not a prophet/event/place."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-held-005
+  bucket: BROAD
+  question: "How does the Quran describe being raised from the dead?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Held-out. Sharper angle than 'day of judgment' (resurrection mechanics, ba'th). Different verse set; harder to confabulate."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-held-001
+  bucket: CONCRETE
+  question: "What was the fate of the people of Thamud?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Held-out. Different named group than Aad / Lot in main set."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-held-002
+  bucket: CONCRETE
+  question: "Tell me about David (Dawud) in the Quran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Held-out. Different prophet; tests breadth across surahs that mention him (e.g. 2, 4, 17, 21, 27, 34, 38)."
+  added: 2026-05-17
+  added_by: operator
+
+- id: concrete-held-003
+  bucket: CONCRETE
+  question: "What can be learned about the Jinn from the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.25
+    answer_completeness: 0.35
+    tool_path_correctness: 0.3
+    framing_appropriateness: 0.1
+  notes: "Held-out. Non-prophet named category; tests Surah Al-Jinn (72) + cross-refs."
+  added: 2026-05-17
+  added_by: operator
+
+- id: structured-held-001
+  bucket: STRUCTURED
+  question: "What is the shortest surah in the Quran, and what is its message?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.5
+    answer_completeness: 0.2
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.1
+  notes: "Held-out. Mirror of dropped main-set 'longest verse' — graph-required because the agent must verify (Surah Al-Kawthar, 3 verses)."
+  added: 2026-05-17
+  added_by: operator

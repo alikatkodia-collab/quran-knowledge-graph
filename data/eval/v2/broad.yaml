@@ -1,0 +1,280 @@
+# Eval v2 — BROAD bucket (21 questions).
+#
+# Tests surveys, surah summaries, theological overviews, and prophet
+# biographies. Failure mode: shallow answer that doesn't span enough
+# surahs / verses, or that confabulates roster items. Should use
+# explore_surah for surah-summary questions and traverse multiple
+# keyword paths for theme surveys.
+
+- id: broad-001
+  bucket: BROAD
+  question: "Summarize Surah Al-Baqarah."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Longest surah (286v). Tests explore_surah usage and breadth across legal + narrative content. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-002
+  bucket: BROAD
+  question: "Provide a summary of Surah Yusuf."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "111-verse self-contained Joseph narrative (was Al-Fatiha, swapped for length). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-003
+  bucket: BROAD
+  question: "What is the main theme of Surah Yasin?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Tests theme extraction on the 'heart of the Quran.' Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-004
+  bucket: BROAD
+  question: "Give me an overview of Surah Al-Imran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "200-verse Madinan surah; tests cross-section synthesis. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-005
+  bucket: BROAD
+  question: "What are the main themes of the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Highest-breadth question; failure mode = shallow listicle. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-006
+  bucket: BROAD
+  question: "In what ways does the Quran describe itself?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Self-referential; should cite 2:2, 15:9, 17:88. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-007
+  bucket: BROAD
+  question: "How does the Quran present the concept of revelation?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Tests breadth across revelation-related verses (wahy, tanzeel). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-008
+  bucket: BROAD
+  question: "Outline the contents of Surah An-Nisa."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Women / family law; tests legal-content handling. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-009
+  bucket: BROAD
+  question: "What is the central message of Surah Al-Kahf?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Story-heavy surah; tests narrative synthesis. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-010
+  bucket: BROAD
+  question: "According to the Quran, how should we understand the relationship between God and humanity?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Highest-level theological question. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-011
+  bucket: BROAD
+  question: "Explain the structure of the Quran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Meta question; should describe surah counts, Makki/Madani, etc. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-012
+  bucket: BROAD
+  question: "How does the Quran speak of its own miraculous nature?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Tests i'jaz + Code-19 awareness (Khalifa-specific). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-013
+  bucket: BROAD
+  question: "Who are the prophets mentioned in the Quran?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "25 named prophets; tests roster completeness. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-014
+  bucket: BROAD
+  question: "What is the Quran's portrayal of the Day of Judgment?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Heavy eschatology; tests breadth. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-015
+  bucket: BROAD
+  question: "What is the Quran's perspective on the Torah and the Gospel?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Tests inter-scriptural framing. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-016
+  bucket: BROAD
+  question: "Tell me about Abraham in the Quran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Father-of-prophets; tests breadth. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-017
+  bucket: BROAD
+  question: "Recount the story of Moses in the Quran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Most-mentioned prophet (~136 refs); tests breadth. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-018
+  bucket: BROAD
+  question: "Summarise the Quranic account of Jesus."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Isa; tests theological distinctions vs Christian framing. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-019
+  bucket: BROAD
+  question: "Describe Muhammad as he appears in the Quran."
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Tests how the Quran characterises its own messenger. Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-020
+  bucket: BROAD
+  question: "What does the Quran tell us about Noah?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "Nuh; tests narrative across multiple surahs (esp. 71). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
+
+- id: broad-021
+  bucket: BROAD
+  question: "From a Quranic perspective, how does Satan succeed in misleading humanity?"
+  asserts: {}
+  rubric_weights:
+    citation_accuracy: 0.2
+    answer_completeness: 0.5
+    tool_path_correctness: 0.1
+    framing_appropriateness: 0.2
+  notes: "BROAD framing of Satan question (complements ABSTRACT 16-19). Asserts pending."
+  added: 2026-05-17
+  added_by: operator
