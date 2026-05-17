@@ -617,13 +617,27 @@
 - id: abstract-024
   bucket: ABSTRACT
   question: "What insight does the Quran provide about prayer (salat)?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["29:45"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["prayer"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: prayer / salat. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: prayer / salat. Many canonical verses exist (2:43, 2:238,
+    4:103, 17:78, 29:45, …); kept candidates to the top three
+    considered per the per-question annotation guideline.
+    Anchor candidates considered: 29:45 (Khalifa: "the Contact
+    Prayer prohibits evil and vice" — distinctive Khalifa rendering
+    that surfaces the FUNCTION of prayer, not just the obligation),
+    4:103 ("the Contact Prayers are decreed for the believers at
+    specific times"), 2:238 ("you shall consistently observe the
+    Contact Prayers"). Picked 29:45 because the question asks for
+    "insight" — function-oriented rather than obligation-oriented.
   added: 2026-05-17
   added_by: operator
 
