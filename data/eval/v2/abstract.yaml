@@ -466,13 +466,26 @@
 - id: abstract-018
   bucket: ABSTRACT
   question: "Explain how the Quran describes the whisperings of Satan (waswasa)."
-  asserts: {}
+  asserts:
+    cites_must_include: ["114:4"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["whisper"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: waswasa. Should anchor on 114 (An-Nas). Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: whisperings of Satan / waswasa. Substring "whisper"
+    matches whisper/whispers/whispering/whisperings.
+    Anchor candidates considered: 114:4 (Khalifa: "From the evil
+    of the sneaky whisperer" — Surah An-Nas, most direct on
+    waswasa), 7:20 ("the devil whispered to them in order to
+    reveal their bodies"), 20:120 ("the devil whispered to him").
+    Picked 114:4 for the explicit "whisperer" naming in Surah
+    An-Nas; the closing surah of the Quran is the canonical refuge
+    against waswasa.
   added: 2026-05-17
   added_by: operator
 
