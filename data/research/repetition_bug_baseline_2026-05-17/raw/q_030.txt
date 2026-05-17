@@ -1,0 +1,9 @@
+data: {"t": "tool", "name": "Model", "args": "ollama", "summary": "qwen3:14b"}
+
+data: {"t": "tool", "name": "Answer cache", "args": "What does the Quran say about its own miraculous nature?", "summary": "Found relevant cached answers"}
+
+data: {"t": "tool", "name": "Reasoning memory", "args": "1 playbook(s)", "summary": "Found 1 similar past traces"}
+
+data: {"t": "tool", "name": "Query profile", "args": "What does the Quran say about its own miraculous nature?", "summary": "profile=broad"}
+
+data: {"t": "tool", "name": "concept_search", "args": "{\"concept\": \"miracle\", \"top_k\": 30}", "summary": "Done"}

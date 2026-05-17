@@ -1,0 +1,13 @@
+data: {"t": "tool", "name": "Model", "args": "ollama", "summary": "qwen3:14b"}
+
+data: {"t": "tool", "name": "Answer cache", "args": "What does the Quran say about the unseen?", "summary": "Found relevant cached answers"}
+
+data: {"t": "tool", "name": "Reasoning memory", "args": "2 playbook(s)", "summary": "Found 2 similar past traces"}
+
+data: {"t": "tool", "name": "Query profile", "args": "What does the Quran say about the unseen?", "summary": "profile=broad"}
+
+data: {"t": "graph_update", "nodes": [{"id": "2:3", "type": "verse", "verseId": "2:3", "label": "[2:3]", "surahName": "The Heifer", "text": "who believe in the unseen, observe the Contact Prayers (Salat), and from our provisions to them, they give to charity.", "arabicText": "ٱلَّذِينَ يُؤۡمِنُونَ بِٱلۡغَيۡبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ"}, {"id": "34:14", "type": "verse", "verseId": "34:14", "label": "[34:14]", "surahName": "Sheba", "text": "When the appointed time for his death came, they had no clue that he had died. Not until one of the animals tried to eat his staff, and he fell down, did the jinns realized that he was dead. They thus realized that if they really knew the u", "arabicText": "فَلَمَّا قَضَيۡنَا عَلَيۡهِ ٱلۡمَوۡتَ مَا دَلَّهُمۡ عَلَىٰ مَوۡتِهِۦٓ إِلَّا دَآبَّةُ ٱلۡأَرۡضِ تَأۡكُلُ مِنسَأَتَهُۥۖ فَلَمَّا خَرَّ تَبَيَّنَتِ ٱلۡجِنُّ أَن لَّوۡ كَانُواْ يَعۡلَمُونَ ٱلۡغَيۡبَ مَا لَبِثُواْ فِي ٱلۡعَذَابِ ٱلۡمُهِينِ"}], "links": [], "active": ["2:3", "34:14"]}
+
+data: {"t": "tool", "name": "Priming search", "args": "unseen", "summary": "Found 2 candidate verses"}
+
+data: {"t": "tool", "name": "concept_search", "args": "{\"top_k\": 30, \"concept\": \"unseen\"}", "summary": "Done"}

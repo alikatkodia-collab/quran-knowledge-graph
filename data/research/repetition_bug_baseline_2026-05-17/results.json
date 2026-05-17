@@ -1,0 +1,1071 @@
+[
+  {
+    "q_id": "q_001",
+    "question": "What does the Quran say about charity?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 268.5,
+    "raw_file": "raw/q_001.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 9870,
+    "h2_count": 7,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_002",
+    "question": "What does the Quran teach about forgiveness?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 213.2,
+    "raw_file": "raw/q_002.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 2223,
+    "h2_count": 1,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_003",
+    "question": "What does the Quran say about gratitude?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 153.7,
+    "raw_file": "raw/q_003.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 7466,
+    "h2_count": 6,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "2:172",
+        "sections": [
+          0,
+          4
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_004",
+    "question": "What does the Quran say about sin?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 151.3,
+    "raw_file": "raw/q_004.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 4728,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_005",
+    "question": "What does the Quran say about patience?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 223.5,
+    "raw_file": "raw/q_005.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 11101,
+    "h2_count": 8,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_006",
+    "question": "What does the Quran teach about humility?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 98.7,
+    "raw_file": "raw/q_006.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6535,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_007",
+    "question": "What does the Quran say about repentance?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 114.1,
+    "raw_file": "raw/q_007.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6864,
+    "h2_count": 6,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "4:17",
+        "sections": [
+          0,
+          1
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "4:17",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "4:17",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "3:89",
+        "sections": [
+          0,
+          1
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "3:89",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "3:89",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "5:39",
+        "sections": [
+          0,
+          1
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "5:39",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "5:39",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "58:13",
+        "sections": [
+          0,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "66:8",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "66:8",
+        "sections": [
+          0,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "66:8",
+        "sections": [
+          2,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "2:160",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "25:71",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_008",
+    "question": "How does the Quran describe true belief?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 191.3,
+    "raw_file": "raw/q_008.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 5471,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_009",
+    "question": "What does the Quran say about hypocrisy?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 182.2,
+    "raw_file": "raw/q_009.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 7245,
+    "h2_count": 6,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "9:68",
+        "sections": [
+          1,
+          4
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_010",
+    "question": "What does the Quran teach about justice?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 182.3,
+    "raw_file": "raw/q_010.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 8043,
+    "h2_count": 6,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "57:25",
+        "sections": [
+          0,
+          3
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_011",
+    "question": "What does the Quran say about the consequences of arrogance?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 277.2,
+    "raw_file": "raw/q_011.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 7653,
+    "h2_count": 5,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_012",
+    "question": "How does the Quran describe the path of righteousness?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 161.0,
+    "raw_file": "raw/q_012.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 7433,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_013",
+    "question": "What does the Quran teach about trusting in God?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 139.0,
+    "raw_file": "raw/q_013.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 7955,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_014",
+    "question": "What does the Quran say about doubt and certainty?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 121.3,
+    "raw_file": "raw/q_014.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 4739,
+    "h2_count": 5,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_015",
+    "question": "How does the Quran describe sincere worship?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 130.1,
+    "raw_file": "raw/q_015.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6746,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_016",
+    "question": "What does the Quran say about Satan and how he misleads people?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 117.9,
+    "raw_file": "raw/q_016.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 5222,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_017",
+    "question": "What does the Quran teach about being led astray?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 191.7,
+    "raw_file": "raw/q_017.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 7075,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_018",
+    "question": "What does the Quran say about the whisperings of Satan?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 189.1,
+    "raw_file": "raw/q_018.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 4575,
+    "h2_count": 5,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "7:200",
+        "sections": [
+          0,
+          3
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "7:200",
+        "sections": [
+          2,
+          3
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "41:36",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "41:36",
+        "sections": [
+          0,
+          3
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "41:36",
+        "sections": [
+          2,
+          3
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "23:97",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "23:97",
+        "sections": [
+          1,
+          3
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "23:97",
+        "sections": [
+          2,
+          3
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_019",
+    "question": "How does the Quran describe the consequences of following Satan?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 165.3,
+    "raw_file": "raw/q_019.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 7169,
+    "h2_count": 6,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "10:8",
+        "sections": [
+          0,
+          1
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "10:8",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "10:8",
+        "sections": [
+          1,
+          2
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "78:30",
+        "sections": [
+          0,
+          2
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "78:30",
+        "sections": [
+          3,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "37:73",
+        "sections": [
+          0,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "3:197",
+        "sections": [
+          3,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "2:167",
+        "sections": [
+          0,
+          3
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "37:163",
+        "sections": [
+          1,
+          4
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "82:14",
+        "sections": [
+          1,
+          4
+        ],
+        "match": "near_verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_020",
+    "question": "What does the Quran say about wealth and worldly attachment?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 142.9,
+    "raw_file": "raw/q_020.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 8399,
+    "h2_count": 7,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "57:20",
+        "sections": [
+          0,
+          3
+        ],
+        "match": "near_verbatim"
+      },
+      {
+        "verse": "2:267",
+        "sections": [
+          2,
+          5
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_021",
+    "question": "What does the Quran teach about death and the soul?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 202.5,
+    "raw_file": "raw/q_021.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 7355,
+    "h2_count": 7,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "39:42",
+        "sections": [
+          0,
+          1
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "7:172",
+        "sections": [
+          1,
+          5
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "3:185",
+        "sections": [
+          3,
+          4
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_022",
+    "question": "What does the Quran say about reflection and contemplation?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 212.2,
+    "raw_file": "raw/q_022.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 6748,
+    "h2_count": 5,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_023",
+    "question": "How does the Quran describe the mercy of God?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 123.8,
+    "raw_file": "raw/q_023.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 8171,
+    "h2_count": 5,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_024",
+    "question": "What does the Quran say about prayer?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 325.8,
+    "raw_file": "raw/q_024.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_025",
+    "question": "What does the Quran teach about honoring parents?",
+    "category": "ABSTRACT",
+    "elapsed_seconds": 172.4,
+    "raw_file": "raw/q_025.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 7114,
+    "h2_count": 6,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "4:36",
+        "sections": [
+          1,
+          4
+        ],
+        "match": "verbatim"
+      },
+      {
+        "verse": "4:33",
+        "sections": [
+          1,
+          4
+        ],
+        "match": "verbatim"
+      }
+    ]
+  },
+  {
+    "q_id": "q_026",
+    "question": "What are the main themes of the Quran?",
+    "category": "BROAD",
+    "elapsed_seconds": 334.6,
+    "raw_file": "raw/q_026.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_027",
+    "question": "How does the Quran describe itself?",
+    "category": "BROAD",
+    "elapsed_seconds": 327.7,
+    "raw_file": "raw/q_027.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_028",
+    "question": "What is the Quran's view of revelation?",
+    "category": "BROAD",
+    "elapsed_seconds": 267.3,
+    "raw_file": "raw/q_028.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 5680,
+    "h2_count": 8,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_029",
+    "question": "How does the Quran describe the relationship between God and humanity?",
+    "category": "BROAD",
+    "elapsed_seconds": 223.6,
+    "raw_file": "raw/q_029.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 15802,
+    "h2_count": 1,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_030",
+    "question": "What does the Quran say about its own miraculous nature?",
+    "category": "BROAD",
+    "elapsed_seconds": 317.5,
+    "raw_file": "raw/q_030.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_031",
+    "question": "How does the Quran describe the Day of Judgment?",
+    "category": "BROAD",
+    "elapsed_seconds": 170.1,
+    "raw_file": "raw/q_031.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6375,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_032",
+    "question": "What is the Quran's view of other scriptures?",
+    "category": "BROAD",
+    "elapsed_seconds": 396.5,
+    "raw_file": "raw/q_032.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_033",
+    "question": "What is the central message of Surah Ar-Rahman?",
+    "category": "BROAD",
+    "elapsed_seconds": 300.9,
+    "raw_file": "raw/q_033.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_034",
+    "question": "What is the main theme of Surah Yasin?",
+    "category": "BROAD",
+    "elapsed_seconds": 329.9,
+    "raw_file": "raw/q_034.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 5962,
+    "h2_count": 5,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_035",
+    "question": "What is the message of Surah Al-Kahf?",
+    "category": "BROAD",
+    "elapsed_seconds": 333.0,
+    "raw_file": "raw/q_035.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_036",
+    "question": "What does the Quran say about fear of God?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 314.3,
+    "raw_file": "raw/q_036.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6500,
+    "h2_count": 5,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_037",
+    "question": "What does the Quran teach about kindness?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 296.3,
+    "raw_file": "raw/q_037.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 17837,
+    "h2_count": 10,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_038",
+    "question": "How does the Quran describe the believers' relationship to each other?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 370.2,
+    "raw_file": "raw/q_038.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_039",
+    "question": "What does the Quran say about the unseen?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 415.3,
+    "raw_file": "raw/q_039.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_040",
+    "question": "What does the Quran say about envy and jealousy?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 451.5,
+    "raw_file": "raw/q_040.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_041",
+    "question": "What does the Quran teach about lying and truthfulness?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 367.8,
+    "raw_file": "raw/q_041.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 15736,
+    "h2_count": 3,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_042",
+    "question": "How does the Quran describe paradise?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 363.1,
+    "raw_file": "raw/q_042.txt",
+    "status": "error",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 0,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "ERROR",
+    "duplicate_pairs": [],
+    "error": "HTTPConnectionPool(host='localhost', port=8085): Read timed out."
+  },
+  {
+    "q_id": "q_043",
+    "question": "How does the Quran describe hell?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 294.6,
+    "raw_file": "raw/q_043.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 9890,
+    "h2_count": 2,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_044",
+    "question": "What does the Quran say about generosity?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 182.5,
+    "raw_file": "raw/q_044.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 6,
+    "answer_length_chars": 10541,
+    "h2_count": 6,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_045",
+    "question": "What does the Quran teach about peace?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 385.5,
+    "raw_file": "raw/q_045.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6838,
+    "h2_count": 5,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_046",
+    "question": "What does the Quran say about anger and self-control?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 290.4,
+    "raw_file": "raw/q_046.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 9,
+    "answer_length_chars": 5959,
+    "h2_count": 5,
+    "verdict": "CLEAN",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_047",
+    "question": "What does the Quran say about wisdom?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 327.1,
+    "raw_file": "raw/q_047.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 6375,
+    "h2_count": 6,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_048",
+    "question": "What does the Quran say about freedom and slavery?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 331.4,
+    "raw_file": "raw/q_048.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 7779,
+    "h2_count": 6,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_049",
+    "question": "What does the Quran teach about justice in commerce?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 325.0,
+    "raw_file": "raw/q_049.txt",
+    "status": "timeout",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 8,
+    "answer_length_chars": 0,
+    "h2_count": 0,
+    "verdict": "TIMEOUT",
+    "duplicate_pairs": []
+  },
+  {
+    "q_id": "q_050",
+    "question": "What does the Quran say about the resurrection?",
+    "category": "COMPLEMENTARY",
+    "elapsed_seconds": 178.7,
+    "raw_file": "raw/q_050.txt",
+    "status": "ok",
+    "model_served": "qwen3:14b",
+    "tool_call_count": 7,
+    "answer_length_chars": 8116,
+    "h2_count": 7,
+    "verdict": "BUG_VERBATIM",
+    "duplicate_pairs": [
+      {
+        "verse": "3:185",
+        "sections": [
+          3,
+          6
+        ],
+        "match": "verbatim"
+      }
+    ]
+  }
+]
