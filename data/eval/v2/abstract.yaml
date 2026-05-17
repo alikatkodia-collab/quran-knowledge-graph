@@ -73,7 +73,7 @@
     cites_must_include: ["14:7"]
     tools_used_must_include: ["concept_search", "search_arabic_root"]
     tools_used_must_not_include: ["run_cypher"]
-    answer_substring_required: ["thank", "shukr"]
+    answer_substring_required: ["thank", "shukr", "ش-ك-ر"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
@@ -128,7 +128,7 @@
     cites_must_include: ["2:153"]
     tools_used_must_include: ["concept_search", "search_arabic_root"]
     tools_used_must_not_include: ["run_cypher"]
-    answer_substring_required: ["patience", "sabr"]
+    answer_substring_required: ["patience", "sabr", "ص-ب-ر"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
