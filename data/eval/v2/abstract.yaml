@@ -543,13 +543,24 @@
 - id: abstract-021
   bucket: ABSTRACT
   question: "Trace the Quran's depiction of death and the soul."
-  asserts: {}
+  asserts:
+    cites_must_include: ["39:42"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["soul"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: death, nafs, ruh. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: death + soul (nafs / ruh).
+    Anchor candidates considered: 39:42 (Khalifa: "GOD puts the
+    souls to death when the end of their life comes, and also for
+    those who do not die during their sleep" — most explicit on
+    God's role as life-and-death-taker of the soul), 56:83-87
+    (when the soul reaches the throat), 75:26-30 (the soul
+    reaches the collar-bones). Picked 39:42.
   added: 2026-05-17
   added_by: operator
 
