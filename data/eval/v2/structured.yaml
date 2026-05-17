@@ -108,12 +108,31 @@
 - id: structured-004
   bucket: STRUCTURED
   question: "What are the thematic differences between Meccan and Medinan revelations?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["run_cypher", "concept_search"]
+    tools_used_must_not_include: []
+    answer_substring_required: ["Meccan", "Medinan"]
   rubric_weights:
     citation_accuracy: 0.5
     answer_completeness: 0.2
     tool_path_correctness: 0.2
     framing_appropriateness: 0.1
-  notes: "FORCING FUNCTION — depends on Meccan/Medinan tagging. Will fail until backfill lands. Asserts pending."
+  notes: |
+    Meccan/Medinan-themes sub-shape. Backfill landed on main.
+    Compound question — needs both classification data (run_cypher
+    on revelation_location) AND theme reasoning (concept_search
+    over verses within each classification). Both pins required.
+    Two-substring gate keeps the classification names anchored
+    without over-constraining thematic vocabulary.
+    cites_must_include empty by design — themes span many verses
+    on each side; no single anchor is canonical.
+    Phase 4d any_of candidate: theme-vocab cluster (e.g.,
+    {"law", "faith", "monotheism", "community"} as any_of) once
+    we see which theme words good answers actually surface.
+    Failure mode: agent recites the textbook generalisation
+    ("Meccan is monotheism + eschatology, Medinan is law +
+    community") without grounding either side in the actual
+    verse distribution the graph can confirm.
   added: 2026-05-17
   added_by: operator
