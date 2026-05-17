@@ -151,13 +151,25 @@
 - id: broad-006
   bucket: BROAD
   question: "In what ways does the Quran describe itself?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: []
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Self-referential; should cite 2:2, 15:9, 17:88. Asserts pending."
+  notes: |
+    Theme-survey sub-shape. Self-referential question — should
+    surface 2:2 (infallible scripture), 15:9 (preservation guarantee),
+    17:88 (inimitability), 41:42 (no falsehood), 39:23 (the best
+    of all narrations), etc. No single canonical anchor — rubric
+    (completeness 0.5) is the only quality signal.
+    Failure mode: shallow paraphrase ("the Quran calls itself a
+    guidance, a reminder…") without citing the self-description
+    verses verbatim.
   added: 2026-05-17
   added_by: operator
 
