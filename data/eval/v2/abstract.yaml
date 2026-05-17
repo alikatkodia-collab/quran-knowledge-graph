@@ -283,13 +283,25 @@
 - id: abstract-011
   bucket: ABSTRACT
   question: "How does the Quran warn about the consequences of arrogance?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["7:13"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["arrogan"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: arrogance + its consequences (compound). Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: arrogance + consequences (compound). Substring "arrogan"
+    matches arrogant/arrogance/arrogantly.
+    Anchor candidates considered: 7:13 (Iblis cast down for
+    arrogance — the prototypical cosmic case), 31:18 (don't strut;
+    GOD does not love the arrogant), 40:35 (GOD seals every
+    arrogant tyrant's heart). Picked 7:13 because it anchors the
+    cosmic narrative — every other arrogance verse echoes Iblis's
+    fall.
   added: 2026-05-17
   added_by: operator
 
