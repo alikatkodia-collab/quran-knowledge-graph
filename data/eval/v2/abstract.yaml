@@ -178,13 +178,26 @@
 - id: abstract-007
   bucket: ABSTRACT
   question: "What is the Quran's teaching on repentance?"
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:222"]
+    tools_used_must_include: ["concept_search", "search_arabic_root"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["repent", "tawba", "ت-و-ب"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: repentance. [AR] root t-w-b / tawba. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: repentance. [AR] root ت-و-ب / tawba. Three-substring
+    AR-augmentation gate ("repent" English topic, "tawba"
+    transliteration, "ت-و-ب" Arabic letters). "repent" matches
+    repent/repents/repentance/repenting.
+    Anchor candidates considered: 2:222 (Khalifa: "GOD loves those
+    who repent" — canonical bidirectional repentance verse), 39:54
+    ("Repent to your Lord and submit to Him"), 25:71 ("whoever
+    repents and reforms... will be redeemed"). Picked 2:222.
+    Promote to any_of cluster in Phase 4d if it proves brittle.
   added: 2026-05-17
   added_by: operator
 
