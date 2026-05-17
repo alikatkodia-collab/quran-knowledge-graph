@@ -442,13 +442,26 @@
 - id: broad-017
   bucket: BROAD
   question: "Recount the story of Moses in the Quran."
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Moses"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Most-mentioned prophet (~136 refs); tests breadth. Asserts pending."
+  notes: |
+    Prophet-bio sub-shape. hybrid_search pin (proper noun grammar).
+    cites_must_include empty by design — Moses is mentioned ~136
+    times across multiple surahs.
+    Phase 4d any_of candidate: substring "Moses" vs "Musa"
+    (transliterated form).
+    Failure mode: agent telescopes the long Moses arc into the
+    Exodus highlight (Pharaoh + parting the sea) and skips the
+    Mount Sinai chapters, the encounter with the servant
+    (18:60-82), and the burning bush (20:9-24).
   added: 2026-05-17
   added_by: operator
 
