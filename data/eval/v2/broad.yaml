@@ -176,13 +176,24 @@
 - id: broad-007
   bucket: BROAD
   question: "How does the Quran present the concept of revelation?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["revelation"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Tests breadth across revelation-related verses (wahy, tanzeel). Asserts pending."
+  notes: |
+    Theme-survey sub-shape. Tests breadth across revelation-related
+    verses (wahy, tanzeel). No single canonical anchor (3:3, 42:51,
+    53:4, 25:32, etc. all candidates) — rubric is the quality
+    signal.
+    Failure mode: agent gives generic "the Quran was revealed
+    gradually" framing without the active-revelation verses
+    (42:51 on the modes of wahy, 53:4 on the source).
   added: 2026-05-17
   added_by: operator
 
