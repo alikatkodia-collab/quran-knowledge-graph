@@ -548,12 +548,30 @@
 - id: broad-021
   bucket: BROAD
   question: "From a Quranic perspective, how does Satan succeed in misleading humanity?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["devil"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "BROAD framing of Satan question (complements ABSTRACT 16-19). Asserts pending."
+  notes: |
+    Reclassified per operator decision: prophet-bio sub-shape (Satan
+    is a named proper noun) -> hybrid_search pin. concept_search
+    NOT forbidden. cites_must_include empty by design — Satan
+    appears across 2:36, 2:208, 7:11-25, 17:53-65, 35:6, 38:71-85,
+    etc.
+    BROAD framing complements ABSTRACT 16-19 (mechanism,
+    whisperings, consequences) — this question is about HOW
+    Satan succeeds across the totality of the Quran, narrative
+    + theological. Substring "devil" matches Khalifa's preferred
+    rendering (consistent with abstract-016 / abstract-019).
+    Failure mode: agent recycles only the ABSTRACT-bucket
+    mechanisms (waswasa, false hopes) and misses the cosmic
+    narrative (Iblis's refusal, the granted respite till the
+    Last Day in 38:79-85).
   added: 2026-05-17
   added_by: operator
