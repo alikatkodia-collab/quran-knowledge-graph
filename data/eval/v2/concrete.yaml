@@ -140,13 +140,26 @@
 - id: concrete-006
   bucket: CONCRETE
   question: "Tell the story of the Cave (Ashab al-Kahf) as the Quran presents it."
-  asserts: {}
+  asserts:
+    cites_must_include: ["18:9"]
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Cave"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.35
     tool_path_correctness: 0.3
     framing_appropriateness: 0.1
-  notes: "Surah 18; tests whether agent stays grounded vs spiritualizes. Asserts pending."
+  notes: |
+    Named-entity sub-shape (named narrative) -> hybrid_search pin.
+    Single canonical location: 18:9-26 in Surah Al-Kahf.
+    Anchor candidates considered: 18:9 (opening), 18:13 (the
+    young men sought refuge in the Cave), 18:21 (their numbers
+    debate). Picked 18:9 as the opening.
+    Failure mode: agent spiritualises the Cave narrative into
+    abstract themes (faith / refuge / sleep-as-trial) without
+    grounding in the specific verses; or imports the Christian
+    "Seven Sleepers of Ephesus" tradition uncritically.
   added: 2026-05-17
   added_by: operator
 
