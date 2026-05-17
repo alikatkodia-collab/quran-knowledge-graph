@@ -15,13 +15,28 @@
 - id: abstract-001
   bucket: ABSTRACT
   question: "Tell me what the Quran says about charity."
-  asserts: {}
+  asserts:
+    cites_must_include: ["2:177"]
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["charity"]
   rubric_weights:
     citation_accuracy: 0.25
     answer_completeness: 0.4
-    tool_path_correctness: 0.15
-    framing_appropriateness: 0.2
-  notes: "Theme: charity. Asserts pending."
+    tool_path_correctness: 0.2
+    framing_appropriateness: 0.15
+  notes: |
+    Theme: charity. Routing: ABSTRACT lane -> concept_search first
+    (per system prompt). run_cypher forbidden as long-tail escape
+    hatch — should not fire on a thematic query. tool_path weight
+    nudged to 0.2 because tool-lane discipline is exactly what this
+    bucket tests.
+    Anchor candidates considered: 2:177 (definitional Khalifa
+    "righteousness" verse, defines charity to relatives / orphans /
+    needy), 9:103 (Khalifa: take from their money a charity to
+    purify them), 2:267 (give from the good of what you earn).
+    Picked 2:177 as most canonical. Promote to any_of cluster in
+    Phase 4d if it proves brittle.
   added: 2026-05-17
   added_by: operator
 
