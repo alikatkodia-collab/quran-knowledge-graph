@@ -494,13 +494,27 @@
 - id: broad-019
   bucket: BROAD
   question: "Describe Muhammad as he appears in the Quran."
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["hybrid_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: ["Muhammad"]
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Tests how the Quran characterises its own messenger. Asserts pending."
+  notes: |
+    Prophet-bio sub-shape. hybrid_search pin (proper noun grammar).
+    cites_must_include empty by design — Muhammad's portrayal
+    spans 3:144, 33:40 (Khalifa: final prophet), 48:29, 9:128,
+    33:21 (good example), 68:4 (sublime character), etc.
+    Failure mode: agent gives a hagiographic biography drawn from
+    hadith / sira material rather than what the QURAN ITSELF says
+    about Muhammad. Should anchor in verses, not in
+    extra-Quranic tradition.
+    Khalifa-specific note: 33:40 ("the final prophet") is a
+    Khalifa lynchpin verse — agent ideally surfaces it.
   added: 2026-05-17
   added_by: operator
 
