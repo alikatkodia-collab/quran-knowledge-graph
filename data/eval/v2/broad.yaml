@@ -250,13 +250,24 @@
 - id: broad-010
   bucket: BROAD
   question: "According to the Quran, how should we understand the relationship between God and humanity?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: []
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Highest-level theological question. Asserts pending."
+  notes: |
+    Theme-survey sub-shape. Highest-level theological question.
+    No single canonical anchor — relevant verses span 2:30
+    (humanity as khalifa), 51:56 (created to worship), 7:172
+    (covenant of the souls), etc. Rubric (especially completeness
+    0.5) is the only quality signal.
+    Failure mode: vague abstraction ("a covenant relationship",
+    "God is creator, we are servants") without verse grounding.
   added: 2026-05-17
   added_by: operator
 
