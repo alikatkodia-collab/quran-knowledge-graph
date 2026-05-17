@@ -120,13 +120,31 @@
 - id: broad-005
   bucket: BROAD
   question: "What are the main themes of the Quran?"
-  asserts: {}
+  asserts:
+    cites_must_include: []
+    tools_used_must_include: ["concept_search"]
+    tools_used_must_not_include: ["run_cypher"]
+    answer_substring_required: []
   rubric_weights:
     citation_accuracy: 0.2
     answer_completeness: 0.5
     tool_path_correctness: 0.1
     framing_appropriateness: 0.2
-  notes: "Highest-breadth question; failure mode = shallow listicle. Asserts pending."
+  notes: |
+    Theme-survey sub-shape of BROAD (no specific surah → routing
+    is concept_search-led, NOT explore_surah). cites_must_include
+    empty by design — no single canonical anchor exists for "main
+    themes of the whole Quran." answer_substring_required also
+    empty — any required word ("Quran", "themes", "God") would
+    be trivially present and add no signal.
+    The rubric (especially completeness 0.5 and framing 0.2) is
+    the ONLY quality signal for this question. Watch this one on
+    first eval run: if it scores high purely on hand-waving prose
+    that the judge can't penalise, the rubric anchors need
+    tightening in Phase 4d.
+    Failure mode: shallow listicle ("monotheism, prophets,
+    afterlife, morality, …") without verse grounding for any
+    of the listed themes.
   added: 2026-05-17
   added_by: operator
 
