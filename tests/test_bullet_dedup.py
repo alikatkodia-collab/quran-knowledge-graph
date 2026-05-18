@@ -10,12 +10,18 @@ leave clean answers byte-for-byte unchanged. These tests pin both
 properties.
 
 Fixtures in ``tests/fixtures/dedup/`` are the concatenated text events
-extracted from three real BUG_VERBATIM SSE runs:
+extracted from real BUG_VERBATIM SSE runs:
 
 * ``q_003`` — gratitude, MD-table bullet shape, dup verse 2:172.
-* ``q_007`` — repentance, dash-bullet shape, multiple dup verses
+* ``q_007`` — repentance, bold dash-bullet shape, multiple dup verses
   (4:17, 3:89, 5:39, 66:8, 58:13).
 * ``q_018`` — Satan whisperings, dup verse 23:97 across 3 sections.
+* ``q2_repentance_nonbold`` — repentance, NON-bold ``- [4:18] "..."``
+  shape (post-2026-05-18 spot-check that the original regex missed).
+* ``q5_charity_nonbold`` — charity, bold-with-colon ``- **[2:272]**:
+  "..."`` shape where the verse quote is identical across two sections
+  but the trailing commentary diverges at position ~122 in the rest;
+  caught by the 100-char signature window, not the original 150-char.
 """
 
 from __future__ import annotations
@@ -133,14 +139,51 @@ def test_same_verse_different_angle_is_preserved():
     assert suppressed == []
 
 
+def test_q2_repentance_nonbold_4_18_is_suppressed():
+    """q2 spot-check fixture (repentance, non-bold ``- [4:18] "..."``):
+    the broadened regex must recognise the non-bold citation shape
+    that the original ``**[X:Y]**``-only regex missed.
+    """
+    text = _load("q2_repentance_nonbold.txt")
+    cleaned, suppressed = BulletDedup().filter_text(text)
+
+    assert "4:18" in suppressed, (
+        f"verse 4:18 must be suppressed in q2 fixture; got suppressed={suppressed!r}"
+    )
+    assert len(cleaned) < len(text), "at least one bullet line must have been dropped"
+
+
+def test_q5_charity_nonbold_2_272_is_suppressed():
+    """q5 spot-check fixture (charity, bold-with-colon ``- **[2:272]**:
+    "..."``): the verse quote is identical across two sections but the
+    trailing commentary diverges at position ~122 in the rest. The
+    100-char signature window must catch the duplicate.
+    """
+    text = _load("q5_charity_nonbold.txt")
+    cleaned, suppressed = BulletDedup().filter_text(text)
+
+    assert "2:272" in suppressed, (
+        f"verse 2:272 must be suppressed in q5 fixture; got suppressed={suppressed!r}"
+    )
+    assert len(cleaned) < len(text), "at least one bullet line must have been dropped"
+
+
 @pytest.mark.parametrize(
-    "fixture_name", ["q_003.answer.txt", "q_007.answer.txt", "q_018.answer.txt"]
+    "fixture_name",
+    [
+        "q_003.answer.txt",
+        "q_007.answer.txt",
+        "q_018.answer.txt",
+        "q2_repentance_nonbold.txt",
+        "q5_charity_nonbold.txt",
+    ],
 )
 def test_cleaned_output_has_no_remaining_verbatim_duplicates(fixture_name: str):
     """Property: after one pass of dedup, no two bullet lines share the
-    same (verse_id, first-150-chars) signature in the cleaned output.
+    same (verse_id, first-N-chars) signature in the cleaned output, where
+    N is the dedup module's signature-prefix length.
     """
-    from bullet_dedup import _BULLET_LINE
+    from bullet_dedup import _BULLET_LINE, _SIG_PREFIX_CHARS
 
     text = _load(fixture_name)
     cleaned, _ = BulletDedup().filter_text(text)
@@ -150,7 +193,7 @@ def test_cleaned_output_has_no_remaining_verbatim_duplicates(fixture_name: str):
         m = _BULLET_LINE.match(line)
         if m is None:
             continue
-        key = (m.group("verse"), (m.group("rest") or "").strip()[:150])
+        key = (m.group("verse"), (m.group("rest") or "").strip()[:_SIG_PREFIX_CHARS])
         assert key not in seen, (
             f"leftover duplicate in {fixture_name}: verse={key[0]} line={line[:120]!r}"
         )
