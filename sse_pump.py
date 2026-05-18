@@ -33,6 +33,7 @@ import asyncio
 import json
 import queue as tqueue
 import threading
+import time
 from collections.abc import AsyncIterator
 from typing import Callable
 
@@ -44,6 +45,7 @@ async def pump_worker_into_sse(
     *,
     join_timeout: float = 1.0,
     dedup_text: bool = False,
+    keepalive_idle_sec: float = 10.0,
 ) -> AsyncIterator[str]:
     """Run `run_fn(queue, stop_event)` in a daemon thread; yield SSE frames.
 
@@ -65,6 +67,15 @@ async def pump_worker_into_sse(
     ``done`` event is forwarded. A short summary line is printed to
     stdout for ops visibility; nothing about the suppression goes out
     over SSE.
+
+    When the worker goes ``keepalive_idle_sec`` seconds without
+    pushing any event into the queue, a SSE comment frame
+    (``": keepalive\\n\\n"``) is yielded to keep the underlying TCP
+    connection (and any HTTP proxies) from timing out during long
+    LLM turns or the dedup buffering window. SSE clients ignore
+    comment frames, so this is transparent to callers. The idle
+    timer resets on any queue activity (including buffered text
+    events) and after each keepalive is emitted.
     """
     q: tqueue.SimpleQueue = tqueue.SimpleQueue()
     stop_event = threading.Event()
@@ -102,13 +113,18 @@ async def pump_worker_into_sse(
             )
         return f"data: {json.dumps({'t': 'text', 'd': cleaned}, ensure_ascii=False)}\n\n"
 
+    last_activity = time.monotonic()
     try:
         while True:
             try:
                 event = q.get_nowait()
-            except Exception:
+            except tqueue.Empty:
+                if time.monotonic() - last_activity >= keepalive_idle_sec:
+                    yield ": keepalive\n\n"
+                    last_activity = time.monotonic()
                 await asyncio.sleep(0.05)
                 continue
+            last_activity = time.monotonic()
             if event is None:
                 # End of stream. If we were buffering text and never saw
                 # a `done` event, flush the buffered text now so callers
